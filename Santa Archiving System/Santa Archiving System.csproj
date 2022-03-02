@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,8 +57,27 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\account.cs" />
+    <Compile Include="models\appropriation.cs" />
+    <Compile Include="models\committee.cs" />
+    <Compile Include="models\electronic.cs" />
+    <Compile Include="models\indexmanagement.cs" />
+    <Compile Include="models\legislativedocument.cs" />
+    <Compile Include="models\ordinance.cs" />
+    <Compile Include="models\resolution.cs" />
+    <Compile Include="models\sb.cs" />
+    <Compile Include="models\tricycle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="screens\auth\logIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\auth\logIn.Designer.cs">
+      <DependentUpon>logIn.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +87,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="screens\auth\logIn.resx">
+      <DependentUpon>logIn.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +102,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="screens\appropriation\" />
+    <Folder Include="screens\committee\" />
+    <Folder Include="screens\dashboard\" />
+    <Folder Include="screens\documentIndex\" />
+    <Folder Include="screens\electronic\" />
+    <Folder Include="screens\legislativeDocument\" />
+    <Folder Include="screens\ordinance\" />
+    <Folder Include="screens\resolution\" />
+    <Folder Include="screens\sbOfficial\" />
+    <Folder Include="screens\tricycle\" />
+    <Folder Include="screens\users\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
