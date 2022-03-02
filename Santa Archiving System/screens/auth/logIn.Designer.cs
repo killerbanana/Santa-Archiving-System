@@ -1,6 +1,6 @@
 ﻿namespace Santa_Archiving_System.screens.auth
 {
-    partial class logIn
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(logIn));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -127,6 +127,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(358, 45);
             this.guna2Button1.TabIndex = 4;
             this.guna2Button1.Text = "Log In";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // tb_username
             // 

@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Santa_Archiving_System.screens.mainPanel;
 
 namespace Santa_Archiving_System.screens.auth
 {
-    public partial class logIn : Form
+    public partial class Login : Form
     {
-        public logIn()
+        public Login()
         {
             InitializeComponent();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            MainPanel mainPanel = new MainPanel();
+            mainPanel.ShowDialog();
+            this.Hide();
         }
     }
 }
