@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Santa_Archiving_System.screens.resolution;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -151,6 +152,11 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             TabSlider.Visible = false;
             showSubMenu(accountManagementPanel);
+        }
+
+        private void PDFButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ResoluionEncode());
         }
     }
 }

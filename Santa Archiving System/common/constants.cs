@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Santa_Archiving_System.common
 {
-    class constants
+    class Constants
     {
         public static string connectionStringOffline = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SantaLocalDb.mdf;Integrated Security=True");
         public static string connectionStringOnline = "host='santa-database-do-user-9937190-0.b.db.ondigitalocean.com';" +
