@@ -8,5 +8,8 @@ namespace Santa_Archiving_System.models
 {
     class account
     {
+        public int ID { get; set; }
+        public string firstName { get; set; }
+
     }
 }
