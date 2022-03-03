@@ -47,9 +47,7 @@ namespace Santa_Archiving_System.services.resolution
             return dt;
         }
 
-        public static async 
-        Task
-ImportResolutions()
+        public static async Task ImportResolutions()
         {
             try
             {
@@ -122,6 +120,115 @@ ImportResolutions()
             catch (Exception)
             {
 
+                throw;
+            }
+        }
+        
+        public static async Task ExportData()
+        {
+            try
+            {
+                await Task.Run(() =>
+                {
+                    using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                    {
+                        using (SqlCommand cmd = new SqlCommand("SELECT * FROM Resolution", con))
+                        {
+                            con.Open();
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.HasRows)
+                                {
+                                    while (reader.Read())
+                                    {
+                                        using (MySqlConnection connect = new MySqlConnection(Constants.connectionStringOnline))
+                                        {
+                                            using (MySqlCommand command = new MySqlCommand("SELECT * FROM Resolution where ResolutionNo ='" + reader[1].ToString() + "'AND Series ='" + reader[2].ToString() + "'", connect))
+                                            {
+                                                connect.Open();
+
+                                                using (MySqlDataReader reader1 = command.ExecuteReader())
+                                                {
+
+                                                    if (reader1.HasRows)
+                                                    {
+                                                        byte[] dbbyte;
+                                                        dbbyte = (byte[])reader["Files"];
+
+                                                        String query1 = "Update Resolution set ResolutionNo = @Resolution, " +
+                                                        "Series= @Series, " +
+                                                        "Date = @Date, " +
+                                                        "Title = @Title," +
+                                                        "Author = @Author, " +
+                                                        "Files = @Files, " +
+                                                        "Time = @Time, " +
+                                                        "Type = @Type, " +
+                                                        "Size = @Size, " +
+                                                        "Tag = @Tag, " +
+                                                        "Reading = @Reading where ResolutionNo ='" + reader[1].ToString() +
+                                                        "'AND Series ='" + reader[2].ToString() + "'";
+
+                                                        using (MySqlConnection connection3 = new MySqlConnection(Constants.connectionStringOnline))
+                                                        {
+                                                            MySqlCommand command3 = new MySqlCommand(query1, connection3);
+                                                            command3.Parameters.Add(new MySqlParameter("@Resolution", reader[1].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Series", reader[2].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Date", reader[3].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Title", reader[4].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Author", reader[5].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Files", dbbyte));
+                                                            command3.Parameters.Add(new MySqlParameter("@Time", reader[7].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Type", reader[8].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Size", reader[9].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Tag", reader[10].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Reading", reader[11].ToString()));
+
+                                                            connection3.Open();
+
+                                                            command3.ExecuteNonQuery();
+                                                            connection3.Close();
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        byte[] dbbyte;
+                                                        dbbyte = (byte[])reader["Files"];
+                                                        String query1 = "INSERT INTO Resolution(ResolutionNo, Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Resolution,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
+                                                        using (MySqlConnection connection3 = new MySqlConnection(Constants.connectionStringOnline))
+                                                        {
+                                                            MySqlCommand command3 = new MySqlCommand(query1, connection3);
+                                                            command3.Parameters.Add(new MySqlParameter("@Resolution", reader[1].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Series", reader[2].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Date", reader[3].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Title", reader[4].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Author", reader[5].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Files", dbbyte));
+                                                            command3.Parameters.Add(new MySqlParameter("@Time", reader[7].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Type", reader[8].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Size", reader[9].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Tag", reader[10].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Reading", reader[11].ToString()));
+                                                            connection3.Open();
+
+                                                            command3.ExecuteNonQuery();
+                                                            connection3.Close();
+                                                        }
+                                                    }
+                                                }
+                                                connect.Close();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            con.Close();
+                        }
+                    }
+                });
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

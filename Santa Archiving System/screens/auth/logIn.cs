@@ -21,8 +21,8 @@ namespace Santa_Archiving_System.screens.auth
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             MainPanel mainPanel = new MainPanel();
-            mainPanel.ShowDialog();
             this.Hide();
+            mainPanel.ShowDialog();
         }
     }
 }

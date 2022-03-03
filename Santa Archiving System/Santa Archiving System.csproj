@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="common\Constants.cs" />
+    <Compile Include="common\loading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="common\loading.Designer.cs">
+      <DependentUpon>loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
     </Compile>
     <Compile Include="services\resolution\Resolutions.cs" />
+    <EmbeddedResource Include="common\loading.resx">
+      <DependentUpon>loading.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +175,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="screens\auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -202,6 +212,9 @@
     <Folder Include="screens\users\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\import.png" />
+    <None Include="Resources\import_white.png" />
+    <None Include="Resources\download_white.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
