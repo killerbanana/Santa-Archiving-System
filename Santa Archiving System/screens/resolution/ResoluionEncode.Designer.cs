@@ -178,6 +178,7 @@
             this.btn_add.TabIndex = 29;
             this.btn_add.Text = "Add";
             this.btn_add.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // guna2TextBox1
             // 

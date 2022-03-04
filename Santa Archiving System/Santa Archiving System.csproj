@@ -130,7 +130,7 @@
     <Compile Include="models\electronic.cs" />
     <Compile Include="models\indexmanagement.cs" />
     <Compile Include="models\legislativedocument.cs" />
-    <Compile Include="models\ordinance.cs" />
+    <Compile Include="models\Ordinance.cs" />
     <Compile Include="models\resolution.cs" />
     <Compile Include="models\sb.cs" />
     <Compile Include="models\tricycle.cs" />
@@ -196,6 +196,12 @@
     <Compile Include="screens\ordinance\OrdinaceEncode.Designer.cs">
       <DependentUpon>OrdinaceEncode.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\resolution\AddResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\AddResolution.Designer.cs">
+      <DependentUpon>AddResolution.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\resolution\ResoluionEncode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\mainPanel\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\AddResolution.resx">
+      <DependentUpon>AddResolution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\ResoluionEncode.resx">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using Santa_Archiving_System.common;
+using Santa_Archiving_System.models;
 using Santa_Archiving_System.services.resolution;
 using System;
 using System.Collections.Generic;
@@ -62,6 +63,16 @@ namespace Santa_Archiving_System.screens.resolution
             {
                 (guna2DataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("[Resolution No] LIKE '%{0}%' OR [Series] LIKE '%{0}%'  OR [Date] LIKE '%{0}%' OR  [Title] LIKE '%{0}%'", guna2TextBox1.Text);
             }
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            Ordinance data = new Ordinance();
+
+            data.Reading = "First Reading";
+            AddResolution addResolution = new AddResolution();
+            addResolution.ShowDialog();
+
         }
     }
 }

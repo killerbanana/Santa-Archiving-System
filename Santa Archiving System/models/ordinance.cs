@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Santa_Archiving_System.models
 {
-    class ordinance
+    public class Ordinance
     {
-        public int ID { get; set; }
-        public string Title { get; set; }
-        public DateTime ReleaseDate { get; set; }
-        public string Genre { get; set; }
-        public decimal Price { get; set; }
+        public string Reading { get; set; }
     }
 }
