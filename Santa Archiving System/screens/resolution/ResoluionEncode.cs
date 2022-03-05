@@ -97,11 +97,8 @@ namespace Santa_Archiving_System.screens.resolution
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            Ordinance data = new Ordinance()
-            {
-                Reading = "First Reading"
-            };
-            AddResolution addResolution = new AddResolution(data);
+            
+            AddResolution addResolution = new AddResolution(ord);
             addResolution.ShowDialog();
 
         }

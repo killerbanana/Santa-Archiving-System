@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -158,7 +159,7 @@ namespace Santa_Archiving_System.services.resolution
                 throw;
             }
         }
-        
+
         public static async Task ExportData()
         {
             try
@@ -265,6 +266,76 @@ namespace Santa_Archiving_System.services.resolution
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+        public static async Task SaveResolutionData(
+            string resolutionNo,
+            string series,
+            string date,
+            string title,
+            string author,
+            string time,
+            string ampm,
+            string tag,
+            string reading
+            )
+        {
+            String query = "INSERT INTO Resolution([Resolution No], Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Resolution,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
+
+            using (Stream stream = File.OpenRead(Constants.filePath))
+            {
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+
+                string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+                double len = new FileInfo(Constants.filePath).Length;
+                int order = 0;
+                while (len >= 1024 && order < sizes.Length - 1)
+                {
+                    order++;
+                    len = len / 1024;
+                }
+
+                // Adjust the format string to your preferences. For example "{0:0.#}{1}" would
+                // show a single decimal place, and no space.
+                string resultSize = String.Format("{0:0.##} {1}", len, sizes[order]);
+
+
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@Resolution", SqlDbType.VarChar).Value = resolutionNo;
+                    cmd.Parameters.AddWithValue("@Series", SqlDbType.VarChar).Value = series;
+                    cmd.Parameters.AddWithValue("@Date", SqlDbType.VarChar).Value = date;
+                    cmd.Parameters.AddWithValue("@Title", SqlDbType.VarChar).Value = title;
+                    cmd.Parameters.AddWithValue("@Author", SqlDbType.VarChar).Value = author;
+                    cmd.Parameters.AddWithValue("@Files", SqlDbType.VarBinary).Value = buffer;
+                    cmd.Parameters.AddWithValue("@Time", SqlDbType.VarChar).Value = time + " " + ampm;
+                    cmd.Parameters.AddWithValue("@Type", SqlDbType.VarChar).Value = Constants.ext;
+                    cmd.Parameters.AddWithValue("@Size", SqlDbType.VarChar).Value = resultSize;
+                    cmd.Parameters.AddWithValue("@Tag", SqlDbType.VarChar).Value = tag;
+                    cmd.Parameters.AddWithValue("@Reading", SqlDbType.VarChar).Value = reading;
+
+                    con.Open();
+
+                    IAsyncResult result = cmd.BeginExecuteNonQuery();
+
+                    while (!result.IsCompleted)
+                    {
+
+                    }
+
+
+
+                    await Task.Run(() =>
+                    {
+                        cmd.EndExecuteNonQuery(result);
+                    });
+
+                    con.Close();
+
+                }
             }
         }
     }
