@@ -16,12 +16,14 @@ namespace Santa_Archiving_System.screens.resolution
 {
     public partial class AddResolution : Form
     {
-        public AddResolution()
+        Ordinance ord;
+        public AddResolution(Ordinance data)
         {
+            this.ord = data;
             InitializeComponent();
         }
     
-        Ordinance ord = new Ordinance();
+        
 
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
