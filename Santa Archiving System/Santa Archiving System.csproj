@@ -132,7 +132,7 @@
     <Compile Include="models\indexmanagement.cs" />
     <Compile Include="models\legislativedocument.cs" />
     <Compile Include="models\Ordinance.cs" />
-    <Compile Include="models\resolution.cs" />
+    <Compile Include="models\Resolution.cs" />
     <Compile Include="models\sb.cs" />
     <Compile Include="models\tricycle.cs" />
     <Compile Include="Program.cs" />
@@ -197,6 +197,12 @@
     <Compile Include="screens\mainPanel\MainPanel.Designer.cs">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\ordinance\AddOrdinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\AddOrdinance.Designer.cs">
+      <DependentUpon>AddOrdinance.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\ordinance\OrdinaceEncode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,8 @@
     <Compile Include="screens\users\UserManagementEncode.Designer.cs">
       <DependentUpon>UserManagementEncode.cs</DependentUpon>
     </Compile>
+    <Compile Include="services\controls\ControlsServices.cs" />
+    <Compile Include="services\ordinance\Ordinances.cs" />
     <Compile Include="services\resolution\Resolutions.cs" />
     <EmbeddedResource Include="common\loading.resx">
       <DependentUpon>loading.cs</DependentUpon>
@@ -265,11 +273,20 @@
     <EmbeddedResource Include="screens\mainPanel\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\AddOrdinance.resx">
+      <DependentUpon>AddOrdinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\OrdinaceEncode.resx">
+      <DependentUpon>OrdinaceEncode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\AddResolution.resx">
       <DependentUpon>AddResolution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\ResoluionEncode.resx">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sbOfficial\SbOfficialEncode.resx">
+      <DependentUpon>SbOfficialEncode.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -290,6 +307,8 @@
     <None Include="Resources\import.png" />
     <None Include="Resources\import_white.png" />
     <None Include="Resources\download_white.png" />
+    <None Include="Resources\gudetama_vox.0.jpg" />
+    <None Include="Resources\edit white.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

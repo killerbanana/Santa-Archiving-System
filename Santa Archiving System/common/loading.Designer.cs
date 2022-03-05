@@ -33,11 +33,13 @@
             // 
             // guna2ProgressIndicator1
             // 
+            this.guna2ProgressIndicator1.AutoStart = true;
+            this.guna2ProgressIndicator1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ProgressIndicator1.CircleSize = 1F;
             this.guna2ProgressIndicator1.Location = new System.Drawing.Point(3, 3);
             this.guna2ProgressIndicator1.Name = "guna2ProgressIndicator1";
-            this.guna2ProgressIndicator1.ProgressColor = System.Drawing.Color.White;
-            this.guna2ProgressIndicator1.Size = new System.Drawing.Size(90, 90);
+            this.guna2ProgressIndicator1.ProgressColor = System.Drawing.Color.Aqua;
+            this.guna2ProgressIndicator1.Size = new System.Drawing.Size(68, 68);
             this.guna2ProgressIndicator1.TabIndex = 0;
             // 
             // loading
@@ -47,7 +49,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.guna2ProgressIndicator1);
             this.Name = "loading";
-            this.Size = new System.Drawing.Size(95, 99);
+            this.Size = new System.Drawing.Size(72, 74);
             this.ResumeLayout(false);
 
         }

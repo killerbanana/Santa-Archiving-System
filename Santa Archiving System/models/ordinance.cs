@@ -9,7 +9,7 @@ namespace Santa_Archiving_System.models
     public class Ordinance
     {
         public int Id { get; set; }
-        public string ResolutionNo { get; set; }
+        public string OrdinanceNo { get; set; }
         public string Series { get; set; }
         public string Date { get; set; }
         public string Title { get; set; }
