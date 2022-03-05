@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.reading_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -60,6 +59,7 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.loading1 = new Santa_Archiving_System.common.loading();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.panel5 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,14 +77,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(20, 673);
             this.panel4.TabIndex = 6;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(598, 20);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 673);
-            this.panel5.TabIndex = 7;
             // 
             // panel2
             // 
@@ -504,6 +496,14 @@
             this.guna2Elipse1.BorderRadius = 30;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(598, 20);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(20, 673);
+            this.panel5.TabIndex = 7;
+            // 
             // AddResolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,7 +552,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2ComboBox reading_cb;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
@@ -581,5 +580,6 @@
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private common.loading loading1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Panel panel5;
     }
 }

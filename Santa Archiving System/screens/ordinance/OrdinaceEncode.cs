@@ -83,5 +83,11 @@ namespace Santa_Archiving_System.screens.ordinance
                 loading1.Visible = false;
             }
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            AddOrdinance addOrdinance = new AddOrdinance(ordinance);
+            addOrdinance.ShowDialog();
+        }
     }
 }
