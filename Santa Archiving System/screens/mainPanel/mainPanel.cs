@@ -158,5 +158,10 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             openChildForm(new ResoluionEncode());
         }
+
+        private void guna2Button12_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
