@@ -8,18 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Santa_Archiving_System.services.resolution
+namespace Santa_Archiving_System.services.ordinance
 {
-    class Resolutions
+    class Ordinances
     {
-        public static async Task<DataTable> getList()
+        public static async Task<DataTable> getListOrdinance()
         {
 
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
             {
 
-                using (SqlCommand cmd = new SqlCommand("SELECT ID, [Resolution No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT ID, [Ordinance No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Ordinance", con))
                 {
                     con.Open();
                     IAsyncResult result = cmd.BeginExecuteReader();
@@ -54,7 +54,7 @@ namespace Santa_Archiving_System.services.resolution
             using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
             {
 
-                using (SqlCommand cmd = new SqlCommand("SELECT ID, [Resolution No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution WHERE Reading ='" + reading + "'", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT ID, [Ordinance No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Ordinance WHERE Reading ='" + reading + "'", con))
                 {
                     con.Open();
                     IAsyncResult result = cmd.BeginExecuteReader();
@@ -82,7 +82,7 @@ namespace Santa_Archiving_System.services.resolution
             return dt;
         }
 
-        public static async Task ImportResolutions()
+        public static async Task ImportOrdinances()
         {
             try
             {
@@ -90,7 +90,7 @@ namespace Santa_Archiving_System.services.resolution
                 {
                     using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
                     {
-                        using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Resolution", con))
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Ordinance", con))
                         {
                             con.Open();
 
@@ -105,7 +105,7 @@ namespace Santa_Archiving_System.services.resolution
 
                                         using (SqlConnection connect = new SqlConnection(Constants.connectionStringOffline))
                                         {
-                                            using (SqlCommand command = new SqlCommand("SELECT * FROM Resolution where [Resolution No] ='" + res + "'AND Series ='" + series + "'", connect))
+                                            using (SqlCommand command = new SqlCommand("SELECT * FROM Ordinance where [Ordinance No] ='" + res + "'AND Series ='" + series + "'", connect))
                                             {
                                                 connect.Open();
 
@@ -119,11 +119,11 @@ namespace Santa_Archiving_System.services.resolution
                                                         byte[] dbbyte;
                                                         dbbyte = (byte[])reader["Files"];
 
-                                                        String query1 = "INSERT INTO Resolution([Resolution No], Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Resolution,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
+                                                        String query1 = "INSERT INTO Ordinance([Ordinance No], Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Ordinance,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
                                                         using (SqlConnection connection3 = new SqlConnection(Constants.connectionStringOffline))
                                                         {
                                                             SqlCommand command3 = new SqlCommand(query1, connection3);
-                                                            command3.Parameters.AddWithValue("@Resolution", SqlDbType.VarChar).Value = reader[1].ToString();
+                                                            command3.Parameters.AddWithValue("@Ordinance", SqlDbType.VarChar).Value = reader[1].ToString();
                                                             command3.Parameters.AddWithValue("@Series", SqlDbType.VarChar).Value = reader[2].ToString();
                                                             command3.Parameters.AddWithValue("@Date", SqlDbType.VarChar).Value = reader[3].ToString();
                                                             command3.Parameters.AddWithValue("@Title", SqlDbType.VarChar).Value = reader[4].ToString();
@@ -158,8 +158,8 @@ namespace Santa_Archiving_System.services.resolution
                 throw;
             }
         }
-        
-        public static async Task ExportData()
+
+        public static async Task ExportOrdinances()
         {
             try
             {
@@ -167,7 +167,7 @@ namespace Santa_Archiving_System.services.resolution
                 {
                     using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                     {
-                        using (SqlCommand cmd = new SqlCommand("SELECT * FROM Resolution", con))
+                        using (SqlCommand cmd = new SqlCommand("SELECT * FROM Ordinance", con))
                         {
                             con.Open();
 
@@ -179,7 +179,7 @@ namespace Santa_Archiving_System.services.resolution
                                     {
                                         using (MySqlConnection connect = new MySqlConnection(Constants.connectionStringOnline))
                                         {
-                                            using (MySqlCommand command = new MySqlCommand("SELECT * FROM Resolution where ResolutionNo ='" + reader[1].ToString() + "'AND Series ='" + reader[2].ToString() + "'", connect))
+                                            using (MySqlCommand command = new MySqlCommand("SELECT * FROM Ordinance where OrdinanceNo ='" + reader[1].ToString() + "'AND Series ='" + reader[2].ToString() + "'", connect))
                                             {
                                                 connect.Open();
 
@@ -191,7 +191,7 @@ namespace Santa_Archiving_System.services.resolution
                                                         byte[] dbbyte;
                                                         dbbyte = (byte[])reader["Files"];
 
-                                                        String query1 = "Update Resolution set ResolutionNo = @Resolution, " +
+                                                        String query1 = "Update Ordinance set OrinanceNo = @Ordinance, " +
                                                         "Series= @Series, " +
                                                         "Date = @Date, " +
                                                         "Title = @Title," +
@@ -201,13 +201,13 @@ namespace Santa_Archiving_System.services.resolution
                                                         "Type = @Type, " +
                                                         "Size = @Size, " +
                                                         "Tag = @Tag, " +
-                                                        "Reading = @Reading where ResolutionNo ='" + reader[1].ToString() +
+                                                        "Reading = @Reading where OrdinanceNo ='" + reader[1].ToString() +
                                                         "'AND Series ='" + reader[2].ToString() + "'";
 
                                                         using (MySqlConnection connection3 = new MySqlConnection(Constants.connectionStringOnline))
                                                         {
                                                             MySqlCommand command3 = new MySqlCommand(query1, connection3);
-                                                            command3.Parameters.Add(new MySqlParameter("@Resolution", reader[1].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Ordinance", reader[1].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Series", reader[2].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Date", reader[3].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Title", reader[4].ToString()));
@@ -229,11 +229,11 @@ namespace Santa_Archiving_System.services.resolution
                                                     {
                                                         byte[] dbbyte;
                                                         dbbyte = (byte[])reader["Files"];
-                                                        String query1 = "INSERT INTO Resolution(ResolutionNo, Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Resolution,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
+                                                        String query1 = "INSERT INTO Resolution(OrdinanceNo, Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Ordinance,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
                                                         using (MySqlConnection connection3 = new MySqlConnection(Constants.connectionStringOnline))
                                                         {
                                                             MySqlCommand command3 = new MySqlCommand(query1, connection3);
-                                                            command3.Parameters.Add(new MySqlParameter("@Resolution", reader[1].ToString()));
+                                                            command3.Parameters.Add(new MySqlParameter("@Ordinance", reader[1].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Series", reader[2].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Date", reader[3].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Title", reader[4].ToString()));

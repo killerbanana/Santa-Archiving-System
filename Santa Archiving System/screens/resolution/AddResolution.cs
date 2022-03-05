@@ -1,5 +1,6 @@
 ﻿using Santa_Archiving_System.common;
 using Santa_Archiving_System.models;
+using Santa_Archiving_System.services.controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,7 +72,7 @@ namespace Santa_Archiving_System.screens.resolution
 
                     con.Open();
 
-                    loading.Visible = true;
+                    loading1.Visible = true;
 
                     IAsyncResult result = cmd.BeginExecuteNonQuery();
 
@@ -87,7 +88,7 @@ namespace Santa_Archiving_System.screens.resolution
                     });
 
                     con.Close();
-                    loading.Visible = false;
+                    loading1.Visible = false;
                     
 
                     switch (ord.Reading)
@@ -112,7 +113,13 @@ namespace Santa_Archiving_System.screens.resolution
 
         private void AddResolution_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(ord.Reading);
+            
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var filename = ControlsServices.OpenFileDialog();
+            fileName.Text = filename;
         }
     }
 }

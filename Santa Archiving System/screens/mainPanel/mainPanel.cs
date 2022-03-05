@@ -1,5 +1,8 @@
 ﻿using Guna.UI2.WinForms;
+using Santa_Archiving_System.models;
+using Santa_Archiving_System.screens.ordinance;
 using Santa_Archiving_System.screens.resolution;
+using Santa_Archiving_System.screens.sbOfficial;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -156,7 +159,77 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void PDFButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new ResoluionEncode());
+            Resolution data = new Resolution()
+            {
+            };
+            openChildForm(new ResoluionEncode(data));
+        }
+
+        private void guna2Button13_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SbOfficialEncode());
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Resolution data = new Resolution()
+            {
+                Reading = "First Reading"
+            };
+            openChildForm(new ResoluionEncode(data));
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            Resolution data = new Resolution()
+            {
+                Reading = "Second Reading"
+            };
+            openChildForm(new ResoluionEncode(data));
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            Resolution data = new Resolution()
+            {
+                Reading = "Third Reading"
+            };
+            openChildForm(new ResoluionEncode(data));
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            Ordinance data = new Ordinance()
+            {
+            };
+            openChildForm(new OrdinaceEncode(data));
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            Ordinance data = new Ordinance()
+            {
+                Reading = "First Reading"
+            };
+            openChildForm(new OrdinaceEncode(data));
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            Ordinance data = new Ordinance()
+            {
+                Reading = "Second Reading"
+            };
+            openChildForm(new OrdinaceEncode(data));
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            Ordinance data = new Ordinance()
+            {
+                Reading = "Third Reading"
+            };
+            openChildForm(new OrdinaceEncode(data));
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -36,7 +37,6 @@
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tag = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.loading = new Guna.UI2.WinForms.Guna2ProgressIndicator();
             this.ampm = new Guna.UI2.WinForms.Guna2ComboBox();
             this.time = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -57,6 +57,9 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.loading1 = new Santa_Archiving_System.common.loading();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.SuspendLayout();
             // 
             // panel1
@@ -157,17 +160,6 @@
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(33, 23);
             this.guna2HtmlLabel9.TabIndex = 81;
             this.guna2HtmlLabel9.Text = "Tag";
-            // 
-            // loading
-            // 
-            this.loading.AutoStart = true;
-            this.loading.BackColor = System.Drawing.Color.White;
-            this.loading.CircleSize = 1F;
-            this.loading.Location = new System.Drawing.Point(269, 287);
-            this.loading.Name = "loading";
-            this.loading.Size = new System.Drawing.Size(90, 90);
-            this.loading.TabIndex = 80;
-            this.loading.Visible = false;
             // 
             // ampm
             // 
@@ -358,6 +350,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(141, 36);
             this.guna2Button1.TabIndex = 72;
             this.guna2Button1.Text = "Browse";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // title
             // 
@@ -493,17 +486,35 @@
             this.guna2HtmlLabel1.TabIndex = 66;
             this.guna2HtmlLabel1.Text = "New Resolution Data";
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.TargetControl = this;
+            // 
+            // loading1
+            // 
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(263, 304);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(71, 70);
+            this.loading1.TabIndex = 84;
+            this.loading1.Visible = false;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 30;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // AddResolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 693);
             this.ControlBox = false;
+            this.Controls.Add(this.loading1);
             this.Controls.Add(this.reading_cb);
             this.Controls.Add(this.guna2HtmlLabel10);
             this.Controls.Add(this.tag);
             this.Controls.Add(this.guna2HtmlLabel9);
-            this.Controls.Add(this.loading);
             this.Controls.Add(this.ampm);
             this.Controls.Add(this.time);
             this.Controls.Add(this.guna2HtmlLabel8);
@@ -528,8 +539,9 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddResolution";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.AddResolution_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -546,7 +558,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2TextBox tag;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2ProgressIndicator loading;
         private Guna.UI2.WinForms.Guna2ComboBox ampm;
         private Guna.UI2.WinForms.Guna2TextBox time;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
@@ -567,5 +578,8 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private common.loading loading1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }
