@@ -16,8 +16,10 @@ namespace Santa_Archiving_System.screens.resolution
 {
     public partial class ResoluionEncode : Form
     {
-        public ResoluionEncode()
+        Resolution ord;
+        public ResoluionEncode(Resolution data)
         {
+            this.ord = data;
             InitializeComponent();
         }
 
@@ -25,30 +27,58 @@ namespace Santa_Archiving_System.screens.resolution
             guna2DataGridView1.DataSource = await Resolutions.getList();
         }
 
+        private async Task LoadDataTableReading(string reading)
+        {
+            guna2DataGridView1.DataSource = await Resolutions.getReading(reading);
+        }
         private async void ResoluionEncode_Load(object sender, EventArgs e)
         {
-            loading.Visible = true;
-            await LoadDataTable();
-            loading.Visible = false;
+            loading1.Visible = true;
+            try {
+                switch (ord.Reading) {
+                    case "First Reading":
+                        await LoadDataTableReading("1st Reading");
+                        break;
+                    case "Second Reading":
+                        await LoadDataTableReading("2nd Reading");
+                        break;
+                    case "Third Reading":
+                        await LoadDataTableReading("3rd Reading");
+                        break;
+                    default:
+                        await LoadDataTable();
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+            loading1.Visible = false;
         }
 
         private async void btn_import_Click(object sender, EventArgs e)
         {
-            loading.Visible = true;
-            await Resolutions.ImportResolutions();
-            await LoadDataTable();
-            loading.Visible = false;
+            DialogResult dialogResult = MessageBox.Show("Do you want to download backup from cloud?", "Download", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                loading1.Visible = true;
+                await Resolutions.ImportResolutions();
+                await LoadDataTable();
+                loading1.Visible = false;
+            }
         }
 
         private async void btn_export_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to saave these Data to cloud?", "Export", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to download backup from cloud? This process make up some time.", "Upload", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                loading.Visible = true;
+                loading1.Visible = true;
                 await Resolutions.ExportData();
                 await LoadDataTable();
-                loading.Visible = false;
+                loading1.Visible = false;
             }
         }
 
@@ -75,5 +105,13 @@ namespace Santa_Archiving_System.screens.resolution
             addResolution.ShowDialog();
 
         }
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow item in this.guna2DataGridView1.SelectedRows)
+            {
+
+            }
+         }
     }
 }
