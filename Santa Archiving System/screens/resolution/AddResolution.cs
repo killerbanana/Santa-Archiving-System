@@ -29,21 +29,50 @@ namespace Santa_Archiving_System.screens.resolution
 
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
-            if (fileName.Text == string.Empty)
+            if (fileName.Text == string.Empty || resolutionNumber.Text == string.Empty || series.Text == string.Empty)
             {
                 MessageBox.Show("File can't be empty!");
                 return;
             }
             loading1.Visible = true;
-            await Resolutions.SaveResolutionData(resolutionNumber.Text,
-            series.Text,
-            date.Text,
-            title.Text,
-            author.Text,
-            time.Text,
-            ampm.Text,
-            tag.Text,
-            reading_cb.Text);
+            if (ControlsServices.CheckIfOnline())
+            {
+                await Resolutions.SaveResolutionData(
+                    resolutionNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text);
+
+                await Resolutions.SaveResolutionDataOnline(
+                    resolutionNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text);
+            }
+            else {
+                await Resolutions.SaveResolutionData(
+                    resolutionNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text);
+            }
+                
+
             loading1.Visible = false;
             MessageBox.Show("Successfully Added");
         }

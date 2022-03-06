@@ -66,9 +66,7 @@ namespace Santa_Archiving_System.screens.tricycle
                     {
 
                     }
-
-
-
+                    
                     await Task.Run(() => {
                         cmd.EndExecuteNonQuery(result);
                     });
@@ -86,16 +84,6 @@ namespace Santa_Archiving_System.screens.tricycle
                 using (SqlCommand cmd = new SqlCommand("SELECT Files FROM Retrieve", con))
                 {
                     con.Open();
-                    //IAsyncResult result = cmd.BeginExecuteReader();
-
-                    /*while (!result.IsCompleted)
-                    {
-
-                        // Wait for 1/10 second, so the counter
-                        // does not consume all available resources 
-                        //System.Threading.Thread.Sleep(100);
-                        // on the main thread.
-                    }*/
 
                     da = new SqlDataAdapter(cmd);
                     dt = new DataTable();
@@ -264,14 +252,7 @@ namespace Santa_Archiving_System.screens.tricycle
                     file1 = reader.ReadBytes((int)stream.Length);
                 }
             }
-            /*
-            using (var varConnection = Locale.sqlConnectOneTime(Locale.sqlDataConnectionDetails))
-            using (var sqlWrite = new SqlCommand("INSERT INTO Raporty (RaportPlik) Values(@File)", varConnection))
-            {
-                sqlWrite.Parameters.Add("@File", SqlDbType.VarBinary, file.Length).Value = file;
-                sqlWrite.ExecuteNonQuery();
-            }
-            */
+
             using (var conn = new SqlConnection(Constants.connectionStringOffline))
             {
 
