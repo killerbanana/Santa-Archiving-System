@@ -1,41 +1,37 @@
 ﻿using Santa_Archiving_System.common;
 using Santa_Archiving_System.models;
 using Santa_Archiving_System.services.controls;
-using Santa_Archiving_System.services.resolution;
+using Santa_Archiving_System.services.ordinance;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Santa_Archiving_System.screens.resolution
+namespace Santa_Archiving_System.screens.ordinance
 {
-    public partial class AddResolution : Form
+    public partial class AddOrdinance : Form
     {
-        Resolution resolution;
-        public AddResolution(Resolution data)
+        Ordinance ordinane;
+        public AddOrdinance(Ordinance data)
         {
-            this.resolution = data;
+            this.ordinane = data;
             InitializeComponent();
         }
-    
-        
 
-        private async void guna2Button3_Click(object sender, EventArgs e)
+        private async void btn_add_Click(object sender, EventArgs e)
         {
-            if (fileName.Text == string.Empty)
+            if (fileName.Text == string.Empty || ordinanceNumber.Text == string.Empty || series.Text == string.Empty)
             {
-                MessageBox.Show("File can't be empty!");
+                MessageBox.Show("Fill all required fields!");
                 return;
             }
             loading1.Visible = true;
-            await Resolutions.SaveResolutionData(resolutionNumber.Text,
+            await Ordinances.SaveOrdinanceData(ordinanceNumber.Text,
             series.Text,
             date.Text,
             title.Text,
@@ -48,12 +44,7 @@ namespace Santa_Archiving_System.screens.resolution
             MessageBox.Show("Successfully Added");
         }
 
-        private void AddResolution_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btn_browse_Click(object sender, EventArgs e)
         {
             var filename = ControlsServices.OpenFileDialog();
             fileName.Text = filename;

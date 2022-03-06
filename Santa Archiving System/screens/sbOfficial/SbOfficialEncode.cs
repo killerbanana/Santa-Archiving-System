@@ -16,5 +16,15 @@ namespace Santa_Archiving_System.screens.sbOfficial
         {
             InitializeComponent();
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

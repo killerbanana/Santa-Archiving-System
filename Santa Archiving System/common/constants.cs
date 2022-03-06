@@ -15,6 +15,10 @@ namespace Santa_Archiving_System.common
             "UID='Santaadmin';" +
             "PWD='RXTs2ppzH2kXEwUd';";
 
+        public static string filename2 = @"C:\New folder\tricy1.docx";
+        public static string filename1 = @"C:\New folder\tricy.docx";
+        public static string file = "";
+
         public static string fileContent = string.Empty;
         public static string filePath = string.Empty;
         public static string ext = string.Empty;

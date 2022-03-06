@@ -36,6 +36,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_export = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_import = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
             this.btn_update = new Guna.UI2.WinForms.Guna2Button();
@@ -43,9 +45,7 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.loading = new Guna.UI2.WinForms.Guna2ProgressIndicator();
-            this.btn_export = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_import = new Guna.UI2.WinForms.Guna2Button();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +102,50 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1013, 144);
             this.panel5.TabIndex = 27;
+            // 
+            // btn_export
+            // 
+            this.btn_export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_export.BorderRadius = 5;
+            this.btn_export.CheckedState.Parent = this.btn_export;
+            this.btn_export.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_export.CustomImages.Parent = this.btn_export;
+            this.btn_export.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_export.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_export.ForeColor = System.Drawing.Color.White;
+            this.btn_export.HoverState.Parent = this.btn_export;
+            this.btn_export.Image = global::Santa_Archiving_System.Properties.Resources.import_white;
+            this.btn_export.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_export.Location = new System.Drawing.Point(812, 6);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.ShadowDecoration.Parent = this.btn_export;
+            this.btn_export.Size = new System.Drawing.Size(92, 36);
+            this.btn_export.TabIndex = 32;
+            this.btn_export.Text = "Export";
+            this.btn_export.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            // 
+            // btn_import
+            // 
+            this.btn_import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_import.BorderRadius = 5;
+            this.btn_import.CheckedState.Parent = this.btn_import;
+            this.btn_import.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_import.CustomImages.Parent = this.btn_import;
+            this.btn_import.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ForeColor = System.Drawing.Color.White;
+            this.btn_import.HoverState.Parent = this.btn_import;
+            this.btn_import.Image = global::Santa_Archiving_System.Properties.Resources.download_white;
+            this.btn_import.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_import.Location = new System.Drawing.Point(910, 6);
+            this.btn_import.Name = "btn_import";
+            this.btn_import.ShadowDecoration.Parent = this.btn_import;
+            this.btn_import.Size = new System.Drawing.Size(97, 36);
+            this.btn_import.TabIndex = 31;
+            this.btn_import.Text = "Import";
+            this.btn_import.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
             // 
             // guna2Button1
             // 
@@ -285,60 +329,16 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
-            // loading
+            // loading1
             // 
-            this.loading.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.loading.AutoStart = true;
-            this.loading.CircleSize = 1F;
-            this.loading.Location = new System.Drawing.Point(480, 264);
-            this.loading.Name = "loading";
-            this.loading.Size = new System.Drawing.Size(90, 90);
-            this.loading.TabIndex = 29;
-            // 
-            // btn_export
-            // 
-            this.btn_export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_export.BorderRadius = 5;
-            this.btn_export.CheckedState.Parent = this.btn_export;
-            this.btn_export.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_export.CustomImages.Parent = this.btn_export;
-            this.btn_export.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_export.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_export.ForeColor = System.Drawing.Color.White;
-            this.btn_export.HoverState.Parent = this.btn_export;
-            this.btn_export.Image = global::Santa_Archiving_System.Properties.Resources.import_white;
-            this.btn_export.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_export.Location = new System.Drawing.Point(812, 6);
-            this.btn_export.Name = "btn_export";
-            this.btn_export.ShadowDecoration.Parent = this.btn_export;
-            this.btn_export.Size = new System.Drawing.Size(92, 36);
-            this.btn_export.TabIndex = 32;
-            this.btn_export.Text = "Export";
-            this.btn_export.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
-            // 
-            // btn_import
-            // 
-            this.btn_import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_import.BorderRadius = 5;
-            this.btn_import.CheckedState.Parent = this.btn_import;
-            this.btn_import.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_import.CustomImages.Parent = this.btn_import;
-            this.btn_import.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_import.ForeColor = System.Drawing.Color.White;
-            this.btn_import.HoverState.Parent = this.btn_import;
-            this.btn_import.Image = global::Santa_Archiving_System.Properties.Resources.download_white;
-            this.btn_import.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_import.Location = new System.Drawing.Point(910, 6);
-            this.btn_import.Name = "btn_import";
-            this.btn_import.ShadowDecoration.Parent = this.btn_import;
-            this.btn_import.Size = new System.Drawing.Size(97, 36);
-            this.btn_import.TabIndex = 31;
-            this.btn_import.Text = "Import";
-            this.btn_import.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(461, 287);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(72, 74);
+            this.loading1.TabIndex = 29;
             // 
             // ResoluionEncode
             // 
@@ -346,7 +346,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1053, 592);
-            this.Controls.Add(this.loading);
+            this.Controls.Add(this.loading1);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -378,7 +378,7 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2ProgressIndicator loading;
         private Guna.UI2.WinForms.Guna2Button btn_import;
+        private common.loading loading1;
     }
 }
