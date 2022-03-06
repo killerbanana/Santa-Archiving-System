@@ -15,71 +15,118 @@ namespace Santa_Archiving_System.services.resolution
     {
         public static async Task<DataTable> getList()
         {
-
             DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+            await Task.Run(() =>
             {
-
-                using (SqlCommand cmd = new SqlCommand("SELECT ID, [Resolution No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution", con))
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                 {
-                    con.Open();
-                    IAsyncResult result = cmd.BeginExecuteReader();
 
-                    while (!result.IsCompleted)
+                    using (SqlCommand cmd = new SqlCommand("SELECT ID, [Resolution No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution", con))
                     {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
 
-                        // Wait for 1/10 second, so the counter
-                        // does not consume all available resources 
-                        //System.Threading.Thread.Sleep(100);
-                        // on the main thread.
-                    }
+                        while (!result.IsCompleted)
+                        {
+                        }
 
-                    using (SqlDataReader reader = cmd.EndExecuteReader(result))
-                    {
-                        await Task.Run(() =>
+                        using (SqlDataReader reader = cmd.EndExecuteReader(result))
                         {
                             dt.Load(reader);
-                        });
+                        }
+
                     }
-
                 }
+            });
+            return dt;
+        }
 
-            }
+        public static async Task<DataTable> getListOnline()
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT ID, ResolutionNo, Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+                        }
+
+                        using (MySqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                }
+            });
             return dt;
         }
 
         public static async Task<DataTable> getReading(string reading)
         {
-
             DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+            await Task.Run(() =>
             {
-
-                using (SqlCommand cmd = new SqlCommand("SELECT ID, [Resolution No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution WHERE Reading ='" + reading + "'", con))
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                 {
-                    con.Open();
-                    IAsyncResult result = cmd.BeginExecuteReader();
 
-                    while (!result.IsCompleted)
+                    using (SqlCommand cmd = new SqlCommand("SELECT ID, [Resolution No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution WHERE Reading ='" + reading + "'", con))
                     {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
 
-                        // Wait for 1/10 second, so the counter
-                        // does not consume all available resources 
-                        //System.Threading.Thread.Sleep(100);
-                        // on the main thread.
-                    }
+                        while (!result.IsCompleted)
+                        {
 
-                    using (SqlDataReader reader = cmd.EndExecuteReader(result))
-                    {
-                        await Task.Run(() =>
+                        }
+
+                        using (SqlDataReader reader = cmd.EndExecuteReader(result))
                         {
                             dt.Load(reader);
-                        });
+                        }
+
                     }
 
                 }
+            });
+                
+            return dt;
+        }
 
-            }
+        public static async Task<DataTable> getReadingOnline(string reading)
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT ID, ResolutionNo, Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution WHERE Reading ='" + reading + "'", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+
+                        }
+
+                        using (MySqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+
+                }
+            });
             return dt;
         }
 

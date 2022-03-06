@@ -233,5 +233,10 @@ namespace Santa_Archiving_System.screens.mainPanel
             };
             openChildForm(new OrdinaceEncode(data));
         }
+
+        private void guna2Button17_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

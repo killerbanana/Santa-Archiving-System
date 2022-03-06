@@ -25,9 +25,9 @@ namespace Santa_Archiving_System.screens.ordinance
 
         private async void btn_add_Click(object sender, EventArgs e)
         {
-            if (fileName.Text == string.Empty)
+            if (fileName.Text == string.Empty || ordinanceNumber.Text == string.Empty || series.Text == string.Empty)
             {
-                MessageBox.Show("File can't be empty!");
+                MessageBox.Show("Fill all required fields!");
                 return;
             }
             loading1.Visible = true;
