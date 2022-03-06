@@ -3,6 +3,7 @@ using Santa_Archiving_System.models;
 using Santa_Archiving_System.screens.ordinance;
 using Santa_Archiving_System.screens.resolution;
 using Santa_Archiving_System.screens.sbOfficial;
+using Santa_Archiving_System.screens.tricycle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -137,6 +138,7 @@ namespace Santa_Archiving_System.screens.mainPanel
             TabSlider.Location = new Point(b.Location.X + 141, Legislative.Location.Y + 48);
             TabSlider.BringToFront();
             hideSubMenu();
+            openChildForm(new TricycleEncode());
         }
 
         private void Appropriation_Click(object sender, EventArgs e)
@@ -232,9 +234,15 @@ namespace Santa_Archiving_System.screens.mainPanel
             openChildForm(new OrdinaceEncode(data));
         }
 
+<<<<<<< HEAD
         private void guna2Button12_Click(object sender, EventArgs e)
         {
            
+=======
+        private void guna2Button17_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> origin/master
         }
     }
 }

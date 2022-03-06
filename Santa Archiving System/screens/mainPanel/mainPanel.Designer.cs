@@ -551,6 +551,7 @@
             this.guna2Button17.TabIndex = 23;
             this.guna2Button17.Text = "Encode/Update";
             this.guna2Button17.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button17.Click += new System.EventHandler(this.guna2Button17_Click);
             // 
             // Appropriation
             // 
@@ -593,7 +594,7 @@
             this.TabSlider.BackColor = System.Drawing.Color.Transparent;
             this.TabSlider.FillColor = System.Drawing.Color.DimGray;
             this.TabSlider.Image = ((System.Drawing.Image)(resources.GetObject("TabSlider.Image")));
-            this.TabSlider.Location = new System.Drawing.Point(143, 613);
+            this.TabSlider.Location = new System.Drawing.Point(143, 1403);
             this.TabSlider.Name = "TabSlider";
             this.TabSlider.ShadowDecoration.Parent = this.TabSlider;
             this.TabSlider.Size = new System.Drawing.Size(77, 117);

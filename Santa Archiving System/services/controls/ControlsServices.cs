@@ -1,8 +1,10 @@
 ﻿using Santa_Archiving_System.common;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,7 +13,8 @@ namespace Santa_Archiving_System.services.controls
 {
     class ControlsServices
     {
-        public static string OpenFileDialog() {
+        public static string OpenFileDialog()
+        {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
@@ -35,7 +38,26 @@ namespace Santa_Archiving_System.services.controls
                     }
                 }
             }
-            return  Constants.filePath;
+            return Constants.filePath;
         }
+
+        public static bool CheckIfOnline()
+        {
+            try
+            {
+                Ping myPing = new Ping();
+                String host = "google.com";
+                byte[] buffer = new byte[32];
+                int timeout = 1000;
+                PingOptions pingOptions = new PingOptions();
+                PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
+                return (reply.Status == IPStatus.Success);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Santa_Archiving_System.common;
 using Santa_Archiving_System.models;
+using Santa_Archiving_System.services.controls;
 using Santa_Archiving_System.services.resolution;
 using System;
 using System.Collections.Generic;
@@ -23,19 +24,62 @@ namespace Santa_Archiving_System.screens.resolution
             InitializeComponent();
         }
 
-        private async Task LoadDataTable() {
+        private async Task LoadDataTable()
+        {
             guna2DataGridView1.DataSource = await Resolutions.getList();
+        }
+
+        private async Task LoadDataTableOnline()
+        {
+            guna2DataGridView1.DataSource = await Resolutions.getListOnline();
         }
 
         private async Task LoadDataTableReading(string reading)
         {
             guna2DataGridView1.DataSource = await Resolutions.getReading(reading);
         }
+
+        private async Task LoadDataTableReadingOnline(string reading)
+        {
+            guna2DataGridView1.DataSource = await Resolutions.getReadingOnline(reading);
+        }
+        
         private async void ResoluionEncode_Load(object sender, EventArgs e)
         {
+            if (ControlsServices.CheckIfOnline())
+            {
+                loading1.Visible = true;
+                try
+                {
+                    switch (ord.Reading)
+                    {
+                        case "First Reading":
+                            await LoadDataTableReadingOnline("1st Reading");
+                            break;
+                        case "Second Reading":
+                            await LoadDataTableReadingOnline("2nd Reading");
+                            break;
+                        case "Third Reading":
+                            await LoadDataTableReadingOnline("3rd Reading");
+                            break;
+                        default:
+                            await LoadDataTableOnline();
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                loading1.Visible = false;
+                return;
+            }
             loading1.Visible = true;
-            try {
-                switch (ord.Reading) {
+            try
+            {
+                switch (ord.Reading)
+                {
                     case "First Reading":
                         await LoadDataTableReading("1st Reading");
                         break;
@@ -50,12 +94,13 @@ namespace Santa_Archiving_System.screens.resolution
                         break;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            
+
             loading1.Visible = false;
+
         }
 
         private async void btn_import_Click(object sender, EventArgs e)
@@ -97,11 +142,8 @@ namespace Santa_Archiving_System.screens.resolution
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            Ordinance data = new Ordinance()
-            {
-                Reading = "First Reading"
-            };
-            AddResolution addResolution = new AddResolution(data);
+            
+            AddResolution addResolution = new AddResolution(ord);
             addResolution.ShowDialog();
 
         }

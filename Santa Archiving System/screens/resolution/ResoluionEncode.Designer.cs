@@ -333,6 +333,7 @@
             // 
             // loading1
             // 
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loading1.BackColor = System.Drawing.Color.Transparent;
             this.loading1.Location = new System.Drawing.Point(461, 287);
             this.loading1.Name = "loading1";
