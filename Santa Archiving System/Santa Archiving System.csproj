@@ -279,16 +279,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-<<<<<<< HEAD
     <EmbeddedResource Include="screens\auth\AccountPriviledge.resx">
       <DependentUpon>AccountPriviledge.cs</DependentUpon>
-=======
     <EmbeddedResource Include="screens\appropriation\AddAppropriation.resx">
       <DependentUpon>AddAppropriation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\appropriation\AppropriationEncode.resx">
       <DependentUpon>AppropriationEncode.cs</DependentUpon>
->>>>>>> origin/master
     </EmbeddedResource>
     <EmbeddedResource Include="screens\auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

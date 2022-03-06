@@ -234,15 +234,12 @@ namespace Santa_Archiving_System.screens.mainPanel
             openChildForm(new OrdinaceEncode(data));
         }
 
-<<<<<<< HEAD
         private void guna2Button12_Click(object sender, EventArgs e)
         {
            
-=======
         private void guna2Button17_Click(object sender, EventArgs e)
         {
 
->>>>>>> origin/master
         }
     }
 }
