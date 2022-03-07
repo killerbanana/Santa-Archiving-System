@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Santa_Archiving_System.models;
+using Santa_Archiving_System.screens.auth;
 using Santa_Archiving_System.screens.ordinance;
 using Santa_Archiving_System.screens.resolution;
 using Santa_Archiving_System.screens.sbOfficial;
@@ -236,6 +237,12 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void guna2Button17_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void guna2Button12_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Registration());
 
         }
     }

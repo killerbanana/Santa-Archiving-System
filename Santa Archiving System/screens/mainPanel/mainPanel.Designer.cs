@@ -330,6 +330,7 @@
             this.guna2Button12.TabIndex = 23;
             this.guna2Button12.Text = "Create User";
             this.guna2Button12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button12.Click += new System.EventHandler(this.guna2Button12_Click);
             // 
             // AccountManagement
             // 
