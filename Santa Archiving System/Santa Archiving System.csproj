@@ -173,11 +173,11 @@
     <Compile Include="screens\committee\CommitteEncode.Designer.cs">
       <DependentUpon>CommitteEncode.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\dashboard\dashboard.cs">
+    <Compile Include="screens\dashboard\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\dashboard\dashboard.Designer.cs">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <Compile Include="screens\dashboard\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\documentIndex\DocumentIndex.cs">
       <SubType>Form</SubType>
@@ -283,6 +283,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\auth\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\dashboard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\electronic\Electronic.resx">
+      <DependentUpon>Electronic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\mainPanel\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>

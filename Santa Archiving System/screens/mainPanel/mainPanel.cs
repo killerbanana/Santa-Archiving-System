@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Santa_Archiving_System.models;
+using Santa_Archiving_System.screens.dashboard;
 using Santa_Archiving_System.screens.ordinance;
 using Santa_Archiving_System.screens.resolution;
 using Santa_Archiving_System.screens.sbOfficial;
@@ -122,6 +123,7 @@ namespace Santa_Archiving_System.screens.mainPanel
 
             tabshow();
             moveImageBox(sender);
+            openChildForm(new Dashboard());
         }
 
         private void Ordinance_Click(object sender, EventArgs e)

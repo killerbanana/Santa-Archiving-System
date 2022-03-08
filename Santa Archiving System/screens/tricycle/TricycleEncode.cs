@@ -1,4 +1,5 @@
 ﻿using Santa_Archiving_System.models;
+using Santa_Archiving_System.services.controls;
 using Santa_Archiving_System.services.tricycle;
 using System;
 using System.Collections.Generic;
@@ -26,9 +27,22 @@ namespace Santa_Archiving_System.screens.tricycle
             guna2DataGridView1.DataSource = await Tricycles.GetTricycleData();
         }
 
+        private async Task LoadDataTableOnline()
+        {
+            guna2DataGridView1.DataSource = await Tricycles.GetTricycleDataOnline();
+        }
+
         private async void TricycleEncode_Load(object sender, EventArgs e)
         {
+            loading1.Visible = true;
+            if (ControlsServices.CheckIfOnline())
+            {
+                await LoadDataTableOnline();
+                loading1.Visible = false;
+                return;
+            }
             await LoadDataTable();
+            loading1.Visible = false;
         }
 
         private async void btn_import_Click(object sender, EventArgs e)

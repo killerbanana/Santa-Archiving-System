@@ -16,34 +16,71 @@ namespace Santa_Archiving_System.services.tricycle
         {
 
             DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+            await Task.Run(() =>
             {
-
-                using (SqlCommand cmd = new SqlCommand("SELECT ID, Name, Barangay, [Civil Status], Reason, Make, [Motor No], [Chassis No], [Plate No], [No of units], [Franchise No], [Tax certificate No], [OR No], [Date of Franchise], Status FROM [Tricycle Franchise]", con))
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                 {
-                    con.Open();
-                    IAsyncResult result = cmd.BeginExecuteReader();
 
-                    while (!result.IsCompleted)
+                    using (SqlCommand cmd = new SqlCommand("SELECT ID, Name, Barangay, [Civil Status], Reason, Make, [Motor No], [Chassis No], [Plate No], [No of units], [Franchise No], [Tax certificate No], [OR No], [Date of Franchise], Status FROM [Tricycle Franchise]", con))
                     {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
 
-                        // Wait for 1/10 second, so the counter
-                        // does not consume all available resources 
-                        //System.Threading.Thread.Sleep(100);
-                        // on the main thread.
-                    }
+                        while (!result.IsCompleted)
+                        {
 
-                    using (SqlDataReader reader = cmd.EndExecuteReader(result))
-                    {
-                        await Task.Run(() =>
+                            // Wait for 1/10 second, so the counter
+                            // does not consume all available resources 
+                            //System.Threading.Thread.Sleep(100);
+                            // on the main thread.
+                        }
+
+                        using (SqlDataReader reader = cmd.EndExecuteReader(result))
                         {
                             dt.Load(reader);
-                        });
+                        }
+
                     }
 
                 }
+            });
+                
+            return dt;
+        }
 
-            }
+        public static async Task<DataTable> GetTricycleDataOnline()
+        {
+
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT ID, Name, Barangay, CivilStatus, Reason, Make, MotorNo, ChassisNo, PlateNo, Noofunits, FranchiseNo, TaxcertificateNo, ORNo, DateofFranchise, Status FROM TricycleFranchise", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+
+                            // Wait for 1/10 second, so the counter
+                            // does not consume all available resources 
+                            //System.Threading.Thread.Sleep(100);
+                            // on the main thread.
+                        }
+
+                        using (MySqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+
+                }
+            });
+
             return dt;
         }
 
