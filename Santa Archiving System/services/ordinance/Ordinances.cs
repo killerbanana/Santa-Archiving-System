@@ -386,5 +386,73 @@ namespace Santa_Archiving_System.services.ordinance
                 }
             }
         }
+
+        public static async Task SaveOrdinanceDataOnline(
+           string ordinanceNo,
+           string series,
+           string date,
+           string title,
+           string author,
+           string time,
+           string ampm,
+           string tag,
+           string reading
+           )
+        {
+            String query = "INSERT INTO Ordinance(OrdinanceNo, Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Ordinance,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
+
+            using (Stream stream = File.OpenRead(Constants.filePath))
+            {
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+
+                string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+                double len = new FileInfo(Constants.filePath).Length;
+                int order = 0;
+                while (len >= 1024 && order < sizes.Length - 1)
+                {
+                    order++;
+                    len = len / 1024;
+                }
+
+                // Adjust the format string to your preferences. For example "{0:0.#}{1}" would
+                // show a single decimal place, and no space.
+                string resultSize = String.Format("{0:0.##} {1}", len, sizes[order]);
+
+
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    cmd.Parameters.Add(new MySqlParameter("@Ordinance", ordinanceNo));
+                    cmd.Parameters.Add(new MySqlParameter("@Series", series));
+                    cmd.Parameters.Add(new MySqlParameter("@Date", date));
+                    cmd.Parameters.Add(new MySqlParameter("@Title", title));
+                    cmd.Parameters.Add(new MySqlParameter("@Author", author));
+                    cmd.Parameters.Add(new MySqlParameter("@Files",  buffer));
+                    cmd.Parameters.Add(new MySqlParameter("@Time",  time + " " + ampm));
+                    cmd.Parameters.Add(new MySqlParameter("@Type", Constants.ext));
+                    cmd.Parameters.Add(new MySqlParameter("@Size", resultSize));
+                    cmd.Parameters.Add(new MySqlParameter("@Tag",  tag));
+                    cmd.Parameters.Add(new MySqlParameter("@Reading", reading));
+
+                    con.Open();
+
+                    IAsyncResult result = cmd.BeginExecuteNonQuery();
+
+                    while (!result.IsCompleted)
+                    {
+
+                    }
+
+                    await Task.Run(() =>
+                    {
+                        cmd.EndExecuteNonQuery(result);
+                    });
+
+                    con.Close();
+
+                }
+            }
+        }
     }
 }

@@ -23,6 +23,7 @@ namespace Santa_Archiving_System.screens.ordinance
             InitializeComponent();
         }
 
+
         private async void btn_add_Click(object sender, EventArgs e)
         {
             if (fileName.Text == string.Empty || ordinanceNumber.Text == string.Empty || series.Text == string.Empty)
@@ -31,15 +32,41 @@ namespace Santa_Archiving_System.screens.ordinance
                 return;
             }
             loading1.Visible = true;
-            await Ordinances.SaveOrdinanceData(ordinanceNumber.Text,
-            series.Text,
-            date.Text,
-            title.Text,
-            author.Text,
-            time.Text,
-            ampm.Text,
-            tag.Text,
-            reading_cb.Text);
+            if (ControlsServices.CheckIfOnline())
+            {
+                await Ordinances.SaveOrdinanceData(
+                    ordinanceNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text);
+                await Ordinances.SaveOrdinanceDataOnline(
+                    ordinanceNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text);
+            }
+            else {
+                await Ordinances.SaveOrdinanceData(
+                    ordinanceNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text);
+            }
             loading1.Visible = false;
             MessageBox.Show("Successfully Added");
         }
@@ -49,5 +76,7 @@ namespace Santa_Archiving_System.screens.ordinance
             var filename = ControlsServices.OpenFileDialog();
             fileName.Text = filename;
         }
+
+     
     }
 }

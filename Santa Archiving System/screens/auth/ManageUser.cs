@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Santa_Archiving_System.screens.auth
 {
-    public partial class Register : Form
+    public partial class ManageUser : Form
     {
-        public Register()
+        public ManageUser()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
