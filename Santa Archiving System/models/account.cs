@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Santa_Archiving_System.models
 {
-    class account
+    public class account
     {
         public int ID { get; set; }
         public string firstName { get; set; }
@@ -18,9 +19,10 @@ namespace Santa_Archiving_System.models
         public string address { get; set; }
         public string contactNo { get; set; }
         public string accountRole { get; set; }
-        public string privilege { get; set; }
+        public List<String> privilege { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public string confirmPassword { get; set; }
+      
+      
     }
 }

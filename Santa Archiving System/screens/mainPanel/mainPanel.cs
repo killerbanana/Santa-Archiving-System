@@ -242,7 +242,13 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void guna2Button12_Click(object sender, EventArgs e)
         {
-            openChildForm(new Registration());
+            account data = new account();
+            openChildForm(new Registration(data));
+
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
 
         }
     }

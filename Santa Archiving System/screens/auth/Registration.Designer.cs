@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this._thePanel = new System.Windows.Forms.Panel();
             this.lbl_username = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_accountRole = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -63,12 +64,15 @@
             this.lbl_middleName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_password = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_confirmPassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pb_profile = new Guna.UI2.WinForms.Guna2PictureBox();
             this._thePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).BeginInit();
             this.SuspendLayout();
             // 
             // _thePanel
             // 
             this._thePanel.BackColor = System.Drawing.Color.White;
+            this._thePanel.Controls.Add(this.pb_profile);
             this._thePanel.Controls.Add(this.lbl_username);
             this._thePanel.Controls.Add(this.lbl_accountRole);
             this._thePanel.Controls.Add(this.lbl_lastName);
@@ -105,15 +109,15 @@
             this._thePanel.Controls.Add(this.lbl_confirmPassword);
             this._thePanel.Location = new System.Drawing.Point(12, 12);
             this._thePanel.Name = "_thePanel";
-            this._thePanel.Size = new System.Drawing.Size(1057, 467);
-            this._thePanel.TabIndex = 109;
+            this._thePanel.Size = new System.Drawing.Size(1057, 517);
+            this._thePanel.TabIndex = 110;
             // 
             // lbl_username
             // 
             this.lbl_username.BackColor = System.Drawing.Color.Transparent;
             this.lbl_username.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_username.ForeColor = System.Drawing.Color.Red;
-            this.lbl_username.Location = new System.Drawing.Point(755, 143);
+            this.lbl_username.Location = new System.Drawing.Point(754, 216);
             this.lbl_username.Name = "lbl_username";
             this.lbl_username.Size = new System.Drawing.Size(13, 32);
             this.lbl_username.TabIndex = 141;
@@ -125,7 +129,7 @@
             this.lbl_accountRole.BackColor = System.Drawing.Color.Transparent;
             this.lbl_accountRole.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_accountRole.ForeColor = System.Drawing.Color.Red;
-            this.lbl_accountRole.Location = new System.Drawing.Point(784, 68);
+            this.lbl_accountRole.Location = new System.Drawing.Point(783, 141);
             this.lbl_accountRole.Name = "lbl_accountRole";
             this.lbl_accountRole.Size = new System.Drawing.Size(13, 32);
             this.lbl_accountRole.TabIndex = 140;
@@ -173,7 +177,7 @@
             "Admin",
             "Staff"});
             this.cb_accountRole.ItemsAppearance.Parent = this.cb_accountRole;
-            this.cb_accountRole.Location = new System.Drawing.Point(676, 106);
+            this.cb_accountRole.Location = new System.Drawing.Point(675, 179);
             this.cb_accountRole.Name = "cb_accountRole";
             this.cb_accountRole.ShadowDecoration.Parent = this.cb_accountRole;
             this.cb_accountRole.Size = new System.Drawing.Size(358, 36);
@@ -224,7 +228,7 @@
             this.tb_password.FocusedState.Parent = this.tb_password;
             this.tb_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_password.HoverState.Parent = this.tb_password;
-            this.tb_password.Location = new System.Drawing.Point(676, 254);
+            this.tb_password.Location = new System.Drawing.Point(675, 327);
             this.tb_password.Name = "tb_password";
             this.tb_password.PasswordChar = '*';
             this.tb_password.PlaceholderText = "";
@@ -238,7 +242,7 @@
             // 
             this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(676, 223);
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(675, 296);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
             this.guna2HtmlLabel13.Size = new System.Drawing.Size(75, 23);
             this.guna2HtmlLabel13.TabIndex = 133;
@@ -293,7 +297,7 @@
             this.tb_contactNo.FocusedState.Parent = this.tb_contactNo;
             this.tb_contactNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_contactNo.HoverState.Parent = this.tb_contactNo;
-            this.tb_contactNo.Location = new System.Drawing.Point(400, 392);
+            this.tb_contactNo.Location = new System.Drawing.Point(400, 400);
             this.tb_contactNo.MaxLength = 11;
             this.tb_contactNo.Name = "tb_contactNo";
             this.tb_contactNo.PasswordChar = '\0';
@@ -308,7 +312,7 @@
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(400, 361);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(400, 369);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(97, 23);
             this.guna2HtmlLabel10.TabIndex = 129;
@@ -329,7 +333,7 @@
             this.tb_address.FocusedState.Parent = this.tb_address;
             this.tb_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_address.HoverState.Parent = this.tb_address;
-            this.tb_address.Location = new System.Drawing.Point(17, 392);
+            this.tb_address.Location = new System.Drawing.Point(17, 400);
             this.tb_address.Name = "tb_address";
             this.tb_address.PasswordChar = '\0';
             this.tb_address.PlaceholderText = "";
@@ -342,7 +346,7 @@
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(17, 363);
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(17, 371);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             this.guna2HtmlLabel11.Size = new System.Drawing.Size(65, 23);
             this.guna2HtmlLabel11.TabIndex = 127;
@@ -404,14 +408,13 @@
             this.btn_cancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
             this.btn_cancel.HoverState.Parent = this.btn_cancel;
-            this.btn_cancel.Location = new System.Drawing.Point(676, 383);
+            this.btn_cancel.Location = new System.Drawing.Point(675, 456);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.ShadowDecoration.Parent = this.btn_cancel;
             this.btn_cancel.Size = new System.Drawing.Size(174, 45);
             this.btn_cancel.TabIndex = 121;
             this.btn_cancel.TabStop = false;
             this.btn_cancel.Text = "Cancel";
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_create
             // 
@@ -422,7 +425,7 @@
             this.btn_create.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_create.ForeColor = System.Drawing.Color.White;
             this.btn_create.HoverState.Parent = this.btn_create;
-            this.btn_create.Location = new System.Drawing.Point(860, 383);
+            this.btn_create.Location = new System.Drawing.Point(859, 456);
             this.btn_create.Name = "btn_create";
             this.btn_create.ShadowDecoration.Parent = this.btn_create;
             this.btn_create.Size = new System.Drawing.Size(174, 45);
@@ -435,7 +438,7 @@
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(676, 41);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(675, 106);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(151, 30);
             this.guna2HtmlLabel7.TabIndex = 120;
@@ -456,9 +459,9 @@
             this.tb_confirmPassword.FocusedState.Parent = this.tb_confirmPassword;
             this.tb_confirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_confirmPassword.HoverState.Parent = this.tb_confirmPassword;
-            this.tb_confirmPassword.Location = new System.Drawing.Point(676, 327);
+            this.tb_confirmPassword.Location = new System.Drawing.Point(675, 400);
             this.tb_confirmPassword.Name = "tb_confirmPassword";
-            this.tb_confirmPassword.PasswordChar = '\0';
+            this.tb_confirmPassword.PasswordChar = '*';
             this.tb_confirmPassword.PlaceholderText = "";
             this.tb_confirmPassword.SelectedText = "";
             this.tb_confirmPassword.ShadowDecoration.Parent = this.tb_confirmPassword;
@@ -470,7 +473,7 @@
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(676, 296);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(675, 369);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(140, 23);
             this.guna2HtmlLabel6.TabIndex = 119;
@@ -491,9 +494,9 @@
             this.tb_username.FocusedState.Parent = this.tb_username;
             this.tb_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_username.HoverState.Parent = this.tb_username;
-            this.tb_username.Location = new System.Drawing.Point(676, 181);
+            this.tb_username.Location = new System.Drawing.Point(675, 254);
             this.tb_username.Name = "tb_username";
-            this.tb_username.PasswordChar = '*';
+            this.tb_username.PasswordChar = '\0';
             this.tb_username.PlaceholderText = "";
             this.tb_username.SelectedText = "";
             this.tb_username.ShadowDecoration.Parent = this.tb_username;
@@ -505,7 +508,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(676, 150);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(675, 223);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(81, 23);
             this.guna2HtmlLabel5.TabIndex = 117;
@@ -516,7 +519,7 @@
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(676, 77);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(675, 150);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(110, 23);
             this.guna2HtmlLabel3.TabIndex = 115;
@@ -546,7 +549,6 @@
             this.tb_middleName.Size = new System.Drawing.Size(358, 36);
             this.tb_middleName.TabIndex = 1;
             this.tb_middleName.TextChanged += new System.EventHandler(this.tb_middleName_TextChanged);
-            this.tb_middleName.TabStopChanged += new System.EventHandler(this.tb_middleName_TabStopChanged);
             // 
             // guna2HtmlLabel2
             // 
@@ -598,7 +600,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(16, 41);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(17, 33);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(151, 30);
             this.guna2HtmlLabel1.TabIndex = 109;
@@ -622,7 +624,7 @@
             this.lbl_password.BackColor = System.Drawing.Color.Transparent;
             this.lbl_password.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_password.ForeColor = System.Drawing.Color.Red;
-            this.lbl_password.Location = new System.Drawing.Point(751, 215);
+            this.lbl_password.Location = new System.Drawing.Point(750, 288);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(13, 32);
             this.lbl_password.TabIndex = 142;
@@ -634,25 +636,40 @@
             this.lbl_confirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.lbl_confirmPassword.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_confirmPassword.ForeColor = System.Drawing.Color.Red;
-            this.lbl_confirmPassword.Location = new System.Drawing.Point(814, 289);
+            this.lbl_confirmPassword.Location = new System.Drawing.Point(813, 362);
             this.lbl_confirmPassword.Name = "lbl_confirmPassword";
             this.lbl_confirmPassword.Size = new System.Drawing.Size(13, 32);
             this.lbl_confirmPassword.TabIndex = 143;
             this.lbl_confirmPassword.TabStop = false;
             this.lbl_confirmPassword.Text = "*";
             // 
+            // pb_profile
+            // 
+            this.pb_profile.BorderRadius = 5;
+            this.pb_profile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_profile.Image = ((System.Drawing.Image)(resources.GetObject("pb_profile.Image")));
+            this.pb_profile.Location = new System.Drawing.Point(882, 33);
+            this.pb_profile.Name = "pb_profile";
+            this.pb_profile.ShadowDecoration.Parent = this.pb_profile;
+            this.pb_profile.Size = new System.Drawing.Size(151, 115);
+            this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_profile.TabIndex = 144;
+            this.pb_profile.TabStop = false;
+            this.pb_profile.Click += new System.EventHandler(this.pb_profile_Click);
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1079, 487);
+            this.ClientSize = new System.Drawing.Size(1078, 535);
             this.Controls.Add(this._thePanel);
             this.Name = "Registration";
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Registration_Load);
             this._thePanel.ResumeLayout(false);
             this._thePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -660,6 +677,13 @@
         #endregion
 
         private System.Windows.Forms.Panel _thePanel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_username;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_accountRole;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_lastName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_firstName;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_accountRole;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dt_birthday;
         private Guna.UI2.WinForms.Guna2TextBox tb_password;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
         private Guna.UI2.WinForms.Guna2TextBox tb_gender;
@@ -684,15 +708,9 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_firstName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2ComboBox cb_accountRole;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dt_birthday;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_username;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_accountRole;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_lastName;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_firstName;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_middleName;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_password;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_confirmPassword;
+        private Guna.UI2.WinForms.Guna2PictureBox pb_profile;
     }
 }
