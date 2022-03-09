@@ -23,6 +23,7 @@ namespace Santa_Archiving_System.screens.ordinance
             InitializeComponent();
         }
 
+
         private async void btn_add_Click(object sender, EventArgs e)
         {
             if (fileName.Text == string.Empty || ordinanceNumber.Text == string.Empty || series.Text == string.Empty)
@@ -75,5 +76,7 @@ namespace Santa_Archiving_System.screens.ordinance
             var filename = ControlsServices.OpenFileDialog();
             fileName.Text = filename;
         }
+
+     
     }
 }

@@ -140,7 +140,7 @@
             this.guna2Button21.Location = new System.Drawing.Point(0, 70);
             this.guna2Button21.Name = "guna2Button21";
             this.guna2Button21.ShadowDecoration.Parent = this.guna2Button21;
-            this.guna2Button21.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button21.Size = new System.Drawing.Size(220, 35);
             this.guna2Button21.TabIndex = 26;
             this.guna2Button21.Text = "ManagePersonal Identity";
             this.guna2Button21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -159,10 +159,11 @@
             this.guna2Button11.Location = new System.Drawing.Point(0, 35);
             this.guna2Button11.Name = "guna2Button11";
             this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
-            this.guna2Button11.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button11.Size = new System.Drawing.Size(220, 35);
             this.guna2Button11.TabIndex = 22;
             this.guna2Button11.Text = "Manage User";
             this.guna2Button11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button11.Click += new System.EventHandler(this.guna2Button11_Click);
             // 
             // guna2Button12
             // 
@@ -178,10 +179,11 @@
             this.guna2Button12.Location = new System.Drawing.Point(0, 0);
             this.guna2Button12.Name = "guna2Button12";
             this.guna2Button12.ShadowDecoration.Parent = this.guna2Button12;
-            this.guna2Button12.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button12.Size = new System.Drawing.Size(220, 35);
             this.guna2Button12.TabIndex = 23;
             this.guna2Button12.Text = "Create User";
             this.guna2Button12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button12.Click += new System.EventHandler(this.guna2Button12_Click);
             // 
             // AccountManagement
             // 
@@ -212,7 +214,7 @@
             this.AccountManagement.PressedColor = System.Drawing.Color.Transparent;
             this.AccountManagement.PressedDepth = 0;
             this.AccountManagement.ShadowDecoration.Parent = this.AccountManagement;
-            this.AccountManagement.Size = new System.Drawing.Size(180, 43);
+            this.AccountManagement.Size = new System.Drawing.Size(220, 43);
             this.AccountManagement.TabIndex = 30;
             this.AccountManagement.Text = "Account Management";
             this.AccountManagement.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -227,7 +229,7 @@
             this.sbInformationPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.sbInformationPanel.Location = new System.Drawing.Point(0, 994);
             this.sbInformationPanel.Name = "sbInformationPanel";
-            this.sbInformationPanel.Size = new System.Drawing.Size(180, 72);
+            this.sbInformationPanel.Size = new System.Drawing.Size(220, 72);
             this.sbInformationPanel.TabIndex = 29;
             this.sbInformationPanel.Visible = false;
             // 
@@ -245,7 +247,7 @@
             this.guna2Button13.Location = new System.Drawing.Point(0, 35);
             this.guna2Button13.Name = "guna2Button13";
             this.guna2Button13.ShadowDecoration.Parent = this.guna2Button13;
-            this.guna2Button13.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button13.Size = new System.Drawing.Size(220, 35);
             this.guna2Button13.TabIndex = 22;
             this.guna2Button13.Text = "SB Official";
             this.guna2Button13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -265,7 +267,7 @@
             this.guna2Button18.Location = new System.Drawing.Point(0, 0);
             this.guna2Button18.Name = "guna2Button18";
             this.guna2Button18.ShadowDecoration.Parent = this.guna2Button18;
-            this.guna2Button18.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button18.Size = new System.Drawing.Size(220, 35);
             this.guna2Button18.TabIndex = 23;
             this.guna2Button18.Text = "SB Committee";
             this.guna2Button18.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -299,7 +301,7 @@
             this.Committee.PressedColor = System.Drawing.Color.Transparent;
             this.Committee.PressedDepth = 0;
             this.Committee.ShadowDecoration.Parent = this.Committee;
-            this.Committee.Size = new System.Drawing.Size(180, 43);
+            this.Committee.Size = new System.Drawing.Size(220, 43);
             this.Committee.TabIndex = 28;
             this.Committee.Text = "SB Information";
             this.Committee.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -316,7 +318,7 @@
             this.panelAppropriation.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAppropriation.Location = new System.Drawing.Point(0, 809);
             this.panelAppropriation.Name = "panelAppropriation";
-            this.panelAppropriation.Size = new System.Drawing.Size(180, 142);
+            this.panelAppropriation.Size = new System.Drawing.Size(220, 142);
             this.panelAppropriation.TabIndex = 27;
             this.panelAppropriation.Visible = false;
             // 
@@ -335,7 +337,7 @@
             this.guna2Button14.Location = new System.Drawing.Point(0, 105);
             this.guna2Button14.Name = "guna2Button14";
             this.guna2Button14.ShadowDecoration.Parent = this.guna2Button14;
-            this.guna2Button14.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button14.Size = new System.Drawing.Size(220, 35);
             this.guna2Button14.TabIndex = 25;
             this.guna2Button14.Text = "Generate Index Report";
             this.guna2Button14.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -354,7 +356,7 @@
             this.guna2Button15.Location = new System.Drawing.Point(0, 70);
             this.guna2Button15.Name = "guna2Button15";
             this.guna2Button15.ShadowDecoration.Parent = this.guna2Button15;
-            this.guna2Button15.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button15.Size = new System.Drawing.Size(220, 35);
             this.guna2Button15.TabIndex = 24;
             this.guna2Button15.Text = "PDF File";
             this.guna2Button15.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -373,7 +375,7 @@
             this.guna2Button16.Location = new System.Drawing.Point(0, 35);
             this.guna2Button16.Name = "guna2Button16";
             this.guna2Button16.ShadowDecoration.Parent = this.guna2Button16;
-            this.guna2Button16.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button16.Size = new System.Drawing.Size(220, 35);
             this.guna2Button16.TabIndex = 22;
             this.guna2Button16.Text = "Track History Document";
             this.guna2Button16.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -392,7 +394,7 @@
             this.guna2Button17.Location = new System.Drawing.Point(0, 0);
             this.guna2Button17.Name = "guna2Button17";
             this.guna2Button17.ShadowDecoration.Parent = this.guna2Button17;
-            this.guna2Button17.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button17.Size = new System.Drawing.Size(220, 35);
             this.guna2Button17.TabIndex = 23;
             this.guna2Button17.Text = "Encode/Update";
             this.guna2Button17.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -427,7 +429,7 @@
             this.Appropriation.PressedColor = System.Drawing.Color.Transparent;
             this.Appropriation.PressedDepth = 0;
             this.Appropriation.ShadowDecoration.Parent = this.Appropriation;
-            this.Appropriation.Size = new System.Drawing.Size(180, 43);
+            this.Appropriation.Size = new System.Drawing.Size(220, 43);
             this.Appropriation.TabIndex = 26;
             this.Appropriation.Text = "Appropriation";
             this.Appropriation.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -478,7 +480,7 @@
             this.Tricycle.PressedColor = System.Drawing.Color.Transparent;
             this.Tricycle.PressedDepth = 0;
             this.Tricycle.ShadowDecoration.Parent = this.Tricycle;
-            this.Tricycle.Size = new System.Drawing.Size(180, 43);
+            this.Tricycle.Size = new System.Drawing.Size(220, 43);
             this.Tricycle.TabIndex = 23;
             this.Tricycle.Text = "Tricycle";
             this.Tricycle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -498,7 +500,7 @@
             this.panelOrdinanceHolder.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelOrdinanceHolder.Location = new System.Drawing.Point(0, 477);
             this.panelOrdinanceHolder.Name = "panelOrdinanceHolder";
-            this.panelOrdinanceHolder.Size = new System.Drawing.Size(180, 246);
+            this.panelOrdinanceHolder.Size = new System.Drawing.Size(220, 246);
             this.panelOrdinanceHolder.TabIndex = 22;
             this.panelOrdinanceHolder.Visible = false;
             // 
@@ -517,7 +519,7 @@
             this.guna2Button8.Location = new System.Drawing.Point(0, 210);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
-            this.guna2Button8.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button8.Size = new System.Drawing.Size(220, 35);
             this.guna2Button8.TabIndex = 31;
             this.guna2Button8.Text = "Third Reading";
             this.guna2Button8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -538,7 +540,7 @@
             this.guna2Button9.Location = new System.Drawing.Point(0, 175);
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
-            this.guna2Button9.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button9.Size = new System.Drawing.Size(220, 35);
             this.guna2Button9.TabIndex = 30;
             this.guna2Button9.Text = "Second Reading";
             this.guna2Button9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -559,7 +561,7 @@
             this.guna2Button10.Location = new System.Drawing.Point(0, 140);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.ShadowDecoration.Parent = this.guna2Button10;
-            this.guna2Button10.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button10.Size = new System.Drawing.Size(220, 35);
             this.guna2Button10.TabIndex = 29;
             this.guna2Button10.Text = "First Reading";
             this.guna2Button10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -580,7 +582,7 @@
             this.guna2Button2.Location = new System.Drawing.Point(0, 105);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button2.Size = new System.Drawing.Size(220, 35);
             this.guna2Button2.TabIndex = 25;
             this.guna2Button2.Text = "Generate Index Report";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -599,7 +601,7 @@
             this.guna2Button4.Location = new System.Drawing.Point(0, 70);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button4.Size = new System.Drawing.Size(220, 35);
             this.guna2Button4.TabIndex = 24;
             this.guna2Button4.Text = "PDF File";
             this.guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -618,7 +620,7 @@
             this.guna2Button5.Location = new System.Drawing.Point(0, 35);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button5.Size = new System.Drawing.Size(220, 35);
             this.guna2Button5.TabIndex = 22;
             this.guna2Button5.Text = "Track History Document";
             this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -637,7 +639,7 @@
             this.guna2Button6.Location = new System.Drawing.Point(0, 0);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button6.Size = new System.Drawing.Size(220, 35);
             this.guna2Button6.TabIndex = 23;
             this.guna2Button6.Text = "Encode/Update";
             this.guna2Button6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -670,7 +672,7 @@
             this.Ordinance.PressedColor = System.Drawing.Color.Transparent;
             this.Ordinance.PressedDepth = 0;
             this.Ordinance.ShadowDecoration.Parent = this.Ordinance;
-            this.Ordinance.Size = new System.Drawing.Size(180, 43);
+            this.Ordinance.Size = new System.Drawing.Size(220, 43);
             this.Ordinance.TabIndex = 21;
             this.Ordinance.Text = "Ordinance";
             this.Ordinance.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -690,7 +692,7 @@
             this.panelLegislativeHolder.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLegislativeHolder.Location = new System.Drawing.Point(0, 186);
             this.panelLegislativeHolder.Name = "panelLegislativeHolder";
-            this.panelLegislativeHolder.Size = new System.Drawing.Size(180, 248);
+            this.panelLegislativeHolder.Size = new System.Drawing.Size(220, 248);
             this.panelLegislativeHolder.TabIndex = 20;
             this.panelLegislativeHolder.Visible = false;
             // 
@@ -710,7 +712,7 @@
             this.guna2Button7.Location = new System.Drawing.Point(0, 210);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
-            this.guna2Button7.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button7.Size = new System.Drawing.Size(220, 35);
             this.guna2Button7.TabIndex = 28;
             this.guna2Button7.Text = "Third Reading";
             this.guna2Button7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -732,7 +734,7 @@
             this.guna2Button3.Location = new System.Drawing.Point(0, 175);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button3.Size = new System.Drawing.Size(220, 35);
             this.guna2Button3.TabIndex = 27;
             this.guna2Button3.Text = "Second Reading";
             this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -754,7 +756,7 @@
             this.guna2Button1.Location = new System.Drawing.Point(0, 140);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(180, 35);
+            this.guna2Button1.Size = new System.Drawing.Size(220, 35);
             this.guna2Button1.TabIndex = 26;
             this.guna2Button1.Text = "First Reading";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -776,7 +778,7 @@
             this.IndexReportButton.Location = new System.Drawing.Point(0, 105);
             this.IndexReportButton.Name = "IndexReportButton";
             this.IndexReportButton.ShadowDecoration.Parent = this.IndexReportButton;
-            this.IndexReportButton.Size = new System.Drawing.Size(180, 35);
+            this.IndexReportButton.Size = new System.Drawing.Size(220, 35);
             this.IndexReportButton.TabIndex = 25;
             this.IndexReportButton.Text = "Generate Index Report";
             this.IndexReportButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -797,7 +799,7 @@
             this.SearchDocumentButton.Location = new System.Drawing.Point(0, 70);
             this.SearchDocumentButton.Name = "SearchDocumentButton";
             this.SearchDocumentButton.ShadowDecoration.Parent = this.SearchDocumentButton;
-            this.SearchDocumentButton.Size = new System.Drawing.Size(180, 35);
+            this.SearchDocumentButton.Size = new System.Drawing.Size(220, 35);
             this.SearchDocumentButton.TabIndex = 24;
             this.SearchDocumentButton.Text = "PDF File";
             this.SearchDocumentButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -818,7 +820,7 @@
             this.TrackButton.Location = new System.Drawing.Point(0, 35);
             this.TrackButton.Name = "TrackButton";
             this.TrackButton.ShadowDecoration.Parent = this.TrackButton;
-            this.TrackButton.Size = new System.Drawing.Size(180, 35);
+            this.TrackButton.Size = new System.Drawing.Size(220, 35);
             this.TrackButton.TabIndex = 22;
             this.TrackButton.Text = "Track History Document";
             this.TrackButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -840,7 +842,7 @@
             this.PDFButton.Location = new System.Drawing.Point(0, 0);
             this.PDFButton.Name = "PDFButton";
             this.PDFButton.ShadowDecoration.Parent = this.PDFButton;
-            this.PDFButton.Size = new System.Drawing.Size(180, 35);
+            this.PDFButton.Size = new System.Drawing.Size(220, 35);
             this.PDFButton.TabIndex = 23;
             this.PDFButton.Text = "Encode/Update";
             this.PDFButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -873,7 +875,7 @@
             this.Legislative.PressedColor = System.Drawing.Color.Transparent;
             this.Legislative.PressedDepth = 0;
             this.Legislative.ShadowDecoration.Parent = this.Legislative;
-            this.Legislative.Size = new System.Drawing.Size(180, 43);
+            this.Legislative.Size = new System.Drawing.Size(220, 43);
             this.Legislative.TabIndex = 17;
             this.Legislative.Text = "Legislative";
             this.Legislative.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -910,7 +912,7 @@
             this.Dashboard.PressedColor = System.Drawing.Color.Transparent;
             this.Dashboard.PressedDepth = 0;
             this.Dashboard.ShadowDecoration.Parent = this.Dashboard;
-            this.Dashboard.Size = new System.Drawing.Size(180, 43);
+            this.Dashboard.Size = new System.Drawing.Size(220, 43);
             this.Dashboard.TabIndex = 5;
             this.Dashboard.Text = "Dashboard";
             this.Dashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -924,7 +926,7 @@
             this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panellogo.Location = new System.Drawing.Point(0, 0);
             this.panellogo.Name = "panellogo";
-            this.panellogo.Size = new System.Drawing.Size(180, 100);
+            this.panellogo.Size = new System.Drawing.Size(220, 100);
             this.panellogo.TabIndex = 2;
             // 
             // LogoHolder

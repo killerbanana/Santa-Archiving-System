@@ -93,9 +93,9 @@ namespace Santa_Archiving_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap import {
+        internal static System.Drawing.Bitmap import_white {
             get {
-                object obj = ResourceManager.GetObject("import", resourceCulture);
+                object obj = ResourceManager.GetObject("import_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Santa_Archiving_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap import_white {
+        internal static System.Drawing.Bitmap profile {
             get {
-                object obj = ResourceManager.GetObject("import_white", resourceCulture);
+                object obj = ResourceManager.GetObject("profile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
