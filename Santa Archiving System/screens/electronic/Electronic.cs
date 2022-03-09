@@ -19,7 +19,7 @@ namespace Santa_Archiving_System.screens.electronic
 
         private void Electronic_Load(object sender, EventArgs e)
         {
-            
+           
         }
     }
 }

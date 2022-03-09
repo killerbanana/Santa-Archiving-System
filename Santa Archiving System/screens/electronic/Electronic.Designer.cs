@@ -89,6 +89,9 @@
             this.guna2HtmlLabel1.TabIndex = 27;
             this.guna2HtmlLabel1.Text = "Tricycle Franchise Data";
             // 
+            // webView1
+            // 
+            // 
             // Electronic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
