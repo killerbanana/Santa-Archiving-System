@@ -68,7 +68,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pb_profile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -84,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoHolder)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).BeginInit();
             this.panelChildForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -906,7 +906,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.83193F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.16807F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2CirclePictureBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pb_profile, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_name, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(731, 0);
@@ -916,19 +916,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(353, 50);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // guna2CirclePictureBox1
+            // pb_profile
             // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(284, 3);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(52, 44);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 1;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.pb_profile.BackColor = System.Drawing.Color.Transparent;
+            this.pb_profile.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pb_profile.Image = ((System.Drawing.Image)(resources.GetObject("pb_profile.Image")));
+            this.pb_profile.Location = new System.Drawing.Point(284, 3);
+            this.pb_profile.Name = "pb_profile";
+            this.pb_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pb_profile.ShadowDecoration.Parent = this.pb_profile;
+            this.pb_profile.Size = new System.Drawing.Size(52, 44);
+            this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_profile.TabIndex = 1;
+            this.pb_profile.TabStop = false;
+        
             // 
             // lbl_name
             // 
@@ -1009,7 +1010,7 @@
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1047,7 +1048,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button16;
         private Guna.UI2.WinForms.Guna2Button guna2Button17;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pb_profile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelChildForm;

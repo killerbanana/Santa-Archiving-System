@@ -152,7 +152,7 @@ namespace Santa_Archiving_System.screens.auth
                string.IsNullOrWhiteSpace(tb_confirmPassword.Text))
             {
                 MessageBox.Show("Please fill up all required fields!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-               
+                
             }
             else
             {
@@ -169,6 +169,7 @@ namespace Santa_Archiving_System.screens.auth
                     {
                         account.privilege = new List<string>();
                         account.privilege.Add("All Privilege");
+                        Privilege.privilegeEmpty = false;
                     }
                
                 
