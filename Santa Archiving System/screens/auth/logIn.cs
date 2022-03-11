@@ -22,7 +22,7 @@ namespace Santa_Archiving_System.screens.auth
 
         private async void btn_login_Click(object sender, EventArgs e)
         {
-         
+            
             if (string.IsNullOrWhiteSpace(tb_username.Text) || string.IsNullOrWhiteSpace(tb_password.Text))
             {
               
@@ -32,6 +32,8 @@ namespace Santa_Archiving_System.screens.auth
             {
                 if (ControlsServices.CheckIfOnline())
                 {
+                    loading1.Visible = true;
+                    btn_login.Visible = false;
                     await Account.CheckLoginOnline(tb_username.Text);
                     if (Account.checkedLoginOnline == true)
                     {
@@ -103,7 +105,8 @@ namespace Santa_Archiving_System.screens.auth
              
 
             }
-
+            btn_login.Visible = true;
+            loading1.Visible = false;
         }
     }
 }

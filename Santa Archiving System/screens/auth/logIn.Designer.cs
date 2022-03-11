@@ -39,6 +39,7 @@
             this.btn_login = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -47,6 +48,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.panel1.Controls.Add(this.loading1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -122,7 +124,7 @@
             this.tb_password.Location = new System.Drawing.Point(45, 253);
             this.tb_password.Margin = new System.Windows.Forms.Padding(5);
             this.tb_password.Name = "tb_password";
-            this.tb_password.PasswordChar = '\0';
+            this.tb_password.PasswordChar = '*';
             this.tb_password.PlaceholderText = "";
             this.tb_password.SelectedText = "";
             this.tb_password.ShadowDecoration.Parent = this.tb_password;
@@ -190,6 +192,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Username:";
             // 
+            // loading1
+            // 
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(487, 211);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(74, 76);
+            this.loading1.TabIndex = 7;
+            this.loading1.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,5 +233,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_login;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private common.loading loading1;
     }
 }
