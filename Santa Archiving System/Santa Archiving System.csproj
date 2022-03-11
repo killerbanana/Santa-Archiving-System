@@ -111,6 +111,7 @@
     <Compile Include="models\electronic.cs" />
     <Compile Include="models\indexmanagement.cs" />
     <Compile Include="models\legislativedocument.cs" />
+    <Compile Include="models\loginCredentials.cs" />
     <Compile Include="models\Ordinance.cs" />
     <Compile Include="models\Resolution.cs" />
     <Compile Include="models\sb.cs" />
@@ -218,6 +219,12 @@
     <Compile Include="screens\resolution\ResoluionEncode.Designer.cs">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\resolution\UpdateResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\UpdateResolution.Designer.cs">
+      <DependentUpon>UpdateResolution.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\sbOfficial\SbOfficialEncode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\ResoluionEncode.resx">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\UpdateResolution.resx">
+      <DependentUpon>UpdateResolution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\sbOfficial\SbOfficialEncode.resx">
       <DependentUpon>SbOfficialEncode.cs</DependentUpon>

@@ -43,7 +43,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(17, 229);
+            this.guna2Button2.Location = new System.Drawing.Point(17, 201);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(174, 45);
@@ -59,7 +59,7 @@
             this.btn_save.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_save.ForeColor = System.Drawing.Color.White;
             this.btn_save.HoverState.Parent = this.btn_save;
-            this.btn_save.Location = new System.Drawing.Point(201, 229);
+            this.btn_save.Location = new System.Drawing.Point(201, 201);
             this.btn_save.Name = "btn_save";
             this.btn_save.ShadowDecoration.Parent = this.btn_save;
             this.btn_save.Size = new System.Drawing.Size(174, 45);
@@ -79,7 +79,7 @@
             // 
             // clb_privilege
             // 
-            this.clb_privilege.BackColor = System.Drawing.SystemColors.Control;
+            this.clb_privilege.BackColor = System.Drawing.Color.White;
             this.clb_privilege.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clb_privilege.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clb_privilege.FormattingEnabled = true;
@@ -88,18 +88,17 @@
             "Legislative Records Management",
             "Ordinance Monitoring System",
             "SB Officials Information System",
-            "SB Committee Information System",
             "Tricycle Franchise Management System",
             "User Security Management"});
             this.clb_privilege.Location = new System.Drawing.Point(21, 59);
             this.clb_privilege.Name = "clb_privilege";
-            this.clb_privilege.Size = new System.Drawing.Size(354, 147);
+            this.clb_privilege.Size = new System.Drawing.Size(354, 126);
             this.clb_privilege.TabIndex = 97;
-            this.clb_privilege.SelectedIndexChanged += new System.EventHandler(this.clb_privilege_SelectedIndexChanged);
             // 
             // Privilege
             // 
-            this.ClientSize = new System.Drawing.Size(390, 289);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(390, 272);
             this.Controls.Add(this.clb_privilege);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.btn_save);

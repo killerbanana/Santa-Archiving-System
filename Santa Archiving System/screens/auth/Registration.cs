@@ -17,6 +17,7 @@ namespace Santa_Archiving_System.screens.auth
     public partial class Registration : Form
     {
         account account;
+        bool privilegeIsEmpty;
         public Registration(account data)
         {
             this.account = data;
@@ -30,9 +31,10 @@ namespace Santa_Archiving_System.screens.auth
             this.ClientSize.Width / 2 - _thePanel.Size.Width / 2,
            this.ClientSize.Height / 2 - _thePanel.Size.Height / 2);
             _thePanel.Anchor = AnchorStyles.None;
-
+            privilegeIsEmpty = Privilege.privilegeEmpty;
             cb_accountRole.SelectedIndex = 0;
             account.image = Constants.imagePath;
+            account.status = true;
         }
 
         private void tb_contactNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -119,6 +121,7 @@ namespace Santa_Archiving_System.screens.auth
         {
             if (cb_accountRole.SelectedIndex == 1)
             {
+              
                 Privilege privilege = new Privilege(account);
                 privilege.ShowDialog();
                 lbl_accountRole.Visible = false;
@@ -126,7 +129,7 @@ namespace Santa_Archiving_System.screens.auth
 
             else if (cb_accountRole.SelectedIndex == 0)
             {
-               
+        
                 lbl_accountRole.Visible = false;
             }
             else
@@ -138,6 +141,8 @@ namespace Santa_Archiving_System.screens.auth
         private async void btn_create_Click(object sender, EventArgs e)
         {
            
+           
+         
             if (string.IsNullOrWhiteSpace(tb_firstName.Text) ||
                string.IsNullOrWhiteSpace(tb_middleName.Text) ||
                string.IsNullOrWhiteSpace(tb_lastName.Text) ||
@@ -147,45 +152,67 @@ namespace Santa_Archiving_System.screens.auth
                string.IsNullOrWhiteSpace(tb_confirmPassword.Text))
             {
                 MessageBox.Show("Please fill up all required fields!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
             else
             {
                 
-                await Account.CheckUsername(tb_username.Text);
-                if (Account.checkedUsername == true){
-
-                    MessageBox.Show("Username Already Exist!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Account.checkedUsername = false;
-                }
-                else
+             
+                if(tb_password.Text != tb_confirmPassword.Text)
                 {
-                    if(tb_password.Text != tb_confirmPassword.Text)
-                    {
                         MessageBox.Show("Incorrect password!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+                }
+                else if(tb_password.Text == tb_confirmPassword.Text)
+                {   
+                    if (cb_accountRole.SelectedIndex == 0)
+                    {
+                        account.privilege = new List<string>();
+                        account.privilege.Add("All Privilege");
+                        Privilege.privilegeEmpty = false;
                     }
-                    else if(tb_password.Text == tb_confirmPassword.Text)
-                    {   
-                        if (cb_accountRole.SelectedIndex == 0)
-                        {
-                            account.privilege = new List<string>();
-                            account.privilege.Add("All Privilege");
-                        }
-                        
-                        if(account.privilege.Count == 0)
-                        {
+               
+                
+                    if (Privilege.privilegeEmpty)
+                    {
                              DialogResult d = MessageBox.Show("Please select atleast one privilege", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                              if (d == DialogResult.OK)
                              {
-                                 Privilege privilege = new Privilege(account);
+                                loading1.Visible = false;
+                                Privilege privilege = new Privilege(account);
                                  privilege.ShowDialog();
                              }
-                        }
-                        else
+                    }
+                    else
+                    {
+                        if (ControlsServices.CheckIfOnline())
                         {
-                            if (ControlsServices.CheckIfOnline())
+                            loading1.Visible = true;
+                            await Account.CheckUsername(tb_username.Text);
+                            if (Account.checkedUsername == true)
                             {
-
-
+                                MessageBox.Show("Username Already Exist!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                Account.checkedUsername = false;
+                                loading1.Visible = false;
+                            }
+                            else
+                            {
+                                await Account.SaveAccountOffline
+                                   (
+                                   tb_firstName.Text,
+                                   tb_middleName.Text,
+                                   tb_lastName.Text,
+                                   tb_gender.Text,
+                                   dt_birthday.Text,
+                                   tb_address.Text,
+                                   tb_contactNo.Text,
+                                   cb_accountRole.Text,
+                                   account.privilege,
+                                   tb_username.Text,
+                                   ControlsServices.Encrypt(tb_password.Text),
+                                   account.image,
+                                   account.status
+                                   );
                                 await Account.SaveAccountOnline
                                     (
                                     tb_firstName.Text,
@@ -196,12 +223,13 @@ namespace Santa_Archiving_System.screens.auth
                                     tb_address.Text,
                                     tb_contactNo.Text,
                                     cb_accountRole.Text,
-                                    string.Join(",", account.privilege.ToArray()),
+                                    account.privilege,
                                     tb_username.Text,
                                     ControlsServices.Encrypt(tb_password.Text),
-                                    account.image
+                                    account.image,
+                                    account.status
                                     );
-                                MessageBox.Show("Successfully Created");
+                                MessageBox.Show("Successfully created!");
                                 tb_firstName.Text = String.Empty;
                                 tb_middleName.Text = String.Empty;
                                 tb_lastName.Text = String.Empty;
@@ -215,16 +243,26 @@ namespace Santa_Archiving_System.screens.auth
                                 tb_password.Text = String.Empty;
                                 tb_confirmPassword.Text = String.Empty;
                                 pb_profile.Image = Image.FromFile(Constants.imagePath);
+                                ts_status.Checked = true;
                             }
+                            
+                                
                         }
+                        else
+                        {
+                                MessageBox.Show("Creating an account needs internet connection.", "Network connection failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                            loading1.Visible = false;
+                           
+                    }
                           
 
                        
 
 
 
-                    }
                 }
+                
             }
         }
 
@@ -239,5 +277,21 @@ namespace Santa_Archiving_System.screens.auth
              
             }
         }
+
+        private void ts_status_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ts_status.Checked == true)
+            {
+                lbl_status.Text = "Active";
+                account.status = true;
+            }
+            else
+            {
+                lbl_status.Text = "Inactive";
+                account.status = false;
+            }
+        }
+
+       
     }
 }

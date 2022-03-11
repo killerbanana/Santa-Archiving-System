@@ -17,10 +17,10 @@ namespace Santa_Archiving_System.screens.resolution
 {
     public partial class ResoluionEncode : Form
     {
-        Resolution ord;
+        Resolution resolution;
         public ResoluionEncode(Resolution data)
         {
-            this.ord = data;
+            this.resolution = data;
             InitializeComponent();
         }
 
@@ -46,12 +46,13 @@ namespace Santa_Archiving_System.screens.resolution
         
         private async void ResoluionEncode_Load(object sender, EventArgs e)
         {
+            
             if (ControlsServices.CheckIfOnline())
             {
                 loading1.Visible = true;
                 try
                 {
-                    switch (ord.Reading)
+                    switch (resolution.Reading)
                     {
                         case "First Reading":
                             await LoadDataTableReadingOnline("1st Reading");
@@ -78,7 +79,7 @@ namespace Santa_Archiving_System.screens.resolution
             loading1.Visible = true;
             try
             {
-                switch (ord.Reading)
+                switch (resolution.Reading)
                 {
                     case "First Reading":
                         await LoadDataTableReading("1st Reading");
@@ -143,7 +144,7 @@ namespace Santa_Archiving_System.screens.resolution
         private void btn_add_Click(object sender, EventArgs e)
         {
             
-            AddResolution addResolution = new AddResolution(ord);
+            AddResolution addResolution = new AddResolution(resolution);
             addResolution.ShowDialog();
 
         }
@@ -152,8 +153,56 @@ namespace Santa_Archiving_System.screens.resolution
         {
             foreach (DataGridViewRow item in this.guna2DataGridView1.SelectedRows)
             {
-
+                resolution = new Resolution()
+                {
+                    Id = int.Parse(item.Cells[0].Value.ToString()),
+                    ResolutionNo = item.Cells[1].Value.ToString(),
+                    Series = item.Cells[2].Value.ToString(),
+                    Date = item.Cells[5].Value.ToString(),
+                    Title = item.Cells[3].Value.ToString(),
+                    Author = item.Cells[4].Value.ToString(),
+                    Time = item.Cells[6].Value.ToString(),
+                    Type = item.Cells[7].Value.ToString(),
+                    Tag = item.Cells[8].Value.ToString(),
+                    Reading = item.Cells[10].Value.ToString(),
+                };
             }
          }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(resolution.Id.ToString()) || resolution.Id == 0)
+            {
+
+            }
+            else
+            {
+                UpdateResolution updateResolution = new UpdateResolution(resolution);
+                updateResolution.ShowDialog();
+            }
+        }
+
+        private async void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(resolution.Id.ToString()) || resolution.Id == 0)
+            {
+
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to delete this Data?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (ControlsServices.CheckIfOnline())
+                    {
+                        loading1.Visible = true;
+                        await Resolutions.DeleteResolution(resolution.Id.ToString(), resolution.ResolutionNo, resolution.Series);
+                        await Resolutions.DeleteResolutionOnline(resolution.Id.ToString());
+                        MessageBox.Show("File Deleted");
+                        loading1.Visible = false;
+                    }
+                }
+            }
+        }
     }
 }

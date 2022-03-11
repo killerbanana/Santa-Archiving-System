@@ -31,7 +31,7 @@ namespace Santa_Archiving_System.screens.resolution
         {
             if (fileName.Text == string.Empty || resolutionNumber.Text == string.Empty || series.Text == string.Empty)
             {
-                MessageBox.Show("File can't be empty!");
+                MessageBox.Show("Fill all required fields!");
                 return;
             }
             loading1.Visible = true;

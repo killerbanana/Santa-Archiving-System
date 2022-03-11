@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPanel));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.accountManagementPanel = new System.Windows.Forms.Panel();
-            this.guna2Button21 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.AccountManagement = new Guna.UI2.WinForms.Guna2Button();
             this.sbInformationPanel = new System.Windows.Forms.Panel();
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
@@ -70,14 +66,15 @@
             this.panellogo = new System.Windows.Forms.Panel();
             this.LogoHolder = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pb_profile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lbl_name = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
-            this.accountManagementPanel.SuspendLayout();
             this.sbInformationPanel.SuspendLayout();
             this.panelAppropriation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabSlider)).BeginInit();
@@ -86,14 +83,14 @@
             this.panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoHolder)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).BeginInit();
             this.panelChildForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(63)))), ((int)(((byte)(170)))));
-            this.panel1.Controls.Add(this.accountManagementPanel);
             this.panel1.Controls.Add(this.AccountManagement);
             this.panel1.Controls.Add(this.sbInformationPanel);
             this.panel1.Controls.Add(this.Committee);
@@ -113,93 +110,23 @@
             this.panel1.Size = new System.Drawing.Size(180, 681);
             this.panel1.TabIndex = 1;
             // 
-            // accountManagementPanel
-            // 
-            this.accountManagementPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(159)))));
-            this.accountManagementPanel.Controls.Add(this.guna2Button21);
-            this.accountManagementPanel.Controls.Add(this.guna2Button11);
-            this.accountManagementPanel.Controls.Add(this.guna2Button12);
-            this.accountManagementPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.accountManagementPanel.Location = new System.Drawing.Point(0, 1109);
-            this.accountManagementPanel.Name = "accountManagementPanel";
-            this.accountManagementPanel.Size = new System.Drawing.Size(180, 106);
-            this.accountManagementPanel.TabIndex = 31;
-            this.accountManagementPanel.Visible = false;
-            // 
-            // guna2Button21
-            // 
-            this.guna2Button21.CheckedState.Parent = this.guna2Button21;
-            this.guna2Button21.CustomImages.Parent = this.guna2Button21;
-            this.guna2Button21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button21.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(37)))), ((int)(((byte)(106)))));
-            this.guna2Button21.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button21.ForeColor = System.Drawing.Color.White;
-            this.guna2Button21.HoverState.Parent = this.guna2Button21;
-            this.guna2Button21.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button21.Image")));
-            this.guna2Button21.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button21.Location = new System.Drawing.Point(0, 70);
-            this.guna2Button21.Name = "guna2Button21";
-            this.guna2Button21.ShadowDecoration.Parent = this.guna2Button21;
-            this.guna2Button21.Size = new System.Drawing.Size(220, 35);
-            this.guna2Button21.TabIndex = 26;
-            this.guna2Button21.Text = "ManagePersonal Identity";
-            this.guna2Button21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // guna2Button11
-            // 
-            this.guna2Button11.CheckedState.Parent = this.guna2Button11;
-            this.guna2Button11.CustomImages.Parent = this.guna2Button11;
-            this.guna2Button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(37)))), ((int)(((byte)(106)))));
-            this.guna2Button11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button11.ForeColor = System.Drawing.Color.White;
-            this.guna2Button11.HoverState.Parent = this.guna2Button11;
-            this.guna2Button11.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button11.Image")));
-            this.guna2Button11.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button11.Location = new System.Drawing.Point(0, 35);
-            this.guna2Button11.Name = "guna2Button11";
-            this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
-            this.guna2Button11.Size = new System.Drawing.Size(220, 35);
-            this.guna2Button11.TabIndex = 22;
-            this.guna2Button11.Text = "Manage User";
-            this.guna2Button11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button11.Click += new System.EventHandler(this.guna2Button11_Click);
-            // 
-            // guna2Button12
-            // 
-            this.guna2Button12.CheckedState.Parent = this.guna2Button12;
-            this.guna2Button12.CustomImages.Parent = this.guna2Button12;
-            this.guna2Button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(37)))), ((int)(((byte)(106)))));
-            this.guna2Button12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button12.ForeColor = System.Drawing.Color.White;
-            this.guna2Button12.HoverState.Parent = this.guna2Button12;
-            this.guna2Button12.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button12.Image")));
-            this.guna2Button12.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button12.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button12.Name = "guna2Button12";
-            this.guna2Button12.ShadowDecoration.Parent = this.guna2Button12;
-            this.guna2Button12.Size = new System.Drawing.Size(220, 35);
-            this.guna2Button12.TabIndex = 23;
-            this.guna2Button12.Text = "Create User";
-            this.guna2Button12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button12.Click += new System.EventHandler(this.guna2Button12_Click);
-            // 
             // AccountManagement
             // 
             this.AccountManagement.AutoRoundedCorners = true;
             this.AccountManagement.BackColor = System.Drawing.Color.Transparent;
             this.AccountManagement.BorderColor = System.Drawing.Color.Transparent;
             this.AccountManagement.BorderRadius = 20;
+            this.AccountManagement.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.AccountManagement.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.AccountManagement.CheckedState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.AccountManagement.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.AccountManagement.CheckedState.CustomBorderColor = System.Drawing.Color.White;
+            this.AccountManagement.CheckedState.FillColor = System.Drawing.Color.White;
             this.AccountManagement.CheckedState.ForeColor = System.Drawing.Color.Gray;
             this.AccountManagement.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("AccountManagement.CheckedState.Image")));
             this.AccountManagement.CheckedState.Parent = this.AccountManagement;
             this.AccountManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AccountManagement.CustomImages.Parent = this.AccountManagement;
             this.AccountManagement.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AccountManagement.Enabled = false;
             this.AccountManagement.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.AccountManagement.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountManagement.ForeColor = System.Drawing.Color.White;
@@ -215,11 +142,11 @@
             this.AccountManagement.PressedDepth = 0;
             this.AccountManagement.ShadowDecoration.Parent = this.AccountManagement;
             this.AccountManagement.Size = new System.Drawing.Size(220, 43);
-            this.AccountManagement.TabIndex = 30;
+            this.AccountManagement.TabIndex = 31;
             this.AccountManagement.Text = "Account Management";
             this.AccountManagement.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.AccountManagement.UseTransparentBackground = true;
-            this.AccountManagement.Click += new System.EventHandler(this.AccountManagement_Click);
+            this.AccountManagement.Click += new System.EventHandler(this.guna2Button11_Click_1);
             // 
             // sbInformationPanel
             // 
@@ -287,6 +214,7 @@
             this.Committee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Committee.CustomImages.Parent = this.Committee;
             this.Committee.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Committee.Enabled = false;
             this.Committee.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.Committee.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Committee.ForeColor = System.Drawing.Color.White;
@@ -415,6 +343,7 @@
             this.Appropriation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Appropriation.CustomImages.Parent = this.Appropriation;
             this.Appropriation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Appropriation.Enabled = false;
             this.Appropriation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.Appropriation.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Appropriation.ForeColor = System.Drawing.Color.White;
@@ -466,6 +395,7 @@
             this.Tricycle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Tricycle.CustomImages.Parent = this.Tricycle;
             this.Tricycle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Tricycle.Enabled = false;
             this.Tricycle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.Tricycle.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tricycle.ForeColor = System.Drawing.Color.White;
@@ -658,6 +588,7 @@
             this.Ordinance.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Ordinance.CustomImages.Parent = this.Ordinance;
             this.Ordinance.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Ordinance.Enabled = false;
             this.Ordinance.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.Ordinance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ordinance.ForeColor = System.Drawing.Color.White;
@@ -861,6 +792,7 @@
             this.Legislative.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Legislative.CustomImages.Parent = this.Legislative;
             this.Legislative.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Legislative.Enabled = false;
             this.Legislative.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.Legislative.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Legislative.ForeColor = System.Drawing.Color.White;
@@ -945,32 +877,19 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.panel2.Controls.Add(this.guna2CirclePictureBox1);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(180, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1084, 50);
             this.panel2.TabIndex = 2;
             // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1017, 7);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(38, 34);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 1;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(429, 14);
@@ -979,6 +898,51 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Santa Archiving System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.83193F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.16807F));
+            this.tableLayoutPanel1.Controls.Add(this.pb_profile, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_name, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(731, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(353, 50);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // pb_profile
+            // 
+            this.pb_profile.BackColor = System.Drawing.Color.Transparent;
+            this.pb_profile.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pb_profile.Image = ((System.Drawing.Image)(resources.GetObject("pb_profile.Image")));
+            this.pb_profile.Location = new System.Drawing.Point(284, 3);
+            this.pb_profile.Name = "pb_profile";
+            this.pb_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pb_profile.ShadowDecoration.Parent = this.pb_profile;
+            this.pb_profile.Size = new System.Drawing.Size(52, 44);
+            this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_profile.TabIndex = 1;
+            this.pb_profile.TabStop = false;
+        
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoEllipsis = true;
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl_name.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name.ForeColor = System.Drawing.Color.White;
+            this.lbl_name.Location = new System.Drawing.Point(220, 0);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(58, 50);
+            this.lbl_name.TabIndex = 2;
+            this.lbl_name.Text = "Name";
+            this.lbl_name.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // panel3
             // 
@@ -1032,8 +996,8 @@
             this.Name = "MainPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "main";
+            this.Load += new System.EventHandler(this.MainPanel_Load);
             this.panel1.ResumeLayout(false);
-            this.accountManagementPanel.ResumeLayout(false);
             this.sbInformationPanel.ResumeLayout(false);
             this.panelAppropriation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabSlider)).EndInit();
@@ -1043,7 +1007,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoHolder)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1081,21 +1047,19 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button16;
         private Guna.UI2.WinForms.Guna2Button guna2Button17;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pb_profile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private System.Windows.Forms.Panel accountManagementPanel;
-        private Guna.UI2.WinForms.Guna2Button guna2Button21;
-        private Guna.UI2.WinForms.Guna2Button guna2Button11;
-        private Guna.UI2.WinForms.Guna2Button guna2Button12;
-        private Guna.UI2.WinForms.Guna2Button AccountManagement;
         private System.Windows.Forms.Panel sbInformationPanel;
         private Guna.UI2.WinForms.Guna2Button guna2Button13;
         private Guna.UI2.WinForms.Guna2Button guna2Button18;
         private Guna.UI2.WinForms.Guna2Button Committee;
         private Guna.UI2.WinForms.Guna2Button Appropriation;
+        private Guna.UI2.WinForms.Guna2Button AccountManagement;
+        private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
