@@ -62,6 +62,18 @@ namespace Santa_Archiving_System.screens.mainPanel
                     bool sb = s.Contains(Committee.Text);
                     bool tricycle = s.Contains(Tricycle.Text);
                     bool account = s.Contains(AccountManagement.Text);
+                    if (!appropriation)
+                        Appropriation.Visible = false;
+                    if (!legislative)
+                        Legislative.Visible = false;
+                    if (!ordinance)
+                        Ordinance.Visible = false;
+                    if (!sb)
+                        Committee.Visible = false;
+                    if (!tricycle)
+                        Tricycle.Visible = false;
+                    if (!account)
+                        AccountManagement.Visible = false;
                     if (appropriation)
                         Appropriation.Enabled = true;
                     if (legislative)
@@ -186,11 +198,9 @@ namespace Santa_Archiving_System.screens.mainPanel
         private void Tricycle_Click(object sender, EventArgs e)
         {
             TabSlider.Visible = true;
-            moveImageBox(sender);
-            Guna2Button b = (Guna2Button)sender;
-            TabSlider.Location = new Point(b.Location.X + 141, Legislative.Location.Y + 48);
             TabSlider.BringToFront();
             hideSubMenu();
+            moveImageBox(sender);
             openChildForm(new TricycleEncode());
         }
 
