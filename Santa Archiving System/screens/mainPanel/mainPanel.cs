@@ -21,13 +21,14 @@ namespace Santa_Archiving_System.screens.mainPanel
 {
     public partial class MainPanel : Form
     {
+        bool clicked = false;
+       
+
         public MainPanel()
         {
             InitializeComponent();
             customizeDesign();
         }
-
-        bool clicked = false;
 
         protected override CreateParams CreateParams
         {
@@ -40,6 +41,8 @@ namespace Santa_Archiving_System.screens.mainPanel
         }
         private void MainPanel_Load(object sender, EventArgs e)
         {
+           
+            pb_profile.Image = System.Drawing.Image.FromStream(Account.image);
             lbl_name.Text = Account.firstName + " " + Account.middleName + " " + Account.lastName;
             if(Account.accountRole == "Admin")
             {
@@ -315,9 +318,8 @@ namespace Santa_Archiving_System.screens.mainPanel
             openChildForm(new ManageUser());
         }
 
-       
+      
 
-       
-
+      
     }
 }

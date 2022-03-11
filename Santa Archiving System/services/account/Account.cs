@@ -19,7 +19,8 @@ namespace Santa_Archiving_System.services.account
         public static bool checkedUsername;
         public static bool checkedLoginOnline;
         public static bool checkedLoginOffline;
-        public static string firstName, middleName, lastName, image,  accountRole, username, password;
+        public static string firstName, middleName, lastName, accountRole, username, password;
+        public static System.IO.MemoryStream image;
         public static bool status;
         public static List<String> privilege = new List<string>();
 
@@ -48,7 +49,9 @@ namespace Santa_Archiving_System.services.account
                                             firstName = reader[1].ToString();
                                             middleName = reader[2].ToString();
                                             lastName = reader[3].ToString();
-                                            image = reader[4].ToString();
+                                            byte[] img = (byte[])(reader["Image"]);
+                                            MemoryStream mstream = new MemoryStream(img);
+                                            image = mstream;
                                             accountRole = reader[9].ToString();
                                             privilege.Add(reader.GetString(reader.GetOrdinal("Privilege")));
                                             username = reader[11].ToString();
@@ -96,7 +99,9 @@ namespace Santa_Archiving_System.services.account
                                         firstName = reader[1].ToString();
                                         middleName = reader[2].ToString();
                                         lastName = reader[3].ToString();
-                                        image = reader[4].ToString();
+                                        byte[] img = (byte[])(reader["Image"]);
+                                        MemoryStream mstream = new MemoryStream(img);
+                                        image = mstream;
                                         accountRole = reader[9].ToString();
                                         privilege.Add(reader.GetString(reader.GetOrdinal("Privilege")));
                                         username = reader[11].ToString();
