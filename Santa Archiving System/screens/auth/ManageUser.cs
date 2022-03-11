@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Santa_Archiving_System.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace Santa_Archiving_System.screens.auth
         public ManageUser()
         {
             InitializeComponent();
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            account data = new account();
+            Registration registration = new Registration(data);
+            registration.ShowDialog();
         }
     }
 }

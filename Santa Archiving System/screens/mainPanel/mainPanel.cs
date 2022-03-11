@@ -6,6 +6,7 @@ using Santa_Archiving_System.screens.ordinance;
 using Santa_Archiving_System.screens.resolution;
 using Santa_Archiving_System.screens.sbOfficial;
 using Santa_Archiving_System.screens.tricycle;
+using Santa_Archiving_System.services.account;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,53 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         bool clicked = false;
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                var cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;    // Remove Form Flicker
+                return cp;
+            }
+        }
+        private void MainPanel_Load(object sender, EventArgs e)
+        {
+            lbl_name.Text = Account.firstName + " " + Account.middleName + " " + Account.lastName;
+            if(Account.accountRole == "Admin")
+            {
+                Appropriation.Enabled = true;
+                Legislative.Enabled = true;
+                Ordinance.Enabled = true;
+                Committee.Enabled = true;
+                Tricycle.Enabled = true;
+                AccountManagement.Enabled = true;
+            }
+            else
+            {
+                Account.privilege.ForEach(delegate (string s) {
+                    bool appropriation = s.Contains(Appropriation.Text);
+                    bool legislative = s.Contains(Legislative.Text);
+                    bool ordinance = s.Contains(Ordinance.Text);
+                    bool sb = s.Contains(Committee.Text);
+                    bool tricycle = s.Contains(Tricycle.Text);
+                    bool account = s.Contains(AccountManagement.Text);
+                    if (appropriation)
+                        Appropriation.Enabled = true;
+                    if (legislative)
+                        Legislative.Enabled = true;
+                    if (ordinance)
+                        Ordinance.Enabled = true;
+                    if (sb)
+                        Committee.Enabled = true;
+                    if (tricycle)
+                        Tricycle.Enabled = true;
+                    if (account)
+                        AccountManagement.Enabled = true;
+                });
+            }
+           
+
+        }
         private void customizeDesign()
         {
             panelOrdinanceHolder.Visible = false;
@@ -71,8 +119,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 panelAppropriation.Visible = false;
             if (sbInformationPanel.Visible == true)
                 sbInformationPanel.Visible = false;
-            if (accountManagementPanel.Visible == true)
-                accountManagementPanel.Visible = false;
+
         }
 
         private void showSubMenu(Panel subMenu)
@@ -158,8 +205,12 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void AccountManagement_Click(object sender, EventArgs e)
         {
-            TabSlider.Visible = false;
-            showSubMenu(accountManagementPanel);
+            TabSlider.Visible = true;
+            moveImageBox(sender);
+
+            TabSlider.BringToFront();
+            hideSubMenu();
+            openChildForm(new ManageUser());
         }
 
         private void PDFButton_Click(object sender, EventArgs e)
@@ -253,5 +304,20 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
 
         }
+
+        private void guna2Button11_Click_1(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            clicked = true;
+
+            tabshow();
+            moveImageBox(sender);
+            openChildForm(new ManageUser());
+        }
+
+       
+
+       
+
     }
 }

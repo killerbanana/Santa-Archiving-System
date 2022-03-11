@@ -42,8 +42,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.loading1 = new Santa_Archiving_System.common.loading();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -138,6 +138,7 @@
             this.btn_add.TabIndex = 29;
             this.btn_add.Text = "Add";
             this.btn_add.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // guna2TextBox1
             // 
@@ -215,15 +216,6 @@
             this.panel3.Size = new System.Drawing.Size(1053, 20);
             this.panel3.TabIndex = 31;
             // 
-            // loading1
-            // 
-            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(494, 253);
-            this.loading1.Name = "loading1";
-            this.loading1.Size = new System.Drawing.Size(72, 74);
-            this.loading1.TabIndex = 37;
-            // 
             // guna2DataGridView1
             // 
             this.guna2DataGridView1.AllowDrop = true;
@@ -288,6 +280,16 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // loading1
+            // 
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(494, 253);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(72, 74);
+            this.loading1.TabIndex = 37;
+            this.loading1.Visible = false;
             // 
             // ManageUser
             // 

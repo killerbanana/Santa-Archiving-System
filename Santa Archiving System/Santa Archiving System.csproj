@@ -111,6 +111,7 @@
     <Compile Include="models\electronic.cs" />
     <Compile Include="models\indexmanagement.cs" />
     <Compile Include="models\legislativedocument.cs" />
+    <Compile Include="models\loginCredentials.cs" />
     <Compile Include="models\Ordinance.cs" />
     <Compile Include="models\Resolution.cs" />
     <Compile Include="models\sb.cs" />
