@@ -1,4 +1,5 @@
 ﻿using Santa_Archiving_System.screens.auth;
+using Santa_Archiving_System.screens.splash;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Santa_Archiving_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new SplashScreen());
         }
     }
 }

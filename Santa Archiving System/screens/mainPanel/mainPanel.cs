@@ -6,6 +6,7 @@ using Santa_Archiving_System.screens.resolution;
 using Santa_Archiving_System.screens.sbOfficial;
 using Santa_Archiving_System.screens.tricycle;
 using Santa_Archiving_System.services.account;
+using Santa_Archiving_System.services.controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,9 +41,10 @@ namespace Santa_Archiving_System.screens.mainPanel
         }
         private void MainPanel_Load(object sender, EventArgs e)
         {
-           
+            
             pb_profile.Image = System.Drawing.Image.FromStream(Account.image);
             lbl_name.Text = Account.firstName + " " + Account.middleName + " " + Account.lastName;
+          
             if(Account.accountRole == "Admin")
             {
                 Appropriation.Enabled = true;
@@ -316,8 +318,11 @@ namespace Santa_Archiving_System.screens.mainPanel
             openChildForm(new ManageUser());
         }
 
-      
-
-      
+        private void pb_profile_Click(object sender, EventArgs e)
+        {
+          
+            UserSettings userSettings = new UserSettings();
+            userSettings.ShowDialog();
+        }
     }
 }
