@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Santa_Archiving_System.models;
+using Santa_Archiving_System.screens.dashboard;
 using Santa_Archiving_System.screens.auth;
 using Santa_Archiving_System.screens.ordinance;
 using Santa_Archiving_System.screens.resolution;
@@ -41,7 +42,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         }
         private void MainPanel_Load(object sender, EventArgs e)
         {
-            
+            openChildForm(new Dashboard());
             pb_profile.Image = System.Drawing.Image.FromStream(Account.image);
             lbl_name.Text = Account.firstName + " " + Account.middleName + " " + Account.lastName;
           
@@ -63,6 +64,18 @@ namespace Santa_Archiving_System.screens.mainPanel
                     bool sb = s.Contains(Committee.Text);
                     bool tricycle = s.Contains(Tricycle.Text);
                     bool account = s.Contains(AccountManagement.Text);
+                    if (!appropriation)
+                        Appropriation.Visible = false;
+                    if (!legislative)
+                        Legislative.Visible = false;
+                    if (!ordinance)
+                        Ordinance.Visible = false;
+                    if (!sb)
+                        Committee.Visible = false;
+                    if (!tricycle)
+                        Tricycle.Visible = false;
+                    if (!account)
+                        AccountManagement.Visible = false;
                     if (appropriation)
                         Appropriation.Enabled = true;
                     if (legislative)
@@ -175,6 +188,7 @@ namespace Santa_Archiving_System.screens.mainPanel
 
             tabshow();
             moveImageBox(sender);
+            openChildForm(new Dashboard());
         }
 
         private void Ordinance_Click(object sender, EventArgs e)
@@ -186,11 +200,9 @@ namespace Santa_Archiving_System.screens.mainPanel
         private void Tricycle_Click(object sender, EventArgs e)
         {
             TabSlider.Visible = true;
-            moveImageBox(sender);
-            Guna2Button b = (Guna2Button)sender;
-            TabSlider.Location = new Point(b.Location.X + 141, Legislative.Location.Y + 48);
             TabSlider.BringToFront();
             hideSubMenu();
+            moveImageBox(sender);
             openChildForm(new TricycleEncode());
         }
 
@@ -320,9 +332,26 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void pb_profile_Click(object sender, EventArgs e)
         {
-          
             UserSettings userSettings = new UserSettings();
             userSettings.ShowDialog();
+        }
+        private void IndexReportButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new IndexReportResolution());
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchDocumentButton_Click(object sender, EventArgs e)
+        {
+            Ordinance data = new Ordinance()
+            {
+                Reading = "PDF"
+            };
+            openChildForm(new OrdinaceEncode(data));
         }
     }
 }

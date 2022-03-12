@@ -91,7 +91,7 @@
             this.tb_password.Location = new System.Drawing.Point(33, 215);
             this.tb_password.Margin = new System.Windows.Forms.Padding(5);
             this.tb_password.Name = "tb_password";
-            this.tb_password.PasswordChar = '\0';
+            this.tb_password.PasswordChar = '*';
             this.tb_password.PlaceholderText = "";
             this.tb_password.SelectedText = "";
             this.tb_password.ShadowDecoration.Parent = this.tb_password;
@@ -182,6 +182,15 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // loading1
+            // 
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(487, 211);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(74, 76);
+            this.loading1.TabIndex = 7;
+            this.loading1.Visible = false;
             // 
             // Login
             // 

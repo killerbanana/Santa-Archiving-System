@@ -99,6 +99,7 @@
     <Compile Include="common\loading.Designer.cs">
       <DependentUpon>loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,11 +184,11 @@
     <Compile Include="screens\committee\CommitteEncode.Designer.cs">
       <DependentUpon>CommitteEncode.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\dashboard\dashboard.cs">
+    <Compile Include="screens\dashboard\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\dashboard\dashboard.Designer.cs">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <Compile Include="screens\dashboard\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\documentIndex\DocumentIndex.cs">
       <SubType>Form</SubType>
@@ -219,11 +220,23 @@
     <Compile Include="screens\ordinance\AddOrdinance.Designer.cs">
       <DependentUpon>AddOrdinance.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\ordinance\IndexReportOrdinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\IndexReportOrdinance.Designer.cs">
+      <DependentUpon>IndexReportOrdinance.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\ordinance\OrdinaceEncode.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="screens\ordinance\OrdinaceEncode.Designer.cs">
       <DependentUpon>OrdinaceEncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\ordinance\UpdateOrdinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\UpdateOrdinance.Designer.cs">
+      <DependentUpon>UpdateOrdinance.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\resolution\AddResolution.cs">
       <SubType>Form</SubType>
@@ -231,11 +244,23 @@
     <Compile Include="screens\resolution\AddResolution.Designer.cs">
       <DependentUpon>AddResolution.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\resolution\IndexReportResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\IndexReportResolution.Designer.cs">
+      <DependentUpon>IndexReportResolution.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\resolution\ResoluionEncode.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="screens\resolution\ResoluionEncode.Designer.cs">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\resolution\UpdateResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\UpdateResolution.Designer.cs">
+      <DependentUpon>UpdateResolution.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\sbOfficial\SbOfficialEncode.cs">
       <SubType>Form</SubType>
@@ -305,20 +330,38 @@
     <EmbeddedResource Include="screens\users\UserSettings.resx">
       <DependentUpon>UserSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\dashboard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\electronic\Electronic.resx">
+      <DependentUpon>Electronic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\mainPanel\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\ordinance\AddOrdinance.resx">
       <DependentUpon>AddOrdinance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\IndexReportOrdinance.resx">
+      <DependentUpon>IndexReportOrdinance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\ordinance\OrdinaceEncode.resx">
       <DependentUpon>OrdinaceEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\UpdateOrdinance.resx">
+      <DependentUpon>UpdateOrdinance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\AddResolution.resx">
       <DependentUpon>AddResolution.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\IndexReportResolution.resx">
+      <DependentUpon>IndexReportResolution.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\ResoluionEncode.resx">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\UpdateResolution.resx">
+      <DependentUpon>UpdateResolution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\sbOfficial\SbOfficialEncode.resx">
       <DependentUpon>SbOfficialEncode.cs</DependentUpon>
@@ -346,6 +389,13 @@
   <ItemGroup>
     <None Include="Resources\splash.jpg" />
     <None Include="Resources\HACKDogs-2 %282%29.PNG" />
+    <None Include="Resources\profile1.png" />
+    <None Include="Resources\icons8-add-100.png" />
+    <None Include="Resources\icons8-write-100.png" />
+    <None Include="Resources\icons8-refresh-100.png" />
+    <None Include="Resources\icons8-trash-100.png" />
+    <None Include="Resources\icons8-print-100.png" />
+    <None Include="Resources\icons8-view-100.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

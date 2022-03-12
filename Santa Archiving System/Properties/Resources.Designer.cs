@@ -96,6 +96,61 @@ namespace Santa_Archiving_System.Properties {
         internal static System.Drawing.Bitmap HACKDogs_2__2_ {
             get {
                 object obj = ResourceManager.GetObject("HACKDogs-2 (2)", resourceCulture);
+            }
+        }
+        internal static System.Drawing.Bitmap icons8_add_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-print-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_refresh_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-refresh-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_trash_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-trash-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_view_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-view-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_write_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-write-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

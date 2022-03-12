@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Santa_Archiving_System.screens.electronic
+namespace Santa_Archiving_System.screens.ordinance
 {
-    public partial class Electronic : Form
+    public partial class IndexReportOrdinance : Form
     {
-        public Electronic()
+        public IndexReportOrdinance()
         {
             InitializeComponent();
-        }
-
-        private void Electronic_Load(object sender, EventArgs e)
-        {
-           
         }
     }
 }

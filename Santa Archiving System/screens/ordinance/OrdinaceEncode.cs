@@ -58,6 +58,9 @@ namespace Santa_Archiving_System.screens.ordinance
                         case "Third Reading":
                             await LoadDataTableReadingOnline("3rd Reading");
                             break;
+                        case "PDF":
+
+                            break;
                         default:
                             await LoadDataTableOnline();
                             break;

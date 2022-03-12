@@ -50,7 +50,6 @@ namespace Santa_Archiving_System.screens.auth
             {
                 if (ControlsServices.CheckIfOnline())
                 {
-
                     await Account.CheckLoginOnline(tb_username.Text);
 
                     if (Account.checkedLoginOnline == true)
