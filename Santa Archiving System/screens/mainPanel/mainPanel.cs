@@ -41,7 +41,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         }
         private void MainPanel_Load(object sender, EventArgs e)
         {
-           
+            openChildForm(new Dashboard());
             pb_profile.Image = System.Drawing.Image.FromStream(Account.image);
             lbl_name.Text = Account.firstName + " " + Account.middleName + " " + Account.lastName;
             if(Account.accountRole == "Admin")
@@ -328,8 +328,23 @@ namespace Santa_Archiving_System.screens.mainPanel
             openChildForm(new ManageUser());
         }
 
-      
+        private void IndexReportButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new IndexReportResolution());
+        }
 
-      
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchDocumentButton_Click(object sender, EventArgs e)
+        {
+            Ordinance data = new Ordinance()
+            {
+                Reading = "PDF"
+            };
+            openChildForm(new OrdinaceEncode(data));
+        }
     }
 }
