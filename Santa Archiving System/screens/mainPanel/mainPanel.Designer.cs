@@ -274,6 +274,20 @@
             this.guna2Elipse1.BorderRadius = 40;
             this.guna2Elipse1.TargetControl = this.panelChildForm;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(420, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(244, 33);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Santa Archiving System";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pb_profile
             // 
             this.pb_profile.BackColor = System.Drawing.Color.Transparent;
@@ -287,6 +301,7 @@
             this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_profile.TabIndex = 1;
             this.pb_profile.TabStop = false;
+            this.pb_profile.Click += new System.EventHandler(this.pb_profile_Click);
             // 
             // AccountManagement
             // 
@@ -522,7 +537,7 @@
             this.TabSlider.BackColor = System.Drawing.Color.Transparent;
             this.TabSlider.FillColor = System.Drawing.Color.DimGray;
             this.TabSlider.Image = ((System.Drawing.Image)(resources.GetObject("TabSlider.Image")));
-            this.TabSlider.Location = new System.Drawing.Point(143, 1403);
+            this.TabSlider.Location = new System.Drawing.Point(143, 2280);
             this.TabSlider.Name = "TabSlider";
             this.TabSlider.ShadowDecoration.Parent = this.TabSlider;
             this.TabSlider.Size = new System.Drawing.Size(77, 117);
@@ -1050,7 +1065,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button17;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pb_profile;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Label label4;
@@ -1063,5 +1077,6 @@
         private Guna.UI2.WinForms.Guna2Button AccountManagement;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
     }
 }

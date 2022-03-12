@@ -142,23 +142,41 @@
     <Compile Include="screens\auth\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\auth\ManageUser.cs">
+    <Compile Include="screens\manageAccount\ManageUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\auth\ManageUser.Designer.cs">
+    <Compile Include="screens\manageAccount\ManageUser.Designer.cs">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\auth\Privilege.cs">
+    <Compile Include="screens\createAccount\Privilege.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\auth\Privilege.Designer.cs">
+    <Compile Include="screens\createAccount\Privilege.Designer.cs">
       <DependentUpon>Privilege.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\auth\Registration.cs">
+    <Compile Include="screens\createAccount\Registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\auth\Registration.Designer.cs">
+    <Compile Include="screens\createAccount\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\splash\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\splash\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\users\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\users\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\users\UserSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\users\UserSettings.Designer.cs">
+      <DependentUpon>UserSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\committee\CommitteEncode.cs">
       <SubType>Form</SubType>
@@ -294,14 +312,23 @@
     <EmbeddedResource Include="screens\auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="screens\auth\ManageUser.resx">
+    <EmbeddedResource Include="screens\manageAccount\ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="screens\auth\Privilege.resx">
+    <EmbeddedResource Include="screens\createAccount\Privilege.resx">
       <DependentUpon>Privilege.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="screens\auth\Registration.resx">
+    <EmbeddedResource Include="screens\createAccount\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\splash\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\users\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\users\UserSettings.resx">
+      <DependentUpon>UserSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -360,6 +387,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\splash.jpg" />
+    <None Include="Resources\HACKDogs-2 %282%29.PNG" />
     <None Include="Resources\profile1.png" />
     <None Include="Resources\icons8-add-100.png" />
     <None Include="Resources\icons8-write-100.png" />
@@ -394,5 +423,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

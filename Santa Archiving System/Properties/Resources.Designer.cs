@@ -93,6 +93,16 @@ namespace Santa_Archiving_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HACKDogs_2__2_ {
+            get {
+                object obj = ResourceManager.GetObject("HACKDogs-2 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-100", resourceCulture);
@@ -163,9 +173,9 @@ namespace Santa_Archiving_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap profile {
+        internal static System.Drawing.Bitmap splash {
             get {
-                object obj = ResourceManager.GetObject("profile", resourceCulture);
+                object obj = ResourceManager.GetObject("splash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
