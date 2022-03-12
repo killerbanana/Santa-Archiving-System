@@ -266,7 +266,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1049, 40);
             this.label4.TabIndex = 46;
-            this.label4.Text = "Copyright © HackDogs 2021";
+            this.label4.Text = "Copyright © HackDogs 2022";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Elipse1
@@ -670,6 +670,7 @@
             this.guna2Button4.TabIndex = 24;
             this.guna2Button4.Text = "PDF File";
             this.guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2Button5
             // 
@@ -831,6 +832,7 @@
             this.IndexReportButton.TabIndex = 25;
             this.IndexReportButton.Text = "Generate Index Report";
             this.IndexReportButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.IndexReportButton.Click += new System.EventHandler(this.IndexReportButton_Click);
             // 
             // SearchDocumentButton
             // 
@@ -852,6 +854,7 @@
             this.SearchDocumentButton.TabIndex = 24;
             this.SearchDocumentButton.Text = "PDF File";
             this.SearchDocumentButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SearchDocumentButton.Click += new System.EventHandler(this.SearchDocumentButton_Click);
             // 
             // TrackButton
             // 

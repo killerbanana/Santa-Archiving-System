@@ -134,6 +134,63 @@ namespace Santa_Archiving_System.services.resolution
             return dt;
         }
 
+        public static async Task<DataTable> getPdf(string type)
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT ID, [Resolution No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution WHERE Type ='" + type + "'", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+                        }
+                        using (SqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+
+                }
+            });
+            return dt;
+        }
+
+        public static async Task<DataTable> getPdfOnline(string type)
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT ID, ResolutionNo, Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Resolution WHERE Type ='" + type + "'", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+                        }
+
+                        using (MySqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+
+                }
+            });
+            return dt;
+        }
+
         //IMPORT
         public static async Task ImportResolutions()
         {
@@ -794,6 +851,65 @@ namespace Santa_Archiving_System.services.resolution
                     con.Close();
                 }
             });
+        }
+
+        //PRINTABLE DATA OFFLINE
+        public static async Task <DataTable> getPrintData()
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT [Resolution No], Series, Title, Author, Date, Time FROM Resolution", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+                            System.Threading.Thread.Sleep(100);
+                        }
+
+                        using (SqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                                dt.Load(reader);
+                        }
+                    }
+                }
+            });
+                
+            return dt;
+        }
+
+        //PRINTABLE DATA ONLINE
+        public static async Task<DataTable> getPrintDataOnline()
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT ResolutionNo, Series, Title, Author, Date, Time FROM Resolution", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+                            System.Threading.Thread.Sleep(100);
+                        }
+
+                        using (MySqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+                }
+            });
+            return dt;
         }
     }
 }

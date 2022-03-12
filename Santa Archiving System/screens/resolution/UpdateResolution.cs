@@ -71,7 +71,6 @@ namespace Santa_Archiving_System.screens.resolution
             if (ControlsServices.CheckIfOnline())
             {
                 path = await Resolutions.CreateNewFileOnline(resolution.Id.ToString(), resolution.Type);
-
             }
             else
             {

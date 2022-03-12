@@ -76,6 +76,7 @@ namespace Santa_Archiving_System.services.ordinance
 
         }
 
+        //READING OFFLINE
         public static async Task<DataTable> getReading(string reading)
         {
             DataTable dt = new DataTable();
@@ -104,6 +105,7 @@ namespace Santa_Archiving_System.services.ordinance
             return dt;
         }
 
+        //READING ONLINE
         public static async Task<DataTable> getReadingOnline (string reading)
         {
             DataTable dt = new DataTable();
@@ -113,6 +115,63 @@ namespace Santa_Archiving_System.services.ordinance
                 {
 
                     using (MySqlCommand cmd = new MySqlCommand("SELECT ID, OrdinanceNo, Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Ordinance WHERE Reading ='" + reading + "'", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+                        }
+
+                        using (MySqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+
+                }
+            });
+            return dt;
+        }
+
+        public static async Task<DataTable> getPdf(string type)
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT ID, [Ordinance No], Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Ordinance WHERE Type ='" + type + "'", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+                        }
+                        using (SqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+
+                }
+            });
+            return dt;
+        }
+
+        public static async Task<DataTable> getPdfOnline(string type)
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT ID, OrdinanceNo, Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Ordinance WHERE Type ='" + type + "'", con))
                     {
                         con.Open();
                         IAsyncResult result = cmd.BeginExecuteReader();
