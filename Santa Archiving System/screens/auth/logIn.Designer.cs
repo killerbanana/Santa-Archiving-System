@@ -185,13 +185,6 @@
             // 
             // loading1
             // 
-            this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(487, 211);
-            this.loading1.Name = "loading1";
-            this.loading1.Size = new System.Drawing.Size(74, 76);
-            this.loading1.TabIndex = 7;
-            this.loading1.Visible = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
