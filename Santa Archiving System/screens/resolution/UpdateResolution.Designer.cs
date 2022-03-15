@@ -35,7 +35,6 @@
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.loading1 = new Santa_Archiving_System.common.loading();
             this.reading_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tag = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,6 +60,7 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btn_scan = new Guna.UI2.WinForms.Guna2Button();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             this.SuspendLayout();
             // 
             // panel1
@@ -127,15 +127,6 @@
             this.guna2HtmlLabel12.Size = new System.Drawing.Size(9, 23);
             this.guna2HtmlLabel12.TabIndex = 171;
             this.guna2HtmlLabel12.Text = "*";
-            // 
-            // loading1
-            // 
-            this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(251, 304);
-            this.loading1.Name = "loading1";
-            this.loading1.Size = new System.Drawing.Size(71, 70);
-            this.loading1.TabIndex = 170;
-            this.loading1.Visible = false;
             // 
             // reading_cb
             // 
@@ -545,6 +536,14 @@
             this.btn_scan.Size = new System.Drawing.Size(92, 36);
             this.btn_scan.TabIndex = 174;
             this.btn_scan.Text = "Scan";
+            // loading1
+            // 
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(251, 304);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(71, 70);
+            this.loading1.TabIndex = 170;
+            this.loading1.Visible = false;
             // 
             // UpdateResolution
             // 

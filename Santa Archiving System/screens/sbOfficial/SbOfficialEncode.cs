@@ -26,5 +26,10 @@ namespace Santa_Archiving_System.screens.sbOfficial
         {
 
         }
+
+        private void guna2CircleButton2_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

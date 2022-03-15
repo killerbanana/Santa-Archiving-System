@@ -18,16 +18,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Santa_Archiving_System.screens.appropriation;
+using System.Threading;
+using Santa_Archiving_System.screens.users;
 
 namespace Santa_Archiving_System.screens.mainPanel
 {
     public partial class MainPanel : Form
     {
         bool clicked = false;
-       
-
+        Thread th;
+      
         public MainPanel()
         {
+          
             InitializeComponent();
             customizeDesign();
         }
@@ -44,9 +47,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         private void MainPanel_Load(object sender, EventArgs e)
         {
             openChildForm(new Dashboard());
-            pb_profile.Image = System.Drawing.Image.FromStream(Account.image);
-            lbl_name.Text = Account.firstName + " " + Account.middleName + " " + Account.lastName;
-          
+
             if(Account.accountRole == "Admin")
             {
                 Appropriation.Enabled = true;
@@ -152,6 +153,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         }
 
         Form activeForm = null;
+    
 
         private void openChildForm(Form childForm)
         {
@@ -219,15 +221,7 @@ namespace Santa_Archiving_System.screens.mainPanel
             showSubMenu(sbInformationPanel);
         }
 
-        private void AccountManagement_Click(object sender, EventArgs e)
-        {
-            TabSlider.Visible = true;
-            moveImageBox(sender);
-
-            TabSlider.BringToFront();
-            hideSubMenu();
-            openChildForm(new ManageUser());
-        }
+      
 
         private void PDFButton_Click(object sender, EventArgs e)
         {
@@ -325,30 +319,21 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         }
 
-        private void guna2Button11_Click_1(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            clicked = true;
-
-            tabshow();
-            moveImageBox(sender);
-            openChildForm(new ManageUser());
-        }
+      
 
         private void pb_profile_Click(object sender, EventArgs e)
         {
-            UserSettings userSettings = new UserSettings();
-            userSettings.ShowDialog();
+            account data = new account();
+            Profile profile = new Profile(data);
+            profile.ShowDialog();
+         
         }
         private void IndexReportButton_Click(object sender, EventArgs e)
         {
             openChildForm(new IndexReportResolution());
         }
 
-        private void guna2Button4_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void SearchDocumentButton_Click(object sender, EventArgs e)
         {
@@ -357,6 +342,44 @@ namespace Santa_Archiving_System.screens.mainPanel
                 Reading = "PDF"
             };
             openChildForm(new ResoluionEncode(data));
+        }
+
+        private void openLogin(object obj)
+        {
+            Application.Run(new Login());
+        }
+
+        private void btn_logout_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+               
+                MainPanel obj = (MainPanel)Application.OpenForms["MainPanel"];
+                obj.Close(); //close application
+                th = new Thread(openLogin);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+
+            }
+        }
+
+        private void MainPanel_Activated(object sender, EventArgs e)
+        {
+            lbl_name.Text = Account.firstName + " " + Account.middleName + " " + Account.lastName;
+            pb_profile.Image = System.Drawing.Image.FromStream(Account.image);
+          
+        }
+
+        private void AccountManagement_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            clicked = true;
+            tabshow();
+            moveImageBox(sender);
+            updateAccount data = new updateAccount()
+            {
+            };
+            openChildForm(new ManageUser(data));
         }
     }
 }

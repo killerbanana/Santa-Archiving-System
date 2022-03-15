@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this._thePanel = new System.Windows.Forms.Panel();
+            this.tb_gender = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbl_status = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ts_status = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.loading1 = new Santa_Archiving_System.common.loading();
             this.pb_profile = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbl_username = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_accountRole = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -43,12 +43,12 @@
             this.dt_birthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.tb_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tb_gender = new Guna.UI2.WinForms.Guna2TextBox();
             this.Ge = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tb_contactNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tb_address = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tb_lastName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
@@ -67,7 +67,7 @@
             this.lbl_middleName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_password = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_confirmPassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             this._thePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,7 @@
             // _thePanel
             // 
             this._thePanel.BackColor = System.Drawing.Color.White;
+            this._thePanel.Controls.Add(this.tb_gender);
             this._thePanel.Controls.Add(this.lbl_status);
             this._thePanel.Controls.Add(this.ts_status);
             this._thePanel.Controls.Add(this.loading1);
@@ -88,7 +89,6 @@
             this._thePanel.Controls.Add(this.dt_birthday);
             this._thePanel.Controls.Add(this.tb_password);
             this._thePanel.Controls.Add(this.guna2HtmlLabel13);
-            this._thePanel.Controls.Add(this.tb_gender);
             this._thePanel.Controls.Add(this.Ge);
             this._thePanel.Controls.Add(this.tb_contactNo);
             this._thePanel.Controls.Add(this.guna2HtmlLabel10);
@@ -117,6 +117,30 @@
             this._thePanel.Name = "_thePanel";
             this._thePanel.Size = new System.Drawing.Size(1057, 525);
             this._thePanel.TabIndex = 110;
+            // 
+            // tb_gender
+            // 
+            this.tb_gender.BackColor = System.Drawing.Color.Transparent;
+            this.tb_gender.BorderRadius = 5;
+            this.tb_gender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.tb_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tb_gender.FocusedColor = System.Drawing.Color.Empty;
+            this.tb_gender.FocusedState.Parent = this.tb_gender;
+            this.tb_gender.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tb_gender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.tb_gender.FormattingEnabled = true;
+            this.tb_gender.HoverState.Parent = this.tb_gender;
+            this.tb_gender.ItemHeight = 30;
+            this.tb_gender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.tb_gender.ItemsAppearance.Parent = this.tb_gender;
+            this.tb_gender.Location = new System.Drawing.Point(400, 111);
+            this.tb_gender.Name = "tb_gender";
+            this.tb_gender.ShadowDecoration.Parent = this.tb_gender;
+            this.tb_gender.Size = new System.Drawing.Size(229, 36);
+            this.tb_gender.TabIndex = 149;
+            this.tb_gender.TabStop = false;
             // 
             // lbl_status
             // 
@@ -148,16 +172,6 @@
             this.ts_status.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.ts_status.UncheckedState.Parent = this.ts_status;
             this.ts_status.CheckedChanged += new System.EventHandler(this.ts_status_CheckedChanged);
-            // 
-            // loading1
-            // 
-            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(475, 255);
-            this.loading1.Name = "loading1";
-            this.loading1.Size = new System.Drawing.Size(72, 74);
-            this.loading1.TabIndex = 145;
-            this.loading1.Visible = false;
             // 
             // pb_profile
             // 
@@ -297,7 +311,7 @@
             this.tb_password.SelectedText = "";
             this.tb_password.ShadowDecoration.Parent = this.tb_password;
             this.tb_password.Size = new System.Drawing.Size(358, 36);
-            this.tb_password.TabIndex = 7;
+            this.tb_password.TabIndex = 6;
             this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
             // 
             // guna2HtmlLabel13
@@ -310,29 +324,6 @@
             this.guna2HtmlLabel13.TabIndex = 133;
             this.guna2HtmlLabel13.TabStop = false;
             this.guna2HtmlLabel13.Text = "Password";
-            // 
-            // tb_gender
-            // 
-            this.tb_gender.BorderRadius = 5;
-            this.tb_gender.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_gender.DefaultText = "";
-            this.tb_gender.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb_gender.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb_gender.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_gender.DisabledState.Parent = this.tb_gender;
-            this.tb_gender.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_gender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_gender.FocusedState.Parent = this.tb_gender;
-            this.tb_gender.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_gender.HoverState.Parent = this.tb_gender;
-            this.tb_gender.Location = new System.Drawing.Point(400, 113);
-            this.tb_gender.Name = "tb_gender";
-            this.tb_gender.PasswordChar = '\0';
-            this.tb_gender.PlaceholderText = "";
-            this.tb_gender.SelectedText = "";
-            this.tb_gender.ShadowDecoration.Parent = this.tb_gender;
-            this.tb_gender.Size = new System.Drawing.Size(229, 36);
-            this.tb_gender.TabIndex = 3;
             // 
             // Ge
             // 
@@ -360,13 +351,14 @@
             this.tb_contactNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_contactNo.HoverState.Parent = this.tb_contactNo;
             this.tb_contactNo.Location = new System.Drawing.Point(400, 410);
+            this.tb_contactNo.MaxLength = 11;
             this.tb_contactNo.Name = "tb_contactNo";
             this.tb_contactNo.PasswordChar = '\0';
             this.tb_contactNo.PlaceholderText = "";
             this.tb_contactNo.SelectedText = "";
             this.tb_contactNo.ShadowDecoration.Parent = this.tb_contactNo;
             this.tb_contactNo.Size = new System.Drawing.Size(229, 36);
-            this.tb_contactNo.TabIndex = 5;
+            this.tb_contactNo.TabIndex = 4;
             this.tb_contactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_contactNo_KeyPress);
             // 
             // guna2HtmlLabel10
@@ -401,7 +393,7 @@
             this.tb_address.SelectedText = "";
             this.tb_address.ShadowDecoration.Parent = this.tb_address;
             this.tb_address.Size = new System.Drawing.Size(358, 36);
-            this.tb_address.TabIndex = 4;
+            this.tb_address.TabIndex = 3;
             // 
             // guna2HtmlLabel11
             // 
@@ -413,6 +405,17 @@
             this.guna2HtmlLabel11.TabIndex = 127;
             this.guna2HtmlLabel11.TabStop = false;
             this.guna2HtmlLabel11.Text = "Address";
+            // 
+            // guna2HtmlLabel12
+            // 
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(17, 335);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(146, 30);
+            this.guna2HtmlLabel12.TabIndex = 125;
+            this.guna2HtmlLabel12.TabStop = false;
+            this.guna2HtmlLabel12.Text = "Contact Info";
             // 
             // tb_lastName
             // 
@@ -465,6 +468,7 @@
             this.btn_cancel.TabIndex = 121;
             this.btn_cancel.TabStop = false;
             this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_create
             // 
@@ -516,7 +520,7 @@
             this.tb_confirmPassword.SelectedText = "";
             this.tb_confirmPassword.ShadowDecoration.Parent = this.tb_confirmPassword;
             this.tb_confirmPassword.Size = new System.Drawing.Size(358, 36);
-            this.tb_confirmPassword.TabIndex = 8;
+            this.tb_confirmPassword.TabIndex = 7;
             this.tb_confirmPassword.TextChanged += new System.EventHandler(this.tb_confirmPassword_TextChanged);
             // 
             // guna2HtmlLabel6
@@ -551,7 +555,7 @@
             this.tb_username.SelectedText = "";
             this.tb_username.ShadowDecoration.Parent = this.tb_username;
             this.tb_username.Size = new System.Drawing.Size(358, 36);
-            this.tb_username.TabIndex = 6;
+            this.tb_username.TabIndex = 5;
             this.tb_username.TextChanged += new System.EventHandler(this.tb_username_TextChanged);
             // 
             // guna2HtmlLabel5
@@ -693,16 +697,15 @@
             this.lbl_confirmPassword.TabStop = false;
             this.lbl_confirmPassword.Text = "*";
             // 
-            // guna2HtmlLabel12
+            // loading1
             // 
-            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(17, 335);
-            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
-            this.guna2HtmlLabel12.Size = new System.Drawing.Size(146, 30);
-            this.guna2HtmlLabel12.TabIndex = 125;
-            this.guna2HtmlLabel12.TabStop = false;
-            this.guna2HtmlLabel12.Text = "Contact Info";
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(475, 255);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(72, 74);
+            this.loading1.TabIndex = 145;
+            this.loading1.Visible = false;
             // 
             // Registration
             // 
@@ -738,7 +741,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dt_birthday;
         private Guna.UI2.WinForms.Guna2TextBox tb_password;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
-        private Guna.UI2.WinForms.Guna2TextBox tb_gender;
         private Guna.UI2.WinForms.Guna2HtmlLabel Ge;
         private Guna.UI2.WinForms.Guna2TextBox tb_contactNo;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
@@ -767,5 +769,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_status;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private Guna.UI2.WinForms.Guna2ComboBox tb_gender;
     }
 }

@@ -93,5 +93,7 @@ namespace Santa_Archiving_System.screens.resolution
             var filename = ControlsServices.OpenFileDialog();
             fileName.Text = filename;
         }
+
+     
     }
 }

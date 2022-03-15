@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Santa_Archiving_System.screens.users
+namespace Santa_Archiving_System.screens.sbOfficial
 {
-    public partial class UserManagementEncode : Form
+    public partial class sbEdit : Form
     {
-        public UserManagementEncode()
+        public sbEdit()
         {
             InitializeComponent();
         }
