@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Santa_Archiving_System.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace Santa_Archiving_System.screens.ordinance
 {
     public partial class UpdateOrdinance : Form
     {
-        public UpdateOrdinance()
+        Ordinance ordinance;
+        public UpdateOrdinance(Ordinance data)
         {
+            this.ordinance = data;
             InitializeComponent();
         }
     }

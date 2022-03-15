@@ -1,4 +1,4 @@
-﻿using Santa_Archiving_System.common;
+﻿ using Santa_Archiving_System.common;
 using Santa_Archiving_System.models;
 using Santa_Archiving_System.services.controls;
 using Santa_Archiving_System.services.resolution;
@@ -63,6 +63,8 @@ namespace Santa_Archiving_System.screens.resolution
                         case "Third Reading":
                             await LoadDataTableReadingOnline("3rd Reading");
                             break;
+                        case "PDF":
+                            break;
                         default:
                             await LoadDataTableOnline();
                             break;
@@ -89,6 +91,8 @@ namespace Santa_Archiving_System.screens.resolution
                         break;
                     case "Third Reading":
                         await LoadDataTableReading("3rd Reading");
+                        break;
+                    case "PDF":
                         break;
                     default:
                         await LoadDataTable();

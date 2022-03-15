@@ -54,7 +54,7 @@
             this.btn_add = new Guna.UI2.WinForms.Guna2Button();
             this.btn_browse = new Guna.UI2.WinForms.Guna2Button();
             this.title = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ordinanceNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.appropriationNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.fileName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -381,6 +381,7 @@
             this.btn_add.Size = new System.Drawing.Size(119, 45);
             this.btn_add.TabIndex = 158;
             this.btn_add.Text = "ADD";
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_browse
             // 
@@ -423,28 +424,28 @@
             this.title.Size = new System.Drawing.Size(537, 36);
             this.title.TabIndex = 147;
             // 
-            // ordinanceNumber
+            // appropriationNumber
             // 
-            this.ordinanceNumber.BorderRadius = 5;
-            this.ordinanceNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ordinanceNumber.DefaultText = "";
-            this.ordinanceNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ordinanceNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ordinanceNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ordinanceNumber.DisabledState.Parent = this.ordinanceNumber;
-            this.ordinanceNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ordinanceNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ordinanceNumber.FocusedState.Parent = this.ordinanceNumber;
-            this.ordinanceNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ordinanceNumber.HoverState.Parent = this.ordinanceNumber;
-            this.ordinanceNumber.Location = new System.Drawing.Point(31, 199);
-            this.ordinanceNumber.Name = "ordinanceNumber";
-            this.ordinanceNumber.PasswordChar = '\0';
-            this.ordinanceNumber.PlaceholderText = "";
-            this.ordinanceNumber.SelectedText = "";
-            this.ordinanceNumber.ShadowDecoration.Parent = this.ordinanceNumber;
-            this.ordinanceNumber.Size = new System.Drawing.Size(209, 36);
-            this.ordinanceNumber.TabIndex = 144;
+            this.appropriationNumber.BorderRadius = 5;
+            this.appropriationNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.appropriationNumber.DefaultText = "";
+            this.appropriationNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.appropriationNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.appropriationNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.appropriationNumber.DisabledState.Parent = this.appropriationNumber;
+            this.appropriationNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.appropriationNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.appropriationNumber.FocusedState.Parent = this.appropriationNumber;
+            this.appropriationNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.appropriationNumber.HoverState.Parent = this.appropriationNumber;
+            this.appropriationNumber.Location = new System.Drawing.Point(31, 199);
+            this.appropriationNumber.Name = "appropriationNumber";
+            this.appropriationNumber.PasswordChar = '\0';
+            this.appropriationNumber.PlaceholderText = "";
+            this.appropriationNumber.SelectedText = "";
+            this.appropriationNumber.ShadowDecoration.Parent = this.appropriationNumber;
+            this.appropriationNumber.Size = new System.Drawing.Size(209, 36);
+            this.appropriationNumber.TabIndex = 144;
             // 
             // guna2HtmlLabel4
             // 
@@ -560,7 +561,7 @@
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.ordinanceNumber);
+            this.Controls.Add(this.appropriationNumber);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.fileName);
             this.Controls.Add(this.guna2HtmlLabel5);
@@ -575,6 +576,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AddAppropriation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.AddAppropriation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -607,7 +609,7 @@
         private Guna.UI2.WinForms.Guna2Button btn_add;
         private Guna.UI2.WinForms.Guna2Button btn_browse;
         private Guna.UI2.WinForms.Guna2TextBox title;
-        private Guna.UI2.WinForms.Guna2TextBox ordinanceNumber;
+        private Guna.UI2.WinForms.Guna2TextBox appropriationNumber;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2TextBox fileName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;

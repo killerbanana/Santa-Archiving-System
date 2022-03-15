@@ -60,6 +60,7 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btn_scan = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -386,10 +387,10 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(424, 107);
+            this.guna2Button1.Location = new System.Drawing.Point(400, 107);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(141, 36);
+            this.guna2Button1.Size = new System.Drawing.Size(92, 36);
             this.guna2Button1.TabIndex = 159;
             this.guna2Button1.Text = "Browse";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -472,7 +473,7 @@
             this.fileName.ReadOnly = true;
             this.fileName.SelectedText = "";
             this.fileName.ShadowDecoration.Parent = this.fileName;
-            this.fileName.Size = new System.Drawing.Size(391, 36);
+            this.fileName.Size = new System.Drawing.Size(367, 36);
             this.fileName.TabIndex = 146;
             // 
             // guna2HtmlLabel5
@@ -502,7 +503,7 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Red;
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(548, 26);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(545, 31);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
@@ -528,12 +529,30 @@
             this.guna2HtmlLabel1.TabIndex = 153;
             this.guna2HtmlLabel1.Text = "Update Resolution Data";
             // 
+            // btn_scan
+            // 
+            this.btn_scan.BorderRadius = 5;
+            this.btn_scan.CheckedState.Parent = this.btn_scan;
+            this.btn_scan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_scan.CustomImages.Parent = this.btn_scan;
+            this.btn_scan.FillColor = System.Drawing.Color.Green;
+            this.btn_scan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_scan.ForeColor = System.Drawing.Color.White;
+            this.btn_scan.HoverState.Parent = this.btn_scan;
+            this.btn_scan.Location = new System.Drawing.Point(498, 107);
+            this.btn_scan.Name = "btn_scan";
+            this.btn_scan.ShadowDecoration.Parent = this.btn_scan;
+            this.btn_scan.Size = new System.Drawing.Size(92, 36);
+            this.btn_scan.TabIndex = 174;
+            this.btn_scan.Text = "Scan";
+            // 
             // UpdateResolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 691);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_scan);
             this.Controls.Add(this.guna2HtmlLabel13);
             this.Controls.Add(this.guna2HtmlLabel11);
             this.Controls.Add(this.guna2HtmlLabel12);
@@ -609,5 +628,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2Button btn_scan;
     }
 }
