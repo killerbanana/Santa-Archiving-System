@@ -96,7 +96,7 @@
             this.tb_password.SelectedText = "";
             this.tb_password.ShadowDecoration.Parent = this.tb_password;
             this.tb_password.Size = new System.Drawing.Size(357, 47);
-            this.tb_password.TabIndex = 5;
+            this.tb_password.TabIndex = 1;
             // 
             // tb_username
             // 
@@ -120,7 +120,7 @@
             this.tb_username.SelectedText = "";
             this.tb_username.ShadowDecoration.Parent = this.tb_username;
             this.tb_username.Size = new System.Drawing.Size(360, 47);
-            this.tb_username.TabIndex = 5;
+            this.tb_username.TabIndex = 0;
             // 
             // label2
             // 
@@ -146,6 +146,7 @@
             this.btn_login.ShadowDecoration.Parent = this.btn_login;
             this.btn_login.Size = new System.Drawing.Size(358, 45);
             this.btn_login.TabIndex = 4;
+            this.btn_login.TabStop = false;
             this.btn_login.Text = "Log In";
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
@@ -182,8 +183,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // loading1
             // 
             // Login
             // 

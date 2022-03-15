@@ -204,5 +204,12 @@ namespace Santa_Archiving_System.screens.resolution
                 }
             }
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+  
     }
 }

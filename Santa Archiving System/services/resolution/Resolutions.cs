@@ -34,6 +34,7 @@ namespace Santa_Archiving_System.services.resolution
                         using (SqlDataReader reader = cmd.EndExecuteReader(result))
                         {
                             dt.Load(reader);
+
                         }
 
                     }

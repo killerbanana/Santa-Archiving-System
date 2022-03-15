@@ -117,6 +117,7 @@
     <Compile Include="models\Resolution.cs" />
     <Compile Include="models\sb.cs" />
     <Compile Include="models\Tricycle.cs" />
+    <Compile Include="models\updateAccount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -160,6 +161,18 @@
     <Compile Include="screens\createAccount\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\manageAccount\UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\manageAccount\UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sbOfficial\sbEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sbOfficial\sbEdit.Designer.cs">
+      <DependentUpon>sbEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\splash\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,11 +185,11 @@
     <Compile Include="screens\users\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\users\UserSettings.cs">
+    <Compile Include="screens\users\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\users\UserSettings.Designer.cs">
-      <DependentUpon>UserSettings.cs</DependentUpon>
+    <Compile Include="screens\users\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\committee\CommitteEncode.cs">
       <SubType>Form</SubType>
@@ -280,12 +293,6 @@
     <Compile Include="screens\tricycle\TricycleEncode.Designer.cs">
       <DependentUpon>TricycleEncode.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\users\UserManagementEncode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="screens\users\UserManagementEncode.Designer.cs">
-      <DependentUpon>UserManagementEncode.cs</DependentUpon>
-    </Compile>
     <Compile Include="services\account\Account.cs" />
     <Compile Include="services\appropriation\Appropriations.cs" />
     <Compile Include="services\controls\ControlsServices.cs" />
@@ -321,14 +328,20 @@
     <EmbeddedResource Include="screens\createAccount\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\manageAccount\UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sbOfficial\sbEdit.resx">
+      <DependentUpon>sbEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\splash\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\users\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="screens\users\UserSettings.resx">
-      <DependentUpon>UserSettings.cs</DependentUpon>
+    <EmbeddedResource Include="screens\users\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

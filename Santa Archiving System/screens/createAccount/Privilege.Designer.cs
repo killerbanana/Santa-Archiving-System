@@ -28,27 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.clb_privilege = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.Red;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(17, 201);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(174, 45);
-            this.guna2Button2.TabIndex = 95;
-            this.guna2Button2.Text = "Cancel";
             // 
             // btn_save
             // 
@@ -59,10 +42,10 @@
             this.btn_save.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_save.ForeColor = System.Drawing.Color.White;
             this.btn_save.HoverState.Parent = this.btn_save;
-            this.btn_save.Location = new System.Drawing.Point(201, 201);
+            this.btn_save.Location = new System.Drawing.Point(21, 201);
             this.btn_save.Name = "btn_save";
             this.btn_save.ShadowDecoration.Parent = this.btn_save;
-            this.btn_save.Size = new System.Drawing.Size(174, 45);
+            this.btn_save.Size = new System.Drawing.Size(354, 45);
             this.btn_save.TabIndex = 96;
             this.btn_save.Text = "Save";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -98,9 +81,8 @@
             // Privilege
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(390, 272);
+            this.ClientSize = new System.Drawing.Size(390, 266);
             this.Controls.Add(this.clb_privilege);
-            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -118,7 +100,6 @@
 
         #endregion
         private System.Windows.Forms.CheckedListBox clb_privilege;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button btn_save;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }

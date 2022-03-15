@@ -35,7 +35,6 @@
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.loading1 = new Santa_Archiving_System.common.loading();
             this.reading_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tag = new Guna.UI2.WinForms.Guna2TextBox();
@@ -60,6 +59,7 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,15 +126,6 @@
             this.guna2HtmlLabel12.Size = new System.Drawing.Size(9, 23);
             this.guna2HtmlLabel12.TabIndex = 171;
             this.guna2HtmlLabel12.Text = "*";
-            // 
-            // loading1
-            // 
-            this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(251, 304);
-            this.loading1.Name = "loading1";
-            this.loading1.Size = new System.Drawing.Size(71, 70);
-            this.loading1.TabIndex = 170;
-            this.loading1.Visible = false;
             // 
             // reading_cb
             // 
@@ -527,6 +518,15 @@
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(310, 34);
             this.guna2HtmlLabel1.TabIndex = 153;
             this.guna2HtmlLabel1.Text = "Update Resolution Data";
+            // 
+            // loading1
+            // 
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(251, 304);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(71, 70);
+            this.loading1.TabIndex = 170;
+            this.loading1.Visible = false;
             // 
             // UpdateResolution
             // 

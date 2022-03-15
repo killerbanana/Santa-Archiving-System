@@ -1,5 +1,6 @@
 ﻿using Santa_Archiving_System.common;
 using Santa_Archiving_System.models;
+using Santa_Archiving_System.screens.mainPanel;
 using Santa_Archiving_System.services.account;
 using Santa_Archiving_System.services.controls;
 using System;
@@ -229,7 +230,7 @@ namespace Santa_Archiving_System.screens.auth
                                     account.image,
                                     account.status
                                     );
-                                MessageBox.Show("Successfully created!");
+                                MessageBox.Show("Successfully created!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 tb_firstName.Text = String.Empty;
                                 tb_middleName.Text = String.Empty;
                                 tb_lastName.Text = String.Empty;
@@ -244,6 +245,9 @@ namespace Santa_Archiving_System.screens.auth
                                 tb_confirmPassword.Text = String.Empty;
                                 pb_profile.Image = Image.FromFile(Constants.imagePath);
                                 ts_status.Checked = true;
+                                this.Close();
+                                ManageUser obj = (ManageUser)Application.OpenForms["ManageUser"];
+                                await obj.LoadDataTableOnline();
                             }
                             
                                 
@@ -292,6 +296,21 @@ namespace Santa_Archiving_System.screens.auth
             }
         }
 
-       
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            tb_firstName.Text = String.Empty;
+            tb_middleName.Text = String.Empty;
+            tb_lastName.Text = String.Empty;
+            tb_gender.Text = String.Empty;
+            dt_birthday.Text = String.Empty;
+            tb_address.Text = String.Empty;
+            tb_contactNo.Text = String.Empty;
+            cb_accountRole.SelectedIndex = 0;
+            tb_username.Text = String.Empty;
+            tb_password.Text = String.Empty;
+            tb_confirmPassword.Text = String.Empty;
+            pb_profile.Image = Image.FromFile(Constants.imagePath);
+            ts_status.Checked = true;
+        }
     }
 }

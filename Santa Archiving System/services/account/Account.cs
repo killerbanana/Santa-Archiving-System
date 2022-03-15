@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Santa_Archiving_System.services.account
 {
@@ -19,11 +20,11 @@ namespace Santa_Archiving_System.services.account
         public static bool checkedUsername;
         public static bool checkedLoginOnline;
         public static bool checkedLoginOffline;
-        public static string firstName, middleName, lastName, accountRole, username, password;
+        public static string firstName, middleName, lastName, accountRole, gender, birthday, address, contactNo, userName, password;
         public static System.IO.MemoryStream image;
         public static bool status;
         public static List<String> privilege = new List<string>();
-
+  
         public static async Task CheckLoginOffline(string username)
         {
             
@@ -50,13 +51,18 @@ namespace Santa_Archiving_System.services.account
                                             middleName = reader[2].ToString();
                                             lastName = reader[3].ToString();
                                             byte[] img = (byte[])(reader["Image"]);
+                                            gender = reader[5].ToString();
+                                            birthday = reader[6].ToString();
+                                            address = reader[7].ToString();
+                                            contactNo = reader[8].ToString();
                                             MemoryStream mstream = new MemoryStream(img);
                                             image = mstream;
                                             accountRole = reader[9].ToString();
                                             privilege.Add(reader.GetString(reader.GetOrdinal("Privilege")));
-                                            username = reader[11].ToString();
+                                            userName = reader[11].ToString();
                                             password = reader[12].ToString();
                                             status = Convert.ToBoolean(reader[13]); 
+
                                         } 
                                     }
 
@@ -99,12 +105,16 @@ namespace Santa_Archiving_System.services.account
                                         firstName = reader[1].ToString();
                                         middleName = reader[2].ToString();
                                         lastName = reader[3].ToString();
+                                        gender = reader[5].ToString();
+                                        birthday = reader[6].ToString();
+                                        address = reader[7].ToString();
+                                        contactNo = reader[8].ToString();
                                         byte[] img = (byte[])(reader["Image"]);
                                         MemoryStream mstream = new MemoryStream(img);
                                         image = mstream;
                                         accountRole = reader[9].ToString();
                                         privilege.Add(reader.GetString(reader.GetOrdinal("Privilege")));
-                                        username = reader[11].ToString();
+                                        userName = reader[11].ToString();
                                         password = reader[12].ToString();
                                         status = Convert.ToBoolean(reader[13]);
                                     }
@@ -293,5 +303,356 @@ namespace Santa_Archiving_System.services.account
             }
         }
 
+
+        public static async Task UpdateProfileOnline
+            (
+            string firstName,
+            string middleName,
+            string lastName,
+            string gender,
+            string birthday,
+            string address,
+            string contactNo
+        
+            )
+        {
+            await Task.Run(() =>
+            {
+
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("Update Registration set FirstName=@FirstName, MiddleName=@MiddleName, LastName=@LastName, Gender=@Gender, " +
+                            "Birthday=@Birthday, Address=@Address , ContactNo=@ContactNo where Username=@Username", con))
+                    {
+                        con.Open();
+                        cmd.Parameters.Add(new MySqlParameter("@Username", userName));
+                        cmd.Parameters.Add(new MySqlParameter("@FirstName", firstName));
+                        cmd.Parameters.Add(new MySqlParameter("@MiddleName", middleName));
+                        cmd.Parameters.Add(new MySqlParameter("@LastName", lastName));
+                        cmd.Parameters.Add(new MySqlParameter("@Gender", gender));
+                        cmd.Parameters.Add(new MySqlParameter("@Birthday", birthday));
+                        cmd.Parameters.Add(new MySqlParameter("@Address", address));
+                        cmd.Parameters.Add(new MySqlParameter("@ContactNo", contactNo));
+                        
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+                       
+
+                    }
+                   
+                }
+                
+            });
+
+        }
+
+        public static async Task UpdateProfileOffline
+          (
+          string firstName,
+          string middleName,
+          string lastName,
+          string gender,
+          string birthday,
+          string address,
+          string contactNo
+
+          )
+        {
+            await Task.Run(() =>
+            {
+
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+                    using (SqlCommand cmd = new SqlCommand("Update Registration set FirstName=@FirstName, MiddleName=@MiddleName, LastName=@LastName, Gender=@Gender, " +
+                            "Birthday=@Birthday, Address=@Address , ContactNo=@ContactNo where Username=@Username", con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@Username", SqlDbType.VarChar).Value = userName;
+                        cmd.Parameters.AddWithValue("@FirstName", SqlDbType.VarChar).Value = firstName;
+                        cmd.Parameters.AddWithValue("@MiddleName", SqlDbType.VarChar).Value = middleName;
+                        cmd.Parameters.AddWithValue("@LastName", SqlDbType.VarChar).Value = lastName;
+                        cmd.Parameters.AddWithValue("@Gender", SqlDbType.VarChar).Value = gender;
+                        cmd.Parameters.AddWithValue("@Birthday", SqlDbType.VarChar).Value = birthday;
+                        cmd.Parameters.AddWithValue("@Address", SqlDbType.VarChar).Value = address;
+                        cmd.Parameters.AddWithValue("@ContactNo", SqlDbType.VarChar).Value = contactNo;
+
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+
+
+                    }
+
+                }
+
+            });
+
+        }
+        public static async Task UpdateProfilePicOnline
+           (
+           string image
+           )
+        {
+            await Task.Run(() =>
+            {
+
+                string FileName = image;
+                byte[] ImageData;
+                FileStream fs;
+                BinaryReader br;
+                fs = new FileStream(FileName, FileMode.Open, FileAccess.Read);
+                br = new BinaryReader(fs);
+                ImageData = br.ReadBytes((int)fs.Length);
+                br.Close();
+                fs.Close();
+
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("Update Registration set Image=@Image where Username=@Username", con))
+                    {
+                        con.Open();
+                        cmd.Parameters.Add(new MySqlParameter("@Username", userName));
+                        cmd.Parameters.Add(new MySqlParameter("@Image", ImageData));
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+
+
+                    }
+
+                }
+
+            });
+
+        }
+        public static async Task UpdateProfilePicOffline
+           (
+           string image
+           )
+        {
+            await Task.Run(() =>
+            {
+
+                string FileName = image;
+                byte[] ImageData;
+                FileStream fs;
+                BinaryReader br;
+                fs = new FileStream(FileName, FileMode.Open, FileAccess.Read);
+                br = new BinaryReader(fs);
+                ImageData = br.ReadBytes((int)fs.Length);
+                br.Close();
+                fs.Close();
+
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+                    using (SqlCommand cmd = new SqlCommand("Update Registration set Image=@Image where Username=@Username", con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@Username", SqlDbType.VarChar).Value = userName;
+                        cmd.Parameters.AddWithValue("@Image", SqlDbType.VarChar).Value = ImageData;
+                     
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+
+
+                    }
+
+                }
+
+            });
+
+        }
+
+        public static async Task UpdatePasswordOffline(string password)
+        {
+            await Task.Run(() =>
+            {
+
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("Update Registration set Password=@Password where Username=@Username", con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@Username", SqlDbType.VarChar).Value = userName;
+                        cmd.Parameters.AddWithValue("@Password", SqlDbType.VarChar).Value = password;
+
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+                    }
+
+                }
+
+            });
+
+        }
+
+        public static async Task UpdatePasswordOnline(string password)
+        {
+            await Task.Run(() =>
+            {
+
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("Update Registration set Password=@Password where Username=@Username", con))
+                    {
+                        con.Open();
+                        cmd.Parameters.Add(new MySqlParameter("@Username", userName));
+                        cmd.Parameters.Add(new MySqlParameter("@Password", password));
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+                    }
+
+                }
+
+            });
+
+        }
+
+        public static async Task<DataTable> getUsersListOnline()
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Registration", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+                        }
+
+                        using (MySqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                           
+                            dt.Load(reader);
+                        }
+
+                    }
+
+                }
+            });
+            return dt;
+        }
+        //update user account
+        public static async Task getUserToUpdateOnline
+        (
+           
+            string accountRole,
+            List<String> privilege,
+            bool status,
+            string username
+        )
+        {
+
+          
+                await Task.Run(() =>
+                {
+                   
+                    using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand("Update Registration set AccountRole=@AccountRole, Privilege=@Privilege, Status=@Status where Username=@Username", con))
+                        {
+                            con.Open();
+                          
+                        
+                            cmd.Parameters.Add(new MySqlParameter("@AccountRole", accountRole));
+                            cmd.Parameters.Add(new MySqlParameter("@Privilege", string.Join(",", privilege)));
+                            cmd.Parameters.Add(new MySqlParameter("@Status", Convert.ToBoolean(status)));
+                            cmd.Parameters.Add(new MySqlParameter("@Username", username));
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
+                });
+           
+        }
+
+        public static async Task getUserToUpdateOffline
+        (
+
+            string accountRole,
+            List<String> privilege,
+            bool status,
+            string username
+        )
+        {
+
+
+            await Task.Run(() =>
+            {
+
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+                    using (SqlCommand cmd = new SqlCommand("Update Registration set AccountRole=@AccountRole, Privilege=@Privilege, Status=@Status where Username=@Username", con))
+                    {
+                        con.Open();
+
+                        cmd.Parameters.AddWithValue("@AccountRole", SqlDbType.VarChar).Value = accountRole;
+                        cmd.Parameters.AddWithValue("@Privilege", SqlDbType.VarChar).Value = string.Join(",", privilege);
+                        cmd.Parameters.AddWithValue("@Status", SqlDbType.VarChar).Value = Convert.ToBoolean(status);
+                        cmd.Parameters.AddWithValue("@Username", SqlDbType.VarChar).Value = username;
+                   
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+            });
+
+        }
+
+
+        //Delete
+        public static async Task DeleteUserOnline(string username)
+        {
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    MySqlCommand cmd = new MySqlCommand("Delete from Registration where Username = @Username", con);
+                    cmd.Parameters.Add(new MySqlParameter("@Username", username));
+                    con.Open();
+
+                    IAsyncResult result = cmd.BeginExecuteNonQuery();
+
+                    while (!result.IsCompleted)
+                    {
+
+                    }
+                    cmd.EndExecuteNonQuery(result);
+                    con.Close();
+                }
+            });
+        }
+
+        public static async Task DeleteUserOffline(string username)
+        {
+            await Task.Run(() =>
+            {
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+                    SqlCommand cmd = new SqlCommand("Delete from Registration where Username = @Username", con);
+                    cmd.Parameters.AddWithValue("@Username", SqlDbType.VarChar).Value = username;
+                    con.Open();
+                    
+                    IAsyncResult result = cmd.BeginExecuteNonQuery();
+
+                    while (!result.IsCompleted)
+                    {
+
+                    }
+                    cmd.EndExecuteNonQuery(result);
+                    con.Close();
+                }
+            });
+        }
     }
 }

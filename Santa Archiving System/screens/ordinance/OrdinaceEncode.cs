@@ -131,5 +131,7 @@ namespace Santa_Archiving_System.screens.ordinance
             AddOrdinance addOrdinance = new AddOrdinance(ordinance);
             addOrdinance.ShowDialog();
         }
+
+     
     }
 }
