@@ -38,7 +38,6 @@
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.loading1 = new Santa_Archiving_System.common.loading();
-            this.reading_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tag = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -62,6 +61,7 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.reading_cb = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // guna2DragControl1
@@ -142,30 +142,6 @@
             this.loading1.Size = new System.Drawing.Size(71, 70);
             this.loading1.TabIndex = 167;
             this.loading1.Visible = false;
-            // 
-            // reading_cb
-            // 
-            this.reading_cb.BackColor = System.Drawing.Color.Transparent;
-            this.reading_cb.BorderRadius = 5;
-            this.reading_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.reading_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.reading_cb.FocusedColor = System.Drawing.Color.Empty;
-            this.reading_cb.FocusedState.Parent = this.reading_cb;
-            this.reading_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reading_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.reading_cb.FormattingEnabled = true;
-            this.reading_cb.HoverState.Parent = this.reading_cb;
-            this.reading_cb.ItemHeight = 30;
-            this.reading_cb.Items.AddRange(new object[] {
-            "1st Reading",
-            "2nd Reading",
-            "3rd Reading"});
-            this.reading_cb.ItemsAppearance.Parent = this.reading_cb;
-            this.reading_cb.Location = new System.Drawing.Point(31, 549);
-            this.reading_cb.Name = "reading_cb";
-            this.reading_cb.ShadowDecoration.Parent = this.reading_cb;
-            this.reading_cb.Size = new System.Drawing.Size(538, 36);
-            this.reading_cb.TabIndex = 166;
             // 
             // guna2HtmlLabel10
             // 
@@ -535,17 +511,25 @@
             this.guna2HtmlLabel1.TabIndex = 150;
             this.guna2HtmlLabel1.Text = "New Appropriation Data";
             // 
+            // reading_cb
+            // 
+            this.reading_cb.FormattingEnabled = true;
+            this.reading_cb.Location = new System.Drawing.Point(32, 559);
+            this.reading_cb.Name = "reading_cb";
+            this.reading_cb.Size = new System.Drawing.Size(537, 21);
+            this.reading_cb.TabIndex = 171;
+            // 
             // AddAppropriation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 689);
             this.ControlBox = false;
+            this.Controls.Add(this.reading_cb);
             this.Controls.Add(this.guna2HtmlLabel12);
             this.Controls.Add(this.guna2HtmlLabel11);
             this.Controls.Add(this.guna2HtmlLabel19);
             this.Controls.Add(this.loading1);
-            this.Controls.Add(this.reading_cb);
             this.Controls.Add(this.guna2HtmlLabel10);
             this.Controls.Add(this.tag);
             this.Controls.Add(this.guna2HtmlLabel9);
@@ -593,7 +577,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
         private common.loading loading1;
-        private Guna.UI2.WinForms.Guna2ComboBox reading_cb;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2TextBox tag;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
@@ -617,5 +600,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.ComboBox reading_cb;
     }
 }

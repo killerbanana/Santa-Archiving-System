@@ -64,6 +64,7 @@ namespace Santa_Archiving_System.screens.resolution
                             await LoadDataTableReadingOnline("3rd Reading");
                             break;
                         case "PDF":
+                            guna2DataGridView1.DataSource = await Resolutions.getPdfOnline(".pdf");
                             break;
                         default:
                             await LoadDataTableOnline();
@@ -93,6 +94,7 @@ namespace Santa_Archiving_System.screens.resolution
                         await LoadDataTableReading("3rd Reading");
                         break;
                     case "PDF":
+                        guna2DataGridView1.DataSource = await Resolutions.getPdf(".pdf");
                         break;
                     default:
                         await LoadDataTable();
@@ -177,7 +179,7 @@ namespace Santa_Archiving_System.screens.resolution
         {
             if (String.IsNullOrWhiteSpace(resolution.Id.ToString()) || resolution.Id == 0)
             {
-
+                MessageBox.Show("Select a file to update");
             }
             else
             {
