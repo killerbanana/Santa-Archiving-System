@@ -41,7 +41,6 @@
             this.tb_lastName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tb_middleName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tb_firstName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -49,6 +48,7 @@
             this.pb_profile = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btn_changePassword = new Guna.UI2.WinForms.Guna2Button();
             this.tb_gender = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +126,6 @@
             this.tb_contactNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_contactNo.HoverState.Parent = this.tb_contactNo;
             this.tb_contactNo.Location = new System.Drawing.Point(405, 529);
-            this.tb_contactNo.MaxLength = 11;
             this.tb_contactNo.Name = "tb_contactNo";
             this.tb_contactNo.PasswordChar = '\0';
             this.tb_contactNo.PlaceholderText = "";
@@ -249,17 +248,6 @@
             this.tb_middleName.Size = new System.Drawing.Size(358, 36);
             this.tb_middleName.TabIndex = 168;
             // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(22, 300);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(108, 23);
-            this.guna2HtmlLabel2.TabIndex = 175;
-            this.guna2HtmlLabel2.TabStop = false;
-            this.guna2HtmlLabel2.Text = "Middle Name";
-            // 
             // tb_firstName
             // 
             this.tb_firstName.BorderRadius = 5;
@@ -372,12 +360,24 @@
             this.tb_gender.TabIndex = 191;
             this.tb_gender.TabStop = false;
             // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(22, 302);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(165, 23);
+            this.guna2HtmlLabel2.TabIndex = 201;
+            this.guna2HtmlLabel2.TabStop = false;
+            this.guna2HtmlLabel2.Text = "Middle Name / Initial";
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 648);
+            this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.tb_gender);
             this.Controls.Add(this.btn_changePassword);
             this.Controls.Add(this.pb_profile);
@@ -393,7 +393,6 @@
             this.Controls.Add(this.tb_lastName);
             this.Controls.Add(this.guna2HtmlLabel8);
             this.Controls.Add(this.tb_middleName);
-            this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.tb_firstName);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -424,7 +423,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_lastName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2TextBox tb_middleName;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox tb_firstName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
@@ -432,5 +430,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox pb_profile;
         private Guna.UI2.WinForms.Guna2Button btn_changePassword;
         private Guna.UI2.WinForms.Guna2ComboBox tb_gender;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }

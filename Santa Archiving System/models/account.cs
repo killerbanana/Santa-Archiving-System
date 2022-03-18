@@ -13,6 +13,7 @@ namespace Santa_Archiving_System.models
         public string firstName { get; set; }
         public string middleName { get; set; }
         public string lastName { get; set; }
+        public string suffix { get; set; }
         public string image { get; set; }
         public string gender { get; set; }
         public string birthday { get; set; }

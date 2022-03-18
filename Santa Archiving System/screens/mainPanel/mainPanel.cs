@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using Santa_Archiving_System.screens.users;
+using Santa_Archiving_System.screens.committee;
 
 namespace Santa_Archiving_System.screens.mainPanel
 {
@@ -46,8 +47,8 @@ namespace Santa_Archiving_System.screens.mainPanel
         private void MainPanel_Load(object sender, EventArgs e)
         {
             openChildForm(new Dashboard());
-
-            if(Account.accountRole == "Admin")
+            
+            if (Account.accountRole == "Admin")
             {
                 Appropriation.Enabled = true;
                 Legislative.Enabled = true;
@@ -58,6 +59,7 @@ namespace Santa_Archiving_System.screens.mainPanel
             }
             else
             {
+               
                 Account.privilege.ForEach(delegate (string s) {
                     bool appropriation = s.Contains(Appropriation.Text);
                     bool legislative = s.Contains(Legislative.Text);
@@ -230,11 +232,7 @@ namespace Santa_Archiving_System.screens.mainPanel
             openChildForm(new ResoluionEncode(data));
         }
 
-        private void guna2Button13_Click(object sender, EventArgs e)
-        {
-            openChildForm(new SbOfficialEncode());
-        }
-
+     
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             Resolution data = new Resolution()
@@ -346,9 +344,11 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void btn_logout_Click_1(object sender, EventArgs e)
         {
+          
             if (MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-               
+                Account.accountRole = string.Empty;
+                Account.privilege.Clear();
                 MainPanel obj = (MainPanel)Application.OpenForms["MainPanel"];
                 obj.Close(); //close application
                 th = new Thread(openLogin);
@@ -360,7 +360,7 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void MainPanel_Activated(object sender, EventArgs e)
         {
-            lbl_name.Text = Account.firstName + " " + Account.middleName + " " + Account.lastName;
+            lbl_name.Text = Account.firstName + " " + Account.middleName + " " + Account.lastName + " " + Account.suffix;
             pb_profile.Image = System.Drawing.Image.FromStream(Account.image);
           
         }
@@ -375,6 +375,21 @@ namespace Santa_Archiving_System.screens.mainPanel
             {
             };
             openChildForm(new ManageUser(data));
+        }
+
+      
+
+        private void SBOfficials_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SbOfficialEncode());
+        }
+
+        private void SBComittee_Click(object sender, EventArgs e)
+        {
+            committees data = new committees()
+            {
+            };
+            openChildForm(new CommitteeEncode(data));
         }
     }
 }

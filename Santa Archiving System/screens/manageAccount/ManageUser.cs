@@ -48,13 +48,21 @@ namespace Santa_Archiving_System.screens.auth
 
         public async Task LoadDataTableOnline()
         {
-            dt_users.DataSource = await Account.getUsersListOnline();
-            dt_users.Columns[0].Visible = false;
-            dt_users.Columns[4].Visible = false;
-            dt_users.Columns[12].Visible = false;
-            dt_users.Columns[13].Visible = false;
-            dt_users.ClearSelection();
-            
+            try
+            {
+                dt_users.DataSource = await Account.getUsersListOnline();
+                dt_users.Columns[0].Visible = false;
+                dt_users.Columns[5].Visible = false;
+                dt_users.Columns[13].Visible = false;
+                dt_users.Columns[14].Visible = false;
+                dt_users.ClearSelection();
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+            }
         }
 
         private async void ManageUser_Load(object sender, EventArgs e)
@@ -110,29 +118,37 @@ namespace Santa_Archiving_System.screens.auth
 
         private void dt_users_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_update.Enabled = true;
-            string privilege;
-            foreach (DataGridViewRow item in this.dt_users.SelectedRows)
+            try
             {
-                string listText = "";
-                updateaccount.firstName = item.Cells[1].Value.ToString();
-                updateaccount.middleName = item.Cells[2].Value.ToString();
-                updateaccount.lastName = item.Cells[3].Value.ToString();
-                byte[] bytes = (byte[])item.Cells[4].Value;
-                MemoryStream ms = new MemoryStream(bytes);
-                updateaccount.image = ms;
-                updateaccount.gender = item.Cells[5].Value.ToString();
-                updateaccount.birthday = item.Cells[6].Value.ToString();
-                updateaccount.address = item.Cells[7].Value.ToString();
-                updateaccount.contactNo = item.Cells[8].Value.ToString();
-                updateaccount.accountRole = item.Cells[9].Value.ToString();
-                listText = item.Cells[10].Value.ToString();
-                privilege = item.Cells[10].Value.ToString();
-                updateaccount.privilege = privilege.Split(',').ToList();
-                updateaccount.status = Convert.ToBoolean(item.Cells[13].Value);
-                updateaccount.username = item.Cells[11].Value.ToString();
+                string privilege;
+                foreach (DataGridViewRow item in this.dt_users.SelectedRows)
+                {
+                    string listText = "";
+                    updateaccount.firstName = item.Cells[1].Value.ToString();
+                    updateaccount.middleName = item.Cells[2].Value.ToString();
+                    updateaccount.lastName = item.Cells[3].Value.ToString();
+                    updateaccount.suffix = item.Cells[4].Value.ToString();
+                    byte[] bytes = (byte[])item.Cells[5].Value;
+                    MemoryStream ms = new MemoryStream(bytes);
+                    updateaccount.image = ms;
+                    updateaccount.gender = item.Cells[6].Value.ToString();
+                    updateaccount.birthday = item.Cells[7].Value.ToString();
+                    updateaccount.address = item.Cells[8].Value.ToString();
+                    updateaccount.contactNo = item.Cells[9].Value.ToString();
+                    updateaccount.accountRole = item.Cells[10].Value.ToString();
+                    listText = item.Cells[11].Value.ToString();
+                    privilege = item.Cells[11].Value.ToString();
+                    updateaccount.privilege = privilege.Split(',').ToList();
+                    updateaccount.status = Convert.ToBoolean(item.Cells[14].Value);
+                    updateaccount.username = item.Cells[12].Value.ToString();
 
+                }
             }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+         
         }
 
         private void tb_searchBox_TextChanged(object sender, EventArgs e)
@@ -147,5 +163,7 @@ namespace Santa_Archiving_System.screens.auth
                 (dt_users.DataSource as DataTable).DefaultView.RowFilter = string.Format("[FirstName] LIKE '%{0}%' OR [Username] LIKE '%{0}%'  OR [LastName] LIKE '%{0}%' ", tb_searchBox.Text);
             }
         }
+
+     
     }
 }

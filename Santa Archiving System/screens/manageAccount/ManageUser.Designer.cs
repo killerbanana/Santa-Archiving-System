@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_export = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_import = new Guna.UI2.WinForms.Guna2Button();
             this.btn_refresh = new Guna.UI2.WinForms.Guna2Button();
             this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
             this.btn_update = new Guna.UI2.WinForms.Guna2Button();
@@ -51,6 +53,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.btn_export);
+            this.panel5.Controls.Add(this.btn_import);
             this.panel5.Controls.Add(this.btn_refresh);
             this.panel5.Controls.Add(this.btn_delete);
             this.panel5.Controls.Add(this.btn_update);
@@ -63,6 +67,48 @@
             this.panel5.Size = new System.Drawing.Size(1013, 144);
             this.panel5.TabIndex = 35;
             // 
+            // btn_export
+            // 
+            this.btn_export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_export.BorderRadius = 5;
+            this.btn_export.CheckedState.Parent = this.btn_export;
+            this.btn_export.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_export.CustomImages.Parent = this.btn_export;
+            this.btn_export.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_export.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_export.ForeColor = System.Drawing.Color.White;
+            this.btn_export.HoverState.Parent = this.btn_export;
+            this.btn_export.Image = global::Santa_Archiving_System.Properties.Resources.import_white;
+            this.btn_export.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_export.Location = new System.Drawing.Point(807, 6);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.ShadowDecoration.Parent = this.btn_export;
+            this.btn_export.Size = new System.Drawing.Size(97, 36);
+            this.btn_export.TabIndex = 34;
+            this.btn_export.Text = "Export";
+            this.btn_export.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btn_import
+            // 
+            this.btn_import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_import.BorderRadius = 5;
+            this.btn_import.CheckedState.Parent = this.btn_import;
+            this.btn_import.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_import.CustomImages.Parent = this.btn_import;
+            this.btn_import.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ForeColor = System.Drawing.Color.White;
+            this.btn_import.HoverState.Parent = this.btn_import;
+            this.btn_import.Image = global::Santa_Archiving_System.Properties.Resources.download_white;
+            this.btn_import.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_import.Location = new System.Drawing.Point(910, 6);
+            this.btn_import.Name = "btn_import";
+            this.btn_import.ShadowDecoration.Parent = this.btn_import;
+            this.btn_import.Size = new System.Drawing.Size(97, 36);
+            this.btn_import.TabIndex = 33;
+            this.btn_import.Text = "Import";
+            this.btn_import.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // btn_refresh
             // 
             this.btn_refresh.BorderRadius = 5;
@@ -73,8 +119,9 @@
             this.btn_refresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_refresh.ForeColor = System.Drawing.Color.White;
             this.btn_refresh.HoverState.Parent = this.btn_refresh;
+            this.btn_refresh.Image = global::Santa_Archiving_System.Properties.Resources.icons8_refresh_100;
             this.btn_refresh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_refresh.Location = new System.Drawing.Point(206, 97);
+            this.btn_refresh.Location = new System.Drawing.Point(223, 97);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.ShadowDecoration.Parent = this.btn_refresh;
             this.btn_refresh.Size = new System.Drawing.Size(103, 36);
@@ -93,11 +140,12 @@
             this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
             this.btn_delete.HoverState.Parent = this.btn_delete;
+            this.btn_delete.Image = global::Santa_Archiving_System.Properties.Resources.icons8_trash_100;
             this.btn_delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_delete.Location = new System.Drawing.Point(317, 97);
+            this.btn_delete.Location = new System.Drawing.Point(332, 97);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.ShadowDecoration.Parent = this.btn_delete;
-            this.btn_delete.Size = new System.Drawing.Size(97, 36);
+            this.btn_delete.Size = new System.Drawing.Size(104, 36);
             this.btn_delete.TabIndex = 29;
             this.btn_delete.Text = "Delete";
             this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -113,8 +161,9 @@
             this.btn_update.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
             this.btn_update.HoverState.Parent = this.btn_update;
+            this.btn_update.Image = global::Santa_Archiving_System.Properties.Resources.icons8_write_100;
             this.btn_update.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_update.Location = new System.Drawing.Point(96, 97);
+            this.btn_update.Location = new System.Drawing.Point(113, 97);
             this.btn_update.Name = "btn_update";
             this.btn_update.ShadowDecoration.Parent = this.btn_update;
             this.btn_update.Size = new System.Drawing.Size(104, 36);
@@ -133,11 +182,12 @@
             this.btn_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.White;
             this.btn_add.HoverState.Parent = this.btn_add;
+            this.btn_add.Image = global::Santa_Archiving_System.Properties.Resources.icons8_add_100;
             this.btn_add.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_add.Location = new System.Drawing.Point(3, 97);
             this.btn_add.Name = "btn_add";
             this.btn_add.ShadowDecoration.Parent = this.btn_add;
-            this.btn_add.Size = new System.Drawing.Size(87, 36);
+            this.btn_add.Size = new System.Drawing.Size(104, 36);
             this.btn_add.TabIndex = 29;
             this.btn_add.Text = "Add";
             this.btn_add.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -224,33 +274,33 @@
             // 
             this.dt_users.AllowDrop = true;
             this.dt_users.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dt_users.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dt_users.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dt_users.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dt_users.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dt_users.BackgroundColor = System.Drawing.Color.White;
             this.dt_users.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dt_users.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dt_users.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dt_users.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dt_users.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dt_users.ColumnHeadersHeight = 25;
             this.dt_users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dt_users.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dt_users.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dt_users.DefaultCellStyle = dataGridViewCellStyle3;
             this.dt_users.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_users.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dt_users.EnableHeadersVisualStyles = false;
@@ -285,6 +335,7 @@
             this.dt_users.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dt_users.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dt_users.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dt_users_CellClick);
+        
             // 
             // loading1
             // 
@@ -326,12 +377,14 @@
         private Guna.UI2.WinForms.Guna2Button btn_update;
         private Guna.UI2.WinForms.Guna2Button btn_add;
         private Guna.UI2.WinForms.Guna2TextBox tb_searchBox;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2DataGridView dt_users;
         private common.loading loading1;
+        private Guna.UI2.WinForms.Guna2Button btn_export;
+        private Guna.UI2.WinForms.Guna2Button btn_import;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

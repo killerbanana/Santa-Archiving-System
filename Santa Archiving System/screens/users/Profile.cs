@@ -103,28 +103,36 @@ namespace Santa_Archiving_System.screens.users
         {
             OpenFileDialog opf = new OpenFileDialog();
             opf.Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif";
-            if (opf.ShowDialog() == DialogResult.OK)
+            try
             {
-
-                pb_profile.Image = Image.FromFile(opf.FileName);
-                account.image = opf.FileName;
-                this.UseWaitCursor = true;
-         
-                if (ControlsServices.CheckIfOnline())
+                if (opf.ShowDialog() == DialogResult.OK)
                 {
-                    await Account.UpdateProfilePicOnline(account.image);
-                    await Account.UpdateProfilePicOffline(account.image);
-                    await Account.CheckLoginOnline(Account.userName);
-                  
-                }
-                else
-                {
-                    MessageBox.Show("Please try again!", "Internet connection lost", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
 
-                MessageBox.Show("Profile has been updated!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.UseWaitCursor = false;
-            
+                    pb_profile.Image = Image.FromFile(opf.FileName);
+                    account.image = opf.FileName;
+                    this.UseWaitCursor = true;
+
+                    if (ControlsServices.CheckIfOnline())
+                    {
+                        await Account.UpdateProfilePicOnline(account.image);
+                        await Account.UpdateProfilePicOffline(account.image);
+                        await Account.CheckLoginOnline(Account.userName);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please try again!", "Internet connection lost", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                    MessageBox.Show("Profile has been updated!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.UseWaitCursor = false;
+
+                }
+            }
+          
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
