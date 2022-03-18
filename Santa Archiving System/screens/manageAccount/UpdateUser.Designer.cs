@@ -40,9 +40,9 @@
             this.lbl_gender = new System.Windows.Forms.Label();
             this.lbl_address = new System.Windows.Forms.Label();
             this.lbl_contactNo = new System.Windows.Forms.Label();
-            this.pb_profile = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbl_birthday = new System.Windows.Forms.Label();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pb_profile = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(10, 299);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(10, 288);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(141, 23);
             this.guna2HtmlLabel5.TabIndex = 151;
@@ -70,7 +70,7 @@
             "SB Officials Information System",
             "Tricycle Franchise Management System",
             "User Security Management"});
-            this.clb_privilege.Location = new System.Drawing.Point(10, 328);
+            this.clb_privilege.Location = new System.Drawing.Point(10, 317);
             this.clb_privilege.Name = "clb_privilege";
             this.clb_privilege.Size = new System.Drawing.Size(354, 126);
             this.clb_privilege.TabIndex = 150;
@@ -129,6 +129,7 @@
             this.cb_accountRole.Size = new System.Drawing.Size(167, 36);
             this.cb_accountRole.TabIndex = 136;
             this.cb_accountRole.TabStop = false;
+            this.cb_accountRole.SelectedIndexChanged += new System.EventHandler(this.cb_accountRole_SelectedIndexChanged);
             // 
             // btn_update
             // 
@@ -197,19 +198,6 @@
             this.lbl_contactNo.TabIndex = 155;
             this.lbl_contactNo.Text = "cpNo";
             // 
-            // pb_profile
-            // 
-            this.pb_profile.BorderRadius = 5;
-            this.pb_profile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_profile.Image = ((System.Drawing.Image)(resources.GetObject("pb_profile.Image")));
-            this.pb_profile.Location = new System.Drawing.Point(12, 12);
-            this.pb_profile.Name = "pb_profile";
-            this.pb_profile.ShadowDecoration.Parent = this.pb_profile;
-            this.pb_profile.Size = new System.Drawing.Size(141, 121);
-            this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_profile.TabIndex = 190;
-            this.pb_profile.TabStop = false;
-            // 
             // lbl_birthday
             // 
             this.lbl_birthday.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -229,6 +217,20 @@
             this.guna2HtmlLabel7.TabIndex = 120;
             this.guna2HtmlLabel7.TabStop = false;
             this.guna2HtmlLabel7.Text = "Account Info";
+            // 
+            // pb_profile
+            // 
+            this.pb_profile.BorderRadius = 5;
+            this.pb_profile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_profile.Image = ((System.Drawing.Image)(resources.GetObject("pb_profile.Image")));
+            this.pb_profile.Location = new System.Drawing.Point(12, 12);
+            this.pb_profile.Name = "pb_profile";
+            this.pb_profile.ShadowDecoration.Parent = this.pb_profile;
+            this.pb_profile.Size = new System.Drawing.Size(141, 121);
+            this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_profile.TabIndex = 190;
+            this.pb_profile.TabStop = false;
+            this.pb_profile.Click += new System.EventHandler(this.pb_profile_Click);
             // 
             // UpdateUser
             // 
@@ -255,7 +257,7 @@
             this.MinimizeBox = false;
             this.Name = "UpdateUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Update user";
+            this.Text = "Update User";
             this.Load += new System.EventHandler(this.UpdateUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).EndInit();
             this.ResumeLayout(false);

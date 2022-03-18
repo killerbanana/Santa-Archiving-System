@@ -29,66 +29,72 @@ namespace Santa_Archiving_System.screens.manageAccount
 
         private void UpdateUser_Load(object sender, EventArgs e)
         {
-           
+
             this.UseWaitCursor = true;
-            if (updateaccount.privilege != null)
+            try
             {
-                List<String> list = updateaccount.privilege.ToList();
+                if (updateaccount.privilege != null)
+                {
+                    List<String> list = updateaccount.privilege.ToList();
 
-                list.ForEach(delegate (string s) {
+                    list.ForEach(delegate (string s) {
 
-                    switch (s)
-                    {
-                        case "All Privilege":
-                            clb_privilege.SetItemChecked(0, true);
-                            clb_privilege.SetItemChecked(1, true);
-                            clb_privilege.SetItemChecked(2, true);
-                            clb_privilege.SetItemChecked(3, true);
-                            clb_privilege.SetItemChecked(4, true);
-                            clb_privilege.SetItemChecked(5, true);
-                            break;
-                        case "Appropriation":
+                        switch (s)
+                        {
+                            case "All Privilege":
+                                clb_privilege.SetItemChecked(0, true);
+                                clb_privilege.SetItemChecked(1, true);
+                                clb_privilege.SetItemChecked(2, true);
+                                clb_privilege.SetItemChecked(3, true);
+                                clb_privilege.SetItemChecked(4, true);
+                                clb_privilege.SetItemChecked(5, true);
+                                break;
+                            case "Appropriation":
 
-                            clb_privilege.SetItemChecked(0, true);
-                            break;
-                        case "Legislative":
-                            clb_privilege.SetItemChecked(1, true);
-                            break;
-                        case "Ordinance":
-                            clb_privilege.SetItemChecked(2, true);
-                            break;
-                        case "SB Information":
-                            clb_privilege.SetItemChecked(3, true);
-                            break;
-                        case "Tricycle":
-                            clb_privilege.SetItemChecked(4, true);
-                            break;
-                        case "Account Management":
-                            clb_privilege.SetItemChecked(5, true);
-                            break;
+                                clb_privilege.SetItemChecked(0, true);
+                                break;
+                            case "Legislative":
+                                clb_privilege.SetItemChecked(1, true);
+                                break;
+                            case "Ordinance":
+                                clb_privilege.SetItemChecked(2, true);
+                                break;
+                            case "SB Information":
+                                clb_privilege.SetItemChecked(3, true);
+                                break;
+                            case "Tricycle":
+                                clb_privilege.SetItemChecked(4, true);
+                                break;
+                            case "Account Management":
+                                clb_privilege.SetItemChecked(5, true);
+                                break;
 
-                    }
+                        }
 
-                });
+                    });
+                }
+
+                lbl_name.Text = updateaccount.firstName + " " + updateaccount.middleName + " " + updateaccount.lastName;
+                pb_profile.Image = System.Drawing.Image.FromStream(updateaccount.image);
+                lbl_gender.Text = updateaccount.gender;
+                lbl_birthday.Text = updateaccount.birthday;
+                lbl_address.Text = updateaccount.address;
+                lbl_contactNo.Text = updateaccount.contactNo;
+                cb_accountRole.Text = updateaccount.accountRole;
+                username = updateaccount.username;
+                if (updateaccount.status)
+                {
+                    ts_status.Checked = true;
+                }
+                else
+                {
+                    ts_status.Checked = false;
+                }
             }
-
-            lbl_name.Text = updateaccount.firstName + " " + updateaccount.middleName + " " + updateaccount.lastName;
-            pb_profile.Image = System.Drawing.Image.FromStream(updateaccount.image);
-            lbl_gender.Text = updateaccount.gender;
-            lbl_birthday.Text = updateaccount.birthday;
-            lbl_address.Text = updateaccount.address;
-            lbl_contactNo.Text = updateaccount.contactNo;
-            cb_accountRole.Text = updateaccount.accountRole;
-            username = updateaccount.username;
-            if (updateaccount.status)
+            catch(Exception err)
             {
-                ts_status.Checked = true;
+                MessageBox.Show(err.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-            {
-                ts_status.Checked = false;
-            }
-
             this.UseWaitCursor = false;
         }
 
@@ -104,86 +110,102 @@ namespace Santa_Archiving_System.screens.manageAccount
         private async void btn_update_Click(object sender, EventArgs e)
         {
             this.UseWaitCursor = true;
-            updateaccount.privilege = new List<string>();
-
-            for (int i = 0; i < clb_privilege.Items.Count; i++)
+            try
             {
-                if (clb_privilege.GetItemChecked(i))
+                updateaccount.privilege = new List<string>();
+                if (cb_accountRole.SelectedIndex == 0)
                 {
-
-                    switch (i)
-                    {
-                        case 0:
-                            updateaccount.privilege.Add("Appropriation");
-
-                            break;
-                        case 1:
-                            updateaccount.privilege.Add("Legislative");
-
-                            break;
-                        case 2:
-                            updateaccount.privilege.Add("Ordinance");
-
-                            break;
-                        case 3:
-                            updateaccount.privilege.Add("SB Information");
-
-                            break;
-                        case 4:
-                            updateaccount.privilege.Add("Tricycle");
-
-                            break;
-                        case 5:
-                            updateaccount.privilege.Add("Account Management");
-
-                            break;
-
-                    }
-
-
+                    updateaccount.privilege.Add("All Privilege");
 
                 }
+                else
+                {
+                    for (int i = 0; i < clb_privilege.Items.Count; i++)
+                    {
+                        if (clb_privilege.GetItemChecked(i))
+                        {
+
+                            switch (i)
+                            {
+                                case 0:
+                                    updateaccount.privilege.Add("Appropriation");
+
+                                    break;
+                                case 1:
+                                    updateaccount.privilege.Add("Legislative");
+
+                                    break;
+                                case 2:
+                                    updateaccount.privilege.Add("Ordinance");
+
+                                    break;
+                                case 3:
+                                    updateaccount.privilege.Add("SB Information");
+
+                                    break;
+                                case 4:
+                                    updateaccount.privilege.Add("Tricycle");
+
+                                    break;
+                                case 5:
+                                    updateaccount.privilege.Add("Account Management");
+
+                                    break;
+
+                            }
+
+
+
+                        }
+                    }
+                }
+                
+                if (ControlsServices.CheckIfOnline())
+                {
+                    updateAccount cls = updateaccount;
+                    await Account.getUserToUpdateOnline
+                     (
+
+                     cb_accountRole.Text,
+                     cls.privilege,
+                     cls.status,
+                     cls.username
+
+                     );
+                    await Account.getUserToUpdateOnline
+                     (
+
+                     cb_accountRole.Text,
+                     cls.privilege,
+                     cls.status,
+                     cls.username
+
+                     );
+                    await Account.getUserToUpdateOffline
+                     (
+
+                     cb_accountRole.Text,
+                     cls.privilege,
+                     cls.status,
+                     cls.username
+
+                     );
+                    MessageBox.Show("Successfully updated!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    await obj.LoadDataTableOnline();
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Please try again!", "Internet connection lost", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            if (ControlsServices.CheckIfOnline())
+            catch (Exception s)
             {
-                updateAccount cls = updateaccount;
-                await Account.getUserToUpdateOnline
-                 (
-
-                 cb_accountRole.Text,
-                 cls.privilege,
-                 cls.status,
-                 cls.username
-
-                 );
-                await Account.getUserToUpdateOnline
-                 (
-
-                 cb_accountRole.Text,
-                 cls.privilege,
-                 cls.status,
-                 cls.username
-
-                 );
-                await Account.getUserToUpdateOffline
-                 (
-
-                 cb_accountRole.Text,
-                 cls.privilege,
-                 cls.status,
-                 cls.username
-
-                 );
-                MessageBox.Show("Successfully updated!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                await obj.LoadDataTableOnline();
-
-                this.Close();
+                MessageBox.Show(s.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-            {
-                MessageBox.Show("Please try again!", "Internet connection lost", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            
             this.UseWaitCursor = false;
             this.Close();
         }
@@ -203,6 +225,19 @@ namespace Santa_Archiving_System.screens.manageAccount
         }
 
         private void _thePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cb_accountRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_accountRole.SelectedIndex == 0)
+                clb_privilege.Enabled = false;
+            else
+                clb_privilege.Enabled = true;
+        }
+
+        private void pb_profile_Click(object sender, EventArgs e)
         {
 
         }

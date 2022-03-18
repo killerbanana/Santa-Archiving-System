@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Santa_Archiving_System.screens.sbOfficial
 {
-    public partial class sbEdit : Form
+    public partial class SbAddOfficials : Form
     {
-        public sbEdit()
+        public SbAddOfficials()
         {
             InitializeComponent();
+        }
+
+        private void SbAddOfficials_Load(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

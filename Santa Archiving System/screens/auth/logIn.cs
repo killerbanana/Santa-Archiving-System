@@ -36,7 +36,7 @@ namespace Santa_Archiving_System.screens.auth
         {
             Application.Run(new MainPanel());
         }
-
+        
         private async void btn_login_Click(object sender, EventArgs e)
         {
             this.UseWaitCursor = true;
@@ -44,7 +44,7 @@ namespace Santa_Archiving_System.screens.auth
             if (string.IsNullOrWhiteSpace(tb_username.Text) || string.IsNullOrWhiteSpace(tb_password.Text))
             {
 
-                MessageBox.Show("Please fill up all required fields!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill all required fields!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -131,7 +131,7 @@ namespace Santa_Archiving_System.screens.auth
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

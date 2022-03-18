@@ -91,7 +91,7 @@
             this.Name = "Privilege";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "select";
+            this.Text = "Select";
             this.Load += new System.EventHandler(this.Privilege_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

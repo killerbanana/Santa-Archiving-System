@@ -29,76 +29,94 @@ namespace Santa_Archiving_System.screens.auth
         {
 
             privilegeEmpty = true;
-            if (account.privilege != null || account.index != null)
+            try
             {
-                List<String> list = account.privilege.ToList();
-                List<int> index = account.index.ToList();
-                list.ForEach(delegate (string s) {
-
-                    for (int x = 0; x < clb_privilege.Items.Count; x++)
-                    {
-                        index.ForEach(delegate (int i)
-                        {
-                            if (x == i)
-                            {
-
-                                clb_privilege.SetItemChecked(i, true);
-                            }
-
-                        });
-                    }
-
-                });
-            }
-           
-        }
-
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-
- 
-            account.privilege = new List<string>();
-            account.index = new List<int>();
-            for (int i = 0; i < clb_privilege.Items.Count; i++)
-            {
-                if (clb_privilege.GetItemChecked(i))
+                if (account.privilege != null || account.index != null)
                 {
-                    privilegeEmpty = false;
-                    switch (i)
+                
+                    List<String> list = account.privilege.ToList();
+                    List<int> index = account.index.ToList();
+                    list.ForEach(delegate (string s)
                     {
-                        case 0:
-                            account.privilege.Add("Appropriation");
-                            account.index.Add(0);
-                            break;
-                        case 1:
-                            account.privilege.Add("Legislative");
-                            account.index.Add(1);
-                            break;
-                        case 2:
-                            account.privilege.Add("Ordinance");
-                            account.index.Add(2);
-                            break;
-                        case 3:
-                            account.privilege.Add("SB Information");
-                            account.index.Add(3);
-                            break;
-                        case 4:
-                            account.privilege.Add("Tricycle");
-                            account.index.Add(4);
-                            break;
-                        case 5:
-                            account.privilege.Add("Account Management");
-                            account.index.Add(5);
-                            break;
 
-                    }
+                        for (int x = 0; x < clb_privilege.Items.Count; x++)
+                        {
+                            index.ForEach(delegate (int i)
+                            {
+                                if (x == i)
+                                {
 
+                                    clb_privilege.SetItemChecked(i, true);
+                                }
+
+                            });
+                        }
+
+                    });
+                
 
 
                 }
             }
+            catch (Exception s)
+            {
+                MessageBox.Show(s.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
-            this.Close();
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                account.privilege = new List<string>();
+                account.index = new List<int>();
+                for (int i = 0; i < clb_privilege.Items.Count; i++)
+                {
+                    if (clb_privilege.GetItemChecked(i))
+                    {
+                        privilegeEmpty = false;
+                        switch (i)
+                        {
+                            case 0:
+                                account.privilege.Add("Appropriation");
+                                account.index.Add(0);
+                                break;
+                            case 1:
+                                account.privilege.Add("Legislative");
+                                account.index.Add(1);
+                                break;
+                            case 2:
+                                account.privilege.Add("Ordinance");
+                                account.index.Add(2);
+                                break;
+                            case 3:
+                                account.privilege.Add("SB Information");
+                                account.index.Add(3);
+                                break;
+                            case 4:
+                                account.privilege.Add("Tricycle");
+                                account.index.Add(4);
+                                break;
+                            case 5:
+                                account.privilege.Add("Account Management");
+                                account.index.Add(5);
+                                break;
+
+                        }
+
+
+
+                    }
+                }
+
+                this.Close();
+            }
+            catch (Exception s)
+            {
+                MessageBox.Show(s.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
      

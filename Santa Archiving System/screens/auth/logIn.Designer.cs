@@ -136,6 +136,7 @@
             // 
             this.btn_login.BorderRadius = 10;
             this.btn_login.CheckedState.Parent = this.btn_login;
+            this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login.CustomImages.Parent = this.btn_login;
             this.btn_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -195,7 +196,7 @@
             this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "login";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
