@@ -26,8 +26,8 @@
     <InstallUrl>https://github.com/killerbanana/Santa-Archiving-System/tree/josh_branch/published/</InstallUrl>
     <UpdateUrl>https://github.com/killerbanana/Santa-Archiving-System/blob/josh_branch/published/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
-    <WebPage>publish.html</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
