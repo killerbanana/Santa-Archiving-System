@@ -24,12 +24,12 @@ namespace Santa_Archiving_System.screens.resolution
             InitializeComponent();
         }
 
-        private async Task LoadDataTable()
+        public async Task LoadDataTable()
         {
             guna2DataGridView1.DataSource = await Resolutions.getList();
         }
 
-        private async Task LoadDataTableOnline()
+        public async Task LoadDataTableOnline()
         {
             guna2DataGridView1.DataSource = await Resolutions.getListOnline();
         }
@@ -206,6 +206,7 @@ namespace Santa_Archiving_System.screens.resolution
                         await Resolutions.DeleteResolutionOnline(resolution.Id.ToString());
                         MessageBox.Show("File Deleted");
                         loading1.Visible = false;
+                        await LoadDataTableOnline();
                     }
                 }
             }
@@ -216,6 +217,9 @@ namespace Santa_Archiving_System.screens.resolution
 
         }
 
-  
+        private async void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            await Resolutions.OpenFileOnline(resolution.Type, resolution.Id.ToString());
+        }
     }
 }

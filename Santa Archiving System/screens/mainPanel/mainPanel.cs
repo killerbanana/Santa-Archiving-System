@@ -396,5 +396,19 @@ namespace Santa_Archiving_System.screens.mainPanel
             };
             openChildForm(new CommitteeEncode(data));
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            Ordinance data = new Ordinance()
+            {
+                Reading = "PDF"
+            };
+            openChildForm(new OrdinaceEncode(data));
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new IndexReportOrdinance());
+        }
     }
 }

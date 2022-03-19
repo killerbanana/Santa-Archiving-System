@@ -134,6 +134,7 @@
             this.btn_print.TabIndex = 29;
             this.btn_print.Text = "Print";
             this.btn_print.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // guna2TextBox1
             // 
@@ -264,6 +265,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "IndexReportOrdinance";
             this.Text = "IndexReportOrdinance";
+            this.Load += new System.EventHandler(this.IndexReportOrdinance_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();

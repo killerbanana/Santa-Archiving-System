@@ -22,12 +22,12 @@ namespace Santa_Archiving_System.screens.ordinance
             InitializeComponent();
         }
 
-        private async Task LoadDataTable()
+        public async Task LoadDataTable()
         {
             guna2DataGridView1.DataSource = await Ordinances.getListOrdinance();
         }
 
-        private async Task LoadDataTableOnline()
+        public async Task LoadDataTableOnline()
         {
             guna2DataGridView1.DataSource = await Ordinances.getListOrdinanceOnline();
         }
@@ -59,7 +59,7 @@ namespace Santa_Archiving_System.screens.ordinance
                             await LoadDataTableReadingOnline("3rd Reading");
                             break;
                         case "PDF":
-
+                            guna2DataGridView1.DataSource = await Ordinances.getPdfOnline(".pdf");
                             break;
                         default:
                             await LoadDataTableOnline();
@@ -87,6 +87,9 @@ namespace Santa_Archiving_System.screens.ordinance
                         break;
                     case "Third Reading":
                         await LoadDataTableReading("3rd Reading");
+                        break;
+                    case "PDF":
+                        guna2DataGridView1.DataSource = await Ordinances.getPdf(".pdf");
                         break;
                     default:
                         await LoadDataTable();
@@ -198,10 +201,16 @@ namespace Santa_Archiving_System.screens.ordinance
                         await Ordinances.DeleteOrdinance(ordinance.Id.ToString(), ordinance.OrdinanceNo, ordinance.Series);
                         await Ordinances.DeleteOrdinanceOnline(ordinance.Id.ToString());
                         MessageBox.Show("File Deleted");
-                        loading1.Visible = false;
+                        loading1.Visible = false; 
+                        await LoadDataTableOnline();
                     }
                 }
             }
+        }
+
+        private async void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            await Ordinances.OpenFileOnline(ordinance.Type, ordinance.Id.ToString());
         }
     }
 }

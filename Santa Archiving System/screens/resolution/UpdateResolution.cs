@@ -25,6 +25,8 @@ namespace Santa_Archiving_System.screens.resolution
 
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
+
+            ResoluionEncode resoluionEncode = (ResoluionEncode)Application.OpenForms["ResoluionEncode"];
             if (fileName.Text == string.Empty || resolutionNumber.Text == string.Empty || series.Text == string.Empty)
             {
                 MessageBox.Show("Fill all required fields!");
@@ -60,6 +62,9 @@ namespace Santa_Archiving_System.screens.resolution
                     tag.Text,
                     reading_cb.Text, 
                     fileName.Text);
+                    MessageBox.Show("Successfully updated!");
+                    this.Close();
+                    await resoluionEncode.LoadDataTableOnline();
                 }
                 loading1.Visible = false;
             }
