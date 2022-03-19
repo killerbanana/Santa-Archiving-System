@@ -36,14 +36,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_export = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_import = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
             this.btn_update = new Guna.UI2.WinForms.Guna2Button();
             this.btn_add = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btn_export = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_import = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.loading1 = new Santa_Archiving_System.common.loading();
             this.panel5.SuspendLayout();
@@ -103,6 +103,50 @@
             this.panel5.Size = new System.Drawing.Size(1013, 144);
             this.panel5.TabIndex = 28;
             // 
+            // btn_export
+            // 
+            this.btn_export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_export.BorderRadius = 5;
+            this.btn_export.CheckedState.Parent = this.btn_export;
+            this.btn_export.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_export.CustomImages.Parent = this.btn_export;
+            this.btn_export.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_export.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_export.ForeColor = System.Drawing.Color.White;
+            this.btn_export.HoverState.Parent = this.btn_export;
+            this.btn_export.Image = global::Santa_Archiving_System.Properties.Resources.import_white;
+            this.btn_export.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_export.Location = new System.Drawing.Point(812, 6);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.ShadowDecoration.Parent = this.btn_export;
+            this.btn_export.Size = new System.Drawing.Size(92, 36);
+            this.btn_export.TabIndex = 32;
+            this.btn_export.Text = "Export";
+            this.btn_export.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            // 
+            // btn_import
+            // 
+            this.btn_import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_import.BorderRadius = 5;
+            this.btn_import.CheckedState.Parent = this.btn_import;
+            this.btn_import.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_import.CustomImages.Parent = this.btn_import;
+            this.btn_import.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ForeColor = System.Drawing.Color.White;
+            this.btn_import.HoverState.Parent = this.btn_import;
+            this.btn_import.Image = global::Santa_Archiving_System.Properties.Resources.download_white;
+            this.btn_import.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_import.Location = new System.Drawing.Point(910, 6);
+            this.btn_import.Name = "btn_import";
+            this.btn_import.ShadowDecoration.Parent = this.btn_import;
+            this.btn_import.Size = new System.Drawing.Size(97, 36);
+            this.btn_import.TabIndex = 31;
+            this.btn_import.Text = "Import";
+            this.btn_import.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
+            // 
             // guna2Button1
             // 
             this.guna2Button1.BorderRadius = 5;
@@ -113,6 +157,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = global::Santa_Archiving_System.Properties.Resources.icons8_refresh_100;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.Location = new System.Drawing.Point(206, 97);
             this.guna2Button1.Name = "guna2Button1";
@@ -132,6 +177,7 @@
             this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
             this.btn_delete.HoverState.Parent = this.btn_delete;
+            this.btn_delete.Image = global::Santa_Archiving_System.Properties.Resources.icons8_trash_100;
             this.btn_delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_delete.Location = new System.Drawing.Point(317, 97);
             this.btn_delete.Name = "btn_delete";
@@ -140,6 +186,7 @@
             this.btn_delete.TabIndex = 29;
             this.btn_delete.Text = "Delete";
             this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_update
             // 
@@ -151,6 +198,7 @@
             this.btn_update.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
             this.btn_update.HoverState.Parent = this.btn_update;
+            this.btn_update.Image = global::Santa_Archiving_System.Properties.Resources.icons8_write_100;
             this.btn_update.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_update.Location = new System.Drawing.Point(96, 97);
             this.btn_update.Name = "btn_update";
@@ -159,6 +207,7 @@
             this.btn_update.TabIndex = 29;
             this.btn_update.Text = "Update";
             this.btn_update.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_add
             // 
@@ -170,6 +219,7 @@
             this.btn_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.White;
             this.btn_add.HoverState.Parent = this.btn_add;
+            this.btn_add.Image = global::Santa_Archiving_System.Properties.Resources.icons8_add_100;
             this.btn_add.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_add.Location = new System.Drawing.Point(3, 97);
             this.btn_add.Name = "btn_add";
@@ -219,50 +269,6 @@
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(190, 30);
             this.guna2HtmlLabel1.TabIndex = 27;
             this.guna2HtmlLabel1.Text = "Ordinance Data";
-            // 
-            // btn_export
-            // 
-            this.btn_export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_export.BorderRadius = 5;
-            this.btn_export.CheckedState.Parent = this.btn_export;
-            this.btn_export.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_export.CustomImages.Parent = this.btn_export;
-            this.btn_export.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_export.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_export.ForeColor = System.Drawing.Color.White;
-            this.btn_export.HoverState.Parent = this.btn_export;
-            this.btn_export.Image = global::Santa_Archiving_System.Properties.Resources.import_white;
-            this.btn_export.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_export.Location = new System.Drawing.Point(812, 6);
-            this.btn_export.Name = "btn_export";
-            this.btn_export.ShadowDecoration.Parent = this.btn_export;
-            this.btn_export.Size = new System.Drawing.Size(92, 36);
-            this.btn_export.TabIndex = 32;
-            this.btn_export.Text = "Export";
-            this.btn_export.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
-            // 
-            // btn_import
-            // 
-            this.btn_import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_import.BorderRadius = 5;
-            this.btn_import.CheckedState.Parent = this.btn_import;
-            this.btn_import.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_import.CustomImages.Parent = this.btn_import;
-            this.btn_import.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_import.ForeColor = System.Drawing.Color.White;
-            this.btn_import.HoverState.Parent = this.btn_import;
-            this.btn_import.Image = global::Santa_Archiving_System.Properties.Resources.download_white;
-            this.btn_import.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_import.Location = new System.Drawing.Point(910, 6);
-            this.btn_import.Name = "btn_import";
-            this.btn_import.ShadowDecoration.Parent = this.btn_import;
-            this.btn_import.Size = new System.Drawing.Size(97, 36);
-            this.btn_import.TabIndex = 31;
-            this.btn_import.Text = "Import";
-            this.btn_import.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
             // 
             // guna2DataGridView1
             // 
@@ -328,6 +334,8 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
+            this.guna2DataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellDoubleClick);
             // 
             // loading1
             // 

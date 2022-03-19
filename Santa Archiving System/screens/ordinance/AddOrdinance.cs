@@ -26,6 +26,7 @@ namespace Santa_Archiving_System.screens.ordinance
 
         private async void btn_add_Click(object sender, EventArgs e)
         {
+            OrdinaceEncode ordiEncode = (OrdinaceEncode)Application.OpenForms["OrdinaceEncode"];
             if (fileName.Text == string.Empty || ordinanceNumber.Text == string.Empty || series.Text == string.Empty)
             {
                 MessageBox.Show("Fill all required fields!");
@@ -54,6 +55,10 @@ namespace Santa_Archiving_System.screens.ordinance
                     ampm.Text,
                     tag.Text,
                     reading_cb.Text);
+                loading1.Visible = false;
+                MessageBox.Show("Successfully Added");
+                this.Close();
+                await ordiEncode.LoadDataTableOnline();
             }
             else {
                 await Ordinances.SaveOrdinanceData(
@@ -66,9 +71,11 @@ namespace Santa_Archiving_System.screens.ordinance
                     ampm.Text,
                     tag.Text,
                     reading_cb.Text);
+                loading1.Visible = false;
+                MessageBox.Show("Successfully Added");
+                this.Close();
+                await ordiEncode.LoadDataTable();
             }
-            loading1.Visible = false;
-            MessageBox.Show("Successfully Added");
         }
 
         private void btn_browse_Click(object sender, EventArgs e)
@@ -77,6 +84,9 @@ namespace Santa_Archiving_System.screens.ordinance
             fileName.Text = filename;
         }
 
-     
+        private void AddOrdinance_Load(object sender, EventArgs e)
+        {
+            reading_cb.SelectedIndex = 0;
+        }
     }
 }

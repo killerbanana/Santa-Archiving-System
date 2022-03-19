@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,7 @@ namespace Santa_Archiving_System.services.resolution
                         using (SqlDataReader reader = cmd.EndExecuteReader(result))
                         {
                             dt.Load(reader);
+
                         }
 
                     }
@@ -910,6 +912,193 @@ namespace Santa_Archiving_System.services.resolution
                 }
             });
             return dt;
+        }
+        public static async Task OpenFile(String FileType, String Id)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                if (FileType == ".docx")
+                {
+                    using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                    {
+
+                        FileStream FS = null;
+                        byte[] dbbyte;
+
+                        using (SqlCommand cmd = new SqlCommand("SELECT Files FROM Resolution where Id ='" + int.Parse(Id) + "'", con))
+                        {
+                            con.Open();
+
+                            da = new SqlDataAdapter(cmd);
+                            dt = new DataTable();
+                            da.Fill(dt);
+
+                            dbbyte = (byte[])dt.Rows[0]["files"];
+
+                            //store file Temporarily 
+                            string filepath = "C:\\New folder\\1.docx";
+
+                            //Assign File path create file
+                            FS = new FileStream(filepath, System.IO.FileMode.Create);
+
+                            //Write bytes to create file
+                            FS.Write(dbbyte, 0, dbbyte.Length);
+
+                            //Close FileStream instance
+                            FS.Close();
+
+                            // Open fila after write 
+
+                            //Create instance for process class
+                            Process Proc = new Process();
+
+                            //assign file path for process
+                            Proc.StartInfo.FileName = filepath;
+                            Proc.Start();
+
+                        }
+
+                    }
+                }
+                if (FileType == ".pdf")
+                {
+                    using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                    {
+
+                        FileStream FS = null;
+                        byte[] dbbyte;
+
+                        using (SqlCommand cmd = new SqlCommand("SELECT Files FROM Resolution where Id ='" + int.Parse(Id) + "'", con))
+                        {
+                            con.Open();
+                            da = new SqlDataAdapter(cmd);
+                            dt = new DataTable();
+                            da.Fill(dt);
+
+                            dbbyte = (byte[])dt.Rows[0]["Files"];
+
+                            //store file Temporarily 
+                            string filepath = "C:\\New folder\\2.pdf";
+
+                            //Assign File path create file
+                            FS = new FileStream(filepath, System.IO.FileMode.Create);
+
+                            //Write bytes to create file
+                            FS.Write(dbbyte, 0, dbbyte.Length);
+
+                            //Close FileStream instance
+                            FS.Close();
+
+                            // Open fila after write 
+
+                            //Create instance for process class
+                            Process Proc = new Process();
+
+                            //assign file path for process
+                            Proc.StartInfo.FileName = filepath;
+                            Proc.Start();
+
+                        }
+
+                    }
+                }
+            });
+        }
+
+        public static async Task OpenFileOnline(String FileType, String Id)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                if (FileType == ".docx")
+                {
+                    using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                    {
+
+                        FileStream FS = null;
+                        byte[] dbbyte;
+
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT Files FROM Resolution where Id ='" + int.Parse(Id) + "'", con))
+                        {
+                            con.Open();
+
+                            da = new MySqlDataAdapter(cmd);
+                            dt = new DataTable();
+                            da.Fill(dt);
+
+                            dbbyte = (byte[])dt.Rows[0]["Files"];
+
+                            //store file Temporarily 
+                            string filepath = "C:\\New folder\\1.docx";
+
+                            //Assign File path create file
+                            FS = new FileStream(filepath, System.IO.FileMode.Create);
+
+                            //Write bytes to create file
+                            FS.Write(dbbyte, 0, dbbyte.Length);
+
+                            //Close FileStream instance
+                            FS.Close();
+
+                            // Open fila after write 
+
+                            //Create instance for process class
+                            Process Proc = new Process();
+
+                            //assign file path for process
+                            Proc.StartInfo.FileName = filepath;
+                            Proc.Start();
+
+                        }
+
+                    }
+                }
+                if (FileType == ".pdf")
+                {
+                    using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                    {
+
+                        FileStream FS = null;
+                        byte[] dbbyte;
+
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT Files FROM Resolution where Id ='" + int.Parse(Id) + "'", con))
+                        {
+                            con.Open();
+                            da = new MySqlDataAdapter(cmd);
+                            dt = new DataTable();
+                            da.Fill(dt);
+
+                            dbbyte = (byte[])dt.Rows[0]["files"];
+
+                            //store file Temporarily 
+                            string filepath = "C:\\New folder\\2.pdf";
+
+                            //Assign File path create file
+                            FS = new FileStream(filepath, System.IO.FileMode.Create);
+
+                            //Write bytes to create file
+                            FS.Write(dbbyte, 0, dbbyte.Length);
+
+                            //Close FileStream instance
+                            FS.Close();
+
+                            // Open fila after write 
+
+                            //Create instance for process class
+                            Process Proc = new Process();
+
+                            //assign file path for process
+                            Proc.StartInfo.FileName = filepath;
+                            Proc.Start();
+
+                        }
+
+                    }
+                }
+            });
         }
     }
 }

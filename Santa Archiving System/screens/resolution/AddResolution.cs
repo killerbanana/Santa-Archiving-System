@@ -29,6 +29,7 @@ namespace Santa_Archiving_System.screens.resolution
 
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
+            ResoluionEncode resoluionEncode = (ResoluionEncode)Application.OpenForms["ResoluionEncode"];
             if (fileName.Text == string.Empty || resolutionNumber.Text == string.Empty || series.Text == string.Empty)
             {
                 MessageBox.Show("Fill all required fields!");
@@ -58,6 +59,11 @@ namespace Santa_Archiving_System.screens.resolution
                     ampm.Text,
                     tag.Text,
                     reading_cb.Text);
+
+                loading1.Visible = false;
+                MessageBox.Show("Successfully Added");
+                this.Close();
+                await resoluionEncode.LoadDataTableOnline();
             }
             else {
                 await Resolutions.SaveResolutionData(
@@ -70,16 +76,15 @@ namespace Santa_Archiving_System.screens.resolution
                     ampm.Text,
                     tag.Text,
                     reading_cb.Text);
+                MessageBox.Show("Successfully Added");
+                this.Close();
+                await resoluionEncode.LoadDataTable();
             }
-                
-
-            loading1.Visible = false;
-            MessageBox.Show("Successfully Added");
         }
 
         private void AddResolution_Load(object sender, EventArgs e)
         {
-            
+            reading_cb.SelectedIndex = 0;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

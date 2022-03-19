@@ -60,6 +60,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_scan = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -351,12 +352,13 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(423, 114);
+            this.guna2Button1.Location = new System.Drawing.Point(408, 114);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(141, 36);
+            this.guna2Button1.Size = new System.Drawing.Size(84, 36);
             this.guna2Button1.TabIndex = 188;
             this.guna2Button1.Text = "Browse";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // title
             // 
@@ -436,7 +438,7 @@
             this.fileName.ReadOnly = true;
             this.fileName.SelectedText = "";
             this.fileName.ShadowDecoration.Parent = this.fileName;
-            this.fileName.Size = new System.Drawing.Size(391, 36);
+            this.fileName.Size = new System.Drawing.Size(376, 36);
             this.fileName.TabIndex = 175;
             // 
             // guna2HtmlLabel5
@@ -455,9 +457,9 @@
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(26, 164);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(112, 23);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(117, 23);
             this.guna2HtmlLabel3.TabIndex = 183;
-            this.guna2HtmlLabel3.Text = "Resolution No.";
+            this.guna2HtmlLabel3.Text = "Ordinance No.";
             // 
             // guna2ControlBox1
             // 
@@ -525,6 +527,24 @@
             this.guna2Button3.Size = new System.Drawing.Size(119, 45);
             this.guna2Button3.TabIndex = 202;
             this.guna2Button3.Text = "SAVE";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
+            // btn_scan
+            // 
+            this.btn_scan.BorderRadius = 5;
+            this.btn_scan.CheckedState.Parent = this.btn_scan;
+            this.btn_scan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_scan.CustomImages.Parent = this.btn_scan;
+            this.btn_scan.FillColor = System.Drawing.Color.Green;
+            this.btn_scan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_scan.ForeColor = System.Drawing.Color.White;
+            this.btn_scan.HoverState.Parent = this.btn_scan;
+            this.btn_scan.Location = new System.Drawing.Point(498, 114);
+            this.btn_scan.Name = "btn_scan";
+            this.btn_scan.ShadowDecoration.Parent = this.btn_scan;
+            this.btn_scan.Size = new System.Drawing.Size(92, 36);
+            this.btn_scan.TabIndex = 203;
+            this.btn_scan.Text = "Scan";
             // 
             // UpdateOrdinance
             // 
@@ -532,6 +552,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 691);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_scan);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.guna2HtmlLabel13);
@@ -567,6 +588,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UpdateOrdinance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.UpdateOrdinance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -606,5 +628,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btn_scan;
     }
 }

@@ -76,7 +76,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(616, 20);
             this.panel1.TabIndex = 3;
-          
             // 
             // panel4
             // 
@@ -578,6 +577,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddOrdinance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.AddOrdinance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

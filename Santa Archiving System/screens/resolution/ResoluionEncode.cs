@@ -1,4 +1,4 @@
-﻿using Santa_Archiving_System.common;
+﻿ using Santa_Archiving_System.common;
 using Santa_Archiving_System.models;
 using Santa_Archiving_System.services.controls;
 using Santa_Archiving_System.services.resolution;
@@ -24,12 +24,12 @@ namespace Santa_Archiving_System.screens.resolution
             InitializeComponent();
         }
 
-        private async Task LoadDataTable()
+        public async Task LoadDataTable()
         {
             guna2DataGridView1.DataSource = await Resolutions.getList();
         }
 
-        private async Task LoadDataTableOnline()
+        public async Task LoadDataTableOnline()
         {
             guna2DataGridView1.DataSource = await Resolutions.getListOnline();
         }
@@ -63,6 +63,9 @@ namespace Santa_Archiving_System.screens.resolution
                         case "Third Reading":
                             await LoadDataTableReadingOnline("3rd Reading");
                             break;
+                        case "PDF":
+                            guna2DataGridView1.DataSource = await Resolutions.getPdfOnline(".pdf");
+                            break;
                         default:
                             await LoadDataTableOnline();
                             break;
@@ -89,6 +92,9 @@ namespace Santa_Archiving_System.screens.resolution
                         break;
                     case "Third Reading":
                         await LoadDataTableReading("3rd Reading");
+                        break;
+                    case "PDF":
+                        guna2DataGridView1.DataSource = await Resolutions.getPdf(".pdf");
                         break;
                     default:
                         await LoadDataTable();
@@ -118,7 +124,7 @@ namespace Santa_Archiving_System.screens.resolution
 
         private async void btn_export_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to download backup from cloud? This process make up some time.", "Upload", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to upload backup from cloud? This process make up some time.", "Upload", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 loading1.Visible = true;
@@ -173,7 +179,7 @@ namespace Santa_Archiving_System.screens.resolution
         {
             if (String.IsNullOrWhiteSpace(resolution.Id.ToString()) || resolution.Id == 0)
             {
-
+                MessageBox.Show("Select a file to update");
             }
             else
             {
@@ -200,9 +206,20 @@ namespace Santa_Archiving_System.screens.resolution
                         await Resolutions.DeleteResolutionOnline(resolution.Id.ToString());
                         MessageBox.Show("File Deleted");
                         loading1.Visible = false;
+                        await LoadDataTableOnline();
                     }
                 }
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            await Resolutions.OpenFileOnline(resolution.Type, resolution.Id.ToString());
         }
     }
 }
