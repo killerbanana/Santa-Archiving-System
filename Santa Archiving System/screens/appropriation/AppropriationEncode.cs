@@ -81,5 +81,49 @@ namespace Santa_Archiving_System.screens.appropriation
 
             loading1.Visible = false;
         }
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow item in this.guna2DataGridView1.SelectedRows)
+            {
+                appropriation = new Appropriation()
+                {
+                    Id = int.Parse(item.Cells[0].Value.ToString()),
+                    AppropriationNo = item.Cells[1].Value.ToString(),
+                    Series = item.Cells[2].Value.ToString(),
+                    Date = item.Cells[5].Value.ToString(),
+                    Title = item.Cells[3].Value.ToString(),
+                    Author = item.Cells[4].Value.ToString(),
+                    Time = item.Cells[6].Value.ToString(),
+                    Type = item.Cells[7].Value.ToString(),
+                    Tag = item.Cells[8].Value.ToString(),
+                    Reading = item.Cells[10].Value.ToString(),
+                };
+            }
+        }
+
+        private async void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(appropriation.Id.ToString()) || appropriation.Id == 0)
+            {
+
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to delete this Data?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (ControlsServices.CheckIfOnline())
+                    {
+                        loading1.Visible = true;
+                        await Appropriations.DeleteAppropriation(appropriation.Id.ToString(), appropriation.AppropriationNo, appropriation.Series);
+                        await Appropriations.DeleteAppropriationOnline(appropriation.Id.ToString());
+                        MessageBox.Show("File Deleted");
+                        await LoadDataTableOnline();
+                        loading1.Visible = false;
+                    }
+                }
+            }
+        }
     }
 }

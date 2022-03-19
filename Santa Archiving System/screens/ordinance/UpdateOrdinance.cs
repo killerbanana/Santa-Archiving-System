@@ -25,6 +25,7 @@ namespace Santa_Archiving_System.screens.ordinance
 
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
+            OrdinaceEncode ordiEncode = (OrdinaceEncode)Application.OpenForms["OrdinaceEncode"];
             if (fileName.Text == string.Empty || ordinanceNumber.Text == string.Empty || series.Text == string.Empty)
             {
                 MessageBox.Show("Fill all required fields!");
@@ -60,6 +61,10 @@ namespace Santa_Archiving_System.screens.ordinance
                     tag.Text,
                     reading_cb.Text,
                     fileName.Text);
+
+                    MessageBox.Show("Successfully Updated");
+                    this.Close();
+                    await ordiEncode.LoadDataTableOnline();
                 }
                 loading1.Visible = false;
             }
