@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Santa_Archiving_System.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,12 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Santa_Archiving_System.screens.users
+namespace Santa_Archiving_System.screens.ordinance
 {
-    public partial class UserManagementEncode : Form
+    public partial class UpdateOrdinance : Form
     {
-        public UserManagementEncode()
+        Ordinance ordinance;
+        public UpdateOrdinance(Ordinance data)
         {
+            this.ordinance = data;
             InitializeComponent();
         }
     }

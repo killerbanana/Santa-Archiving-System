@@ -1,6 +1,6 @@
 ﻿namespace Santa_Archiving_System.screens.dashboard
 {
-    partial class dashboard
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.SuspendLayout();
+            // 
+            // Dashboard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1053, 613);
+            this.Name = "Dashboard";
             this.Text = "dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

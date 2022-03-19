@@ -77,6 +77,9 @@ namespace Santa_Archiving_System.screens.ordinance
             fileName.Text = filename;
         }
 
-     
+        private void AddOrdinance_Load(object sender, EventArgs e)
+        {
+            reading_cb.SelectedIndex = 0;
+        }
     }
 }

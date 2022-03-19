@@ -31,7 +31,7 @@ namespace Santa_Archiving_System.screens.resolution
         {
             if (fileName.Text == string.Empty || resolutionNumber.Text == string.Empty || series.Text == string.Empty)
             {
-                MessageBox.Show("File can't be empty!");
+                MessageBox.Show("Fill all required fields!");
                 return;
             }
             loading1.Visible = true;
@@ -79,7 +79,7 @@ namespace Santa_Archiving_System.screens.resolution
 
         private void AddResolution_Load(object sender, EventArgs e)
         {
-            
+            reading_cb.SelectedIndex = 0;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

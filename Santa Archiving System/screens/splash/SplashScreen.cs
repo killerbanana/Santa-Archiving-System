@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,9 +17,13 @@ namespace Santa_Archiving_System.screens.splash
     {
         int counter = 0;
         Thread th;
+  
         public SplashScreen()
         {
+     
             InitializeComponent();
+          
+
         }
         protected override CreateParams CreateParams
         {
@@ -29,9 +34,12 @@ namespace Santa_Archiving_System.screens.splash
                 return cp;
             }
         }
-
+     
+     
+      
         private void SplashScreen_Load(object sender, EventArgs e)
         {
+        
             this.UseWaitCursor = true;
             progressBar.Value = 0;
             timer1.Start();
@@ -41,7 +49,7 @@ namespace Santa_Archiving_System.screens.splash
         {
             Application.Run(new Login());
         }
-
+     
         private void timer1_Tick(object sender, EventArgs e)
         {
             counter++;
@@ -49,10 +57,12 @@ namespace Santa_Archiving_System.screens.splash
             lbl_percent.Text = progressBar.ProgressPercentText;
             if (counter == 100)
             {
+              
                 this.UseWaitCursor = false;
                 timer1.Stop();
                 lbl_pressToContinue.Visible = true;
                 panel_loading.Visible = false;
+               
             }
            
         }
@@ -78,6 +88,6 @@ namespace Santa_Archiving_System.screens.splash
             }
         }
 
-       
+      
     }
 }

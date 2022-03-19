@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Santa_Archiving_System.screens.committee
+namespace Santa_Archiving_System.screens.ordinance
 {
-    public partial class CommitteEncode : Form
+    public partial class IndexReportOrdinance : Form
     {
-        public CommitteEncode()
+        public IndexReportOrdinance()
         {
             InitializeComponent();
         }

@@ -99,6 +99,7 @@
     <Compile Include="common\loading.Designer.cs">
       <DependentUpon>loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,7 +108,7 @@
     </Compile>
     <Compile Include="models\account.cs" />
     <Compile Include="models\Appropriation.cs" />
-    <Compile Include="models\committee.cs" />
+    <Compile Include="models\committees.cs" />
     <Compile Include="models\electronic.cs" />
     <Compile Include="models\indexmanagement.cs" />
     <Compile Include="models\legislativedocument.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="models\Resolution.cs" />
     <Compile Include="models\sb.cs" />
     <Compile Include="models\Tricycle.cs" />
+    <Compile Include="models\updateAccount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -159,6 +161,36 @@
     <Compile Include="screens\createAccount\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\manageAccount\UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\manageAccount\UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\committee\SbAddCommittee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\committee\SbAddCommittee.Designer.cs">
+      <DependentUpon>SbAddCommittee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbOfficialEncode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbOfficialEncode.Designer.cs">
+      <DependentUpon>SbOfficialEncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\committee\SbUpdateCommittee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\committee\SbUpdateCommittee.Designer.cs">
+      <DependentUpon>SbUpdateCommittee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbAddOfficials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbAddOfficials.Designer.cs">
+      <DependentUpon>SbAddOfficials.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\splash\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,23 +203,23 @@
     <Compile Include="screens\users\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\users\UserSettings.cs">
+    <Compile Include="screens\users\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\users\UserSettings.Designer.cs">
-      <DependentUpon>UserSettings.cs</DependentUpon>
+    <Compile Include="screens\users\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\committee\CommitteEncode.cs">
+    <Compile Include="screens\committee\CommitteeEncode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\committee\CommitteEncode.Designer.cs">
-      <DependentUpon>CommitteEncode.cs</DependentUpon>
+    <Compile Include="screens\committee\CommitteeEncode.Designer.cs">
+      <DependentUpon>CommitteeEncode.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\dashboard\dashboard.cs">
+    <Compile Include="screens\dashboard\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\dashboard\dashboard.Designer.cs">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <Compile Include="screens\dashboard\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\documentIndex\DocumentIndex.cs">
       <SubType>Form</SubType>
@@ -219,11 +251,23 @@
     <Compile Include="screens\ordinance\AddOrdinance.Designer.cs">
       <DependentUpon>AddOrdinance.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\ordinance\IndexReportOrdinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\IndexReportOrdinance.Designer.cs">
+      <DependentUpon>IndexReportOrdinance.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\ordinance\OrdinaceEncode.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="screens\ordinance\OrdinaceEncode.Designer.cs">
       <DependentUpon>OrdinaceEncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\ordinance\UpdateOrdinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\UpdateOrdinance.Designer.cs">
+      <DependentUpon>UpdateOrdinance.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\resolution\AddResolution.cs">
       <SubType>Form</SubType>
@@ -231,17 +275,29 @@
     <Compile Include="screens\resolution\AddResolution.Designer.cs">
       <DependentUpon>AddResolution.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\resolution\IndexReportResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\IndexReportResolution.Designer.cs">
+      <DependentUpon>IndexReportResolution.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\resolution\ResoluionEncode.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="screens\resolution\ResoluionEncode.Designer.cs">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\sbOfficial\SbOfficialEncode.cs">
+    <Compile Include="screens\resolution\UpdateResolution.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\sbOfficial\SbOfficialEncode.Designer.cs">
-      <DependentUpon>SbOfficialEncode.cs</DependentUpon>
+    <Compile Include="screens\resolution\UpdateResolution.Designer.cs">
+      <DependentUpon>UpdateResolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbOrganizationalChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbOrganizationalChart.Designer.cs">
+      <DependentUpon>SbOrganizationalChart.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\tricycle\AddFranchise.cs">
       <SubType>Form</SubType>
@@ -255,14 +311,9 @@
     <Compile Include="screens\tricycle\TricycleEncode.Designer.cs">
       <DependentUpon>TricycleEncode.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\users\UserManagementEncode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="screens\users\UserManagementEncode.Designer.cs">
-      <DependentUpon>UserManagementEncode.cs</DependentUpon>
-    </Compile>
     <Compile Include="services\account\Account.cs" />
     <Compile Include="services\appropriation\Appropriations.cs" />
+    <Compile Include="services\committee\Committee.cs" />
     <Compile Include="services\controls\ControlsServices.cs" />
     <Compile Include="services\ordinance\Ordinances.cs" />
     <Compile Include="services\resolution\Resolutions.cs" />
@@ -287,6 +338,9 @@
     <EmbeddedResource Include="screens\auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\committee\CommitteeEncode.resx">
+      <DependentUpon>CommitteeEncode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\manageAccount\ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,14 +350,35 @@
     <EmbeddedResource Include="screens\createAccount\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\manageAccount\UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\committee\SbAddCommittee.resx">
+      <DependentUpon>SbAddCommittee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sbOfficial\SbOfficialEncode.resx">
+      <DependentUpon>SbOfficialEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\committee\SbUpdateCommittee.resx">
+      <DependentUpon>SbUpdateCommittee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sbOfficial\SbAddOfficials.resx">
+      <DependentUpon>SbAddOfficials.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\splash\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\users\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="screens\users\UserSettings.resx">
-      <DependentUpon>UserSettings.cs</DependentUpon>
+    <EmbeddedResource Include="screens\users\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\dashboard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\electronic\Electronic.resx">
+      <DependentUpon>Electronic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\mainPanel\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>
@@ -311,17 +386,29 @@
     <EmbeddedResource Include="screens\ordinance\AddOrdinance.resx">
       <DependentUpon>AddOrdinance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\IndexReportOrdinance.resx">
+      <DependentUpon>IndexReportOrdinance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\ordinance\OrdinaceEncode.resx">
       <DependentUpon>OrdinaceEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\UpdateOrdinance.resx">
+      <DependentUpon>UpdateOrdinance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\AddResolution.resx">
       <DependentUpon>AddResolution.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\IndexReportResolution.resx">
+      <DependentUpon>IndexReportResolution.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\ResoluionEncode.resx">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="screens\sbOfficial\SbOfficialEncode.resx">
-      <DependentUpon>SbOfficialEncode.cs</DependentUpon>
+    <EmbeddedResource Include="screens\resolution\UpdateResolution.resx">
+      <DependentUpon>UpdateResolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sbOfficial\SbOrganizationalChart.resx">
+      <DependentUpon>SbOrganizationalChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\tricycle\AddFranchise.resx">
       <DependentUpon>AddFranchise.cs</DependentUpon>
@@ -346,6 +433,13 @@
   <ItemGroup>
     <None Include="Resources\splash.jpg" />
     <None Include="Resources\HACKDogs-2 %282%29.PNG" />
+    <None Include="Resources\profile1.png" />
+    <None Include="Resources\icons8-add-100.png" />
+    <None Include="Resources\icons8-write-100.png" />
+    <None Include="Resources\icons8-refresh-100.png" />
+    <None Include="Resources\icons8-trash-100.png" />
+    <None Include="Resources\icons8-print-100.png" />
+    <None Include="Resources\icons8-view-100.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

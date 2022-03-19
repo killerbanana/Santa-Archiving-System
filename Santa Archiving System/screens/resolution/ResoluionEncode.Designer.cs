@@ -157,6 +157,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = global::Santa_Archiving_System.Properties.Resources.icons8_refresh_100;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.Location = new System.Drawing.Point(206, 97);
             this.guna2Button1.Name = "guna2Button1";
@@ -165,6 +166,7 @@
             this.guna2Button1.TabIndex = 30;
             this.guna2Button1.Text = "Refresh";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // btn_delete
             // 
@@ -176,6 +178,7 @@
             this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
             this.btn_delete.HoverState.Parent = this.btn_delete;
+            this.btn_delete.Image = global::Santa_Archiving_System.Properties.Resources.icons8_trash_100;
             this.btn_delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_delete.Location = new System.Drawing.Point(317, 97);
             this.btn_delete.Name = "btn_delete";
@@ -184,6 +187,7 @@
             this.btn_delete.TabIndex = 29;
             this.btn_delete.Text = "Delete";
             this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_update
             // 
@@ -195,6 +199,7 @@
             this.btn_update.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
             this.btn_update.HoverState.Parent = this.btn_update;
+            this.btn_update.Image = global::Santa_Archiving_System.Properties.Resources.icons8_write_100;
             this.btn_update.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_update.Location = new System.Drawing.Point(96, 97);
             this.btn_update.Name = "btn_update";
@@ -203,6 +208,7 @@
             this.btn_update.TabIndex = 29;
             this.btn_update.Text = "Update";
             this.btn_update.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_add
             // 
@@ -214,6 +220,7 @@
             this.btn_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.White;
             this.btn_add.HoverState.Parent = this.btn_add;
+            this.btn_add.Image = global::Santa_Archiving_System.Properties.Resources.icons8_add_100;
             this.btn_add.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_add.Location = new System.Drawing.Point(3, 97);
             this.btn_add.Name = "btn_add";
@@ -335,10 +342,10 @@
             // 
             this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(461, 287);
+            this.loading1.Location = new System.Drawing.Point(490, 259);
             this.loading1.Name = "loading1";
             this.loading1.Size = new System.Drawing.Size(72, 74);
-            this.loading1.TabIndex = 29;
+            this.loading1.TabIndex = 30;
             // 
             // ResoluionEncode
             // 

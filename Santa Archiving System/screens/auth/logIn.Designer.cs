@@ -91,12 +91,12 @@
             this.tb_password.Location = new System.Drawing.Point(33, 215);
             this.tb_password.Margin = new System.Windows.Forms.Padding(5);
             this.tb_password.Name = "tb_password";
-            this.tb_password.PasswordChar = '\0';
+            this.tb_password.PasswordChar = '*';
             this.tb_password.PlaceholderText = "";
             this.tb_password.SelectedText = "";
             this.tb_password.ShadowDecoration.Parent = this.tb_password;
             this.tb_password.Size = new System.Drawing.Size(357, 47);
-            this.tb_password.TabIndex = 5;
+            this.tb_password.TabIndex = 1;
             // 
             // tb_username
             // 
@@ -120,7 +120,7 @@
             this.tb_username.SelectedText = "";
             this.tb_username.ShadowDecoration.Parent = this.tb_username;
             this.tb_username.Size = new System.Drawing.Size(360, 47);
-            this.tb_username.TabIndex = 5;
+            this.tb_username.TabIndex = 0;
             // 
             // label2
             // 
@@ -136,6 +136,7 @@
             // 
             this.btn_login.BorderRadius = 10;
             this.btn_login.CheckedState.Parent = this.btn_login;
+            this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login.CustomImages.Parent = this.btn_login;
             this.btn_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -146,6 +147,7 @@
             this.btn_login.ShadowDecoration.Parent = this.btn_login;
             this.btn_login.Size = new System.Drawing.Size(358, 45);
             this.btn_login.TabIndex = 4;
+            this.btn_login.TabStop = false;
             this.btn_login.Text = "Log In";
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
@@ -194,7 +196,7 @@
             this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "login";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
