@@ -59,7 +59,7 @@ namespace Santa_Archiving_System.screens.ordinance
                             await LoadDataTableReadingOnline("3rd Reading");
                             break;
                         case "PDF":
-
+                            guna2DataGridView1.DataSource = await Ordinances.getPdfOnline(".pdf");
                             break;
                         default:
                             await LoadDataTableOnline();
@@ -87,6 +87,9 @@ namespace Santa_Archiving_System.screens.ordinance
                         break;
                     case "Third Reading":
                         await LoadDataTableReading("3rd Reading");
+                        break;
+                    case "PDF":
+                        guna2DataGridView1.DataSource = await Ordinances.getPdf(".pdf");
                         break;
                     default:
                         await LoadDataTable();

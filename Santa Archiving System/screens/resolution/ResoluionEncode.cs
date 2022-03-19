@@ -206,6 +206,7 @@ namespace Santa_Archiving_System.screens.resolution
                         await Resolutions.DeleteResolutionOnline(resolution.Id.ToString());
                         MessageBox.Show("File Deleted");
                         loading1.Visible = false;
+                        await LoadDataTableOnline();
                     }
                 }
             }
@@ -216,6 +217,9 @@ namespace Santa_Archiving_System.screens.resolution
 
         }
 
-  
+        private void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
