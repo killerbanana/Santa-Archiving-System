@@ -1,5 +1,7 @@
 ﻿using Santa_Archiving_System.common;
 using Santa_Archiving_System.models;
+using Santa_Archiving_System.services.controls;
+using Santa_Archiving_System.services.resolution;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,101 +18,81 @@ namespace Santa_Archiving_System.screens.resolution
 {
     public partial class AddResolution : Form
     {
-        public AddResolution()
+        Resolution resolution;
+        public AddResolution(Resolution data)
         {
+            this.resolution = data;
             InitializeComponent();
         }
     
-        Ordinance ord = new Ordinance();
+        
 
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
-            if (Constants.filePath == string.Empty)
+            ResoluionEncode resoluionEncode = (ResoluionEncode)Application.OpenForms["ResoluionEncode"];
+            if (fileName.Text == string.Empty || resolutionNumber.Text == string.Empty || series.Text == string.Empty)
             {
-                MessageBox.Show("File can't be empty!");
+                MessageBox.Show("Fill all required fields!");
                 return;
             }
-
-            String query = "INSERT INTO Resolution([Resolution No], Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Resolution,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
-
-            using (Stream stream = File.OpenRead(Constants.filePath))
+            loading1.Visible = true;
+            if (ControlsServices.CheckIfOnline())
             {
-                byte[] buffer = new byte[stream.Length];
-                stream.Read(buffer, 0, buffer.Length);
+                await Resolutions.SaveResolutionData(
+                    resolutionNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text);
 
-                string[] sizes = { "B", "KB", "MB", "GB", "TB" };
-                double len = new FileInfo(Constants.filePath).Length;
-                int order = 0;
-                while (len >= 1024 && order < sizes.Length - 1)
-                {
-                    order++;
-                    len = len / 1024;
-                }
+                await Resolutions.SaveResolutionDataOnline(
+                    resolutionNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text);
 
-                // Adjust the format string to your preferences. For example "{0:0.#}{1}" would
-                // show a single decimal place, and no space.
-                string resultSize = String.Format("{0:0.##} {1}", len, sizes[order]);
-
-
-                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
-                {
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@Resolution", SqlDbType.VarChar).Value = resolutionNumber.Text;
-                    cmd.Parameters.AddWithValue("@Series", SqlDbType.VarChar).Value = series.Text;
-                    cmd.Parameters.AddWithValue("@Date", SqlDbType.VarChar).Value = date.Text;
-                    cmd.Parameters.AddWithValue("@Title", SqlDbType.VarChar).Value = title.Text;
-                    cmd.Parameters.AddWithValue("@Author", SqlDbType.VarChar).Value = author.Text;
-                    cmd.Parameters.AddWithValue("@Files", SqlDbType.VarBinary).Value = buffer;
-                    cmd.Parameters.AddWithValue("@Time", SqlDbType.VarChar).Value = time.Text + " " + ampm.Text;
-                    cmd.Parameters.AddWithValue("@Type", SqlDbType.VarChar).Value = Constants.ext;
-                    cmd.Parameters.AddWithValue("@Size", SqlDbType.VarChar).Value = resultSize;
-                    cmd.Parameters.AddWithValue("@Tag", SqlDbType.VarBinary).Value = tag.Text;
-                    cmd.Parameters.AddWithValue("@Reading", SqlDbType.VarBinary).Value = reading_cb.Text;
-
-                    con.Open();
-
-                    loading.Visible = true;
-
-                    IAsyncResult result = cmd.BeginExecuteNonQuery();
-
-                    while (!result.IsCompleted)
-                    {
-
-                    }
-
-
-
-                    await Task.Run(() => {
-                        cmd.EndExecuteNonQuery(result);
-                    });
-
-                    con.Close();
-                    loading.Visible = false;
-                    
-
-                    switch (ord.Reading)
-                    {
-                        case "Encode":
-                            this.Close();
-                            break;
-                        case "First Reading":
-                            this.Close();
-                            break;
-                        case "Second Reading":
-                            this.Close();
-                            break;
-                        case "Third Reading":
-                            this.Close();
-                            break;
-                    }
-
-                }
+                loading1.Visible = false;
+                MessageBox.Show("Successfully Added");
+                this.Close();
+                await resoluionEncode.LoadDataTableOnline();
+            }
+            else {
+                await Resolutions.SaveResolutionData(
+                    resolutionNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text);
+                MessageBox.Show("Successfully Added");
+                this.Close();
+                await resoluionEncode.LoadDataTable();
             }
         }
 
         private void AddResolution_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(ord.Reading);
+            reading_cb.SelectedIndex = 0;
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var filename = ControlsServices.OpenFileDialog();
+            fileName.Text = filename;
+        }
+
+      
     }
 }

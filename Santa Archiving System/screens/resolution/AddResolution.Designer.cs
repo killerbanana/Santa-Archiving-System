@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.reading_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tag = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.loading = new Guna.UI2.WinForms.Guna2ProgressIndicator();
             this.ampm = new Guna.UI2.WinForms.Guna2ComboBox();
             this.time = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -57,6 +56,14 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.loading1 = new Santa_Archiving_System.common.loading();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btn_scan = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,14 +81,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(20, 673);
             this.panel4.TabIndex = 6;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(598, 20);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 673);
-            this.panel5.TabIndex = 7;
             // 
             // panel2
             // 
@@ -157,17 +156,6 @@
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(33, 23);
             this.guna2HtmlLabel9.TabIndex = 81;
             this.guna2HtmlLabel9.Text = "Tag";
-            // 
-            // loading
-            // 
-            this.loading.AutoStart = true;
-            this.loading.BackColor = System.Drawing.Color.White;
-            this.loading.CircleSize = 1F;
-            this.loading.Location = new System.Drawing.Point(269, 287);
-            this.loading.Name = "loading";
-            this.loading.Size = new System.Drawing.Size(90, 90);
-            this.loading.TabIndex = 80;
-            this.loading.Visible = false;
             // 
             // ampm
             // 
@@ -352,12 +340,13 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(436, 107);
+            this.guna2Button1.Location = new System.Drawing.Point(421, 107);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(141, 36);
+            this.guna2Button1.Size = new System.Drawing.Size(85, 36);
             this.guna2Button1.TabIndex = 72;
             this.guna2Button1.Text = "Browse";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // title
             // 
@@ -437,7 +426,7 @@
             this.fileName.ReadOnly = true;
             this.fileName.SelectedText = "";
             this.fileName.ShadowDecoration.Parent = this.fileName;
-            this.fileName.Size = new System.Drawing.Size(391, 36);
+            this.fileName.Size = new System.Drawing.Size(376, 36);
             this.fileName.TabIndex = 59;
             // 
             // guna2HtmlLabel5
@@ -493,17 +482,97 @@
             this.guna2HtmlLabel1.TabIndex = 66;
             this.guna2HtmlLabel1.Text = "New Resolution Data";
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.TargetControl = this;
+            // 
+            // loading1
+            // 
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(263, 304);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(71, 70);
+            this.loading1.TabIndex = 84;
+            this.loading1.Visible = false;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 30;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(598, 20);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(20, 673);
+            this.panel5.TabIndex = 7;
+            // 
+            // guna2HtmlLabel12
+            // 
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel12.ForeColor = System.Drawing.Color.Red;
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(72, 76);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(9, 23);
+            this.guna2HtmlLabel12.TabIndex = 143;
+            this.guna2HtmlLabel12.Text = "*";
+            // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.Red;
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(157, 157);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(9, 23);
+            this.guna2HtmlLabel11.TabIndex = 144;
+            this.guna2HtmlLabel11.Text = "*";
+            // 
+            // guna2HtmlLabel13
+            // 
+            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.Red;
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(365, 157);
+            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(9, 23);
+            this.guna2HtmlLabel13.TabIndex = 145;
+            this.guna2HtmlLabel13.Text = "*";
+            // 
+            // btn_scan
+            // 
+            this.btn_scan.BorderRadius = 5;
+            this.btn_scan.CheckedState.Parent = this.btn_scan;
+            this.btn_scan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_scan.CustomImages.Parent = this.btn_scan;
+            this.btn_scan.FillColor = System.Drawing.Color.Green;
+            this.btn_scan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_scan.ForeColor = System.Drawing.Color.White;
+            this.btn_scan.HoverState.Parent = this.btn_scan;
+            this.btn_scan.Location = new System.Drawing.Point(512, 107);
+            this.btn_scan.Name = "btn_scan";
+            this.btn_scan.ShadowDecoration.Parent = this.btn_scan;
+            this.btn_scan.Size = new System.Drawing.Size(79, 36);
+            this.btn_scan.TabIndex = 175;
+            this.btn_scan.Text = "Scan";
+            // 
             // AddResolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 693);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_scan);
+            this.Controls.Add(this.guna2HtmlLabel13);
+            this.Controls.Add(this.guna2HtmlLabel11);
+            this.Controls.Add(this.guna2HtmlLabel12);
+            this.Controls.Add(this.loading1);
             this.Controls.Add(this.reading_cb);
             this.Controls.Add(this.guna2HtmlLabel10);
             this.Controls.Add(this.tag);
             this.Controls.Add(this.guna2HtmlLabel9);
-            this.Controls.Add(this.loading);
             this.Controls.Add(this.ampm);
             this.Controls.Add(this.time);
             this.Controls.Add(this.guna2HtmlLabel8);
@@ -528,8 +597,9 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddResolution";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.AddResolution_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -540,13 +610,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2ComboBox reading_cb;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2TextBox tag;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2ProgressIndicator loading;
         private Guna.UI2.WinForms.Guna2ComboBox ampm;
         private Guna.UI2.WinForms.Guna2TextBox time;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
@@ -567,5 +635,13 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private common.loading loading1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Panel panel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private Guna.UI2.WinForms.Guna2Button btn_scan;
     }
 }

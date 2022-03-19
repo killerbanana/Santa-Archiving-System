@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,32 +48,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
-      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
-    </Reference>
-    <Reference Include="Guna.UI2">
-      <HintPath>..\..\..\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
-    </Reference>
-    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
-    </Reference>
-    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
-    </Reference>
-    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -83,16 +70,7 @@
       <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -106,6 +84,9 @@
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
+    <Reference Include="WordToPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WordToPDF.1.0.0\lib\net452\WordToPDF.dll</HintPath>
+    </Reference>
     <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\ZstdNet.dll</HintPath>
     </Reference>
@@ -118,6 +99,7 @@
     <Compile Include="common\loading.Designer.cs">
       <DependentUpon>loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,17 +107,30 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="models\account.cs" />
-    <Compile Include="models\appropriation.cs" />
-    <Compile Include="models\committee.cs" />
+    <Compile Include="models\Appropriation.cs" />
+    <Compile Include="models\committees.cs" />
     <Compile Include="models\electronic.cs" />
     <Compile Include="models\indexmanagement.cs" />
     <Compile Include="models\legislativedocument.cs" />
+    <Compile Include="models\loginCredentials.cs" />
     <Compile Include="models\Ordinance.cs" />
-    <Compile Include="models\resolution.cs" />
+    <Compile Include="models\Resolution.cs" />
     <Compile Include="models\sb.cs" />
-    <Compile Include="models\tricycle.cs" />
+    <Compile Include="models\Tricycle.cs" />
+    <Compile Include="models\updateAccount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="screens\appropriation\AddAppropriation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\appropriation\AddAppropriation.Designer.cs">
+      <DependentUpon>AddAppropriation.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\appropriation\AppropriationEncode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,23 +143,83 @@
     <Compile Include="screens\auth\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\auth\Register.cs">
+    <Compile Include="screens\manageAccount\ManageUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\auth\Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
+    <Compile Include="screens\manageAccount\ManageUser.Designer.cs">
+      <DependentUpon>ManageUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\committee\CommitteEncode.cs">
+    <Compile Include="screens\createAccount\Privilege.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\committee\CommitteEncode.Designer.cs">
-      <DependentUpon>CommitteEncode.cs</DependentUpon>
+    <Compile Include="screens\createAccount\Privilege.Designer.cs">
+      <DependentUpon>Privilege.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\dashboard\dashboard.cs">
+    <Compile Include="screens\createAccount\Registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\dashboard\dashboard.Designer.cs">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <Compile Include="screens\createAccount\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\manageAccount\UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\manageAccount\UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\committee\SbAddCommittee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\committee\SbAddCommittee.Designer.cs">
+      <DependentUpon>SbAddCommittee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbOfficialEncode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbOfficialEncode.Designer.cs">
+      <DependentUpon>SbOfficialEncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\committee\SbUpdateCommittee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\committee\SbUpdateCommittee.Designer.cs">
+      <DependentUpon>SbUpdateCommittee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbAddOfficials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbAddOfficials.Designer.cs">
+      <DependentUpon>SbAddOfficials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\splash\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\splash\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\users\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\users\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\users\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\users\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\committee\CommitteeEncode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\committee\CommitteeEncode.Designer.cs">
+      <DependentUpon>CommitteeEncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\dashboard\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\dashboard\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\documentIndex\DocumentIndex.cs">
       <SubType>Form</SubType>
@@ -190,11 +245,29 @@
     <Compile Include="screens\mainPanel\MainPanel.Designer.cs">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\ordinance\AddOrdinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\AddOrdinance.Designer.cs">
+      <DependentUpon>AddOrdinance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\ordinance\IndexReportOrdinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\IndexReportOrdinance.Designer.cs">
+      <DependentUpon>IndexReportOrdinance.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\ordinance\OrdinaceEncode.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="screens\ordinance\OrdinaceEncode.Designer.cs">
       <DependentUpon>OrdinaceEncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\ordinance\UpdateOrdinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\UpdateOrdinance.Designer.cs">
+      <DependentUpon>UpdateOrdinance.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\resolution\AddResolution.cs">
       <SubType>Form</SubType>
@@ -202,17 +275,35 @@
     <Compile Include="screens\resolution\AddResolution.Designer.cs">
       <DependentUpon>AddResolution.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\resolution\IndexReportResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\IndexReportResolution.Designer.cs">
+      <DependentUpon>IndexReportResolution.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\resolution\ResoluionEncode.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="screens\resolution\ResoluionEncode.Designer.cs">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\sbOfficial\SbOfficialEncode.cs">
+    <Compile Include="screens\resolution\UpdateResolution.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="screens\sbOfficial\SbOfficialEncode.Designer.cs">
-      <DependentUpon>SbOfficialEncode.cs</DependentUpon>
+    <Compile Include="screens\resolution\UpdateResolution.Designer.cs">
+      <DependentUpon>UpdateResolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbOrganizationalChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbOrganizationalChart.Designer.cs">
+      <DependentUpon>SbOrganizationalChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\tricycle\AddFranchise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\tricycle\AddFranchise.Designer.cs">
+      <DependentUpon>AddFranchise.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\tricycle\TricycleEncode.cs">
       <SubType>Form</SubType>
@@ -220,13 +311,14 @@
     <Compile Include="screens\tricycle\TricycleEncode.Designer.cs">
       <DependentUpon>TricycleEncode.cs</DependentUpon>
     </Compile>
-    <Compile Include="screens\users\UserManagementEncode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="screens\users\UserManagementEncode.Designer.cs">
-      <DependentUpon>UserManagementEncode.cs</DependentUpon>
-    </Compile>
+    <Compile Include="services\account\Account.cs" />
+    <Compile Include="services\appropriation\Appropriations.cs" />
+    <Compile Include="services\committee\Committee.cs" />
+    <Compile Include="services\controls\ControlsServices.cs" />
+    <Compile Include="services\Officials\Officials.cs" />
+    <Compile Include="services\ordinance\Ordinances.cs" />
     <Compile Include="services\resolution\Resolutions.cs" />
+    <Compile Include="services\tricycle\Tricycles.cs" />
     <EmbeddedResource Include="common\loading.resx">
       <DependentUpon>loading.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,28 +327,95 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="screens\appropriation\AddAppropriation.resx">
+      <DependentUpon>AddAppropriation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\appropriation\AppropriationEncode.resx">
+      <DependentUpon>AppropriationEncode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="screens\auth\Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
+    <EmbeddedResource Include="screens\committee\CommitteeEncode.resx">
+      <DependentUpon>CommitteeEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\manageAccount\ManageUser.resx">
+      <DependentUpon>ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\createAccount\Privilege.resx">
+      <DependentUpon>Privilege.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\createAccount\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\manageAccount\UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\committee\SbAddCommittee.resx">
+      <DependentUpon>SbAddCommittee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sbOfficial\SbOfficialEncode.resx">
+      <DependentUpon>SbOfficialEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\committee\SbUpdateCommittee.resx">
+      <DependentUpon>SbUpdateCommittee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sbOfficial\SbAddOfficials.resx">
+      <DependentUpon>SbAddOfficials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\splash\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\users\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\users\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\dashboard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\electronic\Electronic.resx">
+      <DependentUpon>Electronic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\mainPanel\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\AddOrdinance.resx">
+      <DependentUpon>AddOrdinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\IndexReportOrdinance.resx">
+      <DependentUpon>IndexReportOrdinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\OrdinaceEncode.resx">
+      <DependentUpon>OrdinaceEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\UpdateOrdinance.resx">
+      <DependentUpon>UpdateOrdinance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\AddResolution.resx">
       <DependentUpon>AddResolution.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\IndexReportResolution.resx">
+      <DependentUpon>IndexReportResolution.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\ResoluionEncode.resx">
       <DependentUpon>ResoluionEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\UpdateResolution.resx">
+      <DependentUpon>UpdateResolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sbOfficial\SbOrganizationalChart.resx">
+      <DependentUpon>SbOrganizationalChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\tricycle\AddFranchise.resx">
+      <DependentUpon>AddFranchise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\tricycle\TricycleEncode.resx">
+      <DependentUpon>TricycleEncode.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -272,11 +431,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\import.png" />
-    <None Include="Resources\import_white.png" />
-    <None Include="Resources\download_white.png" />
+    <None Include="Resources\splash.jpg" />
+    <None Include="Resources\HACKDogs-2 %282%29.PNG" />
+    <None Include="Resources\profile1.png" />
+    <None Include="Resources\icons8-add-100.png" />
+    <None Include="Resources\icons8-write-100.png" />
+    <None Include="Resources\icons8-refresh-100.png" />
+    <None Include="Resources\icons8-trash-100.png" />
+    <None Include="Resources\icons8-print-100.png" />
+    <None Include="Resources\icons8-view-100.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -284,6 +448,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>SantaLocalDb.mdf</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.png" />
+    <None Include="Resources\import_white.png" />
+    <None Include="Resources\download_white.png" />
+    <None Include="Resources\gudetama_vox.0.jpg" />
+    <None Include="Resources\edit white.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -297,5 +468,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
