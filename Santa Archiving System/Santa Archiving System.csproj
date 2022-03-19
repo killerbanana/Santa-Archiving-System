@@ -23,11 +23,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/blob/josh_branch/published/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/blob/josh_branch/published/</UpdateUrl>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/tree/josh_branch/published/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/tree/josh_branch/published/</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
