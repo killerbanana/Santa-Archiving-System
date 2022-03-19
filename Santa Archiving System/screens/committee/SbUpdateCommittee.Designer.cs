@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.loading1 = new Santa_Archiving_System.common.loading();
             this.clb_members = new System.Windows.Forms.CheckedListBox();
             this.cb_vc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cb_chair = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cb_to = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_title = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btn_create = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_update = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cb_from = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -50,17 +49,8 @@
             this.lbl_vc = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_desc = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_info = new System.Windows.Forms.Label();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             this.SuspendLayout();
-            // 
-            // loading1
-            // 
-            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(378, 191);
-            this.loading1.Name = "loading1";
-            this.loading1.Size = new System.Drawing.Size(72, 74);
-            this.loading1.TabIndex = 269;
-            this.loading1.Visible = false;
             // 
             // clb_members
             // 
@@ -98,6 +88,7 @@
             this.cb_vc.Size = new System.Drawing.Size(357, 36);
             this.cb_vc.TabIndex = 268;
             this.cb_vc.TabStop = false;
+            this.cb_vc.SelectedIndexChanged += new System.EventHandler(this.cb_vc_SelectedIndexChanged);
             // 
             // cb_chair
             // 
@@ -122,6 +113,7 @@
             this.cb_chair.Size = new System.Drawing.Size(354, 36);
             this.cb_chair.TabIndex = 267;
             this.cb_chair.TabStop = false;
+            this.cb_chair.SelectedIndexChanged += new System.EventHandler(this.cb_chair_SelectedIndexChanged);
             // 
             // cb_to
             // 
@@ -170,22 +162,23 @@
             this.lbl_title.TabStop = false;
             this.lbl_title.Text = "*";
             // 
-            // btn_create
+            // btn_update
             // 
-            this.btn_create.BorderRadius = 10;
-            this.btn_create.CheckedState.Parent = this.btn_create;
-            this.btn_create.CustomImages.Parent = this.btn_create;
-            this.btn_create.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_create.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_create.ForeColor = System.Drawing.Color.White;
-            this.btn_create.HoverState.Parent = this.btn_create;
-            this.btn_create.Location = new System.Drawing.Point(461, 396);
-            this.btn_create.Name = "btn_create";
-            this.btn_create.ShadowDecoration.Parent = this.btn_create;
-            this.btn_create.Size = new System.Drawing.Size(354, 45);
-            this.btn_create.TabIndex = 260;
-            this.btn_create.TabStop = false;
-            this.btn_create.Text = "Update";
+            this.btn_update.BorderRadius = 10;
+            this.btn_update.CheckedState.Parent = this.btn_update;
+            this.btn_update.CustomImages.Parent = this.btn_update;
+            this.btn_update.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_update.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_update.ForeColor = System.Drawing.Color.White;
+            this.btn_update.HoverState.Parent = this.btn_update;
+            this.btn_update.Location = new System.Drawing.Point(461, 396);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.ShadowDecoration.Parent = this.btn_update;
+            this.btn_update.Size = new System.Drawing.Size(354, 45);
+            this.btn_update.TabIndex = 260;
+            this.btn_update.TabStop = false;
+            this.btn_update.Text = "Update";
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // guna2HtmlLabel7
             // 
@@ -266,6 +259,7 @@
             this.tb_desc.ShadowDecoration.Parent = this.tb_desc;
             this.tb_desc.Size = new System.Drawing.Size(354, 36);
             this.tb_desc.TabIndex = 253;
+            this.tb_desc.TextChanged += new System.EventHandler(this.tb_desc_TextChanged);
             // 
             // guna2HtmlLabel2
             // 
@@ -311,6 +305,7 @@
             this.tb_title.ShadowDecoration.Parent = this.tb_title;
             this.tb_title.Size = new System.Drawing.Size(354, 36);
             this.tb_title.TabIndex = 249;
+            this.tb_title.TextChanged += new System.EventHandler(this.tb_title_TextChanged);
             // 
             // guna2HtmlLabel4
             // 
@@ -383,6 +378,16 @@
             this.lbl_info.Text = "Please select year to show members";
             this.lbl_info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // loading1
+            // 
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(378, 191);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(72, 74);
+            this.loading1.TabIndex = 269;
+            this.loading1.Visible = false;
+            // 
             // SbUpdateCommittee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,7 +401,7 @@
             this.Controls.Add(this.cb_to);
             this.Controls.Add(this.guna2HtmlLabel8);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.btn_create);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.guna2HtmlLabel7);
             this.Controls.Add(this.cb_from);
             this.Controls.Add(this.guna2HtmlLabel6);
@@ -411,7 +416,11 @@
             this.Controls.Add(this.lbl_vc);
             this.Controls.Add(this.lbl_desc);
             this.Controls.Add(this.lbl_info);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SbUpdateCommittee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Update Committee";
             this.Load += new System.EventHandler(this.SbUpdateCommittee_Load);
             this.ResumeLayout(false);
@@ -428,7 +437,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cb_to;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_title;
-        private Guna.UI2.WinForms.Guna2Button btn_create;
+        private Guna.UI2.WinForms.Guna2Button btn_update;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2ComboBox cb_from;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;

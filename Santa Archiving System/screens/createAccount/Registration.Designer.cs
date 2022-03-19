@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this._thePanel = new System.Windows.Forms.Panel();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             this.tb_suffix = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -69,7 +70,6 @@
             this.lbl_middleName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_password = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_confirmPassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.loading1 = new Santa_Archiving_System.common.loading();
             this._thePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).BeginInit();
             this.SuspendLayout();
@@ -121,6 +121,16 @@
             this._thePanel.Name = "_thePanel";
             this._thePanel.Size = new System.Drawing.Size(839, 612);
             this._thePanel.TabIndex = 112;
+            // 
+            // loading1
+            // 
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(373, 269);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(72, 74);
+            this.loading1.TabIndex = 217;
+            this.loading1.Visible = false;
             // 
             // tb_suffix
             // 
@@ -400,6 +410,7 @@
             this.tb_contactNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_contactNo.HoverState.Parent = this.tb_contactNo;
             this.tb_contactNo.Location = new System.Drawing.Point(247, 563);
+            this.tb_contactNo.MaxLength = 11;
             this.tb_contactNo.Name = "tb_contactNo";
             this.tb_contactNo.PasswordChar = '\0';
             this.tb_contactNo.PlaceholderText = "";
@@ -733,16 +744,6 @@
             this.lbl_confirmPassword.TabIndex = 143;
             this.lbl_confirmPassword.TabStop = false;
             this.lbl_confirmPassword.Text = "*";
-            // 
-            // loading1
-            // 
-            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(373, 269);
-            this.loading1.Name = "loading1";
-            this.loading1.Size = new System.Drawing.Size(72, 74);
-            this.loading1.TabIndex = 217;
-            this.loading1.Visible = false;
             // 
             // Registration
             // 

@@ -226,7 +226,7 @@
             this.btn_create.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_create.ForeColor = System.Drawing.Color.White;
             this.btn_create.HoverState.Parent = this.btn_create;
-            this.btn_create.Location = new System.Drawing.Point(461, 395);
+            this.btn_create.Location = new System.Drawing.Point(462, 395);
             this.btn_create.Name = "btn_create";
             this.btn_create.ShadowDecoration.Parent = this.btn_create;
             this.btn_create.Size = new System.Drawing.Size(354, 45);

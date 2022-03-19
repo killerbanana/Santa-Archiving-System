@@ -222,7 +222,7 @@ namespace Santa_Archiving_System.services.account
                     cmd.Parameters.AddWithValue("@Privilege", SqlDbType.VarChar).Value = string.Join(",", privilege);
                     cmd.Parameters.AddWithValue("@Username", SqlDbType.VarChar).Value = username;
                     cmd.Parameters.AddWithValue("@Password", SqlDbType.VarChar).Value = password;
-                    cmd.Parameters.AddWithValue("@Image", SqlDbType.VarChar).Value = ImageData;
+                    cmd.Parameters.AddWithValue("@Image", SqlDbType.VarBinary).Value = ImageData;
                     cmd.Parameters.AddWithValue("@Status", SqlDbType.VarChar).Value = status;
 
                     con.Open();
@@ -492,7 +492,7 @@ namespace Santa_Archiving_System.services.account
                         {
                             con.Open();
                             cmd.Parameters.AddWithValue("@Username", SqlDbType.VarChar).Value = userName;
-                            cmd.Parameters.AddWithValue("@Image", SqlDbType.VarChar).Value = ImageData;
+                            cmd.Parameters.AddWithValue("@Image", SqlDbType.VarBinary).Value = ImageData;
 
                             cmd.ExecuteNonQuery();
                             con.Close();
@@ -748,5 +748,7 @@ namespace Santa_Archiving_System.services.account
                 throw;
             }
         }
+
+
     }
 }

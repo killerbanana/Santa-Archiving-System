@@ -46,6 +46,7 @@ namespace Santa_Archiving_System.screens.committee
                 dt_committee.DataSource = await Committee.getCommitteeListOffline(terms);
                 dt_committee.Columns[0].Visible = false;
                 dt_committee.ClearSelection();
+      
             }
             catch (Exception e)
             {
@@ -102,7 +103,7 @@ namespace Santa_Archiving_System.screens.committee
         {
             if (String.IsNullOrWhiteSpace(updateCommittee.Id))
             {
-                MessageBox.Show("Please select account to update", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select committee to update", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -131,9 +132,9 @@ namespace Santa_Archiving_System.screens.committee
         private async void cb_terms_SelectedIndexChanged(object sender, EventArgs e)
         {
             terms = cb_terms.SelectedItem.ToString();
-           
-            if(terms != string.Empty)
+            if (terms != string.Empty)
             {
+               
                 loading1.Visible = true;
                 if (ControlsServices.CheckIfOnline())
                 {
@@ -146,6 +147,103 @@ namespace Santa_Archiving_System.screens.committee
                 loading1.Visible = false;
             }
            
+        }
+
+        private async void btn_refresh_Click(object sender, EventArgs e)
+        {
+            loading1.Visible = true;
+          
+            if (terms != string.Empty)
+            {
+               
+                loading1.Visible = true;
+                if (ControlsServices.CheckIfOnline())
+                {
+                    await LoadDataTableOnline();
+                }
+                else
+                {
+                    await LoadDataTableOffline();
+                }
+                loading1.Visible = false;
+            }
+           
+            loading1.Visible = false;
+        }
+
+        private async void tb_search_TextChanged(object sender, EventArgs e)
+        {
+            if (dt_committee == null || dt_committee.Rows.Count == 0)
+            {
+                if (ControlsServices.CheckIfOnline())
+                {
+                    await LoadDataTableOnline();
+                }
+                else
+                {
+                    await LoadDataTableOffline();
+                }
+            }
+            else
+            {
+                (dt_committee.DataSource as DataTable).DefaultView.RowFilter = string.Format("[Title] LIKE '%{0}%' OR [Chairman] LIKE '%{0}%'  OR [ViceChairman] LIKE '%{0}%' ", tb_search.Text);   
+            }
+        }
+
+        private async void btn_export_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to Upload backup from cloud? This process make up some time.", "Upload", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                loading1.Visible = true;
+                await Committee.ExportData();
+                if (ControlsServices.CheckIfOnline())
+                {
+                    await LoadDataTableOnline();
+                }
+                else
+                {
+                    await LoadDataTableOffline();
+                }
+              
+                loading1.Visible = false;
+            }
+        }
+
+        private async void btn_import_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to download backup from cloud?", "Download", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                loading1.Visible = true;
+                await Committee.ImportCommittee();
+                if (ControlsServices.CheckIfOnline())
+                {
+                    await LoadDataTableOnline();
+                }
+                else
+                {
+                    await LoadDataTableOffline();
+                }
+                loading1.Visible = false;
+            }
+        }
+
+        private async void btn_delete_Click(object sender, EventArgs e)
+        {
+            loading1.Visible = true;
+            if (String.IsNullOrWhiteSpace(updateCommittee.title) || String.IsNullOrWhiteSpace(updateCommittee.terms))
+            {
+                MessageBox.Show("Please select committee to delete", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                await Committee.DeleteCommitteeOnline(updateCommittee.title, updateCommittee.terms);
+                await Committee.DeleteCommitteeOnline(updateCommittee.title, updateCommittee.terms);
+                await LoadDataTableOnline();
+                MessageBox.Show("Successfully deleted!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            loading1.Visible = false;
         }
     }
 }

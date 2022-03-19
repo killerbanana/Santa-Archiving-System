@@ -151,12 +151,15 @@ namespace Santa_Archiving_System.screens.auth
          
         }
 
-        private void tb_searchBox_TextChanged(object sender, EventArgs e)
+        private async void tb_searchBox_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(tb_searchBox.Text))
+            if (dt_users == null || dt_users.Rows.Count == 0)
             {
-
-
+                if (ControlsServices.CheckIfOnline())
+                {
+                    await LoadDataTableOnline();
+                }
+             
             }
             else
             {
@@ -164,6 +167,6 @@ namespace Santa_Archiving_System.screens.auth
             }
         }
 
-     
+      
     }
 }

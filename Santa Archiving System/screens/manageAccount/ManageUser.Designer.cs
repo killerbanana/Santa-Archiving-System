@@ -32,8 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btn_export = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_import = new Guna.UI2.WinForms.Guna2Button();
             this.btn_refresh = new Guna.UI2.WinForms.Guna2Button();
             this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
             this.btn_update = new Guna.UI2.WinForms.Guna2Button();
@@ -53,8 +51,6 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.btn_export);
-            this.panel5.Controls.Add(this.btn_import);
             this.panel5.Controls.Add(this.btn_refresh);
             this.panel5.Controls.Add(this.btn_delete);
             this.panel5.Controls.Add(this.btn_update);
@@ -66,48 +62,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1013, 144);
             this.panel5.TabIndex = 35;
-            // 
-            // btn_export
-            // 
-            this.btn_export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_export.BorderRadius = 5;
-            this.btn_export.CheckedState.Parent = this.btn_export;
-            this.btn_export.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_export.CustomImages.Parent = this.btn_export;
-            this.btn_export.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_export.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_export.ForeColor = System.Drawing.Color.White;
-            this.btn_export.HoverState.Parent = this.btn_export;
-            this.btn_export.Image = global::Santa_Archiving_System.Properties.Resources.import_white;
-            this.btn_export.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_export.Location = new System.Drawing.Point(807, 6);
-            this.btn_export.Name = "btn_export";
-            this.btn_export.ShadowDecoration.Parent = this.btn_export;
-            this.btn_export.Size = new System.Drawing.Size(97, 36);
-            this.btn_export.TabIndex = 34;
-            this.btn_export.Text = "Export";
-            this.btn_export.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // btn_import
-            // 
-            this.btn_import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_import.BorderRadius = 5;
-            this.btn_import.CheckedState.Parent = this.btn_import;
-            this.btn_import.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_import.CustomImages.Parent = this.btn_import;
-            this.btn_import.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_import.ForeColor = System.Drawing.Color.White;
-            this.btn_import.HoverState.Parent = this.btn_import;
-            this.btn_import.Image = global::Santa_Archiving_System.Properties.Resources.download_white;
-            this.btn_import.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_import.Location = new System.Drawing.Point(910, 6);
-            this.btn_import.Name = "btn_import";
-            this.btn_import.ShadowDecoration.Parent = this.btn_import;
-            this.btn_import.Size = new System.Drawing.Size(97, 36);
-            this.btn_import.TabIndex = 33;
-            this.btn_import.Text = "Import";
-            this.btn_import.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btn_refresh
             // 
@@ -335,7 +289,6 @@
             this.dt_users.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dt_users.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dt_users.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dt_users_CellClick);
-        
             // 
             // loading1
             // 
@@ -383,8 +336,6 @@
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2DataGridView dt_users;
         private common.loading loading1;
-        private Guna.UI2.WinForms.Guna2Button btn_export;
-        private Guna.UI2.WinForms.Guna2Button btn_import;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

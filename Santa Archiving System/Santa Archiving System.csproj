@@ -315,6 +315,7 @@
     <Compile Include="services\appropriation\Appropriations.cs" />
     <Compile Include="services\committee\Committee.cs" />
     <Compile Include="services\controls\ControlsServices.cs" />
+    <Compile Include="services\Officials\Officials.cs" />
     <Compile Include="services\ordinance\Ordinances.cs" />
     <Compile Include="services\resolution\Resolutions.cs" />
     <Compile Include="services\tricycle\Tricycles.cs" />

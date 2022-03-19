@@ -124,7 +124,7 @@ namespace Santa_Archiving_System.screens.resolution
 
         private async void btn_export_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to download backup from cloud? This process make up some time.", "Upload", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to upload backup from cloud? This process make up some time.", "Upload", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 loading1.Visible = true;
