@@ -25,9 +25,13 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</InstallUrl>
     <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</UpdateUrl>
+    <SupportUrl>http://www.h4ckdogs.com/</SupportUrl>
+    <ErrorReportUrl>http://www.h4ckdogs.com/</ErrorReportUrl>
+    <ProductName>Santa Archving System</ProductName>
+    <PublisherName>Hackdogs Software Developer Services</PublisherName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
