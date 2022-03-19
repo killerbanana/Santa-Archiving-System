@@ -17,6 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Santa_Archiving_System.screens.appropriation;
 using System.Threading;
 using Santa_Archiving_System.screens.users;
 using Santa_Archiving_System.screens.committee;
@@ -297,7 +298,11 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void guna2Button17_Click(object sender, EventArgs e)
         {
+            Appropriation data = new Appropriation();
+            {
 
+            };
+            openChildForm(new AppropriationEncode(data));
         }
 
         private void guna2Button12_Click(object sender, EventArgs e)
@@ -330,11 +335,11 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void SearchDocumentButton_Click(object sender, EventArgs e)
         {
-            Ordinance data = new Ordinance()
+            Resolution data = new Resolution()
             {
                 Reading = "PDF"
             };
-            openChildForm(new OrdinaceEncode(data));
+            openChildForm(new ResoluionEncode(data));
         }
 
         private void openLogin(object obj)

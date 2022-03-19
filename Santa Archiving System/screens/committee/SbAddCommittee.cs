@@ -1,4 +1,5 @@
-﻿using Santa_Archiving_System.services.committee;
+﻿using Santa_Archiving_System.screens.committee;
+using Santa_Archiving_System.services.committee;
 using Santa_Archiving_System.services.controls;
 using System;
 using System.Collections.Generic;
@@ -136,20 +137,30 @@ namespace Santa_Archiving_System.screens.sbOfficial
                 membersList.Clear();
                 tb_title.Text = String.Empty;
                 tb_desc.Text = String.Empty;
-                cb_chair.Text = String.Empty;
-                cb_vc.Text = String.Empty;
+                cb_chair.SelectedIndex = -1;
+                cb_vc.SelectedIndex = -1;
+                cb_from.SelectedIndex = -1;
+                cb_to.SelectedIndex = -1;
+              
                 try
                 {
-                    for (int i = 0; i < clb_members.Items.Count; i++)
-                    {
-                        clb_members.SetItemChecked(i, false);
-                    }
+                    disable();
+
+
                 }
                 catch (Exception err)
                 {
                     MessageBox.Show(err.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                
+                CommitteeEncode obj = (CommitteeEncode)Application.OpenForms["CommitteeEncode"];
+                if (ControlsServices.CheckIfOnline())
+                {
+                    await obj.LoadDataTableOnline();
+                }
+                else
+                {
+                    await obj.LoadDataTableOffline();
+                }
                 this.UseWaitCursor = false;
             }
         }
@@ -195,6 +206,20 @@ namespace Santa_Archiving_System.screens.sbOfficial
                 await getMembers();
             }
         }
+        private async void disable()
+        {
+            if (cb_from.Text == string.Empty && cb_to.Text == string.Empty)
+            {
+                await getMembers();
+                tb_title.Enabled = false;
+                tb_desc.Enabled = false;
+                cb_chair.Enabled = false;
+                cb_vc.Enabled = false;
+                clb_members.Visible = false;
+            
+               
+            }
+        }
         private void cb_from_SelectedIndexChanged(object sender, EventArgs e)
         {
             enable();
@@ -230,6 +255,6 @@ namespace Santa_Archiving_System.screens.sbOfficial
             }
         }
 
-       
+    
     }
 }

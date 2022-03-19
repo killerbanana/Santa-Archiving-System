@@ -79,7 +79,7 @@ namespace Santa_Archiving_System.screens.resolution
 
         private void AddResolution_Load(object sender, EventArgs e)
         {
-            
+            reading_cb.SelectedIndex = 0;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

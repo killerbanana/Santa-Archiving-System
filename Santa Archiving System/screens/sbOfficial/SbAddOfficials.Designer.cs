@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SbAddOfficials));
-            this.tb_gender = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btn_changePassword = new Guna.UI2.WinForms.Guna2Button();
+            this.cb_gender = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dt_birthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.Ge = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -55,7 +54,7 @@
             this.pb_profile = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.clb_privilege = new System.Windows.Forms.CheckedListBox();
+            this.clb_committee = new System.Windows.Forms.CheckedListBox();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cb_position = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cb_to = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -63,49 +62,38 @@
             this.tb_title = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_firstName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbl_middleName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbl_lastName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbl_info = new System.Windows.Forms.Label();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).BeginInit();
             this.SuspendLayout();
             // 
-            // tb_gender
+            // cb_gender
             // 
-            this.tb_gender.BackColor = System.Drawing.Color.Transparent;
-            this.tb_gender.BorderRadius = 5;
-            this.tb_gender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.tb_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tb_gender.FocusedColor = System.Drawing.Color.Empty;
-            this.tb_gender.FocusedState.Parent = this.tb_gender;
-            this.tb_gender.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.tb_gender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.tb_gender.FormattingEnabled = true;
-            this.tb_gender.HoverState.Parent = this.tb_gender;
-            this.tb_gender.ItemHeight = 30;
-            this.tb_gender.Items.AddRange(new object[] {
+            this.cb_gender.BackColor = System.Drawing.Color.Transparent;
+            this.cb_gender.BorderRadius = 5;
+            this.cb_gender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_gender.Enabled = false;
+            this.cb_gender.FocusedColor = System.Drawing.Color.Empty;
+            this.cb_gender.FocusedState.Parent = this.cb_gender;
+            this.cb_gender.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_gender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cb_gender.FormattingEnabled = true;
+            this.cb_gender.HoverState.Parent = this.cb_gender;
+            this.cb_gender.ItemHeight = 30;
+            this.cb_gender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.tb_gender.ItemsAppearance.Parent = this.tb_gender;
-            this.tb_gender.Location = new System.Drawing.Point(16, 436);
-            this.tb_gender.Name = "tb_gender";
-            this.tb_gender.ShadowDecoration.Parent = this.tb_gender;
-            this.tb_gender.Size = new System.Drawing.Size(167, 36);
-            this.tb_gender.TabIndex = 211;
-            this.tb_gender.TabStop = false;
-            // 
-            // btn_changePassword
-            // 
-            this.btn_changePassword.BorderRadius = 10;
-            this.btn_changePassword.CheckedState.Parent = this.btn_changePassword;
-            this.btn_changePassword.CustomImages.Parent = this.btn_changePassword;
-            this.btn_changePassword.FillColor = System.Drawing.Color.Red;
-            this.btn_changePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_changePassword.ForeColor = System.Drawing.Color.White;
-            this.btn_changePassword.HoverState.Parent = this.btn_changePassword;
-            this.btn_changePassword.Location = new System.Drawing.Point(654, 557);
-            this.btn_changePassword.Name = "btn_changePassword";
-            this.btn_changePassword.ShadowDecoration.Parent = this.btn_changePassword;
-            this.btn_changePassword.Size = new System.Drawing.Size(174, 45);
-            this.btn_changePassword.TabIndex = 210;
-            this.btn_changePassword.TabStop = false;
-            this.btn_changePassword.Text = "Cancel";
+            this.cb_gender.ItemsAppearance.Parent = this.cb_gender;
+            this.cb_gender.Location = new System.Drawing.Point(16, 436);
+            this.cb_gender.Name = "cb_gender";
+            this.cb_gender.ShadowDecoration.Parent = this.cb_gender;
+            this.cb_gender.Size = new System.Drawing.Size(167, 36);
+            this.cb_gender.StartIndex = 0;
+            this.cb_gender.TabIndex = 211;
+            this.cb_gender.TabStop = false;
             // 
             // guna2HtmlLabel9
             // 
@@ -124,6 +112,7 @@
             this.dt_birthday.BorderRadius = 5;
             this.dt_birthday.BorderThickness = 1;
             this.dt_birthday.CheckedState.Parent = this.dt_birthday;
+            this.dt_birthday.Enabled = false;
             this.dt_birthday.FillColor = System.Drawing.Color.White;
             this.dt_birthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dt_birthday.HoverState.Parent = this.dt_birthday;
@@ -158,6 +147,7 @@
             this.tb_contactNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb_contactNo.DisabledState.Parent = this.tb_contactNo;
             this.tb_contactNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_contactNo.Enabled = false;
             this.tb_contactNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_contactNo.FocusedState.Parent = this.tb_contactNo;
             this.tb_contactNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -170,6 +160,7 @@
             this.tb_contactNo.ShadowDecoration.Parent = this.tb_contactNo;
             this.tb_contactNo.Size = new System.Drawing.Size(229, 36);
             this.tb_contactNo.TabIndex = 6;
+            this.tb_contactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_contactNo_KeyPress);
             // 
             // guna2HtmlLabel10
             // 
@@ -192,6 +183,7 @@
             this.tb_address.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb_address.DisabledState.Parent = this.tb_address;
             this.tb_address.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_address.Enabled = false;
             this.tb_address.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_address.FocusedState.Parent = this.tb_address;
             this.tb_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -237,6 +229,7 @@
             this.tb_lastName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb_lastName.DisabledState.Parent = this.tb_lastName;
             this.tb_lastName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_lastName.Enabled = false;
             this.tb_lastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_lastName.FocusedState.Parent = this.tb_lastName;
             this.tb_lastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -249,6 +242,7 @@
             this.tb_lastName.ShadowDecoration.Parent = this.tb_lastName;
             this.tb_lastName.Size = new System.Drawing.Size(358, 36);
             this.tb_lastName.TabIndex = 3;
+            this.tb_lastName.TextChanged += new System.EventHandler(this.tb_lastName_TextChanged);
             // 
             // guna2HtmlLabel8
             // 
@@ -271,6 +265,7 @@
             this.tb_middleName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb_middleName.DisabledState.Parent = this.tb_middleName;
             this.tb_middleName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_middleName.Enabled = false;
             this.tb_middleName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_middleName.FocusedState.Parent = this.tb_middleName;
             this.tb_middleName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -283,6 +278,7 @@
             this.tb_middleName.ShadowDecoration.Parent = this.tb_middleName;
             this.tb_middleName.Size = new System.Drawing.Size(167, 36);
             this.tb_middleName.TabIndex = 1;
+            this.tb_middleName.TextChanged += new System.EventHandler(this.tb_middleName_TextChanged);
             // 
             // guna2HtmlLabel2
             // 
@@ -305,6 +301,7 @@
             this.tb_firstName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb_firstName.DisabledState.Parent = this.tb_firstName;
             this.tb_firstName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_firstName.Enabled = false;
             this.tb_firstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_firstName.FocusedState.Parent = this.tb_firstName;
             this.tb_firstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -317,6 +314,7 @@
             this.tb_firstName.ShadowDecoration.Parent = this.tb_firstName;
             this.tb_firstName.Size = new System.Drawing.Size(358, 36);
             this.tb_firstName.TabIndex = 0;
+            this.tb_firstName.TextChanged += new System.EventHandler(this.tb_firstName_TextChanged);
             // 
             // guna2HtmlLabel4
             // 
@@ -349,13 +347,14 @@
             this.btn_create.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_create.ForeColor = System.Drawing.Color.White;
             this.btn_create.HoverState.Parent = this.btn_create;
-            this.btn_create.Location = new System.Drawing.Point(846, 557);
+            this.btn_create.Location = new System.Drawing.Point(739, 556);
             this.btn_create.Name = "btn_create";
             this.btn_create.ShadowDecoration.Parent = this.btn_create;
-            this.btn_create.Size = new System.Drawing.Size(174, 45);
+            this.btn_create.Size = new System.Drawing.Size(355, 45);
             this.btn_create.TabIndex = 192;
             this.btn_create.TabStop = false;
             this.btn_create.Text = "Create";
+            this.btn_create.Click += new System.EventHandler(this.btn_create_Click);
             // 
             // tb_suffix
             // 
@@ -367,6 +366,7 @@
             this.tb_suffix.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb_suffix.DisabledState.Parent = this.tb_suffix;
             this.tb_suffix.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_suffix.Enabled = false;
             this.tb_suffix.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_suffix.FocusedState.Parent = this.tb_suffix;
             this.tb_suffix.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -404,9 +404,6 @@
             this.cb_from.FormattingEnabled = true;
             this.cb_from.HoverState.Parent = this.cb_from;
             this.cb_from.ItemHeight = 30;
-            this.cb_from.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
             this.cb_from.ItemsAppearance.Parent = this.cb_from;
             this.cb_from.Location = new System.Drawing.Point(399, 219);
             this.cb_from.Name = "cb_from";
@@ -414,6 +411,7 @@
             this.cb_from.Size = new System.Drawing.Size(229, 36);
             this.cb_from.TabIndex = 215;
             this.cb_from.TabStop = false;
+            this.cb_from.SelectedIndexChanged += new System.EventHandler(this.cb_from_SelectedIndexChanged);
             // 
             // guna2HtmlLabel5
             // 
@@ -421,10 +419,10 @@
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(399, 190);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(41, 23);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(82, 23);
             this.guna2HtmlLabel5.TabIndex = 214;
             this.guna2HtmlLabel5.TabStop = false;
-            this.guna2HtmlLabel5.Text = "From";
+            this.guna2HtmlLabel5.Text = "From Year";
             // 
             // guna2HtmlLabel6
             // 
@@ -449,12 +447,13 @@
             this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_profile.TabIndex = 219;
             this.pb_profile.TabStop = false;
+            this.pb_profile.Click += new System.EventHandler(this.pb_profile_Click);
             // 
             // guna2HtmlLabel13
             // 
             this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(661, 190);
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(735, 189);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
             this.guna2HtmlLabel13.Size = new System.Drawing.Size(51, 23);
             this.guna2HtmlLabel13.TabIndex = 220;
@@ -465,31 +464,25 @@
             // 
             this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel14.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel14.Location = new System.Drawing.Point(661, 157);
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(735, 156);
             this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
             this.guna2HtmlLabel14.Size = new System.Drawing.Size(133, 30);
             this.guna2HtmlLabel14.TabIndex = 222;
             this.guna2HtmlLabel14.TabStop = false;
             this.guna2HtmlLabel14.Text = "Committee";
             // 
-            // clb_privilege
+            // clb_committee
             // 
-            this.clb_privilege.BackColor = System.Drawing.Color.White;
-            this.clb_privilege.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.clb_privilege.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clb_privilege.FormattingEnabled = true;
-            this.clb_privilege.Items.AddRange(new object[] {
-            "Appropriation Monitoring System",
-            "Legislative Records Management",
-            "Ordinance Monitoring System",
-            "SB Officials Information System",
-            "Tricycle Franchise Management System",
-            "User Security Management"});
-            this.clb_privilege.Location = new System.Drawing.Point(661, 220);
-            this.clb_privilege.Name = "clb_privilege";
-            this.clb_privilege.Size = new System.Drawing.Size(354, 315);
-            this.clb_privilege.TabIndex = 223;
-            this.clb_privilege.TabStop = false;
+            this.clb_committee.BackColor = System.Drawing.Color.White;
+            this.clb_committee.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.clb_committee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clb_committee.FormattingEnabled = true;
+            this.clb_committee.Location = new System.Drawing.Point(735, 219);
+            this.clb_committee.Name = "clb_committee";
+            this.clb_committee.Size = new System.Drawing.Size(354, 315);
+            this.clb_committee.TabIndex = 223;
+            this.clb_committee.TabStop = false;
+            this.clb_committee.Visible = false;
             // 
             // guna2HtmlLabel7
             // 
@@ -504,10 +497,16 @@
             // 
             // cb_position
             // 
+            this.cb_position.AutoCompleteCustomSource.AddRange(new string[] {
+            "VM",
+            "SBM",
+            "ABC Pres.",
+            "PPSK Pres."});
             this.cb_position.BackColor = System.Drawing.Color.Transparent;
             this.cb_position.BorderRadius = 5;
             this.cb_position.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_position.Enabled = false;
             this.cb_position.FocusedColor = System.Drawing.Color.Empty;
             this.cb_position.FocusedState.Parent = this.cb_position;
             this.cb_position.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -525,6 +524,7 @@
             this.cb_position.Name = "cb_position";
             this.cb_position.ShadowDecoration.Parent = this.cb_position;
             this.cb_position.Size = new System.Drawing.Size(229, 36);
+            this.cb_position.StartIndex = 0;
             this.cb_position.TabIndex = 218;
             this.cb_position.TabStop = false;
             // 
@@ -541,9 +541,6 @@
             this.cb_to.FormattingEnabled = true;
             this.cb_to.HoverState.Parent = this.cb_to;
             this.cb_to.ItemHeight = 30;
-            this.cb_to.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
             this.cb_to.ItemsAppearance.Parent = this.cb_to;
             this.cb_to.Location = new System.Drawing.Point(399, 292);
             this.cb_to.Name = "cb_to";
@@ -551,6 +548,7 @@
             this.cb_to.Size = new System.Drawing.Size(229, 36);
             this.cb_to.TabIndex = 225;
             this.cb_to.TabStop = false;
+            this.cb_to.SelectedIndexChanged += new System.EventHandler(this.cb_to_SelectedIndexChanged);
             // 
             // guna2HtmlLabel15
             // 
@@ -565,7 +563,6 @@
             // 
             // tb_title
             // 
-            this.tb_title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_title.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
             this.tb_title.BorderRadius = 5;
             this.tb_title.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -575,6 +572,7 @@
             this.tb_title.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb_title.DisabledState.Parent = this.tb_title;
             this.tb_title.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_title.Enabled = false;
             this.tb_title.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_title.FocusedState.Parent = this.tb_title;
             this.tb_title.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
@@ -615,18 +613,66 @@
             this.lbl_firstName.TabStop = false;
             this.lbl_firstName.Text = "*";
             // 
+            // lbl_middleName
+            // 
+            this.lbl_middleName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_middleName.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_middleName.ForeColor = System.Drawing.Color.Red;
+            this.lbl_middleName.Location = new System.Drawing.Point(179, 254);
+            this.lbl_middleName.Name = "lbl_middleName";
+            this.lbl_middleName.Size = new System.Drawing.Size(13, 32);
+            this.lbl_middleName.TabIndex = 229;
+            this.lbl_middleName.TabStop = false;
+            this.lbl_middleName.Text = "*";
+            // 
+            // lbl_lastName
+            // 
+            this.lbl_lastName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_lastName.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lastName.ForeColor = System.Drawing.Color.Red;
+            this.lbl_lastName.Location = new System.Drawing.Point(100, 327);
+            this.lbl_lastName.Name = "lbl_lastName";
+            this.lbl_lastName.Size = new System.Drawing.Size(13, 32);
+            this.lbl_lastName.TabIndex = 230;
+            this.lbl_lastName.TabStop = false;
+            this.lbl_lastName.Text = "*";
+            // 
+            // lbl_info
+            // 
+            this.lbl_info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_info.AutoEllipsis = true;
+            this.lbl_info.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_info.ForeColor = System.Drawing.Color.Red;
+            this.lbl_info.Location = new System.Drawing.Point(735, 367);
+            this.lbl_info.Name = "lbl_info";
+            this.lbl_info.Size = new System.Drawing.Size(354, 19);
+            this.lbl_info.TabIndex = 249;
+            this.lbl_info.Text = "Please select year to show list of committee";
+            this.lbl_info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // loading1
+            // 
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(648, 337);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(72, 74);
+            this.loading1.TabIndex = 250;
+            this.loading1.Visible = false;
+            // 
             // SbAddOfficials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1034, 618);
+            this.ClientSize = new System.Drawing.Size(1111, 618);
+            this.Controls.Add(this.loading1);
             this.Controls.Add(this.lbl_firstName);
             this.Controls.Add(this.guna2HtmlLabel16);
             this.Controls.Add(this.tb_title);
             this.Controls.Add(this.cb_to);
             this.Controls.Add(this.guna2HtmlLabel15);
-            this.Controls.Add(this.clb_privilege);
+            this.Controls.Add(this.clb_committee);
             this.Controls.Add(this.guna2HtmlLabel14);
             this.Controls.Add(this.guna2HtmlLabel13);
             this.Controls.Add(this.pb_profile);
@@ -637,8 +683,7 @@
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.tb_suffix);
             this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.tb_gender);
-            this.Controls.Add(this.btn_changePassword);
+            this.Controls.Add(this.cb_gender);
             this.Controls.Add(this.guna2HtmlLabel9);
             this.Controls.Add(this.dt_birthday);
             this.Controls.Add(this.Ge);
@@ -655,7 +700,13 @@
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.btn_create);
+            this.Controls.Add(this.lbl_middleName);
+            this.Controls.Add(this.lbl_lastName);
+            this.Controls.Add(this.lbl_info);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SbAddOfficials";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SB Officials";
             this.Load += new System.EventHandler(this.SbAddOfficials_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).EndInit();
@@ -666,8 +717,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2ComboBox tb_gender;
-        private Guna.UI2.WinForms.Guna2Button btn_changePassword;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_gender;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2DateTimePicker dt_birthday;
         private Guna.UI2.WinForms.Guna2HtmlLabel Ge;
@@ -692,7 +742,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox pb_profile;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
-        private System.Windows.Forms.CheckedListBox clb_privilege;
+        private System.Windows.Forms.CheckedListBox clb_committee;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2ComboBox cb_position;
         private Guna.UI2.WinForms.Guna2ComboBox cb_to;
@@ -700,5 +750,9 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_title;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_firstName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_middleName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_lastName;
+        private System.Windows.Forms.Label lbl_info;
+        private common.loading loading1;
     }
 }

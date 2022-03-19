@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dt_committee = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btn_export = new Guna.UI2.WinForms.Guna2Button();
             this.btn_import = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_refresh = new Guna.UI2.WinForms.Guna2Button();
             this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
             this.btn_update = new Guna.UI2.WinForms.Guna2Button();
             this.btn_add = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tb_search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cb_terms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cb_terms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.loading1 = new Santa_Archiving_System.common.loading();
             ((System.ComponentModel.ISupportInitialize)(this.dt_committee)).BeginInit();
             this.panel5.SuspendLayout();
@@ -55,33 +55,33 @@
             // 
             this.dt_committee.AllowDrop = true;
             this.dt_committee.AllowUserToAddRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dt_committee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dt_committee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dt_committee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dt_committee.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dt_committee.BackgroundColor = System.Drawing.Color.White;
             this.dt_committee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dt_committee.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dt_committee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dt_committee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dt_committee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dt_committee.ColumnHeadersHeight = 25;
             this.dt_committee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dt_committee.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dt_committee.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dt_committee.DefaultCellStyle = dataGridViewCellStyle3;
             this.dt_committee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_committee.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dt_committee.EnableHeadersVisualStyles = false;
@@ -123,11 +123,11 @@
             this.panel5.Controls.Add(this.guna2HtmlLabel1);
             this.panel5.Controls.Add(this.btn_export);
             this.panel5.Controls.Add(this.btn_import);
-            this.panel5.Controls.Add(this.guna2Button1);
+            this.panel5.Controls.Add(this.btn_refresh);
             this.panel5.Controls.Add(this.btn_delete);
             this.panel5.Controls.Add(this.btn_update);
             this.panel5.Controls.Add(this.btn_add);
-            this.panel5.Controls.Add(this.guna2TextBox1);
+            this.panel5.Controls.Add(this.tb_search);
             this.panel5.Controls.Add(this.cb_terms);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(20, 20);
@@ -166,6 +166,7 @@
             this.btn_export.TabIndex = 32;
             this.btn_export.Text = "Export";
             this.btn_export.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
             // btn_import
             // 
@@ -187,26 +188,28 @@
             this.btn_import.TabIndex = 31;
             this.btn_import.Text = "Import";
             this.btn_import.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
             // 
-            // guna2Button1
+            // btn_refresh
             // 
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = global::Santa_Archiving_System.Properties.Resources.icons8_refresh_100;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(222, 97);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(103, 36);
-            this.guna2Button1.TabIndex = 30;
-            this.guna2Button1.Text = "Refresh";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_refresh.BorderRadius = 5;
+            this.btn_refresh.CheckedState.Parent = this.btn_refresh;
+            this.btn_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_refresh.CustomImages.Parent = this.btn_refresh;
+            this.btn_refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_refresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_refresh.HoverState.Parent = this.btn_refresh;
+            this.btn_refresh.Image = global::Santa_Archiving_System.Properties.Resources.icons8_refresh_100;
+            this.btn_refresh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_refresh.Location = new System.Drawing.Point(222, 97);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.ShadowDecoration.Parent = this.btn_refresh;
+            this.btn_refresh.Size = new System.Drawing.Size(103, 36);
+            this.btn_refresh.TabIndex = 30;
+            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // btn_delete
             // 
@@ -227,6 +230,7 @@
             this.btn_delete.TabIndex = 29;
             this.btn_delete.Text = "Delete";
             this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_update
             // 
@@ -270,34 +274,65 @@
             this.btn_add.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // guna2TextBox1
+            // tb_search
             // 
-            this.guna2TextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2TextBox1.BorderRadius = 5;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(724, 97);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.PlaceholderText = "Search......";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(283, 36);
-            this.guna2TextBox1.TabIndex = 28;
+            this.tb_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_search.BorderRadius = 5;
+            this.tb_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_search.DefaultText = "";
+            this.tb_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_search.DisabledState.Parent = this.tb_search;
+            this.tb_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_search.FocusedState.Parent = this.tb_search;
+            this.tb_search.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tb_search.ForeColor = System.Drawing.Color.Black;
+            this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_search.HoverState.Parent = this.tb_search;
+            this.tb_search.Location = new System.Drawing.Point(724, 97);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.PasswordChar = '\0';
+            this.tb_search.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tb_search.PlaceholderText = "Search......";
+            this.tb_search.SelectedText = "";
+            this.tb_search.ShadowDecoration.Parent = this.tb_search;
+            this.tb_search.Size = new System.Drawing.Size(283, 36);
+            this.tb_search.TabIndex = 28;
+            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
+            // 
+            // cb_terms
+            // 
+            this.cb_terms.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cb_terms.Animated = true;
+            this.cb_terms.BackColor = System.Drawing.Color.Transparent;
+            this.cb_terms.BorderColor = System.Drawing.Color.Transparent;
+            this.cb_terms.BorderRadius = 5;
+            this.cb_terms.BorderThickness = 0;
+            this.cb_terms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cb_terms.FocusedColor = System.Drawing.Color.Empty;
+            this.cb_terms.FocusedState.Parent = this.cb_terms;
+            this.cb_terms.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_terms.ForeColor = System.Drawing.Color.Black;
+            this.cb_terms.FormattingEnabled = true;
+            this.cb_terms.HoverState.Parent = this.cb_terms;
+            this.cb_terms.ItemHeight = 30;
+            this.cb_terms.ItemsAppearance.Parent = this.cb_terms;
+            this.cb_terms.Location = new System.Drawing.Point(387, 27);
+            this.cb_terms.MaxDropDownItems = 5;
+            this.cb_terms.Name = "cb_terms";
+            this.cb_terms.ShadowDecoration.Parent = this.cb_terms;
+            this.cb_terms.Size = new System.Drawing.Size(252, 36);
+            this.cb_terms.Sorted = true;
+            this.cb_terms.TabIndex = 241;
+            this.cb_terms.TabStop = false;
+            this.cb_terms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cb_terms.SelectedIndexChanged += new System.EventHandler(this.cb_terms_SelectedIndexChanged);
             // 
             // panel4
             // 
@@ -334,36 +369,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(20, 592);
             this.panel1.TabIndex = 39;
-            // 
-            // cb_terms
-            // 
-            this.cb_terms.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cb_terms.Animated = true;
-            this.cb_terms.BackColor = System.Drawing.Color.Transparent;
-            this.cb_terms.BorderColor = System.Drawing.Color.Transparent;
-            this.cb_terms.BorderRadius = 5;
-            this.cb_terms.BorderThickness = 0;
-            this.cb_terms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cb_terms.FocusedColor = System.Drawing.Color.Empty;
-            this.cb_terms.FocusedState.Parent = this.cb_terms;
-            this.cb_terms.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_terms.ForeColor = System.Drawing.Color.Black;
-            this.cb_terms.FormattingEnabled = true;
-            this.cb_terms.HoverState.Parent = this.cb_terms;
-            this.cb_terms.ItemHeight = 30;
-            this.cb_terms.ItemsAppearance.Parent = this.cb_terms;
-            this.cb_terms.Location = new System.Drawing.Point(387, 27);
-            this.cb_terms.MaxDropDownItems = 5;
-            this.cb_terms.Name = "cb_terms";
-            this.cb_terms.ShadowDecoration.Parent = this.cb_terms;
-            this.cb_terms.Size = new System.Drawing.Size(252, 36);
-            this.cb_terms.Sorted = true;
-            this.cb_terms.TabIndex = 241;
-            this.cb_terms.TabStop = false;
-            this.cb_terms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cb_terms.SelectedIndexChanged += new System.EventHandler(this.cb_terms_SelectedIndexChanged);
             // 
             // loading1
             // 
@@ -404,11 +409,11 @@
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btn_export;
         private Guna.UI2.WinForms.Guna2Button btn_import;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_refresh;
         private Guna.UI2.WinForms.Guna2Button btn_delete;
         private Guna.UI2.WinForms.Guna2Button btn_update;
         private Guna.UI2.WinForms.Guna2Button btn_add;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox tb_search;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

@@ -191,8 +191,9 @@ namespace Santa_Archiving_System.screens.manageAccount
 
                      );
                     MessageBox.Show("Successfully updated!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cls.username = string.Empty;
 
-                    await obj.LoadDataTableOnline();
+                   await obj.LoadDataTableOnline();
 
                     this.Close();
                 }

@@ -1,4 +1,4 @@
-﻿using Santa_Archiving_System.common;
+﻿ using Santa_Archiving_System.common;
 using Santa_Archiving_System.models;
 using Santa_Archiving_System.services.controls;
 using Santa_Archiving_System.services.resolution;
@@ -63,6 +63,9 @@ namespace Santa_Archiving_System.screens.resolution
                         case "Third Reading":
                             await LoadDataTableReadingOnline("3rd Reading");
                             break;
+                        case "PDF":
+                            guna2DataGridView1.DataSource = await Resolutions.getPdfOnline(".pdf");
+                            break;
                         default:
                             await LoadDataTableOnline();
                             break;
@@ -89,6 +92,9 @@ namespace Santa_Archiving_System.screens.resolution
                         break;
                     case "Third Reading":
                         await LoadDataTableReading("3rd Reading");
+                        break;
+                    case "PDF":
+                        guna2DataGridView1.DataSource = await Resolutions.getPdf(".pdf");
                         break;
                     default:
                         await LoadDataTable();
@@ -118,7 +124,7 @@ namespace Santa_Archiving_System.screens.resolution
 
         private async void btn_export_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to download backup from cloud? This process make up some time.", "Upload", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to upload backup from cloud? This process make up some time.", "Upload", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 loading1.Visible = true;
@@ -173,7 +179,7 @@ namespace Santa_Archiving_System.screens.resolution
         {
             if (String.IsNullOrWhiteSpace(resolution.Id.ToString()) || resolution.Id == 0)
             {
-
+                MessageBox.Show("Select a file to update");
             }
             else
             {
