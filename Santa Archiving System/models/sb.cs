@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Santa_Archiving_System.models
 {
-    public class sb
+    public class Sb
     {
         public string Id { get; set; }
         public string firstName { get; set; }

@@ -31,9 +31,10 @@
     <ProductName>Santa Archving System</ProductName>
     <PublisherName>Hackdogs Software Developer Services</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>true</UseApplicationTrust>
+    <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -138,6 +139,7 @@
     <Compile Include="models\Ordinance.cs" />
     <Compile Include="models\Resolution.cs" />
     <Compile Include="models\sb.cs" />
+    <Compile Include="models\EmailContent.cs" />
     <Compile Include="models\Tricycle.cs" />
     <Compile Include="models\updateAccount.cs" />
     <Compile Include="Program.cs" />
@@ -212,6 +214,18 @@
     </Compile>
     <Compile Include="screens\sbOfficial\SbAddOfficials.Designer.cs">
       <DependentUpon>SbAddOfficials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sendToEmail\EmailContents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sendToEmail\EmailContents.Designer.cs">
+      <DependentUpon>EmailContents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sendToEmail\SendToEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sendToEmail\SendToEmail.Designer.cs">
+      <DependentUpon>SendToEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\splash\SplashScreen.cs">
       <SubType>Form</SubType>
@@ -388,6 +402,12 @@
     <EmbeddedResource Include="screens\sbOfficial\SbAddOfficials.resx">
       <DependentUpon>SbAddOfficials.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\sendToEmail\EmailContents.resx">
+      <DependentUpon>EmailContents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sendToEmail\SendToEmail.resx">
+      <DependentUpon>SendToEmail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\splash\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +484,7 @@
     <None Include="Resources\icons8-trash-100.png" />
     <None Include="Resources\icons8-print-100.png" />
     <None Include="Resources\icons8-view-100.png" />
+    <None Include="Resources\icons8-attach-50.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
