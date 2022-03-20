@@ -997,7 +997,7 @@
             // panelChildForm
             // 
             this.panelChildForm.AutoScroll = true;
-            this.panelChildForm.BackColor = System.Drawing.Color.White;
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.panelChildForm.Controls.Add(this.label4);
             this.panelChildForm.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
