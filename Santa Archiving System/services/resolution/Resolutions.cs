@@ -14,6 +14,24 @@ namespace Santa_Archiving_System.services.resolution
 {
     class Resolutions
     {
+        public static async Task<int> getCount()
+        {
+            int count = 0;
+            await Task.Run(() =>
+            {
+                using(MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM Resolution", con))
+                    {
+                        con.Open();
+                        
+
+                    }
+                }
+            });
+            return count;
+
+        }
         //GET DATA
         public static async Task<DataTable> getList()
         {
