@@ -23,19 +23,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</UpdateUrl>
-    <SupportUrl>http://www.h4ckdogs.com/</SupportUrl>
-    <ErrorReportUrl>http://www.h4ckdogs.com/</ErrorReportUrl>
-    <TargetCulture>en-AU</TargetCulture>
-    <ProductName>Santa Archving System</ProductName>
-    <PublisherName>Hackdogs Software Developer Services</PublisherName>
-    <WebPage>publish.htm</WebPage>
-    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/main/published/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/main/published/</UpdateUrl>
+    <WebPage>publish.html</WebPage>
     <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
-    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -59,7 +52,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>DF94396ED129329B725F1C50ED5C9D6A0D4D7F0E</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A60A3E0CFCEBFA59C01E7945B20FE0E49AAAC519</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Santa Archiving System_TemporaryKey.pfx</ManifestKeyFile>
@@ -139,7 +132,6 @@
     <Compile Include="models\Ordinance.cs" />
     <Compile Include="models\Resolution.cs" />
     <Compile Include="models\sb.cs" />
-    <Compile Include="models\EmailContent.cs" />
     <Compile Include="models\Tricycle.cs" />
     <Compile Include="models\updateAccount.cs" />
     <Compile Include="Program.cs" />
@@ -214,18 +206,6 @@
     </Compile>
     <Compile Include="screens\sbOfficial\SbAddOfficials.Designer.cs">
       <DependentUpon>SbAddOfficials.cs</DependentUpon>
-    </Compile>
-    <Compile Include="screens\sendToEmail\EmailContents.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="screens\sendToEmail\EmailContents.Designer.cs">
-      <DependentUpon>EmailContents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="screens\sendToEmail\SendToEmail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="screens\sendToEmail\SendToEmail.Designer.cs">
-      <DependentUpon>SendToEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\splash\SplashScreen.cs">
       <SubType>Form</SubType>
@@ -402,12 +382,6 @@
     <EmbeddedResource Include="screens\sbOfficial\SbAddOfficials.resx">
       <DependentUpon>SbAddOfficials.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="screens\sendToEmail\EmailContents.resx">
-      <DependentUpon>EmailContents.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="screens\sendToEmail\SendToEmail.resx">
-      <DependentUpon>SendToEmail.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="screens\splash\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -484,7 +458,6 @@
     <None Include="Resources\icons8-trash-100.png" />
     <None Include="Resources\icons8-print-100.png" />
     <None Include="Resources\icons8-view-100.png" />
-    <None Include="Resources\icons8-attach-50.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
