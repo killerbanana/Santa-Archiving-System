@@ -64,5 +64,37 @@ namespace Santa_Archiving_System.screens.dashboard
             lb_ordinance.ForeColor = Color.FromArgb(159, 160, 182);
             lb_ordinance_count.ForeColor = Color.Black;
         }
+
+        private void guna2Panel2_Click(object sender, EventArgs e)
+        {
+            EmailContent emailContent = new EmailContent()
+            {
+                Type = "Ordinance"
+            };
+            SendToEmail sendToEmail = new SendToEmail(emailContent);
+            sendToEmail.ShowDialog();
+        }
+
+        private void guna2Panel3_MouseEnter(object sender, EventArgs e)
+        {
+            lb_appropriation.ForeColor = Color.FromArgb(55, 81, 255);
+            lb_appropriation_count.ForeColor = Color.FromArgb(55, 81, 255);
+        }
+
+        private void guna2Panel3_MouseLeave(object sender, EventArgs e)
+        {
+            lb_appropriation.ForeColor = Color.FromArgb(159, 160, 182);
+            lb_appropriation_count.ForeColor = Color.Black;
+        }
+
+        private void guna2Panel3_Click(object sender, EventArgs e)
+        {
+            EmailContent emailContent = new EmailContent()
+            {
+                Type = "Appropriation"
+            };
+            SendToEmail sendToEmail = new SendToEmail(emailContent);
+            sendToEmail.ShowDialog();
+        }
     }
 }

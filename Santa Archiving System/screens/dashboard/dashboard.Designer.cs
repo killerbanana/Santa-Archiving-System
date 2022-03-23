@@ -32,14 +32,14 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lb_resolution = new System.Windows.Forms.Label();
             this.lb_resolution_count = new System.Windows.Forms.Label();
+            this.lb_resolution = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lb_ordinance_count = new System.Windows.Forms.Label();
             this.lb_ordinance = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lb_appropriation_count = new System.Windows.Forms.Label();
+            this.lb_appropriation = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -83,20 +83,6 @@
             this.guna2Panel1.MouseEnter += new System.EventHandler(this.guna2Panel1_MouseEnter);
             this.guna2Panel1.MouseLeave += new System.EventHandler(this.guna2Panel1_MouseLeave);
             // 
-            // lb_resolution
-            // 
-            this.lb_resolution.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lb_resolution.AutoSize = true;
-            this.lb_resolution.BackColor = System.Drawing.Color.Transparent;
-            this.lb_resolution.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_resolution.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(160)))), ((int)(((byte)(182)))));
-            this.lb_resolution.Location = new System.Drawing.Point(58, 13);
-            this.lb_resolution.Name = "lb_resolution";
-            this.lb_resolution.Size = new System.Drawing.Size(112, 28);
-            this.lb_resolution.TabIndex = 9;
-            this.lb_resolution.Text = "Resolutions";
-            this.lb_resolution.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lb_resolution_count
             // 
             this.lb_resolution_count.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -111,6 +97,20 @@
             this.lb_resolution_count.Text = "00";
             this.lb_resolution_count.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lb_resolution
+            // 
+            this.lb_resolution.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_resolution.AutoSize = true;
+            this.lb_resolution.BackColor = System.Drawing.Color.Transparent;
+            this.lb_resolution.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_resolution.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(160)))), ((int)(((byte)(182)))));
+            this.lb_resolution.Location = new System.Drawing.Point(58, 13);
+            this.lb_resolution.Name = "lb_resolution";
+            this.lb_resolution.Size = new System.Drawing.Size(112, 28);
+            this.lb_resolution.TabIndex = 9;
+            this.lb_resolution.Text = "Resolutions";
+            this.lb_resolution.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
@@ -123,6 +123,7 @@
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(224, 120);
             this.guna2Panel2.TabIndex = 12;
+            this.guna2Panel2.Click += new System.EventHandler(this.guna2Panel2_Click);
             this.guna2Panel2.MouseEnter += new System.EventHandler(this.guna2Panel2_MouseEnter);
             this.guna2Panel2.MouseLeave += new System.EventHandler(this.guna2Panel2_MouseLeave);
             // 
@@ -158,42 +159,45 @@
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.White;
             this.guna2Panel3.BorderRadius = 12;
-            this.guna2Panel3.Controls.Add(this.label4);
-            this.guna2Panel3.Controls.Add(this.label5);
+            this.guna2Panel3.Controls.Add(this.lb_appropriation_count);
+            this.guna2Panel3.Controls.Add(this.lb_appropriation);
             this.guna2Panel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Panel3.Location = new System.Drawing.Point(552, 54);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
             this.guna2Panel3.Size = new System.Drawing.Size(224, 120);
             this.guna2Panel3.TabIndex = 13;
+            this.guna2Panel3.Click += new System.EventHandler(this.guna2Panel3_Click);
+            this.guna2Panel3.MouseEnter += new System.EventHandler(this.guna2Panel3_MouseEnter);
+            this.guna2Panel3.MouseLeave += new System.EventHandler(this.guna2Panel3_MouseLeave);
             // 
-            // label4
+            // lb_appropriation_count
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Monotype Corsiva", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(75, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 57);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "00";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_appropriation_count.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_appropriation_count.AutoSize = true;
+            this.lb_appropriation_count.BackColor = System.Drawing.Color.Transparent;
+            this.lb_appropriation_count.Font = new System.Drawing.Font("Monotype Corsiva", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_appropriation_count.ForeColor = System.Drawing.Color.Black;
+            this.lb_appropriation_count.Location = new System.Drawing.Point(75, 41);
+            this.lb_appropriation_count.Name = "lb_appropriation_count";
+            this.lb_appropriation_count.Size = new System.Drawing.Size(69, 57);
+            this.lb_appropriation_count.TabIndex = 11;
+            this.lb_appropriation_count.Text = "00";
+            this.lb_appropriation_count.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lb_appropriation
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(160)))), ((int)(((byte)(182)))));
-            this.label5.Location = new System.Drawing.Point(41, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 28);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Appropriations";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_appropriation.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_appropriation.AutoSize = true;
+            this.lb_appropriation.BackColor = System.Drawing.Color.Transparent;
+            this.lb_appropriation.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_appropriation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(160)))), ((int)(((byte)(182)))));
+            this.lb_appropriation.Location = new System.Drawing.Point(41, 13);
+            this.lb_appropriation.Name = "lb_appropriation";
+            this.lb_appropriation.Size = new System.Drawing.Size(143, 28);
+            this.lb_appropriation.TabIndex = 9;
+            this.lb_appropriation.Text = "Appropriations";
+            this.lb_appropriation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Panel4
             // 
@@ -274,8 +278,8 @@
         private System.Windows.Forms.Label lb_ordinance_count;
         private System.Windows.Forms.Label lb_ordinance;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lb_appropriation_count;
+        private System.Windows.Forms.Label lb_appropriation;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

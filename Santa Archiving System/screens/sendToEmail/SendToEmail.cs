@@ -1,4 +1,5 @@
 ﻿using Santa_Archiving_System.models;
+using Santa_Archiving_System.services.appropriation;
 using Santa_Archiving_System.services.ordinance;
 using Santa_Archiving_System.services.resolution;
 using System;
@@ -32,6 +33,9 @@ namespace Santa_Archiving_System.screens.sendToEmail
                     break;
                 case "Ordinance":
                     guna2DataGridView1.DataSource = await Ordinances.getListOrdinanceOnline();
+                    break;
+                case "Appropriation":
+                    guna2DataGridView1.DataSource = await Appropriations.getListOnline();
                     break;
             }
             loading1.Visible = false;

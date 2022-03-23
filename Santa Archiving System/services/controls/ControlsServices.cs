@@ -29,6 +29,7 @@ namespace Santa_Archiving_System.services.controls
             }
 
         }
+
         public static string Decrypt(string value)
         {
 
@@ -83,6 +84,25 @@ namespace Santa_Archiving_System.services.controls
                 return (reply.Status == IPStatus.Success);
             }
             catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool CheckIfEmail(string email)
+        {
+            var trimmedEmail = email.Trim();
+
+            if (trimmedEmail.EndsWith("."))
+            {
+                return false; // suggested by @TK-421
+            }
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == trimmedEmail;
+            }
+            catch
             {
                 return false;
             }

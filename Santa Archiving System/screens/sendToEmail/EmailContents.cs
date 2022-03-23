@@ -1,4 +1,5 @@
 ﻿using Santa_Archiving_System.models;
+using Santa_Archiving_System.services.controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,10 @@ namespace Santa_Archiving_System.screens.sendToEmail
 
         private void btn_send_Click(object sender, EventArgs e)
         {
+            if (!ControlsServices.CheckIfEmail(tb_recipient.Text)) {
+                MessageBox.Show("Invalid Email!");
+                return;
+            }
             MailMessage message = new MailMessage();
             message.To.Add(tb_recipient.Text);
             message.From = new MailAddress("santalgu2022@gmail.com");
