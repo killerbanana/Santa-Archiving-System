@@ -129,6 +129,9 @@ namespace Santa_Archiving_System.screens.auth
             btn_login.Enabled = true;
         }
 
-     
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

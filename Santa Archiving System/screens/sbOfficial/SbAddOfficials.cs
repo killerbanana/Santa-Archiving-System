@@ -21,13 +21,13 @@ namespace Santa_Archiving_System.screens.sbOfficial
         private string image;
         public SbAddOfficials()
         {
-           
+
             InitializeComponent();
         }
         private async Task getCommittee()
         {
             string term = cb_from.Text + " " + "-" + " " + cb_to.Text;
-         
+
             loading1.Visible = true;
 
             if (ControlsServices.CheckIfOnline())
@@ -38,24 +38,7 @@ namespace Santa_Archiving_System.screens.sbOfficial
             {
                 await Committee.getCommitteeOffline(term);
             }
-          
-            List<String> list = Committee.committeeList;
 
-            list.ForEach(delegate (string s)
-            {
-                clb_committee.Items.Add(s);
-               
-            });
-
-            if (clb_committee.Items.Count == 0)
-            {
-                clb_committee.Visible = false;
-                lbl_info.Text = "No Datas to show";
-            }
-            else
-            {
-                clb_committee.Visible = true;
-            }
             loading1.Visible = false;
 
 
@@ -65,7 +48,7 @@ namespace Santa_Archiving_System.screens.sbOfficial
         {
             if (cb_from.Text != string.Empty && cb_to.Text != string.Empty)
             {
-                tb_firstName.Enabled = true; 
+                tb_firstName.Enabled = true;
                 tb_middleName.Enabled = true;
                 tb_suffix.Enabled = true;
                 tb_lastName.Enabled = true;
@@ -75,13 +58,31 @@ namespace Santa_Archiving_System.screens.sbOfficial
                 tb_contactNo.Enabled = true;
                 tb_title.Enabled = true;
                 cb_position.Enabled = true;
-                clb_committee.Visible = true;
-                clb_committee.Items.Clear();
+                cb_rank.Enabled = true;
 
-               
                 await getCommittee();
             }
         }
+        private async void disable()
+        {
+            if (cb_from.Text == string.Empty && cb_to.Text == string.Empty)
+            {
+                await getCommittee();
+                tb_firstName.Enabled = false;
+                tb_middleName.Enabled = false;
+                tb_suffix.Enabled = false;
+                tb_lastName.Enabled = false;
+                cb_gender.Enabled = false;
+                dt_birthday.Enabled = false;
+                tb_address.Enabled = false;
+                tb_contactNo.Enabled = false;
+                tb_title.Enabled = false;
+                cb_position.Enabled = false;
+                cb_rank.Enabled = false;
+
+            }
+        }
+
         private void SbAddOfficials_Load(object sender, EventArgs e)
         {
             image = Constants.imagePath;
@@ -93,7 +94,7 @@ namespace Santa_Archiving_System.screens.sbOfficial
 
         }
 
-   
+
 
         private void tb_firstName_TextChanged(object sender, EventArgs e)
         {
@@ -133,20 +134,24 @@ namespace Santa_Archiving_System.screens.sbOfficial
 
         private void cb_from_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             enable();
         }
 
         private void cb_to_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             enable();
         }
 
         private void pb_profile_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
+
+            opf.Title = "Choose Image File";
+            opf.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             opf.Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif";
+            opf.Multiselect = false;
             if (opf.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -166,25 +171,11 @@ namespace Santa_Archiving_System.screens.sbOfficial
         private async void btn_create_Click(object sender, EventArgs e)
         {
             string terms = cb_from.Text + " " + "-" + " " + cb_to.Text;
-            try
-            {
-                foreach (var item in clb_committee.CheckedItems)
-                {
-
-
-                    committeeList.Add(item.ToString());
-
-
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
 
             if (string.IsNullOrWhiteSpace(tb_firstName.Text) ||
                string.IsNullOrWhiteSpace(tb_middleName.Text) ||
-               string.IsNullOrWhiteSpace(tb_lastName.Text) 
+               string.IsNullOrWhiteSpace(tb_lastName.Text) ||
+               lbl_rank.Visible == true
                )
             {
                 MessageBox.Show("Please fill all required fields!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -192,8 +183,8 @@ namespace Santa_Archiving_System.screens.sbOfficial
             }
             else
             {
-           
-      
+
+
                 this.UseWaitCursor = true;
                 if (ControlsServices.CheckIfOnline())
                 {
@@ -209,9 +200,9 @@ namespace Santa_Archiving_System.screens.sbOfficial
                         dt_birthday.Text,
                         tb_address.Text,
                         tb_contactNo.Text,
-                        committeeList,
                         terms,
-                        image
+                        image,
+                        cb_rank.Text
                         );
                     await Officials.SaveOfficialsOffline
                          (
@@ -225,9 +216,9 @@ namespace Santa_Archiving_System.screens.sbOfficial
                          dt_birthday.Text,
                          tb_address.Text,
                          tb_contactNo.Text,
-                         committeeList,
                          terms,
-                         image
+                         image,
+                         cb_rank.Text
                          );
                 }
                 else
@@ -244,20 +235,45 @@ namespace Santa_Archiving_System.screens.sbOfficial
                          dt_birthday.Text,
                          tb_address.Text,
                          tb_contactNo.Text,
-                         committeeList,
                          terms,
-                         image
+                         image,
+                        cb_rank.Text
                          );
                 }
                 MessageBox.Show("Successfully created!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                committeeList.Clear();
+                pb_profile.Image = Image.FromFile(Constants.imagePath);
                 tb_firstName.Text = String.Empty;
                 tb_middleName.Text = String.Empty;
                 tb_lastName.Text = String.Empty;
+                tb_title.Text = String.Empty;
+                tb_address.Text = String.Empty;
+                tb_contactNo.Text = String.Empty;
                 cb_from.SelectedIndex = -1;
                 cb_to.SelectedIndex = -1;
-                image = string.Empty;
+                cb_position.SelectedIndex = 0;
+                cb_rank.SelectedIndex = -1;
+                image = Constants.imagePath;
+                try
+                {
+                    disable();
 
+
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                SbOfficialEncode obj = (SbOfficialEncode)Application.OpenForms["SbOfficialEncode"];
+                if (ControlsServices.CheckIfOnline())
+                {
+                    await obj.LoadDataTableOnline();
+                    await obj.getBatch();
+                }
+                else
+                {
+                    await obj.LoadDataTableOffline();
+                    await obj.getBatch();
+                }
                 this.UseWaitCursor = false;
             }
         }
@@ -267,6 +283,29 @@ namespace Santa_Archiving_System.screens.sbOfficial
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void cb_position_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_position.SelectedIndex == 1)
+            {
+                cb_rank.Enabled = true;
+                lbl_rank.Visible = true;
+            }
+            else
+            {
+                cb_rank.Enabled = false;
+                lbl_rank.Visible = false;
+            }
+
+        }
+
+        private void cb_rank_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_rank.SelectedIndex >= 0)
+            {
+                lbl_rank.Visible = false;
             }
         }
     }

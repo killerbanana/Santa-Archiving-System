@@ -51,10 +51,12 @@ namespace Santa_Archiving_System.screens.auth
             try
             {
                 dt_users.DataSource = await Account.getUsersListOnline();
+                dt_users.Columns[1].HeaderText = "Firstname";
+                dt_users.Columns[2].HeaderText = "Middlename";
+                dt_users.Columns[3].HeaderText = "Lastname";
                 dt_users.Columns[0].Visible = false;
                 dt_users.Columns[5].Visible = false;
                 dt_users.Columns[13].Visible = false;
-                dt_users.Columns[14].Visible = false;
                 dt_users.ClearSelection();
             }
             catch (Exception e)
@@ -88,7 +90,7 @@ namespace Santa_Archiving_System.screens.auth
             if (ControlsServices.CheckIfOnline())
             {
                 await LoadDataTableOnline();
-
+                updateaccount.username = string.Empty;
             }
             else
             {
@@ -108,10 +110,16 @@ namespace Santa_Archiving_System.screens.auth
             }
             else
             {
-                await Account.DeleteUserOnline(updateaccount.username);
-                await Account.DeleteUserOffline(updateaccount.username);
-                await LoadDataTableOnline();
-                MessageBox.Show("Successfully deleted!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult dialogResult = MessageBox.Show("Do you want to delete this Data?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    await Account.DeleteUserOnline(updateaccount.username);
+                    await Account.DeleteUserOffline(updateaccount.username);
+                    await LoadDataTableOnline();
+                    MessageBox.Show("Successfully deleted!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    updateaccount.username = string.Empty;
+                }
+                   
             }
             loading1.Visible = false;
         }

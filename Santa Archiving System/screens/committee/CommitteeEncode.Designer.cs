@@ -297,7 +297,7 @@
             this.tb_search.Name = "tb_search";
             this.tb_search.PasswordChar = '\0';
             this.tb_search.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tb_search.PlaceholderText = "Search......";
+            this.tb_search.PlaceholderText = "Search (Title, Chairman, Vice Chairman)";
             this.tb_search.SelectedText = "";
             this.tb_search.ShadowDecoration.Parent = this.tb_search;
             this.tb_search.Size = new System.Drawing.Size(283, 36);
@@ -312,6 +312,7 @@
             this.cb_terms.BorderColor = System.Drawing.Color.Transparent;
             this.cb_terms.BorderRadius = 5;
             this.cb_terms.BorderThickness = 0;
+            this.cb_terms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_terms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;

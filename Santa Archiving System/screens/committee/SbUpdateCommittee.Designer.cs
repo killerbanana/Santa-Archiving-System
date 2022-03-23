@@ -122,6 +122,7 @@
             this.cb_to.BorderRadius = 5;
             this.cb_to.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_to.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_to.Enabled = false;
             this.cb_to.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cb_to.FocusedColor = System.Drawing.Color.Empty;
             this.cb_to.FocusedState.Parent = this.cb_to;
@@ -138,6 +139,7 @@
             this.cb_to.Size = new System.Drawing.Size(155, 36);
             this.cb_to.TabIndex = 266;
             this.cb_to.TabStop = false;
+            this.cb_to.SelectedIndexChanged += new System.EventHandler(this.cb_to_SelectedIndexChanged);
             // 
             // guna2HtmlLabel8
             // 
@@ -166,6 +168,7 @@
             // 
             this.btn_update.BorderRadius = 10;
             this.btn_update.CheckedState.Parent = this.btn_update;
+            this.btn_update.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_update.CustomImages.Parent = this.btn_update;
             this.btn_update.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.btn_update.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -198,6 +201,7 @@
             this.cb_from.BorderRadius = 5;
             this.cb_from.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_from.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_from.Enabled = false;
             this.cb_from.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cb_from.FocusedColor = System.Drawing.Color.Empty;
             this.cb_from.FocusedState.Parent = this.cb_from;
@@ -214,6 +218,7 @@
             this.cb_from.Size = new System.Drawing.Size(155, 36);
             this.cb_from.TabIndex = 258;
             this.cb_from.TabStop = false;
+            this.cb_from.SelectedIndexChanged += new System.EventHandler(this.cb_from_SelectedIndexChanged);
             // 
             // guna2HtmlLabel6
             // 

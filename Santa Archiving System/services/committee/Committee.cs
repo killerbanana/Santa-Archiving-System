@@ -31,7 +31,7 @@ namespace Santa_Archiving_System.services.committee
                     using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
                     {
 
-                        using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Committee  WHERE Terms='" + batch + "'", con))
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT Id, Title, Description, Chairman, ViceChairman, Members, Terms FROM Committee  WHERE Terms='" + batch + "'", con))
                         {
                             con.Open();
                             IAsyncResult result = cmd.BeginExecuteReader();
@@ -68,7 +68,7 @@ namespace Santa_Archiving_System.services.committee
                     using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                     {
 
-                        using (SqlCommand cmd = new SqlCommand("SELECT * FROM Committee  WHERE Terms='" + batch + "'", con))
+                        using (SqlCommand cmd = new SqlCommand("SELECT Id, Title, Description, Chairman, ViceChairman, Members, Terms FROM Committee  WHERE Terms='" + batch + "'", con))
                         {
                             con.Open();
                             IAsyncResult result = cmd.BeginExecuteReader();
@@ -101,7 +101,7 @@ namespace Santa_Archiving_System.services.committee
             {
                 terms.Clear();
 
-                
+
                 await Task.Run(() =>
                 {
                     using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
@@ -118,13 +118,13 @@ namespace Santa_Archiving_System.services.committee
                                     terms.Add(reader.GetString(reader.GetOrdinal("Terms")));
                                 }
                             }
-                          
+
                             con.Close();
                         }
 
                     }
                 });
-           
+
             }
             catch (Exception)
             {
@@ -172,9 +172,9 @@ namespace Santa_Archiving_System.services.committee
         {
             try
             {
-                    committeeMembers.Clear();
-                    membersName = string.Empty;
-                   
+                committeeMembers.Clear();
+                membersName = string.Empty;
+
                 await Task.Run(() =>
                 {
                     using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
@@ -183,13 +183,29 @@ namespace Santa_Archiving_System.services.committee
                         using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Officials WHERE Terms='" + term + "'", con))
                         {
                             con.Open();
-                            
+
                             using (MySqlDataReader reader = cmd.ExecuteReader())
                             {
 
                                 while (reader.Read())
                                 {
-                                    membersName = reader[6].ToString() + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                   
+                                    switch (reader[6].ToString())
+                                    {
+                                        case "Vice Mayor":
+                                            membersName = "VM" + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                            break;
+                                        case "SBM":
+                                            membersName = reader[6].ToString() + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                            break;
+                                        case "ABC Pres":
+                                            membersName = reader[6].ToString() + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                            break;
+                                        case "PPSK Pres":
+                                            membersName = reader[6].ToString() + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                            break;
+                                    }
+                                   
                                     committeeMembers.Add(membersName);
                                 }
                             }
@@ -198,7 +214,7 @@ namespace Santa_Archiving_System.services.committee
 
                     }
                 });
-               
+
             }
             catch (Exception)
             {
@@ -218,7 +234,7 @@ namespace Santa_Archiving_System.services.committee
                     using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                     {
 
-                        using (SqlCommand cmd = new SqlCommand("SELECT * FROM Officials WHERE Term='" + term + "'", con))
+                        using (SqlCommand cmd = new SqlCommand("SELECT * FROM Officials WHERE Terms='" + term + "'", con))
                         {
                             con.Open();
 
@@ -227,7 +243,22 @@ namespace Santa_Archiving_System.services.committee
 
                                 while (reader.Read())
                                 {
-                                    membersName = reader[6].ToString() + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                    switch (reader[6].ToString())
+                                    {
+                                        case "Vice Mayor":
+                                            membersName = "VM" + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                            break;
+                                        case "SBM":
+                                            membersName = reader[6].ToString() + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                            break;
+                                        case "ABC Pres":
+                                            membersName = reader[6].ToString() + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                            break;
+                                        case "PPSK Pres":
+                                            membersName = reader[6].ToString() + " " + reader[5].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                                            break;
+                                    }
+
                                     committeeMembers.Add(membersName);
                                 }
                             }
@@ -257,13 +288,13 @@ namespace Santa_Archiving_System.services.committee
         {
             try
             {
-             
+
                 String query = "INSERT INTO Committee(Title, Description, Chairman, ViceChairman, Members, Terms) VALUES(@Title,@Description, @Chairman, @ViceChairman, @Members, @Terms)";
 
                 using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                 {
                     SqlCommand cmd = new SqlCommand(query, con);
-         
+
                     cmd.Parameters.AddWithValue("@Title", SqlDbType.VarChar).Value = title;
                     cmd.Parameters.AddWithValue("@Description", SqlDbType.VarChar).Value = description;
                     cmd.Parameters.AddWithValue("@Chairman", SqlDbType.VarChar).Value = chairman;
@@ -323,7 +354,7 @@ namespace Santa_Archiving_System.services.committee
                     cmd.Parameters.Add(new MySqlParameter("@ViceChairman", viceChairman));
                     cmd.Parameters.Add(new MySqlParameter("@Members", string.Join(",", members)));
                     cmd.Parameters.Add(new MySqlParameter("@Terms", terms));
-                
+
                     con.Open();
 
                     IAsyncResult result = cmd.BeginExecuteNonQuery();
@@ -368,7 +399,7 @@ namespace Santa_Archiving_System.services.committee
 
                     using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
                     {
-                        using (MySqlCommand cmd = new MySqlCommand("Update Committee set Title=@Title, Description=@Description, Chairman=@Chairman, ViceChairman=@ViceChairman, Members=@Members, Terms=@Terms where Id=@Id", con))
+                        using (MySqlCommand cmd = new MySqlCommand("Update Committee set Title=@Title, Description=@Description, Chairman=@Chairman, ViceChairman=@ViceChairman, Members=@Members, Terms=@Terms where Id=@Id and Title=@Title", con))
                         {
                             con.Open();
                             cmd.Parameters.Add(new MySqlParameter("@Title", title));
@@ -387,7 +418,7 @@ namespace Santa_Archiving_System.services.committee
                     }
 
                 });
-                
+
             }
             catch (Exception)
             {
@@ -414,7 +445,7 @@ namespace Santa_Archiving_System.services.committee
 
                     using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                     {
-                        using (SqlCommand cmd = new SqlCommand("Update Committee set Title=@Title, Description=@Description, Chairman=@Chairman, ViceChairman=@ViceChairman, Members=@Members, Terms=@Terms where Id=@Id", con))
+                        using (SqlCommand cmd = new SqlCommand("Update Committee set Title=@Title, Description=@Description, Chairman=@Chairman, ViceChairman=@ViceChairman, Members=@Members, Terms=@Terms where Id=@Id and Title=@Title", con))
                         {
                             con.Open();
                             cmd.Parameters.AddWithValue("@Title", SqlDbType.VarChar).Value = title;
@@ -488,7 +519,7 @@ namespace Santa_Archiving_System.services.committee
                                                             command3.Parameters.Add(new MySqlParameter("@ViceChairman", reader[4].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Members", reader[5].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Terms", reader[6].ToString()));
-                                               
+
 
                                                             connection3.Open();
 
@@ -498,7 +529,7 @@ namespace Santa_Archiving_System.services.committee
                                                     }
                                                     else
                                                     {
-                                                       
+
                                                         String query1 = "INSERT INTO Committee(Title, Description, Chairman, ViceChairman, Members , Terms) VALUES(@Title,@Description, @Chairman, @ViceChairman, @Members, @Terms)";
                                                         using (MySqlConnection connection3 = new MySqlConnection(Constants.connectionStringOnline))
                                                         {
@@ -509,7 +540,7 @@ namespace Santa_Archiving_System.services.committee
                                                             command3.Parameters.Add(new MySqlParameter("@ViceChairman", reader[4].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Members", reader[5].ToString()));
                                                             command3.Parameters.Add(new MySqlParameter("@Terms", reader[6].ToString()));
-                                                 
+
                                                             connection3.Open();
 
                                                             command3.ExecuteNonQuery();
@@ -608,7 +639,7 @@ namespace Santa_Archiving_System.services.committee
         }
 
         //delete
-        public static async Task DeleteCommitteeOnline(string title, string terms)
+        public static async Task DeleteCommitteeOnline(string title, string Id)
         {
             try
             {
@@ -616,9 +647,9 @@ namespace Santa_Archiving_System.services.committee
                 {
                     using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
                     {
-                        MySqlCommand cmd = new MySqlCommand("Delete from Committee where Title=@Title and Terms=@Terms", con);
+                        MySqlCommand cmd = new MySqlCommand("Delete from Committee where Title=@Title and Id=@Id", con);
                         cmd.Parameters.Add(new MySqlParameter("@Title", title));
-                        cmd.Parameters.Add(new MySqlParameter("@Terms", terms));
+                        cmd.Parameters.Add(new MySqlParameter("@Id", Id));
                         con.Open();
 
                         IAsyncResult result = cmd.BeginExecuteNonQuery();
@@ -638,7 +669,7 @@ namespace Santa_Archiving_System.services.committee
             }
         }
 
-        public static async Task DeleteCommitteeOffline(string title, string terms)
+        public static async Task DeleteCommitteeOffline(string title, string Id)
         {
             try
             {
@@ -646,9 +677,9 @@ namespace Santa_Archiving_System.services.committee
                 {
                     using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                     {
-                        SqlCommand cmd = new SqlCommand("Delete from Committee where Title=@Title and Terms=@Terms", con);
+                        SqlCommand cmd = new SqlCommand("Delete from Committee where Title=@Title and Id=@Id", con);
                         cmd.Parameters.AddWithValue("@Title", SqlDbType.VarChar).Value = title;
-                        cmd.Parameters.AddWithValue("@Terms", SqlDbType.VarChar).Value = terms;
+                        cmd.Parameters.AddWithValue("@Id", SqlDbType.VarChar).Value = Id;
                         con.Open();
 
                         IAsyncResult result = cmd.BeginExecuteNonQuery();

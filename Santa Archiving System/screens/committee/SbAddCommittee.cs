@@ -71,6 +71,8 @@ namespace Santa_Archiving_System.screens.sbOfficial
         private async void btn_create_Click(object sender, EventArgs e)
         {
             string terms = cb_from.Text + " " + "-" + " " + cb_to.Text;
+       
+            
             try
             {
                 foreach (var item in clb_members.CheckedItems)
@@ -100,6 +102,7 @@ namespace Santa_Archiving_System.screens.sbOfficial
             else
             {
                 this.UseWaitCursor = true;
+
                 if (ControlsServices.CheckIfOnline())
                 {
                     await Committee.SaveMembersOnline
@@ -156,10 +159,12 @@ namespace Santa_Archiving_System.screens.sbOfficial
                 if (ControlsServices.CheckIfOnline())
                 {
                     await obj.LoadDataTableOnline();
+                    await obj.loadBatch();
                 }
                 else
                 {
                     await obj.LoadDataTableOffline();
+                    await obj.loadBatch();
                 }
                 this.UseWaitCursor = false;
             }

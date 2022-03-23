@@ -198,7 +198,7 @@ namespace Santa_Archiving_System.screens.resolution
             {
                 DialogResult dialogResult = MessageBox.Show("Do you want to delete this Data?", "Warning", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
-                {
+                { 
                     if (ControlsServices.CheckIfOnline())
                     {
                         loading1.Visible = true;

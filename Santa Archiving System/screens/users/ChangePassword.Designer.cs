@@ -101,6 +101,7 @@
             // 
             this.btn_changePassword.BorderRadius = 10;
             this.btn_changePassword.CheckedState.Parent = this.btn_changePassword;
+            this.btn_changePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_changePassword.CustomImages.Parent = this.btn_changePassword;
             this.btn_changePassword.Enabled = false;
             this.btn_changePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));

@@ -221,6 +221,7 @@
             // 
             this.btn_create.BorderRadius = 10;
             this.btn_create.CheckedState.Parent = this.btn_create;
+            this.btn_create.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_create.CustomImages.Parent = this.btn_create;
             this.btn_create.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.btn_create.Font = new System.Drawing.Font("Segoe UI", 9F);

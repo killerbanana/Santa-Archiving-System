@@ -135,6 +135,7 @@
             // 
             this.btn_update.BorderRadius = 10;
             this.btn_update.CheckedState.Parent = this.btn_update;
+            this.btn_update.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_update.CustomImages.Parent = this.btn_update;
             this.btn_update.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.btn_update.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -230,7 +231,6 @@
             this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_profile.TabIndex = 190;
             this.pb_profile.TabStop = false;
-            this.pb_profile.Click += new System.EventHandler(this.pb_profile_Click);
             // 
             // UpdateUser
             // 
