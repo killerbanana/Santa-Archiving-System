@@ -18,8 +18,8 @@ namespace Santa_Archiving_System.screens.sbOfficial
     {
 
         public static string terms;
-        sb updateOfficials;
-        public SbOfficialEncode(sb data)
+        Sb updateOfficials;
+        public SbOfficialEncode(Sb data)
         {
             this.updateOfficials = data;
             InitializeComponent();

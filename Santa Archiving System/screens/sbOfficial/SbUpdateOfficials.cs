@@ -19,8 +19,8 @@ namespace Santa_Archiving_System.screens.sbOfficial
     {
         private List<String> committeeList = new List<String>();
         private string image;
-        sb updateOfficials;
-        public SbUpdateOfficials(sb data)
+        Sb updateOfficials;
+        public SbUpdateOfficials(Sb data)
         {
             this.updateOfficials = data;
             InitializeComponent();
