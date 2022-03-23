@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</UpdateUrl>
+    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/develop/published/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/develop/published/</UpdateUrl>
     <SupportUrl>http://www.h4ckdogs.com/</SupportUrl>
     <ErrorReportUrl>http://www.h4ckdogs.com/</ErrorReportUrl>
     <TargetCulture>en-AU</TargetCulture>
@@ -32,7 +32,7 @@
     <PublisherName>Hackdogs Software Developer Services</PublisherName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -226,7 +226,7 @@
     </Compile>
     <Compile Include="screens\sendToEmail\SendToEmail.Designer.cs">
       <DependentUpon>SendToEmail.cs</DependentUpon>
-      </Compile>
+    </Compile>
     <Compile Include="screens\sbOfficial\SbUpdateOfficials.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,7 +413,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\sendToEmail\SendToEmail.resx">
       <DependentUpon>SendToEmail.cs</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\sbOfficial\SbUpdateOfficials.resx">
       <DependentUpon>SbUpdateOfficials.cs</DependentUpon>
     </EmbeddedResource>
