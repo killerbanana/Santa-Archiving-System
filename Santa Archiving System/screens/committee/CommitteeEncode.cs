@@ -17,6 +17,7 @@ namespace Santa_Archiving_System.screens.committee
     public partial class CommitteeEncode : Form
     {
         private string terms;
+
         committees updateCommittee;
         public CommitteeEncode(committees data)
         {
@@ -31,6 +32,7 @@ namespace Santa_Archiving_System.screens.committee
                 dt_committee.DataSource = await Committee.getCommitteeListOnline(terms);
                 dt_committee.Columns[0].Visible = false;
                 dt_committee.ClearSelection();
+
             }
             catch (Exception e)
             {
@@ -44,9 +46,11 @@ namespace Santa_Archiving_System.screens.committee
             try
             {
                 dt_committee.DataSource = await Committee.getCommitteeListOffline(terms);
+                dt_committee.Columns[4].HeaderText = "Vice Chairman";
                 dt_committee.Columns[0].Visible = false;
                 dt_committee.ClearSelection();
-      
+
+
             }
             catch (Exception e)
             {
@@ -55,12 +59,10 @@ namespace Santa_Archiving_System.screens.committee
 
             }
         }
-        private async void CommitteEncode_Load(object sender, EventArgs e)
+        public async Task loadBatch()
         {
-           
-       
 
-            if(ControlsServices.CheckIfOnline())
+            if (ControlsServices.CheckIfOnline())
             {
                 await Committee.getTermsOnline();
             }
@@ -84,15 +86,18 @@ namespace Santa_Archiving_System.screens.committee
                     });
                 }
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 MessageBox.Show(err.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-       
-
+        }
+        private async void CommitteEncode_Load(object sender, EventArgs e)
+        {
+            await loadBatch();
+            terms = cb_terms.Text;
         }
 
-    
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             SbAddCommittee sbAddCommittee = new SbAddCommittee();
@@ -131,31 +136,38 @@ namespace Santa_Archiving_System.screens.committee
 
         private async void cb_terms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            terms = cb_terms.SelectedItem.ToString();
-            if (terms != string.Empty)
-            {
-               
-                loading1.Visible = true;
-                if (ControlsServices.CheckIfOnline())
-                {
-                    await LoadDataTableOnline();
-                }
-                else
-                {
-                    await LoadDataTableOffline();
-                }
-                loading1.Visible = false;
-            }
            
+            try
+            {
+                terms = cb_terms.Text;
+                if (terms != string.Empty)
+                {
+
+                    loading1.Visible = true;
+                    if (ControlsServices.CheckIfOnline())
+                    {
+                        await LoadDataTableOnline();
+                    }
+                    else
+                    {
+                        await LoadDataTableOffline();
+                    }
+                    loading1.Visible = false;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void btn_refresh_Click(object sender, EventArgs e)
         {
             loading1.Visible = true;
-          
+
             if (terms != string.Empty)
             {
-               
+
                 loading1.Visible = true;
                 if (ControlsServices.CheckIfOnline())
                 {
@@ -165,9 +177,11 @@ namespace Santa_Archiving_System.screens.committee
                 {
                     await LoadDataTableOffline();
                 }
+
                 loading1.Visible = false;
             }
-           
+            updateCommittee.Id = string.Empty;
+
             loading1.Visible = false;
         }
 
@@ -186,7 +200,7 @@ namespace Santa_Archiving_System.screens.committee
             }
             else
             {
-                (dt_committee.DataSource as DataTable).DefaultView.RowFilter = string.Format("[Title] LIKE '%{0}%' OR [Chairman] LIKE '%{0}%'  OR [ViceChairman] LIKE '%{0}%' ", tb_search.Text);   
+                (dt_committee.DataSource as DataTable).DefaultView.RowFilter = string.Format("[Title] LIKE '%{0}%' OR [Chairman] LIKE '%{0}%'  OR [ViceChairman] LIKE '%{0}%' ", tb_search.Text);
             }
         }
 
@@ -196,16 +210,20 @@ namespace Santa_Archiving_System.screens.committee
             if (dialogResult == DialogResult.Yes)
             {
                 loading1.Visible = true;
-                await Committee.ExportData();
+
                 if (ControlsServices.CheckIfOnline())
                 {
+                    await Committee.ExportData();
                     await LoadDataTableOnline();
+                    MessageBox.Show("Successfully uploaded!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
+                    MessageBox.Show("Failed to process!", "Internet connection lost", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await LoadDataTableOffline();
                 }
-              
+
+
                 loading1.Visible = false;
             }
         }
@@ -216,15 +234,20 @@ namespace Santa_Archiving_System.screens.committee
             if (dialogResult == DialogResult.Yes)
             {
                 loading1.Visible = true;
-                await Committee.ImportCommittee();
+
                 if (ControlsServices.CheckIfOnline())
                 {
+                    await Committee.ImportCommittee();
                     await LoadDataTableOnline();
+                    MessageBox.Show("Successfully downloaded!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
+                    MessageBox.Show("Failed to process!", "Internet connection lost", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await LoadDataTableOffline();
                 }
+
+
                 loading1.Visible = false;
             }
         }
@@ -232,16 +255,29 @@ namespace Santa_Archiving_System.screens.committee
         private async void btn_delete_Click(object sender, EventArgs e)
         {
             loading1.Visible = true;
-            if (String.IsNullOrWhiteSpace(updateCommittee.title) || String.IsNullOrWhiteSpace(updateCommittee.terms))
+            if (String.IsNullOrWhiteSpace(updateCommittee.title) || String.IsNullOrWhiteSpace(updateCommittee.Id))
             {
                 MessageBox.Show("Please select committee to delete", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                await Committee.DeleteCommitteeOnline(updateCommittee.title, updateCommittee.terms);
-                await Committee.DeleteCommitteeOnline(updateCommittee.title, updateCommittee.terms);
-                await LoadDataTableOnline();
-                MessageBox.Show("Successfully deleted!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult dialogResult = MessageBox.Show("Do you want to delete this Data?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    await Committee.DeleteCommitteeOnline(updateCommittee.title, updateCommittee.Id);
+                    await Committee.DeleteCommitteeOffline(updateCommittee.title, updateCommittee.Id);
+                    await LoadDataTableOnline();
+                    MessageBox.Show("Successfully deleted!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    updateCommittee.Id = string.Empty;
+                    updateCommittee.title = string.Empty;
+                    updateCommittee.description = string.Empty;
+                    updateCommittee.chairman = string.Empty;
+                    updateCommittee.viceChairman = string.Empty;
+                    updateCommittee.members.Clear();
+                    updateCommittee.terms = string.Empty;
+                }
+
+
             }
             loading1.Visible = false;
         }

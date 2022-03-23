@@ -69,8 +69,11 @@ namespace Santa_Archiving_System.screens.sbOfficial
             cb_vc.Text = updateCommittee.viceChairman;
             string str = updateCommittee.terms;
             List<String> subs = str.Split(' ').ToList();
-            cb_from.Text =  subs[0];
-            cb_to.Text = subs[2];
+            int indexFrom = cb_from.FindString(subs[0]);
+            cb_from.SelectedIndex = indexFrom;
+            int indexTo = cb_from.FindString(subs[2]);
+            cb_to.SelectedIndex = indexTo;
+         
 
 
             loading1.Visible = false;
@@ -195,10 +198,12 @@ namespace Santa_Archiving_System.screens.sbOfficial
                 if (ControlsServices.CheckIfOnline())
                 {
                     await obj.LoadDataTableOnline();
+                 
                 }
                 else
                 {
                     await obj.LoadDataTableOffline();
+                  
                 }
 
                 this.Close();
@@ -254,6 +259,22 @@ namespace Santa_Archiving_System.screens.sbOfficial
             {
                 lbl_vc.Visible = false;
             }
+        }
+
+        private void SbUpdateCommittee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            updateCommittee.Id = string.Empty;
+       
+        }
+
+        private void cb_from_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_to_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

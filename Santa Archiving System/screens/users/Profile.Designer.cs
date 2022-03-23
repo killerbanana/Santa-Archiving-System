@@ -56,6 +56,7 @@
             // 
             this.btn_create.BorderRadius = 10;
             this.btn_create.CheckedState.Parent = this.btn_create;
+            this.btn_create.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_create.CustomImages.Parent = this.btn_create;
             this.btn_create.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.btn_create.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -322,6 +323,7 @@
             // 
             this.btn_changePassword.BorderRadius = 10;
             this.btn_changePassword.CheckedState.Parent = this.btn_changePassword;
+            this.btn_changePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_changePassword.CustomImages.Parent = this.btn_changePassword;
             this.btn_changePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.btn_changePassword.Font = new System.Drawing.Font("Segoe UI", 9F);

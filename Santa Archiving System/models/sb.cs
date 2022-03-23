@@ -8,6 +8,7 @@ namespace Santa_Archiving_System.models
 {
     public class sb
     {
+
         public string Id { get; set; }
         public string firstName { get; set; }
         public string middleName { get; set; }
@@ -19,8 +20,13 @@ namespace Santa_Archiving_System.models
         public string birthday { get; set; }
         public string address { get; set; }
         public string contactNo { get; set; }
-        public List<String> committee { get; set; }
         public string terms { get; set; }
-        public string image { get; set; }
+        public System.IO.MemoryStream image { get; set; }
+        public List<String> committee { get; set; }
+        public string rank { get; set; }
+
+
+
     }
+
 }

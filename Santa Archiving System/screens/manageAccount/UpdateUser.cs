@@ -172,15 +172,7 @@ namespace Santa_Archiving_System.screens.manageAccount
                      cls.username
 
                      );
-                    await Account.getUserToUpdateOnline
-                     (
-
-                     cb_accountRole.Text,
-                     cls.privilege,
-                     cls.status,
-                     cls.username
-
-                     );
+                  
                     await Account.getUserToUpdateOffline
                      (
 
@@ -238,10 +230,7 @@ namespace Santa_Archiving_System.screens.manageAccount
                 clb_privilege.Enabled = true;
         }
 
-        private void pb_profile_Click(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 
 

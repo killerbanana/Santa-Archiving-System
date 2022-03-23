@@ -170,7 +170,7 @@
             this.tb_searchBox.Name = "tb_searchBox";
             this.tb_searchBox.PasswordChar = '\0';
             this.tb_searchBox.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tb_searchBox.PlaceholderText = "Search......";
+            this.tb_searchBox.PlaceholderText = "Search (Firstname, Lastname, Username)";
             this.tb_searchBox.SelectedText = "";
             this.tb_searchBox.ShadowDecoration.Parent = this.tb_searchBox;
             this.tb_searchBox.Size = new System.Drawing.Size(283, 36);

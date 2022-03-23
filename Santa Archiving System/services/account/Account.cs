@@ -24,10 +24,10 @@ namespace Santa_Archiving_System.services.account
         public static System.IO.MemoryStream image;
         public static bool status;
         public static List<String> privilege = new List<string>();
-  
+
         public static async Task CheckLoginOffline(string username)
         {
-            
+
             try
             {
                 await Task.Run(() =>
@@ -41,33 +41,33 @@ namespace Santa_Archiving_System.services.account
                             using (SqlDataReader reader = cmd.ExecuteReader())
                             {
 
-                               
-                                    if (reader.HasRows)
+
+                                if (reader.HasRows)
+                                {
+                                    while (reader.Read())
                                     {
-                                        while (reader.Read())
-                                        {
-                                            checkedLoginOffline = true;
-                                            firstName = reader[1].ToString();
-                                            middleName = reader[2].ToString();
-                                            lastName = reader[3].ToString();
-                                            suffix = reader[4].ToString();
-                                            gender = reader[6].ToString();
-                                            birthday = reader[7].ToString();
-                                            address = reader[6].ToString();
-                                            contactNo = reader[9].ToString();
-                                            byte[] img = (byte[])(reader["Image"]);
-                                            MemoryStream mstream = new MemoryStream(img);
-                                            image = mstream;
-                                            accountRole = reader[10].ToString();
-                                            privilege.Add(reader.GetString(reader.GetOrdinal("Privilege")));
-                                            userName = reader[12].ToString();
-                                            password = reader[13].ToString();
-                                            status = Convert.ToBoolean(reader[14]);
+                                        checkedLoginOffline = true;
+                                        firstName = reader[1].ToString();
+                                        middleName = reader[2].ToString();
+                                        lastName = reader[3].ToString();
+                                        suffix = reader[4].ToString();
+                                        gender = reader[6].ToString();
+                                        birthday = reader[7].ToString();
+                                        address = reader[6].ToString();
+                                        contactNo = reader[9].ToString();
+                                        byte[] img = (byte[])(reader["Image"]);
+                                        MemoryStream mstream = new MemoryStream(img);
+                                        image = mstream;
+                                        accountRole = reader[10].ToString();
+                                        privilege.Add(reader.GetString(reader.GetOrdinal("Privilege")));
+                                        userName = reader[12].ToString();
+                                        password = reader[13].ToString();
+                                        status = Convert.ToBoolean(reader[14]);
 
-                                    } 
                                     }
+                                }
 
-                                
+
 
                             }
                             con.Close();
@@ -158,7 +158,7 @@ namespace Santa_Archiving_System.services.account
                                     {
 
                                         checkedUsername = true;
-                                        
+
                                     }
 
                                 }
@@ -244,9 +244,9 @@ namespace Santa_Archiving_System.services.account
 
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
-                throw; 
+                throw;
             }
 
         }
@@ -321,7 +321,7 @@ namespace Santa_Archiving_System.services.account
                 throw;
             }
 
-        
+
         }
 
 
@@ -334,7 +334,7 @@ namespace Santa_Archiving_System.services.account
             string birthday,
             string address,
             string contactNo
-        
+
             )
         {
             try
@@ -418,7 +418,7 @@ namespace Santa_Archiving_System.services.account
 
                 });
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -590,14 +590,15 @@ namespace Santa_Archiving_System.services.account
 
                             while (!result.IsCompleted)
                             {
+                               
                             }
 
                             using (MySqlDataReader reader = cmd.EndExecuteReader(result))
                             {
-
+                               
                                 dt.Load(reader);
                             }
-
+                            con.Close();
                         }
 
                     }
@@ -612,7 +613,7 @@ namespace Santa_Archiving_System.services.account
         //update user account
         public static async Task getUserToUpdateOnline
         (
-           
+
             string accountRole,
             List<String> privilege,
             bool status,
@@ -645,9 +646,9 @@ namespace Santa_Archiving_System.services.account
             {
                 throw;
             }
-          
-               
-           
+
+
+
         }
 
         public static async Task getUserToUpdateOffline
@@ -684,8 +685,8 @@ namespace Santa_Archiving_System.services.account
             catch (Exception)
             {
                 throw;
-            }    
-            
+            }
+
 
         }
 

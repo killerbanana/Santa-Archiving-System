@@ -386,7 +386,8 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void SBOfficials_Click(object sender, EventArgs e)
         {
-            openChildForm(new SbOfficialEncode());
+            sb data = new sb(){};
+            openChildForm(new SbOfficialEncode(data));
         }
 
         private void SBComittee_Click(object sender, EventArgs e)

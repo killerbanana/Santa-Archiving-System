@@ -190,7 +190,10 @@ namespace Santa_Archiving_System.screens.auth
         private void pb_profile_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
+            opf.Title = "Choose Image File";
+            opf.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             opf.Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif";
+            opf.Multiselect = false;
             if (opf.ShowDialog() == DialogResult.OK)
             {
                 try

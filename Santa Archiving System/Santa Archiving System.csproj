@@ -191,6 +191,12 @@
     <Compile Include="screens\sbOfficial\SbAddOfficials.Designer.cs">
       <DependentUpon>SbAddOfficials.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\sbOfficial\SbUpdateOfficials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sbOfficial\SbUpdateOfficials.Designer.cs">
+      <DependentUpon>SbUpdateOfficials.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\splash\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\sbOfficial\SbAddOfficials.resx">
       <DependentUpon>SbAddOfficials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sbOfficial\SbUpdateOfficials.resx">
+      <DependentUpon>SbUpdateOfficials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\splash\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
