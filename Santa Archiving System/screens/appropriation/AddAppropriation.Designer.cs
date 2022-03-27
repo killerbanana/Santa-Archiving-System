@@ -58,10 +58,9 @@
             this.fileName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.reading_cb = new System.Windows.Forms.ComboBox();
+            this.reading_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // guna2DragControl1
@@ -478,19 +477,6 @@
             this.guna2HtmlLabel3.TabIndex = 151;
             this.guna2HtmlLabel3.Text = "Appropriation No.";
             // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.BorderRadius = 5;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Red;
-            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(538, 37);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox1.TabIndex = 155;
-            // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
@@ -513,10 +499,26 @@
             // 
             // reading_cb
             // 
+            this.reading_cb.BackColor = System.Drawing.Color.Transparent;
+            this.reading_cb.BorderRadius = 5;
+            this.reading_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.reading_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reading_cb.FocusedColor = System.Drawing.Color.Empty;
+            this.reading_cb.FocusedState.Parent = this.reading_cb;
+            this.reading_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.reading_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.reading_cb.FormattingEnabled = true;
-            this.reading_cb.Location = new System.Drawing.Point(32, 559);
+            this.reading_cb.HoverState.Parent = this.reading_cb;
+            this.reading_cb.ItemHeight = 30;
+            this.reading_cb.Items.AddRange(new object[] {
+            "First Reading",
+            "Second Reading",
+            "Third Reading"});
+            this.reading_cb.ItemsAppearance.Parent = this.reading_cb;
+            this.reading_cb.Location = new System.Drawing.Point(31, 549);
             this.reading_cb.Name = "reading_cb";
-            this.reading_cb.Size = new System.Drawing.Size(537, 21);
+            this.reading_cb.ShadowDecoration.Parent = this.reading_cb;
+            this.reading_cb.Size = new System.Drawing.Size(538, 36);
             this.reading_cb.TabIndex = 171;
             // 
             // AddAppropriation
@@ -524,7 +526,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 689);
-            this.ControlBox = false;
             this.Controls.Add(this.reading_cb);
             this.Controls.Add(this.guna2HtmlLabel12);
             this.Controls.Add(this.guna2HtmlLabel11);
@@ -550,7 +551,6 @@
             this.Controls.Add(this.fileName);
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.panel4);
@@ -558,6 +558,8 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddAppropriation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.AddAppropriation_Load);
@@ -597,9 +599,8 @@
         private Guna.UI2.WinForms.Guna2TextBox fileName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private System.Windows.Forms.ComboBox reading_cb;
+        private Guna.UI2.WinForms.Guna2ComboBox reading_cb;
     }
 }

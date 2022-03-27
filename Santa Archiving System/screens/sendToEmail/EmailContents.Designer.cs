@@ -33,12 +33,12 @@
             this.tb_subject = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_body = new System.Windows.Forms.RichTextBox();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_send = new Guna.UI2.WinForms.Guna2Button();
             this.lb_attachement = new System.Windows.Forms.Label();
             this.lb_extension = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,18 +119,6 @@
             this.tb_body.TabIndex = 6;
             this.tb_body.Text = "";
             // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
-            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(463, 12);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox1.TabIndex = 7;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -192,24 +180,35 @@
             this.pictureBox1.TabIndex = 76;
             this.pictureBox1.TabStop = false;
             // 
+            // loading1
+            // 
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(233, 167);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(72, 74);
+            this.loading1.TabIndex = 77;
+            this.loading1.Visible = false;
+            // 
             // EmailContents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 497);
-            this.ControlBox = false;
+            this.Controls.Add(this.loading1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lb_extension);
             this.Controls.Add(this.lb_attachement);
             this.Controls.Add(this.btn_send);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.tb_body);
             this.Controls.Add(this.tb_subject);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_recipient);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EmailContents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.EmailContents_Load);
@@ -226,11 +225,11 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_subject;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox tb_body;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btn_send;
         private System.Windows.Forms.Label lb_attachement;
         private System.Windows.Forms.Label lb_extension;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private common.loading loading1;
     }
 }

@@ -63,6 +63,10 @@ namespace Santa_Archiving_System.screens.resolution
                 loading1.Visible = false;
                 MessageBox.Show("Successfully Added");
                 this.Close();
+                if (resolution.QuickAction)
+                {
+                    return;
+                }
                 await resoluionEncode.LoadDataTableOnline();
             }
             else {
@@ -78,6 +82,10 @@ namespace Santa_Archiving_System.screens.resolution
                     reading_cb.Text);
                 MessageBox.Show("Successfully Added");
                 this.Close();
+                if (resolution.QuickAction)
+                {
+                    return;
+                }
                 await resoluionEncode.LoadDataTable();
             }
         }
@@ -93,6 +101,9 @@ namespace Santa_Archiving_System.screens.resolution
             fileName.Text = filename;
         }
 
-      
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

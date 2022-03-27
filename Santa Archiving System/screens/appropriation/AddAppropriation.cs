@@ -1,4 +1,5 @@
-﻿using Santa_Archiving_System.services.appropriation;
+﻿using Santa_Archiving_System.models;
+using Santa_Archiving_System.services.appropriation;
 using Santa_Archiving_System.services.controls;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,10 @@ namespace Santa_Archiving_System.screens.appropriation
 {
     public partial class AddAppropriation : Form
     {
-        public AddAppropriation()
+        Appropriation appropriation;
+        public AddAppropriation(Appropriation data)
         {
+            this.appropriation = data;
             InitializeComponent();
         }
 
@@ -80,6 +83,7 @@ namespace Santa_Archiving_System.screens.appropriation
         private void AddAppropriation_Load(object sender, EventArgs e)
         {
             date.Text = DateTime.Now.ToString();
+            reading_cb.SelectedIndex = 0;
         }
     }
 }

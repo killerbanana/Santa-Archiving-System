@@ -212,5 +212,18 @@ namespace Santa_Archiving_System.screens.ordinance
         {
             await Ordinances.OpenFileOnline(ordinance.Type, ordinance.Id.ToString());
         }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(guna2TextBox1.Text))
+            {
+
+
+            }
+            else
+            {
+                (guna2DataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("[OrinanceNo] LIKE '%{0}%' OR [Series] LIKE '%{0}%'  OR [Date] LIKE '%{0}%' OR  [Title] LIKE '%{0}%' OR  [Author] LIKE '%{0}%' OR  [Tag] LIKE '%{0}%'", guna2TextBox1.Text);
+            }
+        }
     }
 }

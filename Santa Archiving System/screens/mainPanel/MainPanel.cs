@@ -229,6 +229,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Resolution data = new Resolution()
             {
+                QuickAction = false
             };
             openChildForm(new ResoluionEncode(data));
         }
@@ -238,7 +239,8 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Resolution data = new Resolution()
             {
-                Reading = "First Reading"
+                Reading = "First Reading",
+                QuickAction = false
             };
             openChildForm(new ResoluionEncode(data));
         }
@@ -247,7 +249,8 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Resolution data = new Resolution()
             {
-                Reading = "Second Reading"
+                Reading = "Second Reading",
+                QuickAction = false
             };
             openChildForm(new ResoluionEncode(data));
         }
@@ -256,7 +259,8 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Resolution data = new Resolution()
             {
-                Reading = "Third Reading"
+                Reading = "Third Reading",
+                QuickAction = false
             };
             openChildForm(new ResoluionEncode(data));
         }
@@ -265,6 +269,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Ordinance data = new Ordinance()
             {
+                QuickAction = false
             };
             openChildForm(new OrdinaceEncode(data));
         }
@@ -273,6 +278,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Ordinance data = new Ordinance()
             {
+                QuickAction = false,
                 Reading = "First Reading"
             };
             openChildForm(new OrdinaceEncode(data));
@@ -282,6 +288,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Ordinance data = new Ordinance()
             {
+                QuickAction = false,
                 Reading = "Second Reading"
             };
             openChildForm(new OrdinaceEncode(data));
@@ -291,6 +298,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Ordinance data = new Ordinance()
             {
+                QuickAction = false,
                 Reading = "Third Reading"
             };
             openChildForm(new OrdinaceEncode(data));
@@ -337,6 +345,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Resolution data = new Resolution()
             {
+                QuickAction = false,
                 Reading = "PDF"
             };
             openChildForm(new ResoluionEncode(data));
@@ -402,6 +411,7 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             Ordinance data = new Ordinance()
             {
+                QuickAction = false,
                 Reading = "PDF"
             };
             openChildForm(new OrdinaceEncode(data));
