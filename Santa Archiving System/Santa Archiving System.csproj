@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</UpdateUrl>
+    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/develop/published/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/develop/published/</UpdateUrl>
     <SupportUrl>http://www.h4ckdogs.com/</SupportUrl>
     <ErrorReportUrl>http://www.h4ckdogs.com/</ErrorReportUrl>
     <TargetCulture>en-AU</TargetCulture>
@@ -32,7 +32,7 @@
     <PublisherName>Hackdogs Software Developer Services</PublisherName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -61,17 +61,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2AA41FA8536A7FEEE8E01EDECADE336F93D08BAB</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>66FE8A9E43060489A79222454DE0C6ECEC0AAB9B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>certificate.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Internet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>santalgu.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
@@ -486,7 +500,9 @@
     <EmbeddedResource Include="screens\tricycle\TricycleEncode.resx">
       <DependentUpon>TricycleEncode.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="certificate.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -496,7 +512,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Santa Archiving System_1_TemporaryKey.pfx" />
+    <None Include="Santa Archiving System_2_TemporaryKey.pfx" />
+    <None Include="Santa Archiving System_3_TemporaryKey.pfx" />
     <None Include="Santa Archiving System_TemporaryKey.pfx" />
+    <None Include="santalgu.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -511,6 +531,10 @@
     <None Include="Resources\icons8-trash-100.png" />
     <None Include="Resources\icons8-print-100.png" />
     <None Include="Resources\icons8-view-100.png" />
+    <None Include="Resources\icons8-attach-50.png" />
+    <None Include="Resources\icons8-mail-50.png" />
+    <None Include="Resources\icons8-pdf-64.png" />
+    <None Include="Resources\icons8-add-50.png" />
     <None Include="Resources\icons8-organization-chart-people-50.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -540,15 +564,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="stdole">
-      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="WIA">
       <Guid>{94A0E92D-43C0-494E-AC29-FD45948A5221}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -556,7 +571,7 @@
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

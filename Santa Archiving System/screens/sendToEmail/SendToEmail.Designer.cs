@@ -103,12 +103,13 @@
             this.btn_send.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_send.ForeColor = System.Drawing.Color.White;
             this.btn_send.HoverState.Parent = this.btn_send;
+            this.btn_send.Image = global::Santa_Archiving_System.Properties.Resources.icons8_mail_50;
             this.btn_send.Image = global::Santa_Archiving_System.Properties.Resources.icons8_add_100;
             this.btn_send.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_send.Location = new System.Drawing.Point(6, 75);
             this.btn_send.Name = "btn_send";
             this.btn_send.ShadowDecoration.Parent = this.btn_send;
-            this.btn_send.Size = new System.Drawing.Size(139, 36);
+            this.btn_send.Size = new System.Drawing.Size(146, 36);
             this.btn_send.TabIndex = 29;
             this.btn_send.Text = "Send to Email";
             this.btn_send.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -142,6 +143,7 @@
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Size = new System.Drawing.Size(283, 36);
             this.guna2TextBox1.TabIndex = 28;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // lb_data
             // 
@@ -243,6 +245,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SendToEmail";

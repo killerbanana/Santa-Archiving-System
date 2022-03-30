@@ -1,6 +1,11 @@
 ﻿using Santa_Archiving_System.models;
+using Santa_Archiving_System.screens.appropriation;
 using Santa_Archiving_System.screens.electronic;
+using Santa_Archiving_System.screens.ordinance;
+using Santa_Archiving_System.screens.resolution;
 using Santa_Archiving_System.screens.sendToEmail;
+using Santa_Archiving_System.services.ordinance;
+using Santa_Archiving_System.services.resolution;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,9 +26,13 @@ namespace Santa_Archiving_System.screens.dashboard
             InitializeComponent();
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
+        private async void Dashboard_Load(object sender, EventArgs e)
         {
+            int resolutionCount = await Resolutions.getCount();
+            int ordinanceCount = await Ordinances.getCount();
 
+            lb_resolution_count.Text = resolutionCount.ToString();
+            lb_ordinance_count.Text = ordinanceCount.ToString();
         }
 
         private void guna2Panel1_MouseEnter(object sender, EventArgs e)
@@ -34,7 +43,7 @@ namespace Santa_Archiving_System.screens.dashboard
 
         private void guna2Panel1_MouseLeave(object sender, EventArgs e)
         {
-            lb_resolution.ForeColor = Color.FromArgb(159, 160, 182);
+            lb_resolution.ForeColor = Color.Black;
             lb_resolution_count.ForeColor = Color.Black;
         }
 
@@ -61,8 +70,124 @@ namespace Santa_Archiving_System.screens.dashboard
 
         private void guna2Panel2_MouseLeave(object sender, EventArgs e)
         {
-            lb_ordinance.ForeColor = Color.FromArgb(159, 160, 182);
+            lb_ordinance.ForeColor = Color.Black;
             lb_ordinance_count.ForeColor = Color.Black;
+        }
+
+        private void guna2Panel2_Click(object sender, EventArgs e)
+        {
+            EmailContent emailContent = new EmailContent()
+            {
+                Type = "Ordinance"
+            };
+            SendToEmail sendToEmail = new SendToEmail(emailContent);
+            sendToEmail.ShowDialog();
+        }
+
+        private void guna2Panel7_Click(object sender, EventArgs e)
+        {
+            Resolution resolution = new Resolution() {
+                QuickAction = true
+            };
+            AddResolution addResolution = new AddResolution(resolution);
+            addResolution.ShowDialog();
+        }
+
+        private void guna2Panel8_Click(object sender, EventArgs e)
+        {
+            Ordinance ordinance = new Ordinance()
+            {
+                QuickAction = true
+            };
+            AddOrdinance addOrdinance = new AddOrdinance(ordinance);
+            addOrdinance.ShowDialog();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            Ordinance ordinance = new Ordinance()
+            {
+                QuickAction = true
+            };
+            AddOrdinance addOrdinance = new AddOrdinance(ordinance);
+            addOrdinance.ShowDialog();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            Resolution resolution = new Resolution()
+            {
+                QuickAction = true
+            };
+            AddResolution addResolution = new AddResolution(resolution);
+            addResolution.ShowDialog();
+        }
+
+        private void guna2Panel9_Click(object sender, EventArgs e)
+        {
+            Appropriation appropriation = new Appropriation();
+            AddAppropriation addAppropriation = new AddAppropriation(appropriation);
+            addAppropriation.ShowDialog();
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            Appropriation appropriation = new Appropriation();
+            AddAppropriation addAppropriation = new AddAppropriation(appropriation);
+            addAppropriation.ShowDialog();
+        }
+
+        private void guna2Panel3_MouseEnter(object sender, EventArgs e)
+        {
+            lb_appropriation.ForeColor = Color.FromArgb(55, 81, 255);
+            lb_appropriation_count.ForeColor = Color.FromArgb(55, 81, 255);
+        }
+
+        private void guna2Panel3_MouseLeave(object sender, EventArgs e)
+        {
+            lb_appropriation.ForeColor = Color.Black;
+            lb_appropriation_count.ForeColor = Color.Black;
+        }
+
+        private void guna2Panel3_Click(object sender, EventArgs e)
+        {
+            EmailContent emailContent = new EmailContent()
+            {
+                Type = "Appropriation"
+            };
+            SendToEmail sendToEmail = new SendToEmail(emailContent);
+            sendToEmail.ShowDialog();
+        }
+
+        private void lb_appropriation_count_Click(object sender, EventArgs e)
+        {
+            EmailContent emailContent = new EmailContent()
+            {
+                Type = "Appropriation"
+            };
+            SendToEmail sendToEmail = new SendToEmail(emailContent);
+            sendToEmail.ShowDialog();
+        }
+
+        private void lb_ordinance_count_Click(object sender, EventArgs e)
+        {
+            EmailContent emailContent = new EmailContent()
+            {
+                Type = "Ordinance"
+            };
+            SendToEmail sendToEmail = new SendToEmail(emailContent);
+            sendToEmail.ShowDialog();
+        }
+
+        private void lb_resolution_count_Click(object sender, EventArgs e)
+        {
+            EmailContent emailContent = new EmailContent()
+            {
+                Type = "Resolution"
+            };
+            SendToEmail sendToEmail = new SendToEmail(emailContent);
+            sendToEmail.ShowDialog();
         }
     }
 }

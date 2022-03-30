@@ -20,6 +20,6 @@ namespace Santa_Archiving_System.models
         public string Size { get; set; }
         public string Tag { get; set; }
         public string Reading { get; set; }
-        
+        public bool QuickAction { get; set; }
     }
 }

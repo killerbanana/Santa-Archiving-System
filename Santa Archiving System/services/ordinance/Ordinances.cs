@@ -379,6 +379,24 @@ namespace Santa_Archiving_System.services.ordinance
             }
         }
 
+        public static async Task<int> getCount()
+        {
+            DataTable dt = new DataTable();
+            int count = 0;
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    con.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM Ordinance", con))
+                    {
+                        count = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            });
+            return count;
+        }
+
         //SAVE OFFLINE
         public static async Task SaveOrdinanceData(
            string ordinanceNo,

@@ -58,6 +58,12 @@ namespace Santa_Archiving_System.screens.ordinance
                 loading1.Visible = false;
                 MessageBox.Show("Successfully Added");
                 this.Close();
+
+                if (ordinane.QuickAction)
+                {
+                    return;
+                }
+                
                 await ordiEncode.LoadDataTableOnline();
             }
             else {
@@ -74,6 +80,10 @@ namespace Santa_Archiving_System.screens.ordinance
                 loading1.Visible = false;
                 MessageBox.Show("Successfully Added");
                 this.Close();
+                if (ordinane.QuickAction)
+                {
+                    return;
+                }
                 await ordiEncode.LoadDataTable();
             }
         }
@@ -87,6 +97,11 @@ namespace Santa_Archiving_System.screens.ordinance
         private void AddOrdinance_Load(object sender, EventArgs e)
         {
             reading_cb.SelectedIndex = 0;
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

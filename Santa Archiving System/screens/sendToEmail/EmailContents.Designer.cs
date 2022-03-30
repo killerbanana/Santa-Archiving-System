@@ -38,6 +38,7 @@
             this.lb_attachement = new System.Windows.Forms.Label();
             this.lb_extension = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,12 +180,23 @@
             this.pictureBox1.TabIndex = 76;
             this.pictureBox1.TabStop = false;
             // 
+            // loading1
+            // 
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(233, 167);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(72, 74);
+            this.loading1.TabIndex = 77;
+            this.loading1.Visible = false;
+            // 
             // EmailContents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(527, 497);
+            this.Controls.Add(this.loading1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lb_extension);
             this.Controls.Add(this.lb_attachement);
@@ -220,5 +232,6 @@
         private System.Windows.Forms.Label lb_attachement;
         private System.Windows.Forms.Label lb_extension;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private common.loading loading1;
     }
 }

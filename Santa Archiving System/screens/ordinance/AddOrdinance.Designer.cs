@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -56,18 +54,13 @@
             this.fileName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btn_scan = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 30;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // panel1
             // 
@@ -332,6 +325,7 @@
             this.btn_cancel.Size = new System.Drawing.Size(111, 45);
             this.btn_cancel.TabIndex = 99;
             this.btn_cancel.Text = "CANCEL";
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_add
             // 
@@ -361,10 +355,10 @@
             this.btn_browse.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_browse.ForeColor = System.Drawing.Color.White;
             this.btn_browse.HoverState.Parent = this.btn_browse;
-            this.btn_browse.Location = new System.Drawing.Point(429, 119);
+            this.btn_browse.Location = new System.Drawing.Point(401, 119);
             this.btn_browse.Name = "btn_browse";
             this.btn_browse.ShadowDecoration.Parent = this.btn_browse;
-            this.btn_browse.Size = new System.Drawing.Size(141, 36);
+            this.btn_browse.Size = new System.Drawing.Size(84, 36);
             this.btn_browse.TabIndex = 98;
             this.btn_browse.Text = "Browse";
             this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click);
@@ -447,7 +441,7 @@
             this.fileName.ReadOnly = true;
             this.fileName.SelectedText = "";
             this.fileName.ShadowDecoration.Parent = this.fileName;
-            this.fileName.Size = new System.Drawing.Size(391, 36);
+            this.fileName.Size = new System.Drawing.Size(363, 36);
             this.fileName.TabIndex = 85;
             // 
             // guna2HtmlLabel5
@@ -469,19 +463,6 @@
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(117, 23);
             this.guna2HtmlLabel3.TabIndex = 93;
             this.guna2HtmlLabel3.Text = "Ordinance No.";
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.BorderRadius = 5;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Red;
-            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(539, 38);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox1.TabIndex = 97;
             // 
             // guna2HtmlLabel2
             // 
@@ -536,12 +517,29 @@
             this.guna2HtmlLabel12.TabIndex = 142;
             this.guna2HtmlLabel12.Text = "*";
             // 
+            // btn_scan
+            // 
+            this.btn_scan.BorderRadius = 5;
+            this.btn_scan.CheckedState.Parent = this.btn_scan;
+            this.btn_scan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_scan.CustomImages.Parent = this.btn_scan;
+            this.btn_scan.FillColor = System.Drawing.Color.Green;
+            this.btn_scan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_scan.ForeColor = System.Drawing.Color.White;
+            this.btn_scan.HoverState.Parent = this.btn_scan;
+            this.btn_scan.Location = new System.Drawing.Point(491, 119);
+            this.btn_scan.Name = "btn_scan";
+            this.btn_scan.ShadowDecoration.Parent = this.btn_scan;
+            this.btn_scan.Size = new System.Drawing.Size(79, 36);
+            this.btn_scan.TabIndex = 176;
+            this.btn_scan.Text = "Scan";
+            // 
             // AddOrdinance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 691);
-            this.ControlBox = false;
+            this.Controls.Add(this.btn_scan);
             this.Controls.Add(this.guna2HtmlLabel12);
             this.Controls.Add(this.guna2HtmlLabel11);
             this.Controls.Add(this.guna2HtmlLabel19);
@@ -567,14 +565,15 @@
             this.Controls.Add(this.fileName);
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddOrdinance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.AddOrdinance_Load);
@@ -584,8 +583,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
@@ -612,11 +609,11 @@
         private Guna.UI2.WinForms.Guna2TextBox fileName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
+        private Guna.UI2.WinForms.Guna2Button btn_scan;
     }
 }

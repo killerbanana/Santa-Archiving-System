@@ -34,7 +34,8 @@ namespace Santa_Archiving_System.screens.appropriation
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            AddAppropriation addAppropriation = new AddAppropriation();
+            Appropriation appropriation = new Appropriation();
+            AddAppropriation addAppropriation = new AddAppropriation(appropriation);
             addAppropriation.ShowDialog();
         }
 
