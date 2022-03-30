@@ -97,5 +97,7 @@ namespace Santa_Archiving_System.screens.tricycle
                 await LoadDataTable();
             }
         }
+
+   
     }
 }

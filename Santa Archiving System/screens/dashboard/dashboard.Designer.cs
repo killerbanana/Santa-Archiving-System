@@ -167,6 +167,20 @@
             this.lb_resolution.Text = "Resolutions";
             this.lb_resolution.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lb_resolution
+            // 
+            this.lb_resolution.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_resolution.AutoSize = true;
+            this.lb_resolution.BackColor = System.Drawing.Color.Transparent;
+            this.lb_resolution.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_resolution.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(160)))), ((int)(((byte)(182)))));
+            this.lb_resolution.Location = new System.Drawing.Point(58, 13);
+            this.lb_resolution.Name = "lb_resolution";
+            this.lb_resolution.Size = new System.Drawing.Size(112, 28);
+            this.lb_resolution.TabIndex = 9;
+            this.lb_resolution.Text = "Resolutions";
+            this.lb_resolution.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -735,7 +749,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1162, 613);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel3);

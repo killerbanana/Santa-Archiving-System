@@ -524,7 +524,8 @@
             this.btn_scan.ShadowDecoration.Parent = this.btn_scan;
             this.btn_scan.Size = new System.Drawing.Size(79, 36);
             this.btn_scan.TabIndex = 175;
-            this.btn_scan.Text = "Scan";
+            this.btn_scan.Text = "Scanner";
+            this.btn_scan.Click += new System.EventHandler(this.btn_scan_Click);
             // 
             // guna2DragControl1
             // 

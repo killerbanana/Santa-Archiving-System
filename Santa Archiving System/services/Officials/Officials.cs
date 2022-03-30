@@ -547,7 +547,7 @@ namespace Santa_Archiving_System.services.Officials
         }
 
         //delete
-        public static async Task DeleteOfficialsOnline(string position, string Id)
+        public static async Task DeleteOfficialsOnline(string position, string Id, string rank)
         {
             try
             {
@@ -557,6 +557,7 @@ namespace Santa_Archiving_System.services.Officials
                     {
                         MySqlCommand cmd = new MySqlCommand("Delete from Officials where Position=@Position and Id=@Id and RankNo=@RankNo", con);
                         cmd.Parameters.Add(new MySqlParameter("@Position", position));
+                        cmd.Parameters.Add(new MySqlParameter("@RankNo", rank));
                         cmd.Parameters.Add(new MySqlParameter("@Id", Id));
                         con.Open();
 
@@ -577,7 +578,7 @@ namespace Santa_Archiving_System.services.Officials
             }
         }
 
-        public static async Task DeleteOfficialsOffline(string position, string Id)
+        public static async Task DeleteOfficialsOffline(string position, string Id, string rank)
         {
             try
             {
@@ -585,8 +586,9 @@ namespace Santa_Archiving_System.services.Officials
                 {
                     using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
                     {
-                        SqlCommand cmd = new SqlCommand("Delete from Committee where Position=@Position and  and Id=@Id", con);
+                        SqlCommand cmd = new SqlCommand("Delete from Officials where Position=@Position and RankNo=@RankNo and Id=@Id", con);
                         cmd.Parameters.AddWithValue("@Position", SqlDbType.VarChar).Value = position;
+                        cmd.Parameters.AddWithValue("@RankNo", SqlDbType.VarChar).Value = rank;
                         cmd.Parameters.AddWithValue("@Id", SqlDbType.VarChar).Value = Id;
                         con.Open();
 
@@ -761,7 +763,7 @@ namespace Santa_Archiving_System.services.Officials
                                                     else
                                                     {
 
-                                                        String query1 = "INSERT INTO Committee(FirstName, MiddleName, LastName, Suffix, Title, Position, Gender, Birthday, Address, ContactNo, Committee, Terms, RankNo, Image) VALUES(@FirstName, @MiddleName, @LastName, @Suffix, @Title, @Position, @Gender, @Birthday, @Address, @ContactNo, @Committee, @Terms, @RankNo, @Image)";
+                                                        String query1 = "INSERT INTO Officials(FirstName, MiddleName, LastName, Suffix, Title, Position, Gender, Birthday, Address, ContactNo, Committee, Terms, RankNo, Image) VALUES(@FirstName, @MiddleName, @LastName, @Suffix, @Title, @Position, @Gender, @Birthday, @Address, @ContactNo, @Committee, @Terms, @RankNo, @Image)";
                                                         using (SqlConnection connection3 = new SqlConnection(Constants.connectionStringOffline))
                                                         {
                                                             SqlCommand command3 = new SqlCommand(query1, connection3);

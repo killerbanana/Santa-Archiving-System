@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Users\AWB\Desktop\Santa Project\Santa Archiving System\published\</PublishUrl>
+    <PublishUrl>C:\Users\Tja07\OneDrive\Desktop\New folder\Santa-Archiving-System\published\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -38,6 +38,8 @@
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -98,6 +100,11 @@
     <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="NTwain, Version=3.0.0.0, Culture=neutral, PublicKeyToken=f9f7e0c5169536c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\NTwain.3.7.1\lib\net40\NTwain.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -122,6 +129,7 @@
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
     <Reference Include="WordToPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WordToPDF.1.0.0\lib\net452\WordToPDF.dll</HintPath>
     </Reference>
@@ -148,13 +156,13 @@
     <Compile Include="models\Appropriation.cs" />
     <Compile Include="models\committees.cs" />
     <Compile Include="models\electronic.cs" />
+    <Compile Include="models\EmailContent.cs" />
     <Compile Include="models\indexmanagement.cs" />
     <Compile Include="models\legislativedocument.cs" />
     <Compile Include="models\loginCredentials.cs" />
     <Compile Include="models\Ordinance.cs" />
     <Compile Include="models\Resolution.cs" />
     <Compile Include="models\sb.cs" />
-    <Compile Include="models\EmailContent.cs" />
     <Compile Include="models\Tricycle.cs" />
     <Compile Include="models\updateAccount.cs" />
     <Compile Include="Program.cs" />
@@ -211,6 +219,12 @@
     </Compile>
     <Compile Include="screens\committee\SbAddCommittee.Designer.cs">
       <DependentUpon>SbAddCommittee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\resolution\ResolutionScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\ResolutionScanner.Designer.cs">
+      <DependentUpon>ResolutionScanner.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\sbOfficial\SbOfficialEncode.cs">
       <SubType>Form</SubType>
@@ -414,6 +428,9 @@
     <EmbeddedResource Include="screens\committee\SbAddCommittee.resx">
       <DependentUpon>SbAddCommittee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\ResolutionScanner.resx">
+      <DependentUpon>ResolutionScanner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\sbOfficial\SbOfficialEncode.resx">
       <DependentUpon>SbOfficialEncode.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +535,7 @@
     <None Include="Resources\icons8-mail-50.png" />
     <None Include="Resources\icons8-pdf-64.png" />
     <None Include="Resources\icons8-add-50.png" />
+    <None Include="Resources\icons8-organization-chart-people-50.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

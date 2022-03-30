@@ -11,6 +11,6 @@ namespace Santa_Archiving_System.models
         public int Id { get; set; }
         public string DocType { get; set; }
         public string Type { get; set; }
-        public string FileName { get; set;}
+        public string FileName { get; set; }
     }
 }

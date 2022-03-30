@@ -25,6 +25,9 @@ namespace Santa_Archiving_System.screens.tricycle
         }
 
         public static string name, barangay, civil, reason, make, motor, chassis, plate, units, franchise, tax, orno, status, date, fee;
+
+  
+
         SqlDataAdapter da = new SqlDataAdapter();
 
         DataTable dt = new DataTable();

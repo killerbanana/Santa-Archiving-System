@@ -104,6 +104,7 @@
             this.btn_send.ForeColor = System.Drawing.Color.White;
             this.btn_send.HoverState.Parent = this.btn_send;
             this.btn_send.Image = global::Santa_Archiving_System.Properties.Resources.icons8_mail_50;
+            this.btn_send.Image = global::Santa_Archiving_System.Properties.Resources.icons8_add_100;
             this.btn_send.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_send.Location = new System.Drawing.Point(6, 75);
             this.btn_send.Name = "btn_send";
@@ -248,7 +249,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SendToEmail";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Kiosk";
             this.Load += new System.EventHandler(this.SendToEmail_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
