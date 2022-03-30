@@ -146,6 +146,7 @@ namespace Santa_Archiving_System.Properties {
         internal static System.Drawing.Bitmap icons8_pdf_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-pdf-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         internal static System.Drawing.Bitmap icons8_organization_chart_people_50 {
