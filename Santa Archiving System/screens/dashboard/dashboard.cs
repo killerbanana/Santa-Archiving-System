@@ -4,8 +4,11 @@ using Santa_Archiving_System.screens.electronic;
 using Santa_Archiving_System.screens.ordinance;
 using Santa_Archiving_System.screens.resolution;
 using Santa_Archiving_System.screens.sendToEmail;
+using Santa_Archiving_System.screens.wordToPdf;
+using Santa_Archiving_System.services.appropriation;
 using Santa_Archiving_System.services.ordinance;
 using Santa_Archiving_System.services.resolution;
+using Santa_Archiving_System.services.tricycle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,9 +33,13 @@ namespace Santa_Archiving_System.screens.dashboard
         {
             int resolutionCount = await Resolutions.getCount();
             int ordinanceCount = await Ordinances.getCount();
+            int appropriationCount = await Appropriations.getCount();
+            int tricyCount = await Tricycles.getCount();
 
             lb_resolution_count.Text = resolutionCount.ToString();
             lb_ordinance_count.Text = ordinanceCount.ToString();
+            lb_appropriation_count.Text = appropriationCount.ToString();
+            tricy_count.Text = tricyCount.ToString();
         }
 
         private void guna2Panel1_MouseEnter(object sender, EventArgs e)
@@ -185,6 +192,62 @@ namespace Santa_Archiving_System.screens.dashboard
             EmailContent emailContent = new EmailContent()
             {
                 Type = "Resolution"
+            };
+            SendToEmail sendToEmail = new SendToEmail(emailContent);
+            sendToEmail.ShowDialog();
+        }
+
+        private void guna2Panel5_Click(object sender, EventArgs e)
+        {
+            WordToPdf word = new WordToPdf();
+            word.ShowDialog();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            WordToPdf word = new WordToPdf();
+            word.ShowDialog();
+        }
+
+        private void guna2Panel5_MouseEnter(object sender, EventArgs e)
+        {
+            word2pdf.ForeColor = Color.FromArgb(55, 81, 255);
+            word2pdflabel.ForeColor = Color.FromArgb(55, 81, 255);
+        }
+
+        private void guna2Panel5_MouseLeave(object sender, EventArgs e)
+        {
+            word2pdf.ForeColor = Color.Black;
+            word2pdflabel.ForeColor = Color.Black;
+        }
+
+        private void guna2Panel4_MouseEnter(object sender, EventArgs e)
+        {
+            tricy.ForeColor = Color.FromArgb(55, 81, 255);
+            tricy_count.ForeColor = Color.FromArgb(55, 81, 255);
+        }
+
+        private void guna2Panel4_MouseLeave(object sender, EventArgs e)
+        {
+            tricy.ForeColor = Color.Black;
+            tricy_count.ForeColor = Color.Black;
+        }
+
+        private void guna2Panel4_Click(object sender, EventArgs e)
+        {
+            EmailContent emailContent = new EmailContent()
+            {
+                Type = "Tricy"
+            };
+            SendToEmail sendToEmail = new SendToEmail(emailContent);
+            sendToEmail.ShowDialog();
+        }
+
+        private void tricy_count_Click(object sender, EventArgs e)
+        {
+            EmailContent emailContent = new EmailContent()
+            {
+                Type = "Tricy"
             };
             SendToEmail sendToEmail = new SendToEmail(emailContent);
             sendToEmail.ShowDialog();

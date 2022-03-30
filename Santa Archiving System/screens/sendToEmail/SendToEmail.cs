@@ -2,6 +2,7 @@
 using Santa_Archiving_System.services.appropriation;
 using Santa_Archiving_System.services.ordinance;
 using Santa_Archiving_System.services.resolution;
+using Santa_Archiving_System.services.tricycle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,13 +31,15 @@ namespace Santa_Archiving_System.screens.sendToEmail
             switch (emailContent.Type) {
                 case "Resolution":
                     guna2DataGridView1.DataSource = await Resolutions.getListOnline();
-                    
                     break;
                 case "Ordinance":
                     guna2DataGridView1.DataSource = await Ordinances.getListOrdinanceOnline();
                     break;
                 case "Appropriation":
                     guna2DataGridView1.DataSource = await Appropriations.getListOnline();
+                    break;
+                case "Tricy":
+                    guna2DataGridView1.DataSource = await Tricycles.GetTricycleDataOnline();
                     break;
             }
             loading1.Visible = false;
@@ -86,6 +89,16 @@ namespace Santa_Archiving_System.screens.sendToEmail
                             Type = "Appropriation",
                             FileName = item.Cells[3].Value.ToString(),
                             DocType = item.Cells[7].Value.ToString()
+                        };
+                    }
+                    break;
+                case "Tricy":
+                    foreach (DataGridViewRow item in this.guna2DataGridView1.SelectedRows)
+                    {
+                        emailContent = new EmailContent()
+                        {
+                            Id = int.Parse(item.Cells[0].Value.ToString()),
+                            Type = "Tricy",
                         };
                     }
                     break;

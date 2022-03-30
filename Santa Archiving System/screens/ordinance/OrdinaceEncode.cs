@@ -222,7 +222,7 @@ namespace Santa_Archiving_System.screens.ordinance
             }
             else
             {
-                (guna2DataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("[OrinanceNo] LIKE '%{0}%' OR [Series] LIKE '%{0}%'  OR [Date] LIKE '%{0}%' OR  [Title] LIKE '%{0}%' OR  [Author] LIKE '%{0}%' OR  [Tag] LIKE '%{0}%'", guna2TextBox1.Text);
+                (guna2DataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("[OrdinanceNo] LIKE '%{0}%' OR [Series] LIKE '%{0}%'  OR [Date] LIKE '%{0}%' OR  [Title] LIKE '%{0}%' OR  [Author] LIKE '%{0}%' OR  [Tag] LIKE '%{0}%'", guna2TextBox1.Text);
             }
         }
     }

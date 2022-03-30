@@ -12,6 +12,74 @@ namespace Santa_Archiving_System.services.tricycle
 {
     class Tricycles
     {
+
+        public static async Task DeletTricyData(
+           string Id
+           )
+        {
+            await Task.Run(() =>
+            {
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+                    SqlCommand cmd = new SqlCommand("Delete from TricycleFranchise where Id = @Id", con);
+                    cmd.Parameters.AddWithValue("@Id", Id);
+                    con.Open();
+
+                    IAsyncResult result = cmd.BeginExecuteNonQuery();
+
+                    while (!result.IsCompleted)
+                    {
+
+                    }
+                    cmd.EndExecuteNonQuery(result);
+                    con.Close();
+                }
+            });
+        }
+
+        //DELETE ONLINE
+        public static async Task DeletTricyDataOnline(
+            string Id
+            )
+        {
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    MySqlCommand cmd = new MySqlCommand("Delete from TricycleFranchise where Id = @Id", con);
+                    cmd.Parameters.Add(new MySqlParameter("@Id", Id));
+                    con.Open();
+
+                    IAsyncResult result = cmd.BeginExecuteNonQuery();
+
+                    while (!result.IsCompleted)
+                    {
+
+                    }
+                    cmd.EndExecuteNonQuery(result);
+                    con.Close();
+                }
+            });
+        }
+
+        public static async Task<int> getCount()
+        {
+            DataTable dt = new DataTable();
+            int count = 0;
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    con.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM TricycleFranchise", con))
+                    {
+                        count = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            });
+            return count;
+        }
+
         public static async Task<DataTable> GetTricycleData()
         {
 

@@ -49,6 +49,7 @@ namespace Santa_Archiving_System.screens.appropriation
                     switch (appropriation.Reading)
                     {
                         case "PDF":
+                            guna2DataGridView1.DataSource = await Appropriations.getPdfOnline(".pdf");
                             break;
                         default:
                             await LoadDataTableOnline();
@@ -69,6 +70,7 @@ namespace Santa_Archiving_System.screens.appropriation
                 switch (appropriation.Reading)
                 {
                     case "PDF":
+                        guna2DataGridView1.DataSource = await Appropriations.getPdf(".pdf");
                         break;
                     default:
                         await LoadDataTable();
