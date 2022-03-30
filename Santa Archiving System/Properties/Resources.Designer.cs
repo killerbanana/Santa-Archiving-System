@@ -123,6 +123,16 @@ namespace Santa_Archiving_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_organization_chart_people_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-organization-chart-people-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_print_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-print-100", resourceCulture);

@@ -619,9 +619,7 @@
             "5",
             "6",
             "7",
-            "8",
-            "9",
-            "10"});
+            "8"});
             this.cb_rank.ItemsAppearance.Parent = this.cb_rank;
             this.cb_rank.Location = new System.Drawing.Point(614, 436);
             this.cb_rank.Name = "cb_rank";

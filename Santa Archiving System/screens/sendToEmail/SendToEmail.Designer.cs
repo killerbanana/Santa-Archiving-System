@@ -36,12 +36,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_send = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.lb_data = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.loading1 = new Santa_Archiving_System.common.loading();
-            this.btn_send = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +84,6 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.guna2ControlBox1);
             this.panel5.Controls.Add(this.btn_send);
             this.panel5.Controls.Add(this.guna2TextBox1);
             this.panel5.Controls.Add(this.lb_data);
@@ -94,6 +92,27 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1013, 122);
             this.panel5.TabIndex = 28;
+            // 
+            // btn_send
+            // 
+            this.btn_send.BorderRadius = 5;
+            this.btn_send.CheckedState.Parent = this.btn_send;
+            this.btn_send.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_send.CustomImages.Parent = this.btn_send;
+            this.btn_send.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_send.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_send.ForeColor = System.Drawing.Color.White;
+            this.btn_send.HoverState.Parent = this.btn_send;
+            this.btn_send.Image = global::Santa_Archiving_System.Properties.Resources.icons8_add_100;
+            this.btn_send.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_send.Location = new System.Drawing.Point(6, 75);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.ShadowDecoration.Parent = this.btn_send;
+            this.btn_send.Size = new System.Drawing.Size(139, 36);
+            this.btn_send.TabIndex = 29;
+            this.btn_send.Text = "Send to Email";
+            this.btn_send.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
             // guna2TextBox1
             // 
@@ -211,46 +230,12 @@
             this.loading1.TabIndex = 31;
             this.loading1.Visible = false;
             // 
-            // btn_send
-            // 
-            this.btn_send.BorderRadius = 5;
-            this.btn_send.CheckedState.Parent = this.btn_send;
-            this.btn_send.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_send.CustomImages.Parent = this.btn_send;
-            this.btn_send.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_send.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_send.ForeColor = System.Drawing.Color.White;
-            this.btn_send.HoverState.Parent = this.btn_send;
-            this.btn_send.Image = global::Santa_Archiving_System.Properties.Resources.icons8_add_100;
-            this.btn_send.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_send.Location = new System.Drawing.Point(6, 75);
-            this.btn_send.Name = "btn_send";
-            this.btn_send.ShadowDecoration.Parent = this.btn_send;
-            this.btn_send.Size = new System.Drawing.Size(139, 36);
-            this.btn_send.TabIndex = 29;
-            this.btn_send.Text = "Send to Email";
-            this.btn_send.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
-            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(962, 6);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox1.TabIndex = 30;
-            // 
             // SendToEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1053, 592);
-            this.ControlBox = false;
             this.Controls.Add(this.loading1);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.panel5);
@@ -258,8 +243,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SendToEmail";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Kiosk";
             this.Load += new System.EventHandler(this.SendToEmail_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -280,6 +268,5 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lb_data;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private common.loading loading1;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }

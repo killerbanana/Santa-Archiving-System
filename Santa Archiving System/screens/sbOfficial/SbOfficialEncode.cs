@@ -233,8 +233,9 @@ namespace Santa_Archiving_System.screens.sbOfficial
                 DialogResult dialogResult = MessageBox.Show("Do you want to delete this Data?", "Warning", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    await Officials.DeleteOfficialsOnline(updateOfficials.position, updateOfficials.Id);
-                    await Officials.DeleteOfficialsOffline(updateOfficials.position, updateOfficials.Id);
+                    
+                    await Officials.DeleteOfficialsOnline(updateOfficials.position, updateOfficials.Id, updateOfficials.rank);
+                    await Officials.DeleteOfficialsOffline(updateOfficials.position, updateOfficials.Id, updateOfficials.rank);
                     await LoadDataTableOnline();
                     MessageBox.Show("Successfully deleted!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     updateOfficials.Id = string.Empty;
@@ -292,6 +293,25 @@ namespace Santa_Archiving_System.screens.sbOfficial
 
 
                 loading1.Visible = false;
+            }
+        }
+
+        private async void tb_searchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (dt_officials == null || dt_officials.Rows.Count == 0)
+            {
+                if (ControlsServices.CheckIfOnline())
+                {
+                    await LoadDataTableOnline();
+                }
+                else
+                {
+                    await LoadDataTableOffline();
+                }
+            }
+            else
+            {
+                (dt_officials.DataSource as DataTable).DefaultView.RowFilter = string.Format("[FirstName] LIKE '%{0}%' OR [Position] LIKE '%{0}%'  OR [LastName] LIKE '%{0}%' OR [Committee] LIKE '%{0}%' ", tb_searchBox.Text);
             }
         }
     }
