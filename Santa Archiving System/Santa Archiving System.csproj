@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Users\AWB\Desktop\Santa Project\Santa Archiving System\published\</PublishUrl>
+    <PublishUrl>C:\Users\Tja07\OneDrive\Desktop\New folder\Santa-Archiving-System\published\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,14 +23,23 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/main/published/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/main/published/</UpdateUrl>
-    <WebPage>publish.html</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <InstallUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/killerbanana/Santa-Archiving-System/josh_branch/published/</UpdateUrl>
+    <SupportUrl>http://www.h4ckdogs.com/</SupportUrl>
+    <ErrorReportUrl>http://www.h4ckdogs.com/</ErrorReportUrl>
+    <TargetCulture>en-AU</TargetCulture>
+    <ProductName>Santa Archving System</ProductName>
+    <PublisherName>Hackdogs Software Developer Services</PublisherName>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,10 +61,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A60A3E0CFCEBFA59C01E7945B20FE0E49AAAC519</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2AA41FA8536A7FEEE8E01EDECADE336F93D08BAB</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Santa Archiving System_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -76,6 +86,11 @@
     <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="NTwain, Version=3.0.0.0, Culture=neutral, PublicKeyToken=f9f7e0c5169536c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\NTwain.3.7.1\lib\net40\NTwain.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -100,6 +115,7 @@
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
     <Reference Include="WordToPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WordToPDF.1.0.0\lib\net452\WordToPDF.dll</HintPath>
     </Reference>
@@ -126,6 +142,7 @@
     <Compile Include="models\Appropriation.cs" />
     <Compile Include="models\committees.cs" />
     <Compile Include="models\electronic.cs" />
+    <Compile Include="models\EmailContent.cs" />
     <Compile Include="models\indexmanagement.cs" />
     <Compile Include="models\legislativedocument.cs" />
     <Compile Include="models\loginCredentials.cs" />
@@ -189,6 +206,12 @@
     <Compile Include="screens\committee\SbAddCommittee.Designer.cs">
       <DependentUpon>SbAddCommittee.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\resolution\ResolutionScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\ResolutionScanner.Designer.cs">
+      <DependentUpon>ResolutionScanner.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\sbOfficial\SbOfficialEncode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +229,18 @@
     </Compile>
     <Compile Include="screens\sbOfficial\SbAddOfficials.Designer.cs">
       <DependentUpon>SbAddOfficials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sendToEmail\EmailContents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sendToEmail\EmailContents.Designer.cs">
+      <DependentUpon>EmailContents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\sendToEmail\SendToEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\sendToEmail\SendToEmail.Designer.cs">
+      <DependentUpon>SendToEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\sbOfficial\SbUpdateOfficials.cs">
       <SubType>Form</SubType>
@@ -379,6 +414,9 @@
     <EmbeddedResource Include="screens\committee\SbAddCommittee.resx">
       <DependentUpon>SbAddCommittee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\ResolutionScanner.resx">
+      <DependentUpon>ResolutionScanner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\sbOfficial\SbOfficialEncode.resx">
       <DependentUpon>SbOfficialEncode.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,6 +425,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\sbOfficial\SbAddOfficials.resx">
       <DependentUpon>SbAddOfficials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sendToEmail\EmailContents.resx">
+      <DependentUpon>EmailContents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\sendToEmail\SendToEmail.resx">
+      <DependentUpon>SendToEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\sbOfficial\SbUpdateOfficials.resx">
       <DependentUpon>SbUpdateOfficials.cs</DependentUpon>
@@ -467,6 +511,7 @@
     <None Include="Resources\icons8-trash-100.png" />
     <None Include="Resources\icons8-print-100.png" />
     <None Include="Resources\icons8-view-100.png" />
+    <None Include="Resources\icons8-organization-chart-people-50.png" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -494,6 +539,25 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WIA">
+      <Guid>{94A0E92D-43C0-494E-AC29-FD45948A5221}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
