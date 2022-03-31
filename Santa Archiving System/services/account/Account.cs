@@ -750,6 +750,80 @@ namespace Santa_Archiving_System.services.account
             }
         }
 
+        public static async Task updateOnlineStatus
+       (
 
+        bool online,
+        string username
+       )
+        {
+            try
+            {
+                await Task.Run(() =>
+                {
+
+                    using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand("Update Registration set Online=@Online where Username=@Username", con))
+                        {
+                            con.Open();
+                  
+                            cmd.Parameters.Add(new MySqlParameter("@Online", Convert.ToBoolean(online)));
+                            cmd.Parameters.Add(new MySqlParameter("@Username", username));
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
+
+        }
+
+
+        //getonlineusers
+
+        public static async Task<DataTable> getOnlineUsers()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                await Task.Run(() =>
+                {
+                    using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                    {
+
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT FirstName, Username FROM Registration WHERE Online='" + 1 + "'", con))
+                        {
+                            con.Open();
+                            IAsyncResult result = cmd.BeginExecuteReader();
+
+                            while (!result.IsCompleted)
+                            {
+
+                            }
+
+                            using (MySqlDataReader reader = cmd.EndExecuteReader(result))
+                            {
+
+                                dt.Load(reader);
+                            }
+                            con.Close();
+                        }
+
+                    }
+                });
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Santa_Archiving_System.models;
 using Santa_Archiving_System.screens.mainPanel;
 using Santa_Archiving_System.services.account;
 using Santa_Archiving_System.services.controls;
@@ -18,8 +19,10 @@ namespace Santa_Archiving_System.screens.auth
     public partial class Login : Form
     {
         Thread th;
-        public Login()
+        account account;
+        public Login(account data)
         {
+            this.account = data;
             InitializeComponent();
         }
         protected override CreateParams CreateParams
@@ -34,7 +37,8 @@ namespace Santa_Archiving_System.screens.auth
 
         private void opennewform(object obj)
         {
-            Application.Run(new MainPanel());
+            account data = new account(); 
+            Application.Run(new MainPanel(data));
         }
         
         private async void btn_login_Click(object sender, EventArgs e)
@@ -50,6 +54,7 @@ namespace Santa_Archiving_System.screens.auth
             {
                 if (ControlsServices.CheckIfOnline())
                 {
+
                     await Account.CheckLoginOnline(tb_username.Text);
 
                     if (Account.checkedLoginOnline == true)
@@ -61,6 +66,8 @@ namespace Santa_Archiving_System.screens.auth
                         {
                             if (Account.status == true)
                             {
+                               
+                                await Account.updateOnlineStatus(true, tb_username.Text);
                                 this.Close();
                                 th = new Thread(opennewform);
                                 th.SetApartmentState(ApartmentState.STA);

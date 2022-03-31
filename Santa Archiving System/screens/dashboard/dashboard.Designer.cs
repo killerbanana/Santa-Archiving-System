@@ -127,7 +127,6 @@
             this.guna2Panel1.BorderRadius = 12;
             this.guna2Panel1.Controls.Add(this.lb_resolution_count);
             this.guna2Panel1.Controls.Add(this.lb_resolution);
-            this.guna2Panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Panel1.Location = new System.Drawing.Point(33, 6);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
@@ -173,7 +172,6 @@
             this.guna2Panel2.BorderRadius = 12;
             this.guna2Panel2.Controls.Add(this.lb_ordinance_count);
             this.guna2Panel2.Controls.Add(this.lb_ordinance);
-            this.guna2Panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Panel2.Location = new System.Drawing.Point(300, 6);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
@@ -218,7 +216,6 @@
             this.guna2Panel3.BorderRadius = 12;
             this.guna2Panel3.Controls.Add(this.lb_appropriation_count);
             this.guna2Panel3.Controls.Add(this.lb_appropriation);
-            this.guna2Panel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Panel3.Location = new System.Drawing.Point(567, 6);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
@@ -470,7 +467,6 @@
             this.guna2Panel9.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel9.Controls.Add(this.label14);
             this.guna2Panel9.Controls.Add(this.label15);
-            this.guna2Panel9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Panel9.Location = new System.Drawing.Point(280, 210);
             this.guna2Panel9.Name = "guna2Panel9";
             this.guna2Panel9.ShadowDecoration.Parent = this.guna2Panel9;
@@ -621,7 +617,6 @@
             this.guna2Panel5.Controls.Add(this.word2pdflabel);
             this.guna2Panel5.Controls.Add(this.word2pdf);
             this.guna2Panel5.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Panel5.Location = new System.Drawing.Point(13, 50);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;

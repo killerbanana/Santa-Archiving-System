@@ -28,10 +28,10 @@ namespace Santa_Archiving_System.screens.mainPanel
     {
         bool clicked = false;
         Thread th;
-      
-        public MainPanel()
+        account account;
+        public MainPanel(account data)
         {
-          
+            this.account = data;
             InitializeComponent();
             customizeDesign();
         }
@@ -193,7 +193,7 @@ namespace Santa_Archiving_System.screens.mainPanel
 
             tabshow();
             moveImageBox(sender);
-            openChildForm(new Dashboard());
+            openChildForm(new Dash());
         }
 
         private void Ordinance_Click(object sender, EventArgs e)
@@ -353,14 +353,16 @@ namespace Santa_Archiving_System.screens.mainPanel
 
         private void openLogin(object obj)
         {
-            Application.Run(new Login());
+            account data = new account();
+            Application.Run(new Login(data));
         }
 
-        private void btn_logout_Click_1(object sender, EventArgs e)
+        private async void btn_logout_Click_1(object sender, EventArgs e)
         {
-          
+           
             if (MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                await Account.updateOnlineStatus(false, Account.userName);
                 Account.accountRole = string.Empty;
                 Account.privilege.Clear();
                 MainPanel obj = (MainPanel)Application.OpenForms["MainPanel"];

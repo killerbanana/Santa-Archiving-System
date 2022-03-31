@@ -107,8 +107,7 @@ namespace Santa_Archiving_System.screens.resolution
         }
         private void btn_scan_Click(object sender, EventArgs e)
         {
-            ResolutionScanner resolutionScanner = new ResolutionScanner();
-            resolutionScanner.ShowDialog();
+       
         }
     }
 }

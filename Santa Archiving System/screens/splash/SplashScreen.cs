@@ -1,4 +1,5 @@
-﻿using Santa_Archiving_System.screens.auth;
+﻿using Santa_Archiving_System.models;
+using Santa_Archiving_System.screens.auth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,8 @@ namespace Santa_Archiving_System.screens.splash
 
         private void opennewform(object obj)
         {
-            Application.Run(new Login());
+            account data = new account();
+            Application.Run(new Login(data));
         }
      
         private void timer1_Tick(object sender, EventArgs e)
