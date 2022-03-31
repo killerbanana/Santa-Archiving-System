@@ -1,4 +1,5 @@
 ﻿using Santa_Archiving_System.models;
+using Santa_Archiving_System.services.appropriation;
 using Santa_Archiving_System.services.ordinance;
 using Santa_Archiving_System.services.resolution;
 using System;
@@ -31,9 +32,7 @@ namespace Santa_Archiving_System.screens.sendToEmail
 
         private async void EmailContents_Load(object sender, EventArgs e)
         {
-            lb_attachement.Text = emailContent.FileName;
-            lb_extension.Text = emailContent.DocType;
-
+            
             switch (emailContent.Type)
             {
                 case "Resolution":
@@ -42,8 +41,17 @@ namespace Santa_Archiving_System.screens.sendToEmail
                 case "Ordinance":
                     path = await Ordinances.CreateNewFileOnline(emailContent.Id.ToString(), emailContent.DocType);
                     break;
+                case "Appropriation":
+                    path = await Appropriations.CreateNewFileOnline(emailContent.Id.ToString(), emailContent.DocType);
+                    break;
             }
-            
+            if (emailContent.Type == "Tricy")
+            {
+                return;
+            }
+            lb_attachement.Text = emailContent.FileName;
+            lb_extension.Text = emailContent.DocType;
+
         }
 
         static bool IsValidEmail(string email)

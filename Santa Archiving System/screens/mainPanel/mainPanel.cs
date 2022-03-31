@@ -423,5 +423,35 @@ namespace Santa_Archiving_System.screens.mainPanel
         {
             openChildForm(new IndexReportOrdinance());
         }
+
+        private void guna2Button15_Click(object sender, EventArgs e)
+        {
+            Appropriation data = new Appropriation()
+            {
+                QuickAction = false,
+                Reading = "PDF"
+            };
+            openChildForm(new AppropriationEncode(data));
+        }
+
+        private void guna2Button16_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AppropriationHistory());
+        }
+
+        private void guna2Button14_Click(object sender, EventArgs e)
+        {
+           openChildForm(new IndexReportAppropriation());
+        }
+
+        private void TrackButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ResolutionHistory());
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OrdinanceHistory());
+        }
     }
 }

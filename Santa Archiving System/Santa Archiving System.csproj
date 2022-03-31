@@ -15,7 +15,7 @@
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\Users\Tja07\OneDrive\Desktop\New folder\Santa-Archiving-System\published\</PublishUrl>
+    <PublishUrl>C:\Users\AWB\Desktop\Santa Project\Santa Archiving System\published\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -34,7 +34,7 @@
     <PublisherName>Hackdogs Software Developer Services</PublisherName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -87,6 +87,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-software-64.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
@@ -185,6 +188,18 @@
     <Compile Include="screens\appropriation\AppropriationEncode.Designer.cs">
       <DependentUpon>AppropriationEncode.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\appropriation\AppropriationHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\appropriation\AppropriationHistory.Designer.cs">
+      <DependentUpon>AppropriationHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\appropriation\IndexReportAppropriation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\appropriation\IndexReportAppropriation.Designer.cs">
+      <DependentUpon>IndexReportAppropriation.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\auth\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +247,18 @@
     </Compile>
     <Compile Include="screens\committee\SbAddCommittee.Designer.cs">
       <DependentUpon>SbAddCommittee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\ordinance\OrdinanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\OrdinanceHistory.Designer.cs">
+      <DependentUpon>OrdinanceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\resolution\ResolutionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\ResolutionHistory.Designer.cs">
+      <DependentUpon>ResolutionHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\resolution\ResolutionScanner.cs">
       <SubType>Form</SubType>
@@ -395,6 +422,12 @@
     <Compile Include="screens\tricycle\TricycleEncode.Designer.cs">
       <DependentUpon>TricycleEncode.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\wordToPdf\WordToPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\wordToPdf\WordToPdf.Designer.cs">
+      <DependentUpon>WordToPdf.cs</DependentUpon>
+    </Compile>
     <Compile Include="services\account\Account.cs" />
     <Compile Include="services\appropriation\Appropriations.cs" />
     <Compile Include="services\committee\Committee.cs" />
@@ -420,6 +453,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\appropriation\AppropriationEncode.resx">
       <DependentUpon>AppropriationEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\appropriation\AppropriationHistory.resx">
+      <DependentUpon>AppropriationHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\appropriation\IndexReportAppropriation.resx">
+      <DependentUpon>IndexReportAppropriation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -447,6 +486,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\committee\SbAddCommittee.resx">
       <DependentUpon>SbAddCommittee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\OrdinanceHistory.resx">
+      <DependentUpon>OrdinanceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\ResolutionHistory.resx">
+      <DependentUpon>ResolutionHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\ResolutionScanner.resx">
       <DependentUpon>ResolutionScanner.cs</DependentUpon>
@@ -520,6 +565,9 @@
     <EmbeddedResource Include="screens\tricycle\TricycleEncode.resx">
       <DependentUpon>TricycleEncode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\wordToPdf\WordToPdf.resx">
+      <DependentUpon>WordToPdf.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="certificate.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -556,6 +604,9 @@
     <None Include="Resources\icons8-pdf-64.png" />
     <None Include="Resources\icons8-add-50.png" />
     <None Include="Resources\icons8-organization-chart-people-50.png" />
+    <None Include="Resources\icons8-tax-64.png" />
+    <None Include="Resources\icons8-security-official-64.png" />
+    <Content Include="icons8-software-64.ico" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

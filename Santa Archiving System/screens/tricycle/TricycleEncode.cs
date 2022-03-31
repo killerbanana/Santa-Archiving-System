@@ -98,6 +98,28 @@ namespace Santa_Archiving_System.screens.tricycle
             }
         }
 
-   
+        private async void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(tricycle.Id.ToString()) || tricycle.Id == 0)
+            {
+                MessageBox.Show("Select File to Delete");
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to delete this Data?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (ControlsServices.CheckIfOnline())
+                    {
+                        loading1.Visible = true;
+                        await Tricycles.DeletTricyData(tricycle.Id.ToString());
+                        await Tricycles.DeletTricyDataOnline(tricycle.Id.ToString());
+                        MessageBox.Show("File Deleted");
+                        loading1.Visible = false;
+                        await LoadDataTableOnline();
+                    }
+                }
+            }
+        }
     }
 }

@@ -114,6 +114,7 @@
             this.btn_view.TabIndex = 29;
             this.btn_view.Text = "View";
             this.btn_view.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_view.Click += new System.EventHandler(this.btn_view_Click);
             // 
             // btn_print
             // 
@@ -241,6 +242,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
             // loading1
             // 
