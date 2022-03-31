@@ -49,6 +49,7 @@ namespace Santa_Archiving_System.screens.sendToEmail
         {
             if (String.IsNullOrWhiteSpace(emailContent.FileName) ||  emailContent.Id == 0)
             {
+                MessageBox.Show("Please select a file");
                 return;
             }
             EmailContents emailContents = new EmailContents(emailContent);

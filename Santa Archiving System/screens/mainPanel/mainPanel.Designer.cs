@@ -336,7 +336,7 @@
             this.AccountManagement.CheckedState.CustomBorderColor = System.Drawing.Color.White;
             this.AccountManagement.CheckedState.FillColor = System.Drawing.Color.White;
             this.AccountManagement.CheckedState.ForeColor = System.Drawing.Color.Gray;
-            this.AccountManagement.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("AccountManagement.CheckedState.Image")));
+            this.AccountManagement.CheckedState.Image = global::Santa_Archiving_System.Properties.Resources.icons8_security_official_64;
             this.AccountManagement.CheckedState.Parent = this.AccountManagement;
             this.AccountManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AccountManagement.CustomImages.Parent = this.AccountManagement;
@@ -347,7 +347,7 @@
             this.AccountManagement.ForeColor = System.Drawing.Color.White;
             this.AccountManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.AccountManagement.HoverState.ForeColor = System.Drawing.Color.White;
-            this.AccountManagement.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("AccountManagement.HoverState.Image")));
+            this.AccountManagement.HoverState.Image = global::Santa_Archiving_System.Properties.Resources.icons8_security_official_64;
             this.AccountManagement.HoverState.Parent = this.AccountManagement;
             this.AccountManagement.Image = global::Santa_Archiving_System.Properties.Resources.icons8_security_official_64;
             this.AccountManagement.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -413,7 +413,7 @@
             this.Committee.CheckedState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.Committee.CheckedState.FillColor = System.Drawing.Color.Transparent;
             this.Committee.CheckedState.ForeColor = System.Drawing.Color.Gray;
-            this.Committee.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("Committee.CheckedState.Image")));
+            this.Committee.CheckedState.Image = global::Santa_Archiving_System.Properties.Resources.icons8_organization_chart_people_50;
             this.Committee.CheckedState.Parent = this.Committee;
             this.Committee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Committee.CustomImages.Parent = this.Committee;
@@ -424,7 +424,7 @@
             this.Committee.ForeColor = System.Drawing.Color.White;
             this.Committee.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.Committee.HoverState.ForeColor = System.Drawing.Color.White;
-            this.Committee.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("Committee.HoverState.Image")));
+            this.Committee.HoverState.Image = global::Santa_Archiving_System.Properties.Resources.icons8_organization_chart_people_50;
             this.Committee.HoverState.Parent = this.Committee;
             this.Committee.Image = global::Santa_Archiving_System.Properties.Resources.icons8_organization_chart_people_50;
             this.Committee.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -531,7 +531,7 @@
             this.Appropriation.CheckedState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.Appropriation.CheckedState.FillColor = System.Drawing.Color.Transparent;
             this.Appropriation.CheckedState.ForeColor = System.Drawing.Color.Gray;
-            this.Appropriation.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("Appropriation.CheckedState.Image")));
+            this.Appropriation.CheckedState.Image = global::Santa_Archiving_System.Properties.Resources.icons8_tax_64;
             this.Appropriation.CheckedState.Parent = this.Appropriation;
             this.Appropriation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Appropriation.CustomImages.Parent = this.Appropriation;
@@ -542,7 +542,7 @@
             this.Appropriation.ForeColor = System.Drawing.Color.White;
             this.Appropriation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.Appropriation.HoverState.ForeColor = System.Drawing.Color.White;
-            this.Appropriation.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("Appropriation.HoverState.Image")));
+            this.Appropriation.HoverState.Image = global::Santa_Archiving_System.Properties.Resources.icons8_tax_64;
             this.Appropriation.HoverState.Parent = this.Appropriation;
             this.Appropriation.Image = global::Santa_Archiving_System.Properties.Resources.icons8_tax_64;
             this.Appropriation.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
