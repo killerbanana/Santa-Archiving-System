@@ -40,5 +40,14 @@ namespace Santa_Archiving_System.screens.dashboard
             await LoadDataTableOnline();
         }
 
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

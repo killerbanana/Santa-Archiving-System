@@ -193,7 +193,7 @@ namespace Santa_Archiving_System.screens.mainPanel
 
             tabshow();
             moveImageBox(sender);
-            openChildForm(new Dash());
+            openChildForm(new Dashboard());
         }
 
         private void Ordinance_Click(object sender, EventArgs e)
