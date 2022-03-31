@@ -64,10 +64,7 @@ namespace Santa_Archiving_System.screens.dashboard
             sendToEmail.ShowDialog();
         }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void guna2Panel2_MouseEnter(object sender, EventArgs e)
         {
@@ -275,6 +272,16 @@ namespace Santa_Archiving_System.screens.dashboard
         {
             addOrdinance.ForeColor = Color.Black;
             addOrdinanceLabel.ForeColor = Color.Black;
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lb_resolution_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

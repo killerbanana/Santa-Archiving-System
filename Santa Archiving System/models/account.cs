@@ -26,6 +26,9 @@ namespace Santa_Archiving_System.models
         public bool status { get; set; }
 
         public List<int> index { get; set; }
+
+        public string title { get; set; }
+        public string agenda { get; set; }
     }
     
 }

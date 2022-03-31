@@ -57,6 +57,8 @@ namespace Santa_Archiving_System.screens.auth
                 dt_users.Columns[0].Visible = false;
                 dt_users.Columns[5].Visible = false;
                 dt_users.Columns[13].Visible = false;
+                dt_users.Columns[14].Visible = false;
+                dt_users.Columns[15].Visible = false;
                 dt_users.ClearSelection();
             }
             catch (Exception e)
