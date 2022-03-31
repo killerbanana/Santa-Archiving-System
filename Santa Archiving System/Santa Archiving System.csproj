@@ -13,6 +13,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>true</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>C:\Users\Tja07\OneDrive\Desktop\New folder\Santa-Archiving-System\published\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -38,8 +40,6 @@
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,7 +70,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>Internet</TargetZone>
@@ -85,7 +85,8 @@
     <DelaySign>false</DelaySign>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>santalgu.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
@@ -189,6 +190,18 @@
     </Compile>
     <Compile Include="screens\auth\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\dashboard\AddActivities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\dashboard\AddActivities.Designer.cs">
+      <DependentUpon>AddActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\dashboard\Dash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\dashboard\Dash.Designer.cs">
+      <DependentUpon>Dash.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\manageAccount\ManageUser.cs">
       <SubType>Form</SubType>
@@ -386,6 +399,7 @@
     <Compile Include="services\appropriation\Appropriations.cs" />
     <Compile Include="services\committee\Committee.cs" />
     <Compile Include="services\controls\ControlsServices.cs" />
+    <Compile Include="services\dashboard\dash.cs" />
     <Compile Include="services\Officials\Officials.cs" />
     <Compile Include="services\ordinance\Ordinances.cs" />
     <Compile Include="services\resolution\Resolutions.cs" />
@@ -412,6 +426,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\committee\CommitteeEncode.resx">
       <DependentUpon>CommitteeEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\dashboard\AddActivities.resx">
+      <DependentUpon>AddActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\dashboard\Dash.resx">
+      <DependentUpon>Dash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\manageAccount\ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
@@ -512,11 +532,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Santa Archiving System_1_TemporaryKey.pfx" />
-    <None Include="Santa Archiving System_2_TemporaryKey.pfx" />
-    <None Include="Santa Archiving System_3_TemporaryKey.pfx" />
-    <None Include="Santa Archiving System_TemporaryKey.pfx" />
     <None Include="santalgu.pfx" />
+    <None Include="Santa_Archiving_System_1_TemporaryKey.pfx" />
+    <None Include="Santa_Archiving_System_2_TemporaryKey.pfx" />
+    <None Include="Santa_Archiving_System_3_TemporaryKey.pfx" />
+    <None Include="Santa_Archiving_System_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

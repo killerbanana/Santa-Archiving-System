@@ -56,7 +56,8 @@ namespace Santa_Archiving_System.screens.users
         }
         private void openLogin(object obj)
         {
-            Application.Run(new Login());
+            account data = new account();
+            Application.Run(new Login(data));
         }
         private async void btn_changePassword_Click(object sender, EventArgs e)
         {
