@@ -31,6 +31,24 @@ namespace Santa_Archiving_System.screens.dashboard
             InitializeComponent();
         }
 
+        public async Task LoadDataTableOnline()
+        {
+            try
+            {
+                dt_activities.DataSource = await dash.getActivities();
+                dt_activities.ClearSelection();
+
+                await LoadDataTableOnline();
+                dt_users.Columns[1].HeaderText = "Name";
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+        }
+
         private async void Dashboard_Load(object sender, EventArgs e)
         {
             int resolutionCount = await Resolutions.getCount();
@@ -304,6 +322,12 @@ namespace Santa_Archiving_System.screens.dashboard
             };
             SendToEmail sendToEmail = new SendToEmail(emailContent);
             sendToEmail.ShowDialog();
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            AddActivities addActivities = new AddActivities();
+            addActivities.ShowDialog();
         }
     }
 }
