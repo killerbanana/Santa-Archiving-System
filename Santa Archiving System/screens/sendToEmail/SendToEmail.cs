@@ -47,6 +47,10 @@ namespace Santa_Archiving_System.screens.sendToEmail
 
         private void btn_send_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(emailContent.FileName) ||  emailContent.Id == 0)
+            {
+                return;
+            }
             EmailContents emailContents = new EmailContents(emailContent);
             emailContents.ShowDialog();
         }

@@ -87,6 +87,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>santalgu.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-software-64.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -184,6 +187,12 @@
     <Compile Include="screens\appropriation\AppropriationEncode.Designer.cs">
       <DependentUpon>AppropriationEncode.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\appropriation\AppropriationHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\appropriation\AppropriationHistory.Designer.cs">
+      <DependentUpon>AppropriationHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\appropriation\IndexReportAppropriation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +234,18 @@
     </Compile>
     <Compile Include="screens\committee\SbAddCommittee.Designer.cs">
       <DependentUpon>SbAddCommittee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\ordinance\OrdinanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\ordinance\OrdinanceHistory.Designer.cs">
+      <DependentUpon>OrdinanceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screens\resolution\ResolutionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\resolution\ResolutionHistory.Designer.cs">
+      <DependentUpon>ResolutionHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="screens\resolution\ResolutionScanner.cs">
       <SubType>Form</SubType>
@@ -419,6 +440,9 @@
     <EmbeddedResource Include="screens\appropriation\AppropriationEncode.resx">
       <DependentUpon>AppropriationEncode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="screens\appropriation\AppropriationHistory.resx">
+      <DependentUpon>AppropriationHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="screens\appropriation\IndexReportAppropriation.resx">
       <DependentUpon>IndexReportAppropriation.cs</DependentUpon>
     </EmbeddedResource>
@@ -442,6 +466,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\committee\SbAddCommittee.resx">
       <DependentUpon>SbAddCommittee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\ordinance\OrdinanceHistory.resx">
+      <DependentUpon>OrdinanceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\resolution\ResolutionHistory.resx">
+      <DependentUpon>ResolutionHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\resolution\ResolutionScanner.resx">
       <DependentUpon>ResolutionScanner.cs</DependentUpon>
@@ -554,6 +584,9 @@
     <None Include="Resources\icons8-pdf-64.png" />
     <None Include="Resources\icons8-add-50.png" />
     <None Include="Resources\icons8-organization-chart-people-50.png" />
+    <None Include="Resources\icons8-tax-64.png" />
+    <None Include="Resources\icons8-security-official-64.png" />
+    <Content Include="icons8-software-64.ico" />
     <Content Include="SantaLocalDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

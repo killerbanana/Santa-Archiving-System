@@ -349,7 +349,7 @@
             this.AccountManagement.HoverState.ForeColor = System.Drawing.Color.White;
             this.AccountManagement.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("AccountManagement.HoverState.Image")));
             this.AccountManagement.HoverState.Parent = this.AccountManagement;
-            this.AccountManagement.Image = ((System.Drawing.Image)(resources.GetObject("AccountManagement.Image")));
+            this.AccountManagement.Image = global::Santa_Archiving_System.Properties.Resources.icons8_security_official_64;
             this.AccountManagement.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.AccountManagement.Location = new System.Drawing.Point(0, 1066);
             this.AccountManagement.Name = "AccountManagement";
@@ -426,7 +426,7 @@
             this.Committee.HoverState.ForeColor = System.Drawing.Color.White;
             this.Committee.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("Committee.HoverState.Image")));
             this.Committee.HoverState.Parent = this.Committee;
-            this.Committee.Image = ((System.Drawing.Image)(resources.GetObject("Committee.Image")));
+            this.Committee.Image = global::Santa_Archiving_System.Properties.Resources.icons8_organization_chart_people_50;
             this.Committee.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Committee.Location = new System.Drawing.Point(0, 951);
             this.Committee.Name = "Committee";
@@ -544,7 +544,7 @@
             this.Appropriation.HoverState.ForeColor = System.Drawing.Color.White;
             this.Appropriation.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("Appropriation.HoverState.Image")));
             this.Appropriation.HoverState.Parent = this.Appropriation;
-            this.Appropriation.Image = ((System.Drawing.Image)(resources.GetObject("Appropriation.Image")));
+            this.Appropriation.Image = global::Santa_Archiving_System.Properties.Resources.icons8_tax_64;
             this.Appropriation.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Appropriation.Location = new System.Drawing.Point(0, 766);
             this.Appropriation.Name = "Appropriation";
@@ -563,7 +563,7 @@
             this.TabSlider.BackColor = System.Drawing.Color.Transparent;
             this.TabSlider.FillColor = System.Drawing.Color.DimGray;
             this.TabSlider.Image = ((System.Drawing.Image)(resources.GetObject("TabSlider.Image")));
-            this.TabSlider.Location = new System.Drawing.Point(143, 3642);
+            this.TabSlider.Location = new System.Drawing.Point(143, 4678);
             this.TabSlider.Name = "TabSlider";
             this.TabSlider.ShadowDecoration.Parent = this.TabSlider;
             this.TabSlider.Size = new System.Drawing.Size(77, 117);
@@ -732,6 +732,7 @@
             this.guna2Button5.TabIndex = 22;
             this.guna2Button5.Text = "Track History Document";
             this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // guna2Button6
             // 
@@ -918,6 +919,7 @@
             this.TrackButton.TabIndex = 22;
             this.TrackButton.Text = "Track History Document";
             this.TrackButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TrackButton.Click += new System.EventHandler(this.TrackButton_Click);
             // 
             // PDFButton
             // 

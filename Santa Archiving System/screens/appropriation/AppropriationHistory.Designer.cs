@@ -1,6 +1,6 @@
-﻿namespace Santa_Archiving_System.screens.resolution
+﻿namespace Santa_Archiving_System.screens.appropriation
 {
-    partial class IndexReportResolution
+    partial class AppropriationHistory
     {
         /// <summary>
         /// Required designer variable.
@@ -36,106 +36,70 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btn_view = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_print = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_add = new Guna.UI2.WinForms.Guna2Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.loading1 = new Santa_Archiving_System.common.loading();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lb_username = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_date = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1053, 20);
-            this.panel3.TabIndex = 25;
+            this.panel3.TabIndex = 26;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(20, 572);
-            this.panel1.TabIndex = 26;
+            this.panel1.TabIndex = 27;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(1033, 20);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(20, 572);
-            this.panel2.TabIndex = 27;
+            this.panel2.TabIndex = 30;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(20, 572);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1013, 20);
-            this.panel4.TabIndex = 28;
+            this.panel4.TabIndex = 31;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.btn_view);
-            this.panel5.Controls.Add(this.btn_print);
+            this.panel5.Controls.Add(this.btn_delete);
+            this.panel5.Controls.Add(this.btn_add);
             this.panel5.Controls.Add(this.guna2TextBox1);
             this.panel5.Controls.Add(this.guna2HtmlLabel1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(20, 20);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1013, 144);
-            this.panel5.TabIndex = 29;
-            // 
-            // btn_view
-            // 
-            this.btn_view.BorderRadius = 5;
-            this.btn_view.CheckedState.Parent = this.btn_view;
-            this.btn_view.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_view.CustomImages.Parent = this.btn_view;
-            this.btn_view.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_view.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_view.ForeColor = System.Drawing.Color.White;
-            this.btn_view.HoverState.Parent = this.btn_view;
-            this.btn_view.Image = global::Santa_Archiving_System.Properties.Resources.icons8_view_100;
-            this.btn_view.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_view.Location = new System.Drawing.Point(96, 97);
-            this.btn_view.Name = "btn_view";
-            this.btn_view.ShadowDecoration.Parent = this.btn_view;
-            this.btn_view.Size = new System.Drawing.Size(88, 36);
-            this.btn_view.TabIndex = 29;
-            this.btn_view.Text = "View";
-            this.btn_view.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_view.Click += new System.EventHandler(this.btn_view_Click);
-            // 
-            // btn_print
-            // 
-            this.btn_print.BorderRadius = 5;
-            this.btn_print.CheckedState.Parent = this.btn_print;
-            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_print.CustomImages.Parent = this.btn_print;
-            this.btn_print.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_print.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.ForeColor = System.Drawing.Color.White;
-            this.btn_print.HoverState.Parent = this.btn_print;
-            this.btn_print.Image = global::Santa_Archiving_System.Properties.Resources.icons8_print_100;
-            this.btn_print.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_print.Location = new System.Drawing.Point(3, 97);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.ShadowDecoration.Parent = this.btn_print;
-            this.btn_print.Size = new System.Drawing.Size(87, 36);
-            this.btn_print.TabIndex = 29;
-            this.btn_print.Text = "Print";
-            this.btn_print.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            this.panel5.TabIndex = 32;
             // 
             // guna2TextBox1
             // 
@@ -160,12 +124,11 @@
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.PlaceholderText = "Search......";
+            this.guna2TextBox1.PlaceholderText = "Search";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Size = new System.Drawing.Size(283, 36);
             this.guna2TextBox1.TabIndex = 28;
-            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // guna2HtmlLabel1
             // 
@@ -174,9 +137,66 @@
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(404, 6);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(274, 30);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(248, 30);
             this.guna2HtmlLabel1.TabIndex = 27;
-            this.guna2HtmlLabel1.Text = "Resolution Index Report";
+            this.guna2HtmlLabel1.Text = "Appropriation History";
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.BorderRadius = 5;
+            this.btn_delete.CheckedState.Parent = this.btn_delete;
+            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_delete.CustomImages.Parent = this.btn_delete;
+            this.btn_delete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_delete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.ForeColor = System.Drawing.Color.White;
+            this.btn_delete.HoverState.Parent = this.btn_delete;
+            this.btn_delete.Image = global::Santa_Archiving_System.Properties.Resources.icons8_view_100;
+            this.btn_delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_delete.Location = new System.Drawing.Point(86, 88);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.ShadowDecoration.Parent = this.btn_delete;
+            this.btn_delete.Size = new System.Drawing.Size(81, 45);
+            this.btn_delete.TabIndex = 30;
+            this.btn_delete.Text = "View";
+            this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btn_add
+            // 
+            this.btn_add.BorderRadius = 5;
+            this.btn_add.CheckedState.Parent = this.btn_add;
+            this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_add.CustomImages.Parent = this.btn_add;
+            this.btn_add.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_add.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ForeColor = System.Drawing.Color.White;
+            this.btn_add.HoverState.Parent = this.btn_add;
+            this.btn_add.Image = global::Santa_Archiving_System.Properties.Resources.icons8_print_100;
+            this.btn_add.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_add.Location = new System.Drawing.Point(6, 88);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.ShadowDecoration.Parent = this.btn_add;
+            this.btn_add.Size = new System.Drawing.Size(74, 45);
+            this.btn_add.TabIndex = 32;
+            this.btn_add.Text = "Print";
+            this.btn_add.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(20, 164);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.guna2DataGridView1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.panel7);
+            this.splitContainer1.Size = new System.Drawing.Size(1013, 408);
+            this.splitContainer1.SplitterDistance = 696;
+            this.splitContainer1.TabIndex = 33;
             // 
             // guna2DataGridView1
             // 
@@ -185,7 +205,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.guna2DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.guna2DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -213,13 +233,13 @@
             this.guna2DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(20, 164);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(0, 0);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1013, 408);
-            this.guna2DataGridView1.TabIndex = 30;
+            this.guna2DataGridView1.Size = new System.Drawing.Size(696, 408);
+            this.guna2DataGridView1.TabIndex = 9;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -242,37 +262,82 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
-            // loading1
+            // panel7
             // 
-            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(502, 305);
-            this.loading1.Name = "loading1";
-            this.loading1.Size = new System.Drawing.Size(72, 74);
-            this.loading1.TabIndex = 31;
+            this.panel7.Controls.Add(this.lb_username);
+            this.panel7.Controls.Add(this.lb_date);
+            this.panel7.Controls.Add(this.guna2HtmlLabel3);
+            this.panel7.Controls.Add(this.guna2HtmlLabel2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(313, 408);
+            this.panel7.TabIndex = 0;
             // 
-            // IndexReportResolution
+            // lb_username
+            // 
+            this.lb_username.BackColor = System.Drawing.Color.Transparent;
+            this.lb_username.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_username.Location = new System.Drawing.Point(123, 66);
+            this.lb_username.Name = "lb_username";
+            this.lb_username.Size = new System.Drawing.Size(66, 19);
+            this.lb_username.TabIndex = 7;
+            this.lb_username.Text = "Username";
+            // 
+            // lb_date
+            // 
+            this.lb_date.BackColor = System.Drawing.Color.Transparent;
+            this.lb_date.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_date.Location = new System.Drawing.Point(123, 30);
+            this.lb_date.Name = "lb_date";
+            this.lb_date.Size = new System.Drawing.Size(35, 19);
+            this.lb_date.TabIndex = 6;
+            this.lb_date.Text = "Date";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(24, 66);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(81, 19);
+            this.guna2HtmlLabel3.TabIndex = 5;
+            this.guna2HtmlLabel3.Text = "Updated By:";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(24, 30);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(93, 19);
+            this.guna2HtmlLabel2.TabIndex = 4;
+            this.guna2HtmlLabel2.Text = "Last Updated:";
+            // 
+            // AppropriationHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1053, 592);
-            this.Controls.Add(this.loading1);
-            this.Controls.Add(this.guna2DataGridView1);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = "IndexReportResolution";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "IndexReportResolution";
-            this.Load += new System.EventHandler(this.IndexReportResolution_Load);
+            this.Name = "AppropriationHistory";
+            this.Text = "AppropriationHistory";
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -284,11 +349,16 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private Guna.UI2.WinForms.Guna2Button btn_view;
-        private Guna.UI2.WinForms.Guna2Button btn_print;
+        private Guna.UI2.WinForms.Guna2Button btn_delete;
+        private Guna.UI2.WinForms.Guna2Button btn_add;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private common.loading loading1;
+        private System.Windows.Forms.Panel panel7;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_username;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_date;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }

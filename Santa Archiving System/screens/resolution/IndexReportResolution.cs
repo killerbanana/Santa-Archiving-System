@@ -1,4 +1,5 @@
 ﻿using DGVPrinterHelper;
+using Santa_Archiving_System.models;
 using Santa_Archiving_System.services.controls;
 using Santa_Archiving_System.services.resolution;
 using System;
@@ -15,6 +16,7 @@ namespace Santa_Archiving_System.screens.resolution
 {
     public partial class IndexReportResolution : Form
     {
+        Resolution resolution;
         public IndexReportResolution()
         {
             InitializeComponent();
@@ -76,6 +78,24 @@ namespace Santa_Archiving_System.screens.resolution
             else
             {
                 (guna2DataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("[ResolutionNo] LIKE '%{0}%' OR [Series] LIKE '%{0}%'  OR [Date] LIKE '%{0}%' OR  [Title] LIKE '%{0}%' OR  [Author] LIKE '%{0}%'", guna2TextBox1.Text);
+            }
+        }
+
+        private async void btn_view_Click(object sender, EventArgs e)
+        {
+            await Resolutions.OpenFileOnline1(resolution.Type, resolution.Series, resolution.ResolutionNo);
+        }
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow item in this.guna2DataGridView1.SelectedRows)
+            {
+                resolution = new Resolution()
+                {
+                    ResolutionNo = item.Cells[0].Value.ToString(),
+                    Series = item.Cells[1].Value.ToString(),
+                    Type = item.Cells[6].Value.ToString(),
+                };
             }
         }
     }
