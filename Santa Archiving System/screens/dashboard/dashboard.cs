@@ -30,7 +30,7 @@ namespace Santa_Archiving_System.screens.dashboard
         {
             InitializeComponent();
         }
-
+        account account;
         public async Task LoadDataTableOnline()
         {
             try
@@ -328,6 +328,40 @@ namespace Santa_Archiving_System.screens.dashboard
         {
             AddActivities addActivities = new AddActivities();
             addActivities.ShowDialog();
+        }
+
+        private async void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(account.title) || String.IsNullOrWhiteSpace(account.agenda))
+            {
+                MessageBox.Show("Please select activities to delete", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to delete this Data?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    await dash.DeleteActivities(account.title, account.agenda);
+
+                    await LoadDataTableOnline();
+                    MessageBox.Show("Successfully deleted!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    account.title = string.Empty;
+                    account.agenda = string.Empty;
+                }
+
+            }
+        }
+
+        private void dt_activities_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dt_activities.SelectedRows)
+            {
+                account = new account()
+                {
+                    title = item.Cells[0].Value.ToString(),
+                    agenda = item.Cells[1].Value.ToString(),
+                };
+            }
         }
     }
 }

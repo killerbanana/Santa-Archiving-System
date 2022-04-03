@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +20,22 @@ namespace Santa_Archiving_System.screens.wordToPdf
         {
             InitializeComponent();
         }
-        String path = "";
+        string path = "";
+        string data = "";
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            path = ControlsServices.OpenFileDialog1();
-            fileName.Text = path;
+            switch (guna2ComboBox1.SelectedIndex)
+            {
+                case 0:
+                    path = ControlsServices.OpenFileDialogDocx();
+                    fileName.Text = path;
+                    break;
+                case 1:
+                    path = ControlsServices.OpenFileDialogPDF();
+                    fileName.Text = path;
+                    break;
+            }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -34,9 +45,31 @@ namespace Santa_Archiving_System.screens.wordToPdf
 
         private async void btn_convert_Click(object sender, EventArgs e)
         {
-            loading1.Visible = true;
-            await convert();
-            loading1.Visible = false;
+            switch (guna2ComboBox1.SelectedIndex)
+            {
+                case 0:
+                    if (path == string.Empty || path == "")
+                    {
+                        MessageBox.Show("Please select a file to convert.");
+                        return;
+                    }
+                    loading1.Visible = true;
+                    await convert();
+                    loading1.Visible = false;
+                    MessageBox.Show("Successfully Converted");
+                    break;
+                case 1:
+                    if (path == string.Empty || path == "")
+                    {
+                        MessageBox.Show("Please select a file to convert.");
+                        return;
+                    }
+                    loading1.Visible = true;
+                    await convertPDF();
+                    loading1.Visible = false;
+                    MessageBox.Show("Successfully Converted");
+                    break;
+            }
         }
 
         public async Task convert()
@@ -54,6 +87,29 @@ namespace Santa_Archiving_System.screens.wordToPdf
                 Proc.StartInfo.FileName = @"C:\\New Folder(2)\\file.pdf";
                 Proc.Start();
             });
+        }
+
+        public async Task convertPDF()
+        {
+            await Task.Run(() =>
+            {
+                SautinSoft.PdfFocus f = new SautinSoft.PdfFocus();
+                f.OpenPdf(path);
+                if (f.PageCount > 0)
+                    f.WordOptions.Format = SautinSoft.PdfFocus.CWordOptions.eWordDocument.Docx;
+                    f.ToWord(path + ".docx");
+            });
+        }
+
+        private void WordToPdf_Load(object sender, EventArgs e)
+        {
+            guna2ComboBox1.SelectedIndex = 0;
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            path = "";
+            fileName.Text = path;
         }
     }
 }

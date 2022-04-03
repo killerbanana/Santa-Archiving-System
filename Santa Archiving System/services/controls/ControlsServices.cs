@@ -70,12 +70,40 @@ namespace Santa_Archiving_System.services.controls
             return Constants.filePath;
         }
 
-        public static string OpenFileDialog1()
+        public static string OpenFileDialogDocx()
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
                 openFileDialog.Filter = " .docx|*.docx"; ;
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    Constants.filePath = openFileDialog.FileName;
+
+                    Constants.ext = Path.GetExtension(Constants.filePath);
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        Constants.fileContent = reader.ReadToEnd();
+                    }
+                }
+            }
+            return Constants.filePath;
+        }
+
+        public static string OpenFileDialogPDF()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = " .pdf|*.pdf"; ;
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
 

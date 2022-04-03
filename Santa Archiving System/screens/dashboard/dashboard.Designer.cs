@@ -435,6 +435,7 @@
             this.dt_activities.ThemeStyle.RowsStyle.Height = 22;
             this.dt_activities.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dt_activities.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dt_activities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dt_activities_CellClick);
             // 
             // panel9
             // 
@@ -492,6 +493,7 @@
             this.btn_delete.TabIndex = 35;
             this.btn_delete.Text = "Delete";
             this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_add
             // 
@@ -715,9 +717,9 @@
             this.word2pdflabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.word2pdflabel.Location = new System.Drawing.Point(71, 43);
             this.word2pdflabel.Name = "word2pdflabel";
-            this.word2pdflabel.Size = new System.Drawing.Size(150, 49);
+            this.word2pdflabel.Size = new System.Drawing.Size(138, 49);
             this.word2pdflabel.TabIndex = 13;
-            this.word2pdflabel.Text = "Make DOCX files easy to read by converting them to PDF";
+            this.word2pdflabel.Text = "Convert your DOCX files to PDF and Vice Versa";
             this.word2pdflabel.Click += new System.EventHandler(this.label8_Click);
             // 
             // word2pdf
@@ -729,9 +731,9 @@
             this.word2pdf.ForeColor = System.Drawing.Color.Black;
             this.word2pdf.Location = new System.Drawing.Point(69, 15);
             this.word2pdf.Name = "word2pdf";
-            this.word2pdf.Size = new System.Drawing.Size(137, 28);
+            this.word2pdf.Size = new System.Drawing.Size(127, 28);
             this.word2pdf.TabIndex = 12;
-            this.word2pdf.Text = "Word To PDF";
+            this.word2pdf.Text = "Convert a file";
             this.word2pdf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2PictureBox1

@@ -32,6 +32,8 @@
             this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
             this.btn_convert = new Guna.UI2.WinForms.Guna2Button();
             this.fileName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.word2pdf = new System.Windows.Forms.Label();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.loading1 = new Santa_Archiving_System.common.loading();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(356, 42);
+            this.guna2Button3.Location = new System.Drawing.Point(356, 98);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(111, 36);
@@ -63,7 +65,7 @@
             this.btn_cancel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
             this.btn_cancel.HoverState.Parent = this.btn_cancel;
-            this.btn_cancel.Location = new System.Drawing.Point(239, 119);
+            this.btn_cancel.Location = new System.Drawing.Point(239, 168);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.ShadowDecoration.Parent = this.btn_cancel;
             this.btn_cancel.Size = new System.Drawing.Size(111, 36);
@@ -81,7 +83,7 @@
             this.btn_convert.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_convert.ForeColor = System.Drawing.Color.White;
             this.btn_convert.HoverState.Parent = this.btn_convert;
-            this.btn_convert.Location = new System.Drawing.Point(356, 119);
+            this.btn_convert.Location = new System.Drawing.Point(356, 168);
             this.btn_convert.Name = "btn_convert";
             this.btn_convert.ShadowDecoration.Parent = this.btn_convert;
             this.btn_convert.Size = new System.Drawing.Size(111, 36);
@@ -104,7 +106,7 @@
             this.fileName.FocusedState.Parent = this.fileName;
             this.fileName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fileName.HoverState.Parent = this.fileName;
-            this.fileName.Location = new System.Drawing.Point(12, 42);
+            this.fileName.Location = new System.Drawing.Point(12, 98);
             this.fileName.Name = "fileName";
             this.fileName.PasswordChar = '\0';
             this.fileName.PlaceholderText = "";
@@ -113,6 +115,43 @@
             this.fileName.ShadowDecoration.Parent = this.fileName;
             this.fileName.Size = new System.Drawing.Size(338, 36);
             this.fileName.TabIndex = 78;
+            // 
+            // word2pdf
+            // 
+            this.word2pdf.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.word2pdf.AutoSize = true;
+            this.word2pdf.BackColor = System.Drawing.Color.Transparent;
+            this.word2pdf.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.word2pdf.ForeColor = System.Drawing.Color.Black;
+            this.word2pdf.Location = new System.Drawing.Point(7, 18);
+            this.word2pdf.Name = "word2pdf";
+            this.word2pdf.Size = new System.Drawing.Size(139, 28);
+            this.word2pdf.TabIndex = 80;
+            this.word2pdf.Text = "Pick an Action";
+            this.word2pdf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
+            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.FormattingEnabled = true;
+            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "Word To PDF",
+            "PDF to Word"});
+            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(12, 49);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Size = new System.Drawing.Size(338, 36);
+            this.guna2ComboBox1.TabIndex = 81;
+            this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // loading1
             // 
@@ -127,8 +166,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 179);
+            this.ClientSize = new System.Drawing.Size(479, 216);
             this.Controls.Add(this.loading1);
+            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.word2pdf);
             this.Controls.Add(this.fileName);
             this.Controls.Add(this.btn_convert);
             this.Controls.Add(this.btn_cancel);
@@ -136,7 +177,9 @@
             this.Name = "WordToPdf";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Convert";
+            this.Load += new System.EventHandler(this.WordToPdf_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -147,5 +190,7 @@
         private Guna.UI2.WinForms.Guna2Button btn_convert;
         private Guna.UI2.WinForms.Guna2TextBox fileName;
         private common.loading loading1;
+        private System.Windows.Forms.Label word2pdf;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }
