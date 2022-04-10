@@ -17,8 +17,10 @@ namespace Santa_Archiving_System.screens.resolution
     {
         Resolution resolution;
         String path = "";
-        public UpdateResolution(Resolution data)
+        string username;
+        public UpdateResolution(Resolution data, string user)
         {
+            this.username = user;
             this.resolution = data;
             InitializeComponent();
         }
@@ -62,6 +64,23 @@ namespace Santa_Archiving_System.screens.resolution
                     tag.Text,
                     reading_cb.Text, 
                     fileName.Text);
+
+                    await Resolutions.SaveResolutionHistory(
+                       resolutionNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text,
+                    resolution.Created,
+                    DateTime.Now.ToLongDateString(),
+                    username,
+                    resolution.Type
+                        );
+
                     MessageBox.Show("Successfully updated!");
                     this.Close();
                     await resoluionEncode.LoadDataTableOnline();

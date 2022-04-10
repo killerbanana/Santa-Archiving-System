@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Santa_Archiving_System.services.appropriation;
+using Santa_Archiving_System.services.controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,16 @@ namespace Santa_Archiving_System.screens.appropriation
         public AppropriationHistory()
         {
             InitializeComponent();
+        }
+
+        private async void AppropriationHistory_Load(object sender, EventArgs e)
+        {
+            if (ControlsServices.CheckIfOnline())
+            {
+                loading1.Visible = true;
+                guna2DataGridView1.DataSource = await Appropriations.getHistoryOnline();
+                loading1.Visible = false;
+            }
         }
     }
 }

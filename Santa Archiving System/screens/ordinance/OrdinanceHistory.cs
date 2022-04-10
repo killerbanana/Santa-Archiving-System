@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Santa_Archiving_System.services.ordinance;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace Santa_Archiving_System.screens.ordinance
         public OrdinanceHistory()
         {
             InitializeComponent();
+        }
+
+        private async void OrdinanceHistory_Load(object sender, EventArgs e)
+        {
+            loading1.Visible = true;
+            guna2DataGridView1.DataSource = await Ordinances.getHistoryOnline();
+            loading1.Visible = false;
         }
     }
 }

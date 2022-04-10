@@ -48,7 +48,9 @@ namespace Santa_Archiving_System.screens.appropriation
                     time.Text,
                     ampm.Text,
                     tag.Text,
-                    reading_cb.Text);
+                    reading_cb.Text,
+                    DateTime.Now.ToLongDateString()
+                    );
 
                 await Appropriations.SaveAppropriationDataOnline(
                     appropriationNumber.Text,
@@ -59,7 +61,7 @@ namespace Santa_Archiving_System.screens.appropriation
                     time.Text,
                     ampm.Text,
                     tag.Text,
-                    reading_cb.Text);
+                    reading_cb.Text, DateTime.Now.ToLongDateString());
             }
             else
             {
@@ -72,7 +74,7 @@ namespace Santa_Archiving_System.screens.appropriation
                     time.Text,
                     ampm.Text,
                     tag.Text,
-                    reading_cb.Text);
+                    reading_cb.Text, DateTime.Now.ToLongDateString());
             }
 
 
@@ -84,6 +86,11 @@ namespace Santa_Archiving_System.screens.appropriation
         {
             date.Text = DateTime.Now.ToString();
             reading_cb.SelectedIndex = 0;
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

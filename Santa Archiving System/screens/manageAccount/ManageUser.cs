@@ -51,15 +51,15 @@ namespace Santa_Archiving_System.screens.auth
             try
             {
                 dt_users.DataSource = await Account.getUsersListOnline();
-                dt_users.Columns[1].HeaderText = "Firstname";
-                dt_users.Columns[2].HeaderText = "Middlename";
-                dt_users.Columns[3].HeaderText = "Lastname";
+               // dt_users.Columns[1].HeaderText = "Firstname";
+               // dt_users.Columns[2].HeaderText = "Middlename";
+               // dt_users.Columns[3].HeaderText = "Lastname";
                 dt_users.Columns[0].Visible = false;
                 dt_users.Columns[5].Visible = false;
                 dt_users.Columns[13].Visible = false;
                 dt_users.Columns[14].Visible = false;
                 dt_users.Columns[15].Visible = false;
-                dt_users.ClearSelection();
+                //dt_users.ClearSelection();
             }
             catch (Exception e)
             {

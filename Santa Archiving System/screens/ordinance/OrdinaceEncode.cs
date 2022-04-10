@@ -16,8 +16,10 @@ namespace Santa_Archiving_System.screens.ordinance
     public partial class OrdinaceEncode : Form
     {
         Ordinance ordinance;
-        public OrdinaceEncode(Ordinance data)
+        string username;
+        public OrdinaceEncode(Ordinance data, string name)
         {
+            this.username = name;
             this.ordinance = data;
             InitializeComponent();
         }
@@ -155,11 +157,11 @@ namespace Santa_Archiving_System.screens.ordinance
         {
             if (String.IsNullOrWhiteSpace(ordinance.Id.ToString()) || ordinance.Id == 0)
             {
-
+                MessageBox.Show("Select file to update");
             }
             else
             {
-                UpdateOrdinance updateResolution = new UpdateOrdinance(ordinance);
+                UpdateOrdinance updateResolution = new UpdateOrdinance(ordinance, username);
                 updateResolution.ShowDialog();
             }
         }
@@ -180,6 +182,7 @@ namespace Santa_Archiving_System.screens.ordinance
                     Type = item.Cells[7].Value.ToString(),
                     Tag = item.Cells[8].Value.ToString(),
                     Reading = item.Cells[10].Value.ToString(),
+                    Created = item.Cells[11].Value.ToString()
                 };
             }
         }
@@ -210,7 +213,9 @@ namespace Santa_Archiving_System.screens.ordinance
 
         private async void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.UseWaitCursor = true;
             await Ordinances.OpenFileOnline(ordinance.Type, ordinance.Id.ToString());
+            this.UseWaitCursor = false;
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)

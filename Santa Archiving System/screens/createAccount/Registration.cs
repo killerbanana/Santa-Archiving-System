@@ -110,7 +110,7 @@ namespace Santa_Archiving_System.screens.auth
                                    tb_username.Text,
                                    ControlsServices.Encrypt(tb_password.Text),
                                    account.image,
-                                   account.status
+                                   true
                                    );
                                 await Account.SaveAccountOnline
                                     (
@@ -127,7 +127,7 @@ namespace Santa_Archiving_System.screens.auth
                                     tb_username.Text,
                                     ControlsServices.Encrypt(tb_password.Text),
                                     account.image,
-                                    account.status
+                                   true
                                     );
                                 MessageBox.Show("Successfully created!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 tb_firstName.Text = String.Empty;

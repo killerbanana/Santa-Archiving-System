@@ -203,6 +203,12 @@
     <Compile Include="screens\appropriation\IndexReportAppropriation.Designer.cs">
       <DependentUpon>IndexReportAppropriation.cs</DependentUpon>
     </Compile>
+    <Compile Include="screens\appropriation\UpdateAppropriation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\appropriation\UpdateAppropriation.Designer.cs">
+      <DependentUpon>UpdateAppropriation.cs</DependentUpon>
+    </Compile>
     <Compile Include="screens\auth\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -462,6 +468,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="screens\appropriation\IndexReportAppropriation.resx">
       <DependentUpon>IndexReportAppropriation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\appropriation\UpdateAppropriation.resx">
+      <DependentUpon>UpdateAppropriation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="screens\auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

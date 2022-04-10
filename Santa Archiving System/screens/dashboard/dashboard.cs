@@ -64,10 +64,10 @@ namespace Santa_Archiving_System.screens.dashboard
             try
             {
                 dt_activities.DataSource = await dash.getActivities();
-                dt_activities.ClearSelection();
+               // dt_activities.ClearSelection();
 
                 dt_users.DataSource = await Account.getOnlineUsers();
-                dt_users.Columns[1].HeaderText = "Name";
+                //dt_users.Columns[1].HeaderText = "Name";
             }
             catch (Exception ex)
             {

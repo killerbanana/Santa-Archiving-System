@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -69,7 +70,35 @@ namespace Santa_Archiving_System.services.appropriation
                 using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
                 {
 
-                    using (MySqlCommand cmd = new MySqlCommand("SELECT ID, AppropriationNo, Series, Title, Author, Date, Time, Type, Tag, Size, Reading FROM Appropriation", con))
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT ID, AppropriationNo, Series, Title, Author, Date, Time, Type, Tag, Size, Reading, Created FROM Appropriation", con))
+                    {
+                        con.Open();
+                        IAsyncResult result = cmd.BeginExecuteReader();
+
+                        while (!result.IsCompleted)
+                        {
+                        }
+
+                        using (MySqlDataReader reader = cmd.EndExecuteReader(result))
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                }
+            });
+            return dt;
+        }
+
+        public static async Task<DataTable> getHistoryOnline()
+        {
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT AppropriationNo, Series, Title, Author, Type, Reading, Created, Updated, UpdatedBy FROM AppropriationHistory", con))
                     {
                         con.Open();
                         IAsyncResult result = cmd.BeginExecuteReader();
@@ -407,10 +436,11 @@ namespace Santa_Archiving_System.services.appropriation
             string time,
             string ampm,
             string tag,
-            string reading
+            string reading,
+            string created
             )
         {
-            String query = "INSERT INTO Appropriation([Appropriation No], Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Appropriation,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
+            String query = "INSERT INTO Appropriation([Appropriation No], Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading,  Created) VALUES(@Appropriation,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading, @Created)";
 
             using (Stream stream = File.OpenRead(Constants.filePath))
             {
@@ -445,7 +475,7 @@ namespace Santa_Archiving_System.services.appropriation
                     cmd.Parameters.AddWithValue("@Size", SqlDbType.VarChar).Value = resultSize;
                     cmd.Parameters.AddWithValue("@Tag", SqlDbType.VarChar).Value = tag;
                     cmd.Parameters.AddWithValue("@Reading", SqlDbType.VarChar).Value = reading;
-
+                    cmd.Parameters.AddWithValue("@Created", SqlDbType.VarChar).Value = created;
                     con.Open();
 
                     IAsyncResult result = cmd.BeginExecuteNonQuery();
@@ -478,10 +508,11 @@ namespace Santa_Archiving_System.services.appropriation
             string time,
             string ampm,
             string tag,
-            string reading
+            string reading,
+            string created
             )
         {
-            String query = "INSERT INTO Appropriation(AppropriationNo, Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading) VALUES(@Appropriation,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading)";
+            String query = "INSERT INTO Appropriation(AppropriationNo, Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading, Created) VALUES(@Appropriation,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading, @Created)";
 
             using (Stream stream = File.OpenRead(Constants.filePath))
             {
@@ -517,7 +548,155 @@ namespace Santa_Archiving_System.services.appropriation
                     cmd.Parameters.Add(new MySqlParameter("@Size", resultSize));
                     cmd.Parameters.Add(new MySqlParameter("@Tag", tag));
                     cmd.Parameters.Add(new MySqlParameter("@Reading", reading));
+                    cmd.Parameters.Add(new MySqlParameter("@Created", created));
+                    con.Open();
 
+                    IAsyncResult result = cmd.BeginExecuteNonQuery();
+
+                    while (!result.IsCompleted)
+                    {
+
+                    }
+
+                    await Task.Run(() =>
+                    {
+                        cmd.EndExecuteNonQuery(result);
+                    });
+
+                    con.Close();
+
+                }
+            }
+        }
+
+        //SAVE OFFLINE
+        public static async Task SaveAppropriationDataHistory(
+            string AppropriationNo,
+            string series,
+            string date,
+            string title,
+            string author,
+            string time,
+            string ampm,
+            string tag,
+            string reading,
+            string created
+            )
+        {
+            String query = "INSERT INTO Appropriation([Appropriation No], Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading,  Created) VALUES(@Appropriation,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading, @Created)";
+
+            using (Stream stream = File.OpenRead(Constants.filePath))
+            {
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+
+                string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+                double len = new FileInfo(Constants.filePath).Length;
+                int order = 0;
+                while (len >= 1024 && order < sizes.Length - 1)
+                {
+                    order++;
+                    len = len / 1024;
+                }
+
+                // Adjust the format string to your preferences. For example "{0:0.#}{1}" would
+                // show a single decimal place, and no space.
+                string resultSize = String.Format("{0:0.##} {1}", len, sizes[order]);
+
+
+                using (SqlConnection con = new SqlConnection(Constants.connectionStringOffline))
+                {
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@Appropriation", SqlDbType.VarChar).Value = AppropriationNo;
+                    cmd.Parameters.AddWithValue("@Series", SqlDbType.VarChar).Value = series;
+                    cmd.Parameters.AddWithValue("@Date", SqlDbType.VarChar).Value = date;
+                    cmd.Parameters.AddWithValue("@Title", SqlDbType.VarChar).Value = title;
+                    cmd.Parameters.AddWithValue("@Author", SqlDbType.VarChar).Value = author;
+                    cmd.Parameters.AddWithValue("@Files", SqlDbType.VarBinary).Value = buffer;
+                    cmd.Parameters.AddWithValue("@Time", SqlDbType.VarChar).Value = time + " " + ampm;
+                    cmd.Parameters.AddWithValue("@Type", SqlDbType.VarChar).Value = Constants.ext;
+                    cmd.Parameters.AddWithValue("@Size", SqlDbType.VarChar).Value = resultSize;
+                    cmd.Parameters.AddWithValue("@Tag", SqlDbType.VarChar).Value = tag;
+                    cmd.Parameters.AddWithValue("@Reading", SqlDbType.VarChar).Value = reading;
+                    cmd.Parameters.AddWithValue("@Created", SqlDbType.VarChar).Value = created;
+                    con.Open();
+
+                    IAsyncResult result = cmd.BeginExecuteNonQuery();
+
+                    while (!result.IsCompleted)
+                    {
+
+                    }
+
+
+
+                    await Task.Run(() =>
+                    {
+                        cmd.EndExecuteNonQuery(result);
+                    });
+
+                    con.Close();
+
+                }
+            }
+        }
+
+        //SAVE ONLINE
+        public static async Task SaveAppropriationDataOnlineHistory(
+            string AppropriationNo,
+            string series,
+            string date,
+            string title,
+            string author,
+            string time,
+            string ampm,
+            string tag,
+            string reading,
+            string created,
+            string updated,
+            string user,
+            string type
+            )
+        {
+            String query = "INSERT INTO AppropriationHistory(AppropriationNo, Series, Date, Title, Author , Files, Time, Type, Size, Tag, Reading, Created, Updated, UpdatedBy) VALUES(@Appropriation,@Series, @Date, @Title, @Author, @Files, @Time, @Type, @Size, @Tag, @Reading, @Created, @Updated, @UpdatedBy)";
+
+            using (Stream stream = File.OpenRead(Constants.filePath))
+            {
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+
+                string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+                double len = new FileInfo(Constants.filePath).Length;
+                int order = 0;
+                while (len >= 1024 && order < sizes.Length - 1)
+                {
+                    order++;
+                    len = len / 1024;
+                }
+
+                // Adjust the format string to your preferences. For example "{0:0.#}{1}" would
+                // show a single decimal place, and no space.
+                string resultSize = String.Format("{0:0.##} {1}", len, sizes[order]);
+
+
+
+                using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    cmd.Parameters.Add(new MySqlParameter("@Appropriation", AppropriationNo));
+                    cmd.Parameters.Add(new MySqlParameter("@Series", series));
+                    cmd.Parameters.Add(new MySqlParameter("@Date", date));
+                    cmd.Parameters.Add(new MySqlParameter("@Title", title));
+                    cmd.Parameters.Add(new MySqlParameter("@Author", author));
+                    cmd.Parameters.Add(new MySqlParameter("@Files", buffer));
+                    cmd.Parameters.Add(new MySqlParameter("@Time", time + " " + ampm));
+                    cmd.Parameters.Add(new MySqlParameter("@Type", type));
+                    cmd.Parameters.Add(new MySqlParameter("@Size", resultSize));
+                    cmd.Parameters.Add(new MySqlParameter("@Tag", tag));
+                    cmd.Parameters.Add(new MySqlParameter("@Reading", reading));
+                    cmd.Parameters.Add(new MySqlParameter("@Created", created));
+                    cmd.Parameters.Add(new MySqlParameter("@Updated", updated));
+                    cmd.Parameters.Add(new MySqlParameter("@UpdatedBy", user));
                     con.Open();
 
                     IAsyncResult result = cmd.BeginExecuteNonQuery();
@@ -581,6 +760,7 @@ namespace Santa_Archiving_System.services.appropriation
 
                     }
                     path = "C:\\New folder\\1.docx";
+                    Constants.filePath = path;
                 }
                 if (fileType == ".pdf")
                 {
@@ -614,6 +794,7 @@ namespace Santa_Archiving_System.services.appropriation
 
                     }
                     path = "C:\\New folder\\2.pdf";
+                    Constants.filePath = path;
                 }
             });
             return path;
@@ -662,6 +843,7 @@ namespace Santa_Archiving_System.services.appropriation
 
                     }
                     path = "C:\\New folder\\1.docx";
+                    Constants.filePath = path;
                 }
                 if (fileType == ".pdf")
                 {
@@ -695,6 +877,7 @@ namespace Santa_Archiving_System.services.appropriation
 
                     }
                     path = "C:\\New folder\\2.pdf";
+                    Constants.filePath = path;
                 }
             });
             return path;
@@ -928,6 +1111,100 @@ namespace Santa_Archiving_System.services.appropriation
                 }
             });
             return dt;
+        }
+
+        public static async Task OpenFileOnline(String FileType, String Id)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DataTable dt = new DataTable();
+            await Task.Run(() =>
+            {
+                if (FileType == ".docx")
+                {
+                    using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                    {
+
+                        FileStream FS = null;
+                        byte[] dbbyte;
+
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT Files FROM Appropriation where Id ='" + int.Parse(Id) + "'", con))
+                        {
+                            con.Open();
+
+                            da = new MySqlDataAdapter(cmd);
+                            dt = new DataTable();
+                            da.Fill(dt);
+
+                            dbbyte = (byte[])dt.Rows[0]["files"];
+
+                            //store file Temporarily 
+                            string filepath = "C:\\New folder\\1.docx";
+
+                            //Assign File path create file
+                            FS = new FileStream(filepath, System.IO.FileMode.Create);
+
+                            //Write bytes to create file
+                            FS.Write(dbbyte, 0, dbbyte.Length);
+
+                            //Close FileStream instance
+                            FS.Close();
+
+                            // Open fila after write 
+
+                            //Create instance for process class
+                            Process Proc = new Process();
+
+                            //assign file path for process
+                            Proc.StartInfo.FileName = filepath;
+                            Proc.Start();
+
+                        }
+
+                    }
+                }
+                if (FileType == ".pdf")
+                {
+                    using (MySqlConnection con = new MySqlConnection(Constants.connectionStringOnline))
+                    {
+
+                        FileStream FS = null;
+                        byte[] dbbyte;
+
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT Files FROM Appropriation where Id ='" + int.Parse(Id) + "'", con))
+                        {
+                            con.Open();
+                            da = new MySqlDataAdapter(cmd);
+                            dt = new DataTable();
+                            da.Fill(dt);
+
+                            dbbyte = (byte[])dt.Rows[0]["Files"];
+
+                            //store file Temporarily 
+                            string filepath = "C:\\New folder\\2.pdf";
+
+                            //Assign File path create file
+                            FS = new FileStream(filepath, System.IO.FileMode.Create);
+
+                            //Write bytes to create file
+                            FS.Write(dbbyte, 0, dbbyte.Length);
+
+                            //Close FileStream instance
+                            FS.Close();
+
+                            // Open fila after write 
+
+                            //Create instance for process class
+                            Process Proc = new Process();
+
+                            //assign file path for process
+                            Proc.StartInfo.FileName = filepath;
+                            Proc.Start();
+
+                        }
+
+                    }
+                }
+            });
         }
     }
 }

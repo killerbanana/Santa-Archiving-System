@@ -47,7 +47,7 @@ namespace Santa_Archiving_System.screens.resolution
                     time.Text,
                     ampm.Text,
                     tag.Text,
-                    reading_cb.Text);
+                    reading_cb.Text, DateTime.Now.ToLongDateString());
 
                 await Resolutions.SaveResolutionDataOnline(
                     resolutionNumber.Text,
@@ -58,7 +58,8 @@ namespace Santa_Archiving_System.screens.resolution
                     time.Text,
                     ampm.Text,
                     tag.Text,
-                    reading_cb.Text);
+                    reading_cb.Text, 
+                    DateTime.Now.ToLongDateString());
 
                 loading1.Visible = false;
                 MessageBox.Show("Successfully Added");
@@ -79,7 +80,8 @@ namespace Santa_Archiving_System.screens.resolution
                     time.Text,
                     ampm.Text,
                     tag.Text,
-                    reading_cb.Text);
+                    reading_cb.Text, 
+                    DateTime.Now.ToLongDateString());
                 MessageBox.Show("Successfully Added");
                 this.Close();
                 if (resolution.QuickAction)

@@ -21,5 +21,6 @@ namespace Santa_Archiving_System.models
         public string Tag { get; set; }
         public string Reading { get; set; }
         public bool QuickAction { get; set; }
+        public string Created { get; set; }
     }
 }

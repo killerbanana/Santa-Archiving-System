@@ -37,7 +37,7 @@ namespace Santa_Archiving_System.screens.auth
 
         private void opennewform(object obj)
         {
-            account data = new account(); 
+            account data = new account() { }; 
             Application.Run(new MainPanel(data));
         }
         
@@ -60,13 +60,10 @@ namespace Santa_Archiving_System.screens.auth
                     if (Account.checkedLoginOnline == true)
                     {
 
-
-
                         if (tb_password.Text == ControlsServices.Decrypt(Account.password))
                         {
                             if (Account.status == true)
                             {
-                               
                                 await Account.updateOnlineStatus(true, tb_username.Text);
                                 this.Close();
                                 th = new Thread(opennewform);
@@ -138,7 +135,7 @@ namespace Santa_Archiving_System.screens.auth
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            account data = new account() { };
         }
     }
 }

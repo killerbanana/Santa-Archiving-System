@@ -16,8 +16,10 @@ namespace Santa_Archiving_System.screens.appropriation
     public partial class AppropriationEncode : Form
     {
         Appropriation appropriation;
-        public AppropriationEncode(Appropriation data)
+        string username;
+        public AppropriationEncode(Appropriation data, string name)
         {
+            this.username = name;
             this.appropriation = data;
             InitializeComponent();
         }
@@ -27,7 +29,7 @@ namespace Santa_Archiving_System.screens.appropriation
             guna2DataGridView1.DataSource = await Appropriations.getList();
         }
 
-        private async Task LoadDataTableOnline()
+        public async Task LoadDataTableOnline()
         {
             guna2DataGridView1.DataSource = await Appropriations.getListOnline();
         }
@@ -101,6 +103,7 @@ namespace Santa_Archiving_System.screens.appropriation
                     Type = item.Cells[7].Value.ToString(),
                     Tag = item.Cells[8].Value.ToString(),
                     Reading = item.Cells[10].Value.ToString(),
+                    Created = item.Cells[11].Value.ToString()
                 };
             }
         }
@@ -127,6 +130,25 @@ namespace Santa_Archiving_System.screens.appropriation
                     }
                 }
             }
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(appropriation.Id.ToString()) || appropriation.Id == 0)
+            {
+                MessageBox.Show("Select file to update");
+            }
+            else
+            {
+                UpdateAppropriation update = new UpdateAppropriation(appropriation, username);
+                update.ShowDialog();
+            }
+            
+        }
+
+        private async void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            await Appropriations.OpenFileOnline(appropriation.Type, appropriation.Id.ToString());
         }
     }
 }

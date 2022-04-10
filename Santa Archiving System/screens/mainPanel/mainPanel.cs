@@ -231,7 +231,7 @@ namespace Santa_Archiving_System.screens.mainPanel
             {
                 QuickAction = false
             };
-            openChildForm(new ResoluionEncode(data));
+            openChildForm(new ResoluionEncode(data, Account.userName));
         }
 
      
@@ -242,7 +242,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 Reading = "First Reading",
                 QuickAction = false
             };
-            openChildForm(new ResoluionEncode(data));
+            openChildForm(new ResoluionEncode(data, Account.userName));
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -252,7 +252,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 Reading = "Second Reading",
                 QuickAction = false
             };
-            openChildForm(new ResoluionEncode(data));
+            openChildForm(new ResoluionEncode(data, Account.userName));
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)
@@ -262,7 +262,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 Reading = "Third Reading",
                 QuickAction = false
             };
-            openChildForm(new ResoluionEncode(data));
+            openChildForm(new ResoluionEncode(data, Account.userName));
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
@@ -271,7 +271,7 @@ namespace Santa_Archiving_System.screens.mainPanel
             {
                 QuickAction = false
             };
-            openChildForm(new OrdinaceEncode(data));
+            openChildForm(new OrdinaceEncode(data, Account.userName));
         }
 
         private void guna2Button10_Click(object sender, EventArgs e)
@@ -281,7 +281,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 QuickAction = false,
                 Reading = "First Reading"
             };
-            openChildForm(new OrdinaceEncode(data));
+            openChildForm(new OrdinaceEncode(data, Account.userName));
         }
 
         private void guna2Button9_Click(object sender, EventArgs e)
@@ -291,7 +291,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 QuickAction = false,
                 Reading = "Second Reading"
             };
-            openChildForm(new OrdinaceEncode(data));
+            openChildForm(new OrdinaceEncode(data, Account.userName));
         }
 
         private void guna2Button8_Click(object sender, EventArgs e)
@@ -301,7 +301,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 QuickAction = false,
                 Reading = "Third Reading"
             };
-            openChildForm(new OrdinaceEncode(data));
+            openChildForm(new OrdinaceEncode(data, Account.userName));
         }
 
         private void guna2Button17_Click(object sender, EventArgs e)
@@ -310,7 +310,7 @@ namespace Santa_Archiving_System.screens.mainPanel
             {
 
             };
-            openChildForm(new AppropriationEncode(data));
+            openChildForm(new AppropriationEncode(data, Account.userName));
         }
 
         private void guna2Button12_Click(object sender, EventArgs e)
@@ -348,7 +348,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 QuickAction = false,
                 Reading = "PDF"
             };
-            openChildForm(new ResoluionEncode(data));
+            openChildForm(new ResoluionEncode(data, Account.userName));
         }
 
         private void openLogin(object obj)
@@ -416,7 +416,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 QuickAction = false,
                 Reading = "PDF"
             };
-            openChildForm(new OrdinaceEncode(data));
+            openChildForm(new OrdinaceEncode(data, Account.userName));
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -431,7 +431,7 @@ namespace Santa_Archiving_System.screens.mainPanel
                 QuickAction = false,
                 Reading = "PDF"
             };
-            openChildForm(new AppropriationEncode(data));
+            openChildForm(new AppropriationEncode(data, Account.firstName));
         }
 
         private void guna2Button16_Click(object sender, EventArgs e)

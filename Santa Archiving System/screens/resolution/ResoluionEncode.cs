@@ -18,8 +18,10 @@ namespace Santa_Archiving_System.screens.resolution
     public partial class ResoluionEncode : Form
     {
         Resolution resolution;
-        public ResoluionEncode(Resolution data)
+        string username;
+        public ResoluionEncode(Resolution data, string data1)
         {
+            this.username = data1;
             this.resolution = data;
             InitializeComponent();
         }
@@ -171,6 +173,7 @@ namespace Santa_Archiving_System.screens.resolution
                     Type = item.Cells[7].Value.ToString(),
                     Tag = item.Cells[8].Value.ToString(),
                     Reading = item.Cells[10].Value.ToString(),
+                    Created = item.Cells[11].Value.ToString()
                 };
             }
          }
@@ -183,7 +186,7 @@ namespace Santa_Archiving_System.screens.resolution
             }
             else
             {
-                UpdateResolution updateResolution = new UpdateResolution(resolution);
+                UpdateResolution updateResolution = new UpdateResolution(resolution, username);
                 updateResolution.ShowDialog();
             }
         }
@@ -219,7 +222,9 @@ namespace Santa_Archiving_System.screens.resolution
 
         private async void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.UseWaitCursor = true;
             await Resolutions.OpenFileOnline(resolution.Type, resolution.Id.ToString());
+            this.UseWaitCursor = false;
         }
     }
 }

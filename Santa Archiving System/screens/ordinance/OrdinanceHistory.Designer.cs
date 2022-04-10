@@ -47,6 +47,7 @@
             this.lb_date = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.loading1 = new Santa_Archiving_System.common.loading();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -189,13 +190,14 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.loading1);
             this.splitContainer1.Panel1.Controls.Add(this.guna2DataGridView1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel7);
             this.splitContainer1.Size = new System.Drawing.Size(1013, 408);
-            this.splitContainer1.SplitterDistance = 696;
+            this.splitContainer1.SplitterDistance = 723;
             this.splitContainer1.TabIndex = 32;
             // 
             // guna2DataGridView1
@@ -238,7 +240,7 @@
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(696, 408);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(723, 408);
             this.guna2DataGridView1.TabIndex = 9;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -272,7 +274,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(313, 408);
+            this.panel7.Size = new System.Drawing.Size(286, 408);
             this.panel7.TabIndex = 0;
             // 
             // lb_username
@@ -315,6 +317,16 @@
             this.guna2HtmlLabel2.TabIndex = 4;
             this.guna2HtmlLabel2.Text = "Last Updated:";
             // 
+            // loading1
+            // 
+            this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loading1.BackColor = System.Drawing.Color.Transparent;
+            this.loading1.Location = new System.Drawing.Point(343, 167);
+            this.loading1.Name = "loading1";
+            this.loading1.Size = new System.Drawing.Size(72, 74);
+            this.loading1.TabIndex = 33;
+            this.loading1.Visible = false;
+            // 
             // OrdinanceHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +341,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "OrdinanceHistory";
             this.Text = "OrdinanceHistory";
+            this.Load += new System.EventHandler(this.OrdinanceHistory_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -360,5 +373,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lb_date;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private common.loading loading1;
     }
 }

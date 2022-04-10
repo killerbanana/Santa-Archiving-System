@@ -1,6 +1,6 @@
 ﻿using Santa_Archiving_System.models;
+using Santa_Archiving_System.services.appropriation;
 using Santa_Archiving_System.services.controls;
-using Santa_Archiving_System.services.ordinance;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,24 +11,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Santa_Archiving_System.screens.ordinance
+namespace Santa_Archiving_System.screens.appropriation
 {
-    public partial class UpdateOrdinance : Form
+    public partial class UpdateAppropriation : Form
     {
-        Ordinance ordinance;
-        String path = "";
+        Appropriation appropriation;
         string username;
-        public UpdateOrdinance(Ordinance data, string name)
+        String path = "";
+        public UpdateAppropriation(Appropriation data, string username)
         {
-            this.username = name;
-            this.ordinance = data;
+            this.username = username;
+            this.appropriation = data;
             InitializeComponent();
         }
 
-        private async void guna2Button3_Click(object sender, EventArgs e)
+        private async void btn_add_Click(object sender, EventArgs e)
         {
-            OrdinaceEncode ordiEncode = (OrdinaceEncode)Application.OpenForms["OrdinaceEncode"];
-            if (fileName.Text == string.Empty || ordinanceNumber.Text == string.Empty || series.Text == string.Empty)
+            AppropriationEncode ordiEncode = (AppropriationEncode)Application.OpenForms["AppropriationEncode"];
+            if (fileName.Text == string.Empty || appropriationNumber.Text == string.Empty || series.Text == string.Empty)
             {
                 MessageBox.Show("Fill all required fields!");
                 return;
@@ -38,9 +38,9 @@ namespace Santa_Archiving_System.screens.ordinance
                 loading1.Visible = true;
                 if (ControlsServices.CheckIfOnline())
                 {
-                    await Ordinances.UpdateOrdinance(
-                        ordinance.Id.ToString(),
-                    ordinanceNumber.Text,
+                    await Appropriations.UpdateAppropriation(
+                        appropriation.Id.ToString(),
+                    appropriationNumber.Text,
                     series.Text,
                     date.Text,
                     title.Text,
@@ -51,9 +51,8 @@ namespace Santa_Archiving_System.screens.ordinance
                     reading_cb.Text,
                     fileName.Text);
 
-                    await Ordinances.UpdateOrdinanceOnline(
-                        ordinance.Id.ToString(),
-                    ordinanceNumber.Text,
+                    await Appropriations.SaveAppropriationDataOnlineHistory(
+                        appropriationNumber.Text,
                     series.Text,
                     date.Text,
                     title.Text,
@@ -62,23 +61,24 @@ namespace Santa_Archiving_System.screens.ordinance
                     ampm.Text,
                     tag.Text,
                     reading_cb.Text,
-                    fileName.Text);
-
-                    await Ordinances.SaveOrdinanceHistory(
-                        ordinanceNumber.Text,
-                    series.Text,
-                    date.Text,
-                    title.Text,
-                    author.Text,
-                    time.Text,
-                    ampm.Text,
-                    tag.Text,
-                    reading_cb.Text,
-                    ordinance.Created,
+                    appropriation.Created,
                     DateTime.Now.ToLongDateString(),
                     username,
-                    ordinance.Type
+                    appropriation.Type
                         );
+
+                    await Appropriations.UpdateAppropriationOnline(
+                        appropriation.Id.ToString(),
+                    appropriationNumber.Text,
+                    series.Text,
+                    date.Text,
+                    title.Text,
+                    author.Text,
+                    time.Text,
+                    ampm.Text,
+                    tag.Text,
+                    reading_cb.Text,
+                    fileName.Text);
 
                     MessageBox.Show("Successfully Updated");
                     this.Close();
@@ -88,33 +88,34 @@ namespace Santa_Archiving_System.screens.ordinance
             }
         }
 
-        private async void UpdateOrdinance_Load(object sender, EventArgs e)
+        private async void UpdateAppropriation_Load(object sender, EventArgs e)
         {
+           // MessageBox.Show(account);
             ampm.SelectedIndex = 0;
             if (ControlsServices.CheckIfOnline())
             {
                 loading1.Visible = true;
-                path = await Ordinances.CreateNewFileOnline(ordinance.Id.ToString(), ordinance.Type);
+                path = await Appropriations.CreateNewFileOnline(appropriation.Id.ToString(), appropriation.Type);
             }
             else
             {
                 loading1.Visible = true;
-                path = await Ordinances.CreateNewFile(ordinance.Id.ToString(), ordinance.Type);
+                path = await Appropriations.CreateNewFile(appropriation.Id.ToString(), appropriation.Type);
             }
             fileName.Text = path;
-            string[] subs = ordinance.Time.Split(' ');
-            ordinanceNumber.Text = ordinance.OrdinanceNo;
-            series.Text = ordinance.Series;
-            date.Text = ordinance.Date;
+            string[] subs = appropriation.Time.Split(' ');
+            appropriationNumber.Text = appropriation.AppropriationNo;
+            series.Text = appropriation.Series;
+            date.Text = appropriation.Date;
             time.Text = subs[0];
-            title.Text = ordinance.Title;
-            author.Text = ordinance.Author;
-            tag.Text = ordinance.Tag;
-            reading_cb.Text = ordinance.Reading;
+            title.Text = appropriation.Title;
+            author.Text = appropriation.Author;
+            tag.Text = appropriation.Tag;
+            reading_cb.Text = appropriation.Reading;
             loading1.Visible = false;
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btn_browse_Click(object sender, EventArgs e)
         {
             var filename = ControlsServices.OpenFileDialog();
             fileName.Text = filename;

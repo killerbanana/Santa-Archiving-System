@@ -31,25 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPanel));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.sbInformationPanel = new System.Windows.Forms.Panel();
-            this.panelAppropriation = new System.Windows.Forms.Panel();
-            this.panelOrdinanceHolder = new System.Windows.Forms.Panel();
-            this.panelLegislativeHolder = new System.Windows.Forms.Panel();
-            this.panellogo = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_name = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.pb_profile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btn_logout = new Guna.UI2.WinForms.Guna2Button();
             this.AccountManagement = new Guna.UI2.WinForms.Guna2Button();
+            this.sbInformationPanel = new System.Windows.Forms.Panel();
             this.SBOfficials = new Guna.UI2.WinForms.Guna2Button();
             this.SBComittee = new Guna.UI2.WinForms.Guna2Button();
             this.Committee = new Guna.UI2.WinForms.Guna2Button();
+            this.panelAppropriation = new System.Windows.Forms.Panel();
             this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
@@ -57,6 +45,7 @@
             this.Appropriation = new Guna.UI2.WinForms.Guna2Button();
             this.TabSlider = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Tricycle = new Guna.UI2.WinForms.Guna2Button();
+            this.panelOrdinanceHolder = new System.Windows.Forms.Panel();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
@@ -65,6 +54,7 @@
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.Ordinance = new Guna.UI2.WinForms.Guna2Button();
+            this.panelLegislativeHolder = new System.Windows.Forms.Panel();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -74,19 +64,29 @@
             this.PDFButton = new Guna.UI2.WinForms.Guna2Button();
             this.Legislative = new Guna.UI2.WinForms.Guna2Button();
             this.Dashboard = new Guna.UI2.WinForms.Guna2Button();
+            this.panellogo = new System.Windows.Forms.Panel();
             this.LogoHolder = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pb_profile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lbl_name = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
             this.sbInformationPanel.SuspendLayout();
             this.panelAppropriation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabSlider)).BeginInit();
             this.panelOrdinanceHolder.SuspendLayout();
             this.panelLegislativeHolder.SuspendLayout();
             this.panellogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoHolder)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoHolder)).BeginInit();
+            this.panelChildForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -111,185 +111,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(180, 711);
             this.panel1.TabIndex = 1;
-            // 
-            // sbInformationPanel
-            // 
-            this.sbInformationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(159)))));
-            this.sbInformationPanel.Controls.Add(this.SBOfficials);
-            this.sbInformationPanel.Controls.Add(this.SBComittee);
-            this.sbInformationPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sbInformationPanel.Location = new System.Drawing.Point(0, 994);
-            this.sbInformationPanel.Name = "sbInformationPanel";
-            this.sbInformationPanel.Size = new System.Drawing.Size(180, 72);
-            this.sbInformationPanel.TabIndex = 29;
-            this.sbInformationPanel.Visible = false;
-            // 
-            // panelAppropriation
-            // 
-            this.panelAppropriation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(159)))));
-            this.panelAppropriation.Controls.Add(this.guna2Button14);
-            this.panelAppropriation.Controls.Add(this.guna2Button15);
-            this.panelAppropriation.Controls.Add(this.guna2Button16);
-            this.panelAppropriation.Controls.Add(this.guna2Button17);
-            this.panelAppropriation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAppropriation.Location = new System.Drawing.Point(0, 809);
-            this.panelAppropriation.Name = "panelAppropriation";
-            this.panelAppropriation.Size = new System.Drawing.Size(180, 142);
-            this.panelAppropriation.TabIndex = 27;
-            this.panelAppropriation.Visible = false;
-            // 
-            // panelOrdinanceHolder
-            // 
-            this.panelOrdinanceHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(159)))));
-            this.panelOrdinanceHolder.Controls.Add(this.guna2Button8);
-            this.panelOrdinanceHolder.Controls.Add(this.guna2Button9);
-            this.panelOrdinanceHolder.Controls.Add(this.guna2Button10);
-            this.panelOrdinanceHolder.Controls.Add(this.guna2Button2);
-            this.panelOrdinanceHolder.Controls.Add(this.guna2Button4);
-            this.panelOrdinanceHolder.Controls.Add(this.guna2Button5);
-            this.panelOrdinanceHolder.Controls.Add(this.guna2Button6);
-            this.panelOrdinanceHolder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelOrdinanceHolder.Location = new System.Drawing.Point(0, 477);
-            this.panelOrdinanceHolder.Name = "panelOrdinanceHolder";
-            this.panelOrdinanceHolder.Size = new System.Drawing.Size(180, 246);
-            this.panelOrdinanceHolder.TabIndex = 22;
-            this.panelOrdinanceHolder.Visible = false;
-            // 
-            // panelLegislativeHolder
-            // 
-            this.panelLegislativeHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(159)))));
-            this.panelLegislativeHolder.Controls.Add(this.guna2Button7);
-            this.panelLegislativeHolder.Controls.Add(this.guna2Button3);
-            this.panelLegislativeHolder.Controls.Add(this.guna2Button1);
-            this.panelLegislativeHolder.Controls.Add(this.IndexReportButton);
-            this.panelLegislativeHolder.Controls.Add(this.SearchDocumentButton);
-            this.panelLegislativeHolder.Controls.Add(this.TrackButton);
-            this.panelLegislativeHolder.Controls.Add(this.PDFButton);
-            this.panelLegislativeHolder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLegislativeHolder.Location = new System.Drawing.Point(0, 186);
-            this.panelLegislativeHolder.Name = "panelLegislativeHolder";
-            this.panelLegislativeHolder.Size = new System.Drawing.Size(180, 248);
-            this.panelLegislativeHolder.TabIndex = 20;
-            this.panelLegislativeHolder.Visible = false;
-            // 
-            // panellogo
-            // 
-            this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.panellogo.Controls.Add(this.LogoHolder);
-            this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panellogo.Location = new System.Drawing.Point(0, 0);
-            this.panellogo.Name = "panellogo";
-            this.panellogo.Size = new System.Drawing.Size(180, 100);
-            this.panellogo.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(180, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1119, 50);
-            this.panel2.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(7, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 33);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Santa Archiving System";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.83193F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.16807F));
-            this.tableLayoutPanel1.Controls.Add(this.pb_profile, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_name, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(766, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(353, 50);
-            this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // lbl_name
-            // 
-            this.lbl_name.AutoEllipsis = true;
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbl_name.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.ForeColor = System.Drawing.Color.White;
-            this.lbl_name.Location = new System.Drawing.Point(220, 0);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(58, 50);
-            this.lbl_name.TabIndex = 2;
-            this.lbl_name.Text = "Name";
-            this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1284, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(15, 661);
-            this.panel3.TabIndex = 3;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.AutoScroll = true;
-            this.panelChildForm.BackColor = System.Drawing.Color.White;
-            this.panelChildForm.Controls.Add(this.label4);
-            this.panelChildForm.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(180, 50);
-            this.panelChildForm.Margin = new System.Windows.Forms.Padding(10);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Padding = new System.Windows.Forms.Padding(10);
-            this.panelChildForm.Size = new System.Drawing.Size(1104, 661);
-            this.panelChildForm.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 611);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1084, 40);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "Copyright © HackDogs 2022";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 40;
-            this.guna2Elipse1.TargetControl = this.panelChildForm;
-            // 
-            // pb_profile
-            // 
-            this.pb_profile.BackColor = System.Drawing.Color.Transparent;
-            this.pb_profile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_profile.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pb_profile.Image = ((System.Drawing.Image)(resources.GetObject("pb_profile.Image")));
-            this.pb_profile.Location = new System.Drawing.Point(284, 3);
-            this.pb_profile.Name = "pb_profile";
-            this.pb_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pb_profile.ShadowDecoration.Parent = this.pb_profile;
-            this.pb_profile.Size = new System.Drawing.Size(52, 44);
-            this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_profile.TabIndex = 1;
-            this.pb_profile.TabStop = false;
-            this.pb_profile.Click += new System.EventHandler(this.pb_profile_Click);
             // 
             // btn_logout
             // 
@@ -362,6 +183,18 @@
             this.AccountManagement.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.AccountManagement.UseTransparentBackground = true;
             this.AccountManagement.Click += new System.EventHandler(this.AccountManagement_Click);
+            // 
+            // sbInformationPanel
+            // 
+            this.sbInformationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(159)))));
+            this.sbInformationPanel.Controls.Add(this.SBOfficials);
+            this.sbInformationPanel.Controls.Add(this.SBComittee);
+            this.sbInformationPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sbInformationPanel.Location = new System.Drawing.Point(0, 994);
+            this.sbInformationPanel.Name = "sbInformationPanel";
+            this.sbInformationPanel.Size = new System.Drawing.Size(180, 72);
+            this.sbInformationPanel.TabIndex = 29;
+            this.sbInformationPanel.Visible = false;
             // 
             // SBOfficials
             // 
@@ -439,6 +272,20 @@
             this.Committee.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Committee.UseTransparentBackground = true;
             this.Committee.Click += new System.EventHandler(this.Committee_Click);
+            // 
+            // panelAppropriation
+            // 
+            this.panelAppropriation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(159)))));
+            this.panelAppropriation.Controls.Add(this.guna2Button14);
+            this.panelAppropriation.Controls.Add(this.guna2Button15);
+            this.panelAppropriation.Controls.Add(this.guna2Button16);
+            this.panelAppropriation.Controls.Add(this.guna2Button17);
+            this.panelAppropriation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAppropriation.Location = new System.Drawing.Point(0, 809);
+            this.panelAppropriation.Name = "panelAppropriation";
+            this.panelAppropriation.Size = new System.Drawing.Size(180, 142);
+            this.panelAppropriation.TabIndex = 27;
+            this.panelAppropriation.Visible = false;
             // 
             // guna2Button14
             // 
@@ -609,6 +456,23 @@
             this.Tricycle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Tricycle.UseTransparentBackground = true;
             this.Tricycle.Click += new System.EventHandler(this.Tricycle_Click);
+            // 
+            // panelOrdinanceHolder
+            // 
+            this.panelOrdinanceHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(159)))));
+            this.panelOrdinanceHolder.Controls.Add(this.guna2Button8);
+            this.panelOrdinanceHolder.Controls.Add(this.guna2Button9);
+            this.panelOrdinanceHolder.Controls.Add(this.guna2Button10);
+            this.panelOrdinanceHolder.Controls.Add(this.guna2Button2);
+            this.panelOrdinanceHolder.Controls.Add(this.guna2Button4);
+            this.panelOrdinanceHolder.Controls.Add(this.guna2Button5);
+            this.panelOrdinanceHolder.Controls.Add(this.guna2Button6);
+            this.panelOrdinanceHolder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelOrdinanceHolder.Location = new System.Drawing.Point(0, 477);
+            this.panelOrdinanceHolder.Name = "panelOrdinanceHolder";
+            this.panelOrdinanceHolder.Size = new System.Drawing.Size(180, 246);
+            this.panelOrdinanceHolder.TabIndex = 22;
+            this.panelOrdinanceHolder.Visible = false;
             // 
             // guna2Button8
             // 
@@ -788,6 +652,23 @@
             this.Ordinance.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Ordinance.UseTransparentBackground = true;
             this.Ordinance.Click += new System.EventHandler(this.Ordinance_Click);
+            // 
+            // panelLegislativeHolder
+            // 
+            this.panelLegislativeHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(159)))));
+            this.panelLegislativeHolder.Controls.Add(this.guna2Button7);
+            this.panelLegislativeHolder.Controls.Add(this.guna2Button3);
+            this.panelLegislativeHolder.Controls.Add(this.guna2Button1);
+            this.panelLegislativeHolder.Controls.Add(this.IndexReportButton);
+            this.panelLegislativeHolder.Controls.Add(this.SearchDocumentButton);
+            this.panelLegislativeHolder.Controls.Add(this.TrackButton);
+            this.panelLegislativeHolder.Controls.Add(this.PDFButton);
+            this.panelLegislativeHolder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLegislativeHolder.Location = new System.Drawing.Point(0, 186);
+            this.panelLegislativeHolder.Name = "panelLegislativeHolder";
+            this.panelLegislativeHolder.Size = new System.Drawing.Size(180, 248);
+            this.panelLegislativeHolder.TabIndex = 20;
+            this.panelLegislativeHolder.Visible = false;
             // 
             // guna2Button7
             // 
@@ -1016,6 +897,16 @@
             this.Dashboard.UseTransparentBackground = true;
             this.Dashboard.Click += new System.EventHandler(this.Dashboard_Click);
             // 
+            // panellogo
+            // 
+            this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.panellogo.Controls.Add(this.LogoHolder);
+            this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panellogo.Location = new System.Drawing.Point(0, 0);
+            this.panellogo.Name = "panellogo";
+            this.panellogo.Size = new System.Drawing.Size(180, 100);
+            this.panellogo.TabIndex = 2;
+            // 
             // LogoHolder
             // 
             this.LogoHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
@@ -1028,6 +919,115 @@
             this.LogoHolder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoHolder.TabIndex = 0;
             this.LogoHolder.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.tableLayoutPanel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(180, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1119, 50);
+            this.panel2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(7, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(244, 33);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Santa Archiving System";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.83193F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.16807F));
+            this.tableLayoutPanel1.Controls.Add(this.pb_profile, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_name, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(766, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(353, 50);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // pb_profile
+            // 
+            this.pb_profile.BackColor = System.Drawing.Color.Transparent;
+            this.pb_profile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_profile.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pb_profile.Image = ((System.Drawing.Image)(resources.GetObject("pb_profile.Image")));
+            this.pb_profile.Location = new System.Drawing.Point(284, 3);
+            this.pb_profile.Name = "pb_profile";
+            this.pb_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pb_profile.ShadowDecoration.Parent = this.pb_profile;
+            this.pb_profile.Size = new System.Drawing.Size(52, 44);
+            this.pb_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_profile.TabIndex = 1;
+            this.pb_profile.TabStop = false;
+            this.pb_profile.Click += new System.EventHandler(this.pb_profile_Click);
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoEllipsis = true;
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl_name.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name.ForeColor = System.Drawing.Color.White;
+            this.lbl_name.Location = new System.Drawing.Point(220, 0);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(58, 50);
+            this.lbl_name.TabIndex = 2;
+            this.lbl_name.Text = "Name";
+            this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1284, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(15, 661);
+            this.panel3.TabIndex = 3;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.AutoScroll = true;
+            this.panelChildForm.BackColor = System.Drawing.Color.White;
+            this.panelChildForm.Controls.Add(this.label4);
+            this.panelChildForm.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(180, 50);
+            this.panelChildForm.Margin = new System.Windows.Forms.Padding(10);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Padding = new System.Windows.Forms.Padding(10);
+            this.panelChildForm.Size = new System.Drawing.Size(1104, 661);
+            this.panelChildForm.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 611);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(1084, 40);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Copyright © HackDogs 2022";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 40;
+            this.guna2Elipse1.TargetControl = this.panelChildForm;
             // 
             // MainPanel
             // 
@@ -1047,17 +1047,17 @@
             this.panel1.ResumeLayout(false);
             this.sbInformationPanel.ResumeLayout(false);
             this.panelAppropriation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TabSlider)).EndInit();
             this.panelOrdinanceHolder.ResumeLayout(false);
             this.panelLegislativeHolder.ResumeLayout(false);
             this.panellogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoHolder)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panelChildForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_profile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoHolder)).EndInit();
+            this.panelChildForm.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

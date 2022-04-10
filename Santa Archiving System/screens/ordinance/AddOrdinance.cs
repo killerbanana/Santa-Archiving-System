@@ -44,7 +44,7 @@ namespace Santa_Archiving_System.screens.ordinance
                     time.Text,
                     ampm.Text,
                     tag.Text,
-                    reading_cb.Text);
+                    reading_cb.Text, DateTime.Now.ToLongDateString());
                 await Ordinances.SaveOrdinanceDataOnline(
                     ordinanceNumber.Text,
                     series.Text,
@@ -54,7 +54,7 @@ namespace Santa_Archiving_System.screens.ordinance
                     time.Text,
                     ampm.Text,
                     tag.Text,
-                    reading_cb.Text);
+                    reading_cb.Text, DateTime.Now.ToLongDateString());
                 loading1.Visible = false;
                 MessageBox.Show("Successfully Added");
                 this.Close();
@@ -76,7 +76,7 @@ namespace Santa_Archiving_System.screens.ordinance
                     time.Text,
                     ampm.Text,
                     tag.Text,
-                    reading_cb.Text);
+                    reading_cb.Text, DateTime.Now.ToLongDateString());
                 loading1.Visible = false;
                 MessageBox.Show("Successfully Added");
                 this.Close();

@@ -1,6 +1,6 @@
 ﻿namespace Santa_Archiving_System.screens.appropriation
 {
-    partial class AddAppropriation
+    partial class UpdateAppropriation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -49,8 +43,6 @@
             this.author = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.date = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_add = new Guna.UI2.WinForms.Guna2Button();
             this.btn_browse = new Guna.UI2.WinForms.Guna2Button();
             this.title = new Guna.UI2.WinForms.Guna2TextBox();
             this.appropriationNumber = new Guna.UI2.WinForms.Guna2TextBox();
@@ -60,54 +52,24 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.reading_cb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_add = new Guna.UI2.WinForms.Guna2Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.TargetControl = this;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(614, 20);
-            this.panel1.TabIndex = 4;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(594, 20);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 669);
-            this.panel5.TabIndex = 9;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 20);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(20, 669);
-            this.panel2.TabIndex = 10;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(20, 669);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(574, 20);
-            this.panel4.TabIndex = 11;
             // 
             // guna2HtmlLabel12
             // 
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel12.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(64, 87);
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(69, 80);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
             this.guna2HtmlLabel12.Size = new System.Drawing.Size(9, 23);
-            this.guna2HtmlLabel12.TabIndex = 170;
+            this.guna2HtmlLabel12.TabIndex = 195;
             this.guna2HtmlLabel12.Text = "*";
             // 
             // guna2HtmlLabel11
@@ -115,10 +77,10 @@
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(357, 168);
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(362, 161);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             this.guna2HtmlLabel11.Size = new System.Drawing.Size(9, 23);
-            this.guna2HtmlLabel11.TabIndex = 169;
+            this.guna2HtmlLabel11.TabIndex = 194;
             this.guna2HtmlLabel11.Text = "*";
             // 
             // guna2HtmlLabel19
@@ -126,30 +88,30 @@
             this.guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel19.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel19.Location = new System.Drawing.Point(180, 168);
+            this.guna2HtmlLabel19.Location = new System.Drawing.Point(185, 161);
             this.guna2HtmlLabel19.Name = "guna2HtmlLabel19";
             this.guna2HtmlLabel19.Size = new System.Drawing.Size(9, 23);
-            this.guna2HtmlLabel19.TabIndex = 168;
+            this.guna2HtmlLabel19.TabIndex = 193;
             this.guna2HtmlLabel19.Text = "*";
             // 
             // loading1
             // 
             this.loading1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loading1.BackColor = System.Drawing.Color.Transparent;
-            this.loading1.Location = new System.Drawing.Point(280, 315);
+            this.loading1.Location = new System.Drawing.Point(285, 308);
             this.loading1.Name = "loading1";
             this.loading1.Size = new System.Drawing.Size(71, 70);
-            this.loading1.TabIndex = 167;
+            this.loading1.TabIndex = 192;
             this.loading1.Visible = false;
             // 
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(31, 520);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(36, 513);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(69, 23);
-            this.guna2HtmlLabel10.TabIndex = 165;
+            this.guna2HtmlLabel10.TabIndex = 191;
             this.guna2HtmlLabel10.Text = "Reading";
             // 
             // tag
@@ -166,23 +128,23 @@
             this.tag.FocusedState.Parent = this.tag;
             this.tag.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tag.HoverState.Parent = this.tag;
-            this.tag.Location = new System.Drawing.Point(331, 469);
+            this.tag.Location = new System.Drawing.Point(336, 462);
             this.tag.Name = "tag";
             this.tag.PasswordChar = '\0';
             this.tag.PlaceholderText = "";
             this.tag.SelectedText = "";
             this.tag.ShadowDecoration.Parent = this.tag;
             this.tag.Size = new System.Drawing.Size(238, 36);
-            this.tag.TabIndex = 149;
+            this.tag.TabIndex = 178;
             // 
             // guna2HtmlLabel9
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(331, 438);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(336, 431);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(33, 23);
-            this.guna2HtmlLabel9.TabIndex = 164;
+            this.guna2HtmlLabel9.TabIndex = 190;
             this.guna2HtmlLabel9.Text = "Tag";
             // 
             // ampm
@@ -202,11 +164,11 @@
             "AM",
             "PM"});
             this.ampm.ItemsAppearance.Parent = this.ampm;
-            this.ampm.Location = new System.Drawing.Point(413, 283);
+            this.ampm.Location = new System.Drawing.Point(418, 276);
             this.ampm.Name = "ampm";
             this.ampm.ShadowDecoration.Parent = this.ampm;
             this.ampm.Size = new System.Drawing.Size(78, 36);
-            this.ampm.TabIndex = 163;
+            this.ampm.TabIndex = 189;
             // 
             // time
             // 
@@ -222,23 +184,23 @@
             this.time.FocusedState.Parent = this.time;
             this.time.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.time.HoverState.Parent = this.time;
-            this.time.Location = new System.Drawing.Point(283, 283);
+            this.time.Location = new System.Drawing.Point(288, 276);
             this.time.Name = "time";
             this.time.PasswordChar = '\0';
             this.time.PlaceholderText = "";
             this.time.SelectedText = "";
             this.time.ShadowDecoration.Parent = this.time;
             this.time.Size = new System.Drawing.Size(124, 36);
-            this.time.TabIndex = 146;
+            this.time.TabIndex = 175;
             // 
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Bodoni MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(283, 252);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(288, 245);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(43, 25);
-            this.guna2HtmlLabel8.TabIndex = 162;
+            this.guna2HtmlLabel8.TabIndex = 188;
             this.guna2HtmlLabel8.Text = "Time";
             // 
             // series
@@ -255,23 +217,23 @@
             this.series.FocusedState.Parent = this.series;
             this.series.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.series.HoverState.Parent = this.series;
-            this.series.Location = new System.Drawing.Point(283, 199);
+            this.series.Location = new System.Drawing.Point(288, 192);
             this.series.Name = "series";
             this.series.PasswordChar = '\0';
             this.series.PlaceholderText = "";
             this.series.SelectedText = "";
             this.series.ShadowDecoration.Parent = this.series;
             this.series.Size = new System.Drawing.Size(208, 36);
-            this.series.TabIndex = 145;
+            this.series.TabIndex = 174;
             // 
             // guna2HtmlLabel7
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(283, 168);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(288, 161);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(68, 23);
-            this.guna2HtmlLabel7.TabIndex = 161;
+            this.guna2HtmlLabel7.TabIndex = 187;
             this.guna2HtmlLabel7.Text = "Series Of";
             // 
             // author
@@ -288,23 +250,23 @@
             this.author.FocusedState.Parent = this.author;
             this.author.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.author.HoverState.Parent = this.author;
-            this.author.Location = new System.Drawing.Point(31, 469);
+            this.author.Location = new System.Drawing.Point(36, 462);
             this.author.Name = "author";
             this.author.PasswordChar = '\0';
             this.author.PlaceholderText = "";
             this.author.SelectedText = "";
             this.author.ShadowDecoration.Parent = this.author;
             this.author.Size = new System.Drawing.Size(294, 36);
-            this.author.TabIndex = 148;
+            this.author.TabIndex = 177;
             // 
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(31, 438);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(36, 431);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(58, 23);
-            this.guna2HtmlLabel6.TabIndex = 160;
+            this.guna2HtmlLabel6.TabIndex = 186;
             this.guna2HtmlLabel6.Text = "Author";
             // 
             // date
@@ -314,50 +276,14 @@
             this.date.FillColor = System.Drawing.Color.White;
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.date.HoverState.Parent = this.date;
-            this.date.Location = new System.Drawing.Point(32, 283);
+            this.date.Location = new System.Drawing.Point(37, 276);
             this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date.Name = "date";
             this.date.ShadowDecoration.Parent = this.date;
             this.date.Size = new System.Drawing.Size(208, 36);
-            this.date.TabIndex = 159;
+            this.date.TabIndex = 185;
             this.date.Value = new System.DateTime(2021, 4, 15, 14, 15, 37, 736);
-            // 
-            // btn_cancel
-            // 
-            this.btn_cancel.BorderRadius = 5;
-            this.btn_cancel.CheckedState.Parent = this.btn_cancel;
-            this.btn_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancel.CustomImages.Parent = this.btn_cancel;
-            this.btn_cancel.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_cancel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.ForeColor = System.Drawing.Color.Black;
-            this.btn_cancel.HoverState.Parent = this.btn_cancel;
-            this.btn_cancel.Location = new System.Drawing.Point(333, 607);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.ShadowDecoration.Parent = this.btn_cancel;
-            this.btn_cancel.Size = new System.Drawing.Size(111, 45);
-            this.btn_cancel.TabIndex = 157;
-            this.btn_cancel.Text = "CANCEL";
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            // 
-            // btn_add
-            // 
-            this.btn_add.BorderRadius = 5;
-            this.btn_add.CheckedState.Parent = this.btn_add;
-            this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_add.CustomImages.Parent = this.btn_add;
-            this.btn_add.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.btn_add.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.HoverState.Parent = this.btn_add;
-            this.btn_add.Location = new System.Drawing.Point(450, 607);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.ShadowDecoration.Parent = this.btn_add;
-            this.btn_add.Size = new System.Drawing.Size(119, 45);
-            this.btn_add.TabIndex = 158;
-            this.btn_add.Text = "ADD";
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_browse
             // 
@@ -369,11 +295,11 @@
             this.btn_browse.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_browse.ForeColor = System.Drawing.Color.White;
             this.btn_browse.HoverState.Parent = this.btn_browse;
-            this.btn_browse.Location = new System.Drawing.Point(428, 118);
+            this.btn_browse.Location = new System.Drawing.Point(433, 111);
             this.btn_browse.Name = "btn_browse";
             this.btn_browse.ShadowDecoration.Parent = this.btn_browse;
             this.btn_browse.Size = new System.Drawing.Size(141, 36);
-            this.btn_browse.TabIndex = 156;
+            this.btn_browse.TabIndex = 184;
             this.btn_browse.Text = "Browse";
             this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click);
             // 
@@ -391,14 +317,14 @@
             this.title.FocusedState.Parent = this.title;
             this.title.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.title.HoverState.Parent = this.title;
-            this.title.Location = new System.Drawing.Point(32, 380);
+            this.title.Location = new System.Drawing.Point(37, 373);
             this.title.Name = "title";
             this.title.PasswordChar = '\0';
             this.title.PlaceholderText = "";
             this.title.SelectedText = "";
             this.title.ShadowDecoration.Parent = this.title;
             this.title.Size = new System.Drawing.Size(537, 36);
-            this.title.TabIndex = 147;
+            this.title.TabIndex = 176;
             // 
             // appropriationNumber
             // 
@@ -414,23 +340,23 @@
             this.appropriationNumber.FocusedState.Parent = this.appropriationNumber;
             this.appropriationNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.appropriationNumber.HoverState.Parent = this.appropriationNumber;
-            this.appropriationNumber.Location = new System.Drawing.Point(31, 199);
+            this.appropriationNumber.Location = new System.Drawing.Point(36, 192);
             this.appropriationNumber.Name = "appropriationNumber";
             this.appropriationNumber.PasswordChar = '\0';
             this.appropriationNumber.PlaceholderText = "";
             this.appropriationNumber.SelectedText = "";
             this.appropriationNumber.ShadowDecoration.Parent = this.appropriationNumber;
             this.appropriationNumber.Size = new System.Drawing.Size(209, 36);
-            this.appropriationNumber.TabIndex = 144;
+            this.appropriationNumber.TabIndex = 173;
             // 
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(32, 349);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(37, 342);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(34, 23);
-            this.guna2HtmlLabel4.TabIndex = 153;
+            this.guna2HtmlLabel4.TabIndex = 182;
             this.guna2HtmlLabel4.Text = "Title";
             // 
             // fileName
@@ -448,7 +374,7 @@
             this.fileName.FocusedState.Parent = this.fileName;
             this.fileName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fileName.HoverState.Parent = this.fileName;
-            this.fileName.Location = new System.Drawing.Point(31, 118);
+            this.fileName.Location = new System.Drawing.Point(36, 111);
             this.fileName.Name = "fileName";
             this.fileName.PasswordChar = '\0';
             this.fileName.PlaceholderText = "";
@@ -456,47 +382,55 @@
             this.fileName.SelectedText = "";
             this.fileName.ShadowDecoration.Parent = this.fileName;
             this.fileName.Size = new System.Drawing.Size(391, 36);
-            this.fileName.TabIndex = 143;
+            this.fileName.TabIndex = 172;
             // 
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(32, 252);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(37, 245);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(43, 23);
-            this.guna2HtmlLabel5.TabIndex = 152;
+            this.guna2HtmlLabel5.TabIndex = 181;
             this.guna2HtmlLabel5.Text = "Date";
             // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(31, 168);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(36, 161);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(143, 23);
-            this.guna2HtmlLabel3.TabIndex = 151;
+            this.guna2HtmlLabel3.TabIndex = 180;
             this.guna2HtmlLabel3.Text = "Appropriation No.";
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(31, 87);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(36, 80);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(27, 23);
-            this.guna2HtmlLabel2.TabIndex = 154;
+            this.guna2HtmlLabel2.TabIndex = 183;
             this.guna2HtmlLabel2.Text = "File";
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(31, 37);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(36, 30);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(321, 34);
-            this.guna2HtmlLabel1.TabIndex = 150;
-            this.guna2HtmlLabel1.Text = "New Appropriation Data";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(359, 34);
+            this.guna2HtmlLabel1.TabIndex = 179;
+            this.guna2HtmlLabel1.Text = "Update Appropriation Data";
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(614, 20);
+            this.panel1.TabIndex = 171;
             // 
             // reading_cb
             // 
@@ -516,18 +450,82 @@
             "Second Reading",
             "Third Reading"});
             this.reading_cb.ItemsAppearance.Parent = this.reading_cb;
-            this.reading_cb.Location = new System.Drawing.Point(31, 549);
+            this.reading_cb.Location = new System.Drawing.Point(37, 553);
             this.reading_cb.Name = "reading_cb";
             this.reading_cb.ShadowDecoration.Parent = this.reading_cb;
             this.reading_cb.Size = new System.Drawing.Size(538, 36);
-            this.reading_cb.TabIndex = 171;
+            this.reading_cb.TabIndex = 198;
             // 
-            // AddAppropriation
+            // btn_cancel
+            // 
+            this.btn_cancel.BorderRadius = 5;
+            this.btn_cancel.CheckedState.Parent = this.btn_cancel;
+            this.btn_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancel.CustomImages.Parent = this.btn_cancel;
+            this.btn_cancel.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_cancel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.ForeColor = System.Drawing.Color.Black;
+            this.btn_cancel.HoverState.Parent = this.btn_cancel;
+            this.btn_cancel.Location = new System.Drawing.Point(338, 605);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.ShadowDecoration.Parent = this.btn_cancel;
+            this.btn_cancel.Size = new System.Drawing.Size(111, 45);
+            this.btn_cancel.TabIndex = 196;
+            this.btn_cancel.Text = "CANCEL";
+            // 
+            // btn_add
+            // 
+            this.btn_add.BorderRadius = 5;
+            this.btn_add.CheckedState.Parent = this.btn_add;
+            this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_add.CustomImages.Parent = this.btn_add;
+            this.btn_add.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.btn_add.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ForeColor = System.Drawing.Color.White;
+            this.btn_add.HoverState.Parent = this.btn_add;
+            this.btn_add.Location = new System.Drawing.Point(455, 605);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.ShadowDecoration.Parent = this.btn_add;
+            this.btn_add.Size = new System.Drawing.Size(119, 45);
+            this.btn_add.TabIndex = 197;
+            this.btn_add.Text = "UPDATE";
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(594, 20);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(20, 669);
+            this.panel5.TabIndex = 199;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(20, 669);
+            this.panel2.TabIndex = 200;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(20, 669);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(574, 20);
+            this.panel4.TabIndex = 201;
+            // 
+            // UpdateAppropriation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 689);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.reading_cb);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.guna2HtmlLabel12);
             this.Controls.Add(this.guna2HtmlLabel11);
             this.Controls.Add(this.guna2HtmlLabel19);
@@ -543,8 +541,6 @@
             this.Controls.Add(this.author);
             this.Controls.Add(this.guna2HtmlLabel6);
             this.Controls.Add(this.date);
-            this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.title);
             this.Controls.Add(this.appropriationNumber);
@@ -554,16 +550,11 @@
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "AddAppropriation";
+            this.Name = "UpdateAppropriation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.AddAppropriation_Load);
+            this.Text = "UpdateAppropriation";
+            this.Load += new System.EventHandler(this.UpdateAppropriation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,11 +562,6 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
@@ -591,8 +577,6 @@
         private Guna.UI2.WinForms.Guna2TextBox author;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2DateTimePicker date;
-        private Guna.UI2.WinForms.Guna2Button btn_cancel;
-        private Guna.UI2.WinForms.Guna2Button btn_add;
         private Guna.UI2.WinForms.Guna2Button btn_browse;
         private Guna.UI2.WinForms.Guna2TextBox title;
         private Guna.UI2.WinForms.Guna2TextBox appropriationNumber;
@@ -602,6 +586,12 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2ComboBox reading_cb;
+        private Guna.UI2.WinForms.Guna2Button btn_cancel;
+        private Guna.UI2.WinForms.Guna2Button btn_add;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
     }
 }
